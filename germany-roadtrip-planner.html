@@ -100,6 +100,17 @@
   .stat .n{ font-family:"SF Mono","Consolas",ui-monospace,monospace; font-variant-numeric:tabular-nums; font-size:1.5rem; font-weight:700; color:var(--route); }
   .stat .l{ font-size:0.75rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; }
 
+  .hero-links{ display:flex; flex-wrap:wrap; gap:0.7rem; margin-top:1.5rem; }
+  .hero-link{
+    display:inline-flex; align-items:center; gap:0.55rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:0.6rem 1rem; box-shadow:var(--shadow); text-decoration:none; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.9rem; font-weight:700; transition:border-color 0.15s, transform 0.15s;
+  }
+  .hero-link svg{ color:var(--route); flex:none; }
+  .hero-link:hover{ border-color:var(--route); transform:translateY(-1px); }
+
   /* ---------- Sticky day nav ---------- */
   nav.daynav{
     position:sticky; top:0; z-index:40;
@@ -328,6 +339,24 @@
       <div class="stat"><span class="n">16</span><span class="l">개 방문 도시</span></div>
       <div class="stat"><span class="n">FRA→FRA</span><span class="l">픽업 · 반납</span></div>
     </div>
+    <div class="hero-links">
+      <a class="hero-link" href="german-must-visit.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>꼭 가야할 장소</span>
+      </a>
+      <a class="hero-link" href="german-food-tour.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v7a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2"/><path d="M6 11v11"/><path d="M18 2c-1.7 0-3 2-3 5s1.3 5 3 5v9"/></svg>
+        <span>맛집투어</span>
+      </a>
+      <a class="hero-link" href="#rental">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg>
+        <span>렌터카 준비</span>
+      </a>
+      <a class="hero-link" href="#rules">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg>
+        <span>운전 규칙</span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -345,10 +374,6 @@
     <a href="#day8">8일차</a>
     <a href="#checklist">체크리스트</a>
     <a href="#info">비상연락처</a>
-    <a href="#rental">렌터카 준비</a>
-    <a href="#rules">운전 규칙</a>
-    <a href="german-must-visit.html" style="color:var(--sign);">꼭 가야할 장소 →</a>
-    <a href="german-food-tour.html" style="color:var(--sign);">맛집투어 →</a>
   </div>
 </nav>
 
