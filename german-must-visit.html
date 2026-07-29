@@ -154,7 +154,7 @@
   <section id="map-section">
     <span class="eyebrow">Route Map</span>
     <h2>경로 지도</h2>
-    <p class="lede">색깔은 구간(권역)을 나타냅니다. 마커를 클릭하면 도시명과 방문 일차가 표시됩니다. 회색 마커(뮌헨)는 이번 여행에서는 가지 않는 참고용 위치입니다.</p>
+    <p class="lede">색깔은 구간(권역)을 나타냅니다. 마커를 클릭하면 도시명과 방문 일차가 표시됩니다. 회색 마커는 이번 여행에서는 가지 않는 참고용 위치입니다.</p>
     <div id="map"></div>
     <div class="region-grid">
       <div class="region-card">
@@ -165,7 +165,7 @@
       <div class="region-card">
         <span class="dot" style="background:#c2492f;"></span><h3>바이에른 알프스</h3>
         <span class="days">3~4일차 · 9/21–22</span>
-        <p>아우크스부르크·퓌센·켐프텐 — 동화 속 성이 서 있는 알고이 산악 지역</p>
+        <p>뮌헨(옥토버페스트 반나절)·퓌센·켐프텐 — 동화 속 성이 서 있는 알고이 산악 지역</p>
       </div>
       <div class="region-card">
         <span class="dot" style="background:#2f6f4f;"></span><h3>흑림 · 슈바벤</h3>
@@ -266,6 +266,16 @@
         </div>
       </div>
 
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Wiesn2006_Luftaufnahme.jpg/500px-Wiesn2006_Luftaufnahme.jpg" alt="테레지엔비제 옥토버페스트 축제장" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">3일차 · 뮌헨 (경유)</span>
+          <h3>테레지엔비제 (옥토버페스트 축제장)</h3>
+          <p class="landmark-desc">9월 19일부터 열리는 세계 최대 맥주 축제 현장. 이번 여행은 숙박 없이 반나절만 들러 분위기를 느낍니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>1810년 바이에른 왕세자의 결혼을 축하하는 경마 대회에서 시작된 축제. 축제 기간엔 뮌헨 숙박비가 평소의 2~3배로 뛰어, 이번 일정은 퓌센으로 가는 길에 반나절만 들르도록 짰습니다.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -291,8 +301,8 @@
         <div class="pop-body"><h3>포르쉐 박물관</h3><p>공중에 뜬 듯한 독특한 건축, 스포츠카 팬이라면 필수코스</p></div>
       </div>
       <div class="pop-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Fugger_Fuggerei_Herrengasse.jpg/500px-Fugger_Fuggerei_Herrengasse.jpg" alt="아우크스부르크 푸거라이" loading="lazy">
-        <div class="pop-body"><h3>푸거라이 (아우크스부르크)</h3><p>1521년 설립된 세계에서 가장 오래된 사회주택 — 지금도 실제 주민이 삽니다</p></div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="뮌헨 마리엔 광장" loading="lazy">
+        <div class="pop-body"><h3>마리엔 광장 &amp; 노이에스 라트하우스</h3><p>뮌헨 구시가 중심 광장 — 신 시청사 글로켄슈필 인형극이 명물</p></div>
       </div>
       <div class="pop-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg/500px-Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg" alt="베른카슈텔쿠에스" loading="lazy">
@@ -334,7 +344,7 @@
     [49.38, 10.18, '로텐부르크', '1일차 · 숙박', franken],
     [49.89, 10.89, '밤베르크', '2일차 · 경유', franken],
     [49.45, 11.08, '뉘른베르크', '2일차 · 숙박', franken],
-    [48.37, 10.90, '아우크스부르크', '3일차 · 경유', alps],
+    [48.14, 11.58, '뮌헨', '3일차 · 경유(옥토버페스트)', alps],
     [47.57, 10.70, '퓌센', '3~4일차 · 숙박(2박)', alps],
     [47.73, 10.32, '켐프텐', '5일차 · 경유', alps],
     [47.92, 8.15, '티티제(흑림)', '5일차 · 숙박', schwarzwald],
@@ -355,9 +365,5 @@
       radius: 7, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: 0.95
     }).addTo(map).bindPopup('<b>' + s[2] + '</b><br>' + s[3]);
   });
-
-  L.circleMarker([48.14, 11.58], {
-    radius: 6, color: '#fffdf7', weight: 2, fillColor: ref, fillOpacity: 0.85
-  }).addTo(map).bindPopup('<b>뮌헨</b><br>이번 여행에서는 방문하지 않는 참고 위치');
 })();
 </script>
