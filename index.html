@@ -138,36 +138,46 @@
 
   /* ---------- Route strip ---------- */
   .route-strip{
-    display:flex; align-items:stretch; gap:0; overflow-x:auto;
-    padding:1.2rem 0 0.6rem;
+    display:flex; align-items:flex-start; gap:0; overflow-x:auto;
+    padding:1.2rem 0 0.8rem;
     -webkit-overflow-scrolling:touch;
   }
   .route-stop{
-    flex:none; width:150px; display:flex; flex-direction:column; align-items:center;
+    flex:none; width:126px; display:flex; flex-direction:column; align-items:center;
     text-align:center; position:relative; padding-top:0.2rem;
   }
   .route-stop .badge{
     width:2rem; height:2rem; border-radius:50%;
     background:var(--route); color:#fff;
     display:flex; align-items:center; justify-content:center;
-    font-family:"SF Mono","Consolas",monospace; font-weight:700; font-size:0.85rem;
+    font-family:"SF Mono","Consolas",monospace; font-weight:700; font-size:0.8rem;
     box-shadow: var(--shadow);
     flex:none;
     z-index:2;
   }
-  .route-stop .city{ margin-top:0.6rem; font-weight:700; font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-size:0.95rem;}
-  .route-stop .tag{ margin-top:0.2rem; font-size:0.78rem; color:var(--ink-soft); }
+  .route-stop .badge.wide{ width:auto; min-width:2rem; padding:0 0.4rem; font-size:0.68rem; letter-spacing:-0.02em; }
+  .route-stop .city{ margin-top:0.6rem; font-weight:700; font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-size:0.88rem; line-height:1.3;}
+  .route-stop .tag{ margin-top:0.2rem; font-size:0.75rem; color:var(--ink-soft); }
   .route-link{
-    flex:1 1 60px; min-width:40px; display:flex; align-items:center; justify-content:center;
-    position:relative; top:1rem;
+    flex:0 0 auto; min-width:58px; display:flex; align-items:center; justify-content:center;
+    align-self:flex-start; margin-top:1.2rem; transform:translateY(-50%);
+    padding:0 0.3rem;
   }
   .route-link::before{
     content:""; position:absolute; left:0; right:0; top:50%; height:2px; background:var(--line);
   }
   .route-link span{
     position:relative; background:var(--bg-soft); padding:0 0.4rem;
-    font-family:"SF Mono","Consolas",monospace; font-size:0.72rem; color:var(--ink-soft);
+    font-family:"SF Mono","Consolas",monospace; font-size:0.68rem; color:var(--ink-soft);
     white-space:nowrap;
+  }
+  @media (max-width:520px){
+    .route-stop{ width:104px; }
+    .route-stop .badge{ width:1.7rem; height:1.7rem; font-size:0.72rem; }
+    .route-stop .city{ font-size:0.8rem; }
+    .route-stop .tag{ font-size:0.68rem; }
+    .route-link{ min-width:44px; margin-top:1.05rem; }
+    .route-link span{ font-size:0.62rem; padding:0 0.3rem; }
   }
 
   /* ---------- Germany map ---------- */
@@ -273,8 +283,8 @@
     <p class="sub">프랑크푸르트에서 출발해 로맨틱 가도, 바이에른, 흑림(Schwarzwald)을 돌아오는 1주일 순환 코스. 렌터카 준비, 독일 운전 규칙, 일자별 일정과 출발 전 체크리스트를 한 페이지에 정리했습니다.</p>
     <div class="stat-row">
       <div class="stat"><span class="n">7</span><span class="l">일 · 6박</span></div>
-      <div class="stat"><span class="n">~1,095</span><span class="l">km 총 주행거리</span></div>
-      <div class="stat"><span class="n">7</span><span class="l">개 거점 도시</span></div>
+      <div class="stat"><span class="n">~1,035</span><span class="l">km 총 주행거리</span></div>
+      <div class="stat"><span class="n">6</span><span class="l">개 거점 도시</span></div>
       <div class="stat"><span class="n">FRA→FRA</span><span class="l">픽업 · 반납</span></div>
     </div>
   </div>
@@ -323,17 +333,11 @@
         <div class="city">뉘른베르크</div>
         <div class="tag">숙박</div>
       </div>
-      <div class="route-link"><span>170km · 2h</span></div>
+      <div class="route-link"><span>230km · 3h</span></div>
       <div class="route-stop">
-        <div class="badge">3</div>
-        <div class="city">뮌헨</div>
-        <div class="tag">숙박</div>
-      </div>
-      <div class="route-link"><span>120km · 1.5h</span></div>
-      <div class="route-stop">
-        <div class="badge">4</div>
+        <div class="badge wide">3·4</div>
         <div class="city">퓌센</div>
-        <div class="tag">숙박</div>
+        <div class="tag">2박</div>
       </div>
       <div class="route-link"><span>260km · 3h</span></div>
       <div class="route-stop">
@@ -449,7 +453,7 @@
     <div class="map-wrap">
       <svg viewBox="0 0 480 640" role="img" aria-labelledby="mapTitle mapDesc" class="de-map">
         <title id="mapTitle">독일 지도 위 7일 로드트립 경로</title>
-        <desc id="mapDesc">프랑크푸르트 공항에서 출발해 로텐부르크, 뉘른베르크, 뮌헨, 퓌센, 티티제, 하이델베르크를 거쳐 다시 프랑크푸르트 공항으로 돌아오는 경로</desc>
+        <desc id="mapDesc">프랑크푸르트 공항에서 출발해 로텐부르크, 뉘른베르크, 퓌센(2박), 티티제, 하이델베르크를 거쳐 다시 프랑크푸르트 공항으로 돌아오는 경로</desc>
         <defs>
           <pattern id="gridDots" width="26" height="26" patternUnits="userSpaceOnUse">
             <circle cx="1" cy="1" r="1" fill="var(--ink)" opacity="0.14" />
@@ -458,13 +462,12 @@
         <path class="de-land" d="M132.8,16.2 L183.8,20.3 L229.8,56.7 L270.7,40.5 L321.7,89.1 L377.9,56.7 L429.1,97.2 L449.4,178.2 L459.6,267.3 L434.0,340.3 L342.1,396.9 L347.2,453.7 L408.5,518.5 L362.6,599.5 L286.0,615.7 L234.9,627.8 L206.8,603.5 L99.6,599.5 L91.9,575.2 L107.2,494.2 L91.9,477.7 L30.6,453.7 L15.3,401.0 L10.2,352.4 L5.1,328.1 L66.4,226.8 L66.4,113.4 L137.9,97.2 Z"/>
         <path d="M132.8,16.2 L183.8,20.3 L229.8,56.7 L270.7,40.5 L321.7,89.1 L377.9,56.7 L429.1,97.2 L449.4,178.2 L459.6,267.3 L434.0,340.3 L342.1,396.9 L347.2,453.7 L408.5,518.5 L362.6,599.5 L286.0,615.7 L234.9,627.8 L206.8,603.5 L99.6,599.5 L91.9,575.2 L107.2,494.2 L91.9,477.7 L30.6,453.7 L15.3,401.0 L10.2,352.4 L5.1,328.1 L66.4,226.8 L66.4,113.4 L137.9,97.2 Z" fill="url(#gridDots)"/>
 
-        <path class="route-casing" d="M147.0,404.4 L223.6,463.4 L269.6,457.8 L295.1,563.9 L250.2,610.2 L120.0,581.6 L148.6,461.0 L147.0,404.4"/>
-        <path class="route-line" d="M147.0,404.4 L223.6,463.4 L269.6,457.8 L295.1,563.9 L250.2,610.2 L120.0,581.6 L148.6,461.0 L147.0,404.4"/>
+        <path class="route-casing" d="M147.0,404.4 L223.6,463.4 L269.6,457.8 L250.2,610.2 L120.0,581.6 L148.6,461.0 L147.0,404.4"/>
+        <path class="route-line" d="M147.0,404.4 L223.6,463.4 L269.6,457.8 L250.2,610.2 L120.0,581.6 L148.6,461.0 L147.0,404.4"/>
 
         <text class="route-time" x="203" y="425" text-anchor="start">220km · 2.5h</text>
         <text class="route-time" x="246.6" y="440" text-anchor="middle">85km · 1h</text>
-        <text class="route-time" x="304" y="512" text-anchor="start">170km · 2h</text>
-        <text class="route-time" x="297" y="583" text-anchor="start">120km · 1.5h</text>
+        <text class="route-time" x="283" y="536" text-anchor="start">230km · 3h</text>
         <text class="route-time" x="185.1" y="616" text-anchor="middle">260km · 3h</text>
         <text class="route-time" x="112" y="522" text-anchor="end">150km · 2h</text>
         <text class="route-time" x="118" y="422" text-anchor="end">90km · 1h</text>
@@ -488,14 +491,9 @@
           <text class="city-label" x="286" y="454" text-anchor="start">뉘른베르크</text>
         </g>
         <g>
-          <circle class="badge-circle" cx="295.1" cy="563.9" r="10"/>
-          <text class="badge-text" x="295.1" y="563.9">3</text>
-          <text class="city-label" x="312" y="560" text-anchor="start">뮌헨</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="250.2" cy="610.2" r="10"/>
-          <text class="badge-text" x="250.2" y="610.2">4</text>
-          <text class="city-label" x="250.2" y="634" text-anchor="middle">퓌센</text>
+          <circle class="badge-circle" cx="250.2" cy="610.2" r="12"/>
+          <text class="badge-text" x="250.2" y="610.2" style="font-size:8.5px">3·4</text>
+          <text class="city-label" x="250.2" y="636" text-anchor="middle">퓌센 (2박)</text>
         </g>
         <g>
           <circle class="badge-circle" cx="120.0" cy="581.6" r="10"/>
@@ -509,7 +507,7 @@
         </g>
       </svg>
     </div>
-    <p class="map-caption mono">프랑크푸르트 공항 → 로텐부르크 → 뉘른베르크 → 뮌헨 → 퓌센 → 티티제 → 하이델베르크 → 프랑크푸르트 공항</p>
+    <p class="map-caption mono">프랑크푸르트 공항 → 로텐부르크 → 뉘른베르크 → 퓌센(2박) → 티티제 → 하이델베르크 → 프랑크푸르트 공항</p>
   </section>
 
   <div id="itinerary">
@@ -559,45 +557,45 @@
     </article>
 
     <article class="day" id="day3">
-      <div class="day-head"><span class="num mono">03</span><h3>뉘른베르크 → 뮌헨</h3></div>
-      <div class="day-meta"><span><b>주행</b> 170km · 약 2시간</span><span><b>테마</b> 바이에른 주도 입성</span></div>
+      <div class="day-head"><span class="num mono">03</span><h3>뉘른베르크 → 퓌센 (뮌헨 우회 직행)</h3></div>
+      <div class="day-meta"><span><b>주행</b> 230km · 약 3시간</span><span><b>테마</b> 알프스 관문 마을로 이동</span></div>
       <div class="day-body">
         <div>
           <h4>오늘의 동선</h4>
           <ul>
-            <li>A9 아우토반으로 남쪽 뮌헨 이동</li>
-            <li>마리엔 광장 &amp; 신 시청사 글로켄슈필</li>
-            <li>빅투알리엔 시장에서 점심</li>
-            <li>영국정원(Englischer Garten) 산책</li>
+            <li>A6 → A7 아우토반으로 뮌헨 시내를 거치지 않고 남서쪽 퓌센까지 직행</li>
+            <li>중간 아우크스부르크 인근 휴게소에서 휴식</li>
+            <li>오후 늦게 퓌센 도착, 숙소에 짐 풀고 컨디션 조절</li>
+            <li>퓌센 구시가 &amp; 알프제(Alpsee) 호수 저녁 산책</li>
           </ul>
         </div>
         <div>
           <h4>숙박 추천</h4>
-          <p class="lodge">시내는 대중교통이 편해 숙소는 호텔 부설 주차장이 있는 곳 위주로 선택</p>
+          <p class="lodge">퓌센 또는 호엔슈방가우 마을 숙소 — 다음날에도 같은 곳에서 2박째</p>
           <h4 style="margin-top:1rem">팁</h4>
-          <p class="tip">뮌헨 구시가는 환경구역(Umweltzone) 전역 적용 — 스티커 없이 진입 시 벌금 대상입니다.</p>
+          <p class="tip">뮌헨을 관통하지 않는 대신 이동 시간이 길어지는 날입니다. 휴게소를 여유 있게 활용하세요.</p>
         </div>
       </div>
     </article>
 
     <article class="day" id="day4">
-      <div class="day-head"><span class="num mono">04</span><h3>뮌헨 → 퓌센 (노이슈반슈타인 성)</h3></div>
-      <div class="day-meta"><span><b>주행</b> 120km · 약 1시간 30분</span><span><b>테마</b> 알프스 &amp; 동화 속 성</span></div>
+      <div class="day-head"><span class="num mono">04</span><h3>퓌센 체류 — 노이슈반슈타인 성</h3></div>
+      <div class="day-meta"><span><b>주행</b> 없음 (당일 도보)</span><span><b>테마</b> 동화 속 성 완주</span></div>
       <div class="day-body">
         <div>
           <h4>오늘의 동선</h4>
           <ul>
-            <li>이른 아침 출발 — 성수기엔 티켓 조기 매진 주의, 사전 예매 필수</li>
+            <li>이른 아침 예약 시간에 맞춰 성 매표소로 이동 — 성수기엔 몇 주 전 매진, 사전 예매 필수</li>
             <li>노이슈반슈타인 성 &amp; 호엔슈방가우 성 투어</li>
-            <li>마리엔 다리(Marienbrücke)에서 뷰포인트 사진</li>
-            <li>퓌센 구시가 &amp; 알프제 호수 산책</li>
+            <li>마리엔 다리(Marienbrücke)에서 뷰포인트 사진, 짧은 트레킹 코스</li>
+            <li>오후엔 퓌센 구시가를 여유 있게 재탐방하거나 숙소에서 휴식</li>
           </ul>
         </div>
         <div>
           <h4>숙박 추천</h4>
-          <p class="lodge">퓌센 또는 호엔슈방가우 마을 게스트하우스 — 성 주차장 대비 도보 부담 적음</p>
+          <p class="lodge">전날과 동일한 숙소에서 2박째 — 짐을 풀어둔 채 가볍게 이동</p>
           <h4 style="margin-top:1rem">팁</h4>
-          <p class="tip">성 주차장은 마을 초입에서 20~30분 도보 거리. 셔틀버스나 마차 옵션도 있습니다.</p>
+          <p class="tip">전날 이동을 마쳤기 때문에 이 날은 차 없이 도보와 셔틀버스로만 움직여도 충분합니다.</p>
         </div>
       </div>
     </article>
