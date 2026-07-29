@@ -55,14 +55,9 @@
   .hero-inner{ max-width:960px; margin:0 auto; }
   .hero h1{ font-size:clamp(1.9rem,4.6vw,2.9rem); margin:0.9rem 0 0.7rem; }
   .hero p.sub{ max-width:64ch; color:var(--ink-soft); font-size:1.05rem; margin:0; }
-  .crumb-links{ display:flex; gap:1.1rem; flex-wrap:wrap; }
-  .crumb-links a{
-    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-size:0.85rem; font-weight:700; text-decoration:none;
-  }
 
   nav.mvnav{
-    position:sticky; top:0; z-index:40;
+    position:sticky; top:56px; z-index:40;
     background:var(--surface); border-bottom:1px solid var(--line); box-shadow:var(--shadow);
   }
   .mvnav-scroll{
@@ -128,61 +123,53 @@
   footer{ max-width:960px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
   @media print{ nav.mvnav{ display:none; } #map{ display:none; } }
 
-  /* ---------- Floating cross-page nav ---------- */
-  .floating-nav{ position:fixed; right:1.1rem; bottom:1.1rem; z-index:200; }
-  .floating-nav summary{
-    list-style:none; width:3.1rem; height:3.1rem; border-radius:50%;
-    background:var(--route); color:#fff; box-shadow:var(--shadow);
-    display:flex; align-items:center; justify-content:center; cursor:pointer;
+  /* ---------- Sticky top cross-page bar ---------- */
+  nav.topbar{
+    position:sticky; top:0; z-index:60; height:56px;
+    background:var(--surface); border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+    display:flex; align-items:center;
   }
-  .floating-nav summary::-webkit-details-marker{ display:none; }
-  .floating-nav summary::marker{ content:""; }
-  .floating-nav-panel{
-    position:absolute; right:0; bottom:3.7rem; width:230px;
-    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-    box-shadow:var(--shadow); padding:0.5rem; display:flex; flex-direction:column; gap:0.15rem;
+  .topbar-scroll{
+    max-width:960px; margin:0 auto; width:100%; height:100%;
+    display:flex; align-items:center; gap:0.3rem; overflow-x:auto;
+    padding:0 1rem; scrollbar-width:thin;
   }
-  .floating-nav-item{
-    display:flex; align-items:center; gap:0.7rem; padding:0.5rem 0.6rem; border-radius:2px;
-    text-decoration:none; color:var(--ink);
+  .topbar-item{
+    flex:none; display:inline-flex; align-items:center; gap:0.5rem;
+    padding:0.3rem 0.8rem 0.3rem 0.3rem; border-radius:20px; text-decoration:none;
+    color:var(--ink-soft); border:1px solid transparent; white-space:nowrap;
     font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-size:0.86rem; font-weight:700;
+    font-size:0.82rem; font-weight:700;
   }
-  a.floating-nav-item:hover{ background:var(--bg-soft); }
-  .floating-nav-item .fn-icon{
-    flex:none; width:1.9rem; height:1.9rem; border-radius:50%; background:var(--route-soft);
-    color:var(--route); display:flex; align-items:center; justify-content:center;
+  .topbar-item .tb-icon{
+    flex:none; width:1.7rem; height:1.7rem; border-radius:50%;
+    background:var(--route-soft); color:var(--route);
+    display:flex; align-items:center; justify-content:center;
   }
-  .floating-nav-item.is-current{ background:var(--route-soft); color:var(--route); cursor:default; }
-  .floating-nav-item.is-current .fn-icon{ background:var(--route); color:#fff; }
+  a.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
+  .topbar-item.is-current{ color:var(--route); background:var(--route-soft); }
+  .topbar-item.is-current .tb-icon{ background:var(--route); color:#fff; }
 </style>
+
+<nav class="topbar" aria-label="전체 메뉴">
+  <div class="topbar-scroll">
+    <a class="topbar-item" href="index.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></span>여행 플래너</a>
+    <a class="topbar-item" href="german-weather.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨</a>
+    <a class="topbar-item" href="german-exchange.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>환율</a>
+    <span class="topbar-item is-current"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>꼭 가야할 장소</span>
+    <a class="topbar-item" href="german-food-tour.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v7a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2"/><path d="M6 11v11"/><path d="M18 2c-1.7 0-3 2-3 5s1.3 5 3 5v9"/></svg></span>맛집투어</a>
+    <a class="topbar-item" href="german-rental-guide.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg></span>렌터카 준비</a>
+    <a class="topbar-item" href="german-driving-rules.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg></span>운전 규칙</a>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="crumb-links">
-      <a href="index.html">← 여행 플래너</a>
-      <a href="german-food-tour.html">맛집투어 →</a>
-    </div>
-    <span class="eyebrow" style="display:block;margin-top:0.9rem;">Must Visit · Deutschland</span>
+    <span class="eyebrow" style="display:block;">Must Visit · Deutschland</span>
     <h1>꼭 가야할 장소</h1>
     <p class="sub">독일을 여행한다면 놓치지 말아야 할 대표 명소들, 그리고 7박 8일 경로가 지나가는 4개 권역을 지도로 살펴보세요.</p>
   </div>
 </header>
-
-<details class="floating-nav">
-  <summary aria-label="전체 메뉴 열기">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-  </summary>
-  <div class="floating-nav-panel">
-    <a class="floating-nav-item" href="index.html"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></span>여행 플래너</a>
-    <a class="floating-nav-item" href="german-weather.html"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨</a>
-    <a class="floating-nav-item" href="german-exchange.html"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>환율</a>
-    <span class="floating-nav-item is-current"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>꼭 가야할 장소</span>
-    <a class="floating-nav-item" href="german-food-tour.html"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v7a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2"/><path d="M6 11v11"/><path d="M18 2c-1.7 0-3 2-3 5s1.3 5 3 5v9"/></svg></span>맛집투어</a>
-    <a class="floating-nav-item" href="german-rental-guide.html"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg></span>렌터카 준비</a>
-    <a class="floating-nav-item" href="german-driving-rules.html"><span class="fn-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg></span>운전 규칙</a>
-  </div>
-</details>
 
 <nav class="mvnav" aria-label="빠른 이동">
   <div class="mvnav-scroll">
@@ -407,14 +394,6 @@
     L.circleMarker([s[0], s[1]], {
       radius: 7, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: 0.95
     }).addTo(map).bindPopup('<b>' + s[2] + '</b><br>' + s[3]);
-  });
-})();
-
-(function(){
-  var fnav = document.querySelector('.floating-nav');
-  if(!fnav) return;
-  document.addEventListener('click', function(e){
-    if(fnav.open && !fnav.contains(e.target)) fnav.open = false;
   });
 })();
 </script>
