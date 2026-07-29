@@ -1,0 +1,222 @@
+<title>독일 여행 유로 환율 — 실시간 EUR/KRW</title>
+<meta name="description" content="유럽중앙은행(ECB) 기준 실시간 EUR/KRW 환율과 1주일·1개월·3개월·1년 추이 차트">
+<style>
+  :root{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+    --radius: 3px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+      --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+      --warn: #e3a94a; --warn-soft: #3a2e19;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+    --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+    --warn: #e3a94a; --warn-soft: #3a2e19;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"]{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Noto Serif KR", "Nanum Myeongjo", serif;
+    line-height:1.65; font-size:16px;
+  }
+  h1,h2,h3,.label{
+    font-family: -apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,Helvetica,Arial,sans-serif;
+    font-stretch:condensed; font-weight:800; letter-spacing:-0.01em; text-wrap:balance;
+  }
+  .eyebrow{
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,sans-serif;
+    text-transform:uppercase; letter-spacing:0.14em; font-size:0.72rem; font-weight:700; color:var(--route);
+  }
+  a{ color:var(--route); }
+  a:focus-visible{ outline:2px solid var(--route); outline-offset:2px; }
+  header.hero{
+    background:linear-gradient(180deg, var(--bg-soft), var(--bg));
+    border-bottom:1px solid var(--line); padding:3.2rem 1.5rem 2.4rem;
+  }
+  .hero-inner{ max-width:920px; margin:0 auto; }
+  .hero h1{ font-size:clamp(1.9rem,4.6vw,2.9rem); margin:0.9rem 0 0.7rem; }
+  .hero p.sub{ max-width:64ch; color:var(--ink-soft); font-size:1.05rem; margin:0; }
+  .back-link{
+    display:inline-flex; align-items:center; gap:0.35rem;
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.85rem; font-weight:700; text-decoration:none;
+  }
+  main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
+  section{ padding:2.6rem 0; }
+  section > .eyebrow{ display:block; margin-bottom:0.4rem; }
+  section > h2{ font-size:1.5rem; margin:0 0 0.4rem; }
+  section > p.lede{ color:var(--ink-soft); max-width:68ch; margin:0 0 1.4rem; font-size:0.95rem; }
+
+  .fx-current{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:1.3rem 1.5rem; margin-bottom:1.4rem;
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:0.6rem 1.2rem;
+  }
+  .fx-current .fx-rate{
+    font-family:"SF Mono","Consolas",monospace; font-variant-numeric:tabular-nums;
+    font-size:1.9rem; font-weight:700; color:var(--route);
+  }
+  .fx-current .fx-sub{ font-size:0.85rem; color:var(--ink-soft); }
+  .fx-current .fx-updated{ font-size:0.76rem; color:var(--ink-soft); flex-basis:100%; }
+  .fx-current .fx-loading, .fx-current .fx-error{ font-size:0.9rem; color:var(--ink-soft); }
+  .fx-current .fx-error{ color:var(--warn); }
+
+  .fx-charts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+  .fx-chart-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:0.95rem 1.05rem 0.85rem; box-shadow:var(--shadow);
+  }
+  .fx-chart-card h3{ margin:0 0 0.6rem; font-size:0.88rem; color:var(--ink-soft); font-weight:700; }
+  .fx-svg{ width:100%; height:auto; display:block; }
+  .fx-area{ fill:var(--route-soft); stroke:none; }
+  .fx-line{ fill:none; stroke:var(--route); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .fx-dot{ fill:var(--route); stroke:var(--surface); stroke-width:1.5; }
+  .fx-chart-meta{
+    display:flex; justify-content:space-between; margin-top:0.5rem;
+    font-family:"SF Mono","Consolas",monospace; font-size:0.72rem; color:var(--ink-soft);
+  }
+  .fx-note{ margin-top:1.1rem; font-size:0.8rem; color:var(--ink-soft); max-width:70ch; }
+  footer{ max-width:920px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <a class="back-link" href="index.html">← 여행 플래너</a>
+    <span class="eyebrow" style="display:block;margin-top:0.9rem;">Live Rate · ECB 기준</span>
+    <h1>유로 환율</h1>
+    <p class="sub">유럽중앙은행(ECB) 공식 기준환율입니다. 페이지를 열 때마다 최신 데이터를 자동으로 불러옵니다.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="fx-current" id="fxCurrent">
+      <span class="fx-loading">환율 불러오는 중…</span>
+    </div>
+
+    <div class="fx-charts">
+      <div class="fx-chart-card">
+        <h3>최근 1주일</h3>
+        <svg id="fxSvg-7d" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
+        <div class="fx-chart-meta" id="fxMeta-7d"></div>
+      </div>
+      <div class="fx-chart-card">
+        <h3>최근 1개월</h3>
+        <svg id="fxSvg-1m" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
+        <div class="fx-chart-meta" id="fxMeta-1m"></div>
+      </div>
+      <div class="fx-chart-card">
+        <h3>최근 3개월</h3>
+        <svg id="fxSvg-3m" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
+        <div class="fx-chart-meta" id="fxMeta-3m"></div>
+      </div>
+      <div class="fx-chart-card">
+        <h3>최근 1년</h3>
+        <svg id="fxSvg-1y" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
+        <div class="fx-chart-meta" id="fxMeta-1y"></div>
+      </div>
+    </div>
+    <p class="fx-note">데이터 출처: <a href="https://www.frankfurter.dev/" target="_blank" rel="noopener">Frankfurter.dev</a> (유럽중앙은행 기준환율, 영업일 기준 갱신 · 주말·휴장일은 직전 영업일 값). 환전 시 실제 적용 환율은 은행·환전소마다 다르니 참고용으로만 활용하세요.</p>
+  </section>
+</main>
+
+<footer>
+  이 페이지는 여행 예산 참고용입니다. 실제 환전·결제 환율은 은행·카드사·환전소 고시 환율을 따로 확인하세요.
+</footer>
+
+<script>
+(function(){
+  function fmtDate(d){
+    var y = d.getFullYear(), m = ('0' + (d.getMonth() + 1)).slice(-2), day = ('0' + d.getDate()).slice(-2);
+    return y + '-' + m + '-' + day;
+  }
+  function addDays(date, days){ var d = new Date(date); d.setDate(d.getDate() + days); return d; }
+  function addMonths(date, months){ var d = new Date(date); d.setMonth(d.getMonth() + months); return d; }
+  function fmtKRW(n){ return Math.round(n).toLocaleString('ko-KR'); }
+
+  function drawFxChart(svgId, entries){
+    var svg = document.getElementById(svgId);
+    if(!svg || !entries.length) return;
+    var w = 300, h = 110, padY = 10;
+    var rates = entries.map(function(e){ return e.rate; });
+    var min = Math.min.apply(null, rates), max = Math.max.apply(null, rates);
+    var range = (max - min) || 1;
+    var stepX = entries.length > 1 ? w / (entries.length - 1) : 0;
+    var pts = entries.map(function(e, i){
+      var x = i * stepX;
+      var y = padY + (1 - (e.rate - min) / range) * (h - 2 * padY);
+      return [x, y];
+    });
+    var lineD = 'M' + pts.map(function(p){ return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' L');
+    var areaD = lineD + ' L' + w + ',' + h + ' L0,' + h + ' Z';
+    var last = pts[pts.length - 1];
+    svg.innerHTML =
+      '<path class="fx-area" d="' + areaD + '"/>' +
+      '<path class="fx-line" d="' + lineD + '"/>' +
+      '<circle class="fx-dot" cx="' + last[0].toFixed(1) + '" cy="' + last[1].toFixed(1) + '" r="3.2"/>';
+  }
+
+  function renderFxMeta(elId, entries){
+    var el = document.getElementById(elId);
+    if(!el) return;
+    if(!entries.length){ el.textContent = '데이터 없음'; return; }
+    var rates = entries.map(function(e){ return e.rate; });
+    var min = Math.min.apply(null, rates), max = Math.max.apply(null, rates);
+    var last = entries[entries.length - 1].rate;
+    el.innerHTML = '<span>최저 ' + fmtKRW(min) + '</span><span>최고 ' + fmtKRW(max) + '</span><span>최신 ' + fmtKRW(last) + '</span>';
+  }
+
+  var fxCurrentEl = document.getElementById('fxCurrent');
+  var today = new Date();
+
+  fetch('https://api.frankfurter.dev/v1/latest?from=EUR&to=KRW')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      var rate = data.rates.KRW;
+      fxCurrentEl.innerHTML =
+        '<span class="fx-rate">1 EUR = ' + fmtKRW(rate) + ' KRW</span>' +
+        '<span class="fx-sub">1,000,000원 ≈ ' + (1000000 / rate).toFixed(0) + ' EUR · 25만원 예산 ≈ ' + (250000 / rate).toFixed(0) + ' EUR</span>' +
+        '<span class="fx-updated">ECB 기준일 ' + data.date + ' · 지금 브라우저에서 불러온 값입니다.</span>';
+    })
+    .catch(function(){
+      fxCurrentEl.innerHTML = '<span class="fx-error">환율 정보를 불러오지 못했습니다. 인터넷 연결을 확인하거나 새로고침 해주세요.</span>';
+    });
+
+  var ranges = [
+    { id: '7d', start: addDays(today, -7) },
+    { id: '1m', start: addMonths(today, -1) },
+    { id: '3m', start: addMonths(today, -3) },
+    { id: '1y', start: addMonths(today, -12) }
+  ];
+  ranges.forEach(function(r){
+    var url = 'https://api.frankfurter.dev/v1/' + fmtDate(r.start) + '..' + fmtDate(today) + '?from=EUR&to=KRW';
+    fetch(url)
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        var entries = Object.keys(data.rates).sort().map(function(date){
+          return { date: date, rate: data.rates[date].KRW };
+        });
+        drawFxChart('fxSvg-' + r.id, entries);
+        renderFxMeta('fxMeta-' + r.id, entries);
+      })
+      .catch(function(){
+        renderFxMeta('fxMeta-' + r.id, []);
+      });
+  });
+})();
+</script>

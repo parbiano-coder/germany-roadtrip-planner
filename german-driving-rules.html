@@ -1,0 +1,127 @@
+<title>독일 운전 핵심 규칙</title>
+<meta name="description" content="아우토반 속도, 파크샤이베, 환경 스티커, 통행료 등 한국과 다른 독일 운전 규칙 정리">
+<style>
+  :root{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+    --radius: 3px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+      --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+      --warn: #e3a94a; --warn-soft: #3a2e19;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+    --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+    --warn: #e3a94a; --warn-soft: #3a2e19;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"]{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Noto Serif KR", "Nanum Myeongjo", serif;
+    line-height:1.65; font-size:16px;
+  }
+  h1,h2,h3,.label{
+    font-family: -apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,Helvetica,Arial,sans-serif;
+    font-stretch:condensed; font-weight:800; letter-spacing:-0.01em; text-wrap:balance;
+  }
+  .eyebrow{
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,sans-serif;
+    text-transform:uppercase; letter-spacing:0.14em; font-size:0.72rem; font-weight:700; color:var(--route);
+  }
+  a{ color:var(--route); }
+  a:focus-visible{ outline:2px solid var(--route); outline-offset:2px; }
+  header.hero{
+    background:linear-gradient(180deg, var(--bg-soft), var(--bg));
+    border-bottom:1px solid var(--line); padding:3.2rem 1.5rem 2.4rem;
+  }
+  .hero-inner{ max-width:920px; margin:0 auto; }
+  .hero h1{ font-size:clamp(1.9rem,4.6vw,2.9rem); margin:0.9rem 0 0.7rem; }
+  .hero p.sub{ max-width:64ch; color:var(--ink-soft); font-size:1.05rem; margin:0; }
+  .back-link{
+    display:inline-flex; align-items:center; gap:0.35rem;
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.85rem; font-weight:700; text-decoration:none;
+  }
+  main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
+  section{ padding:2.6rem 0; }
+  .grid{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:1.1rem 1.2rem; box-shadow:var(--shadow);
+  }
+  .card p{ margin:0; color:var(--ink-soft); font-size:0.94rem; }
+  .card.rule{ border-left:4px solid var(--warn); }
+  .card.rule h3{ display:flex; align-items:center; gap:0.5rem; margin:0 0 0.5rem; font-size:1.02rem; }
+  .card.rule .kicker{
+    font-family:"SF Mono","Consolas",monospace; font-size:0.68rem; letter-spacing:0.06em;
+    background:var(--warn-soft); color:var(--warn); padding:0.15rem 0.4rem; border-radius:2px;
+    text-transform:uppercase; font-weight:700;
+  }
+  footer{ max-width:920px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <a class="back-link" href="index.html">← 여행 플래너</a>
+    <span class="eyebrow" style="display:block;margin-top:0.9rem;">On the Road</span>
+    <h1>독일 운전 핵심 규칙</h1>
+    <p class="sub">한국과 다른 표지판·관행 위주로 정리했습니다. 모르면 벌금보다 사고 위험이 커지는 항목들입니다.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="grid">
+      <div class="card rule">
+        <h3><span class="kicker">Speed</span>아우토반 속도</h3>
+        <p>구간 대부분은 속도 무제한이지만 권장속도(Richtgeschwindigkeit) 130km/h. 표지판이 있는 구간(도심 인근, 공사구간, 곡선구간)은 80~120km/h 제한을 반드시 준수하세요.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">Parking</span>파크샤이베 (주차 시계)</h3>
+        <p>파란 바탕 &ldquo;P&rdquo; 구역(Blaue Zone)은 무료 주차 시 대시보드에 도착시간을 표시하는 파란 시계판(Parkscheibe)이 필요합니다. 렌터카 인수 시 비치 여부를 확인하세요.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">Zone</span>환경 스티커 (Umweltplakette)</h3>
+        <p>뮌헨·슈투트가르트 등 대도시 환경구역(Umweltzone) 진입에는 녹색 배출가스 스티커가 필요합니다. 독일 렌터카는 대부분 기본 부착되어 있으나 인수 시 재확인하세요.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">Toll</span>통행료</h3>
+        <p>독일 자체 고속도로는 승용차 통행료가 없습니다. 단 오스트리아·스위스로 넘어갈 경우 비넷(Vignette)을 국경 주유소에서 미리 구매해야 합니다.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">Alcohol</span>음주 기준</h3>
+        <p>혈중알코올농도 0.05% 이하 (2년 미만 초보운전자는 0.0%). 국내보다 기준이 엄격하니 음주 후 운전은 금물입니다.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">Priority</span>우선통행 (Rechts vor Links)</h3>
+        <p>신호·표지판이 없는 교차로는 오른쪽에서 오는 차량이 우선입니다. 로텐부르크·흑림 등 구시가 좁은 골목에서 특히 주의하세요.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">Winter</span>동절기 타이어</h3>
+        <p>겨울(대략 10월~부활절) 노면 상황에는 동절기 타이어 장착이 사실상 의무(상황 규정). 겨울 여행이라면 렌터카 예약 시 명시하세요.</p>
+      </div>
+      <div class="card rule">
+        <h3><span class="kicker">SOS</span>응급 번호</h3>
+        <p>112 — 경찰·구급·소방 공통, EU 전역 무료 통화. 사고 시 삼각대 설치, 형광조끼 착용 후 갓길로 대피하세요.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  이 페이지는 여행 준비를 돕기 위한 참고 자료입니다. 실제 규정(속도제한, 환경구역, 통행료 등)은 방문 시점 기준으로 공식 채널에서 다시 확인하세요.
+</footer>

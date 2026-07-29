@@ -246,14 +246,6 @@
   .card li + li{ margin-top:0.35rem; }
   .card p{ margin:0; color:var(--ink-soft); font-size:0.94rem; }
 
-  .card.rule{ border-left:4px solid var(--warn); }
-  .card.rule h3{ display:flex; align-items:center; gap:0.5rem; }
-  .card.rule .kicker{
-    font-family:"SF Mono","Consolas",monospace; font-size:0.68rem; letter-spacing:0.06em;
-    background:var(--warn-soft); color:var(--warn); padding:0.15rem 0.4rem; border-radius:2px;
-    text-transform:uppercase; font-weight:700;
-  }
-
   /* ---------- Day cards ---------- */
   .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:4rem; }
   .day:last-child{ border-bottom:none; }
@@ -320,39 +312,6 @@
   th{ font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
   td.mono{ color:var(--route); font-weight:700; }
 
-  /* ---------- FX exchange rate ---------- */
-  .fx-current{
-    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-    box-shadow:var(--shadow); padding:1.3rem 1.5rem; margin-bottom:1.4rem;
-    display:flex; flex-wrap:wrap; align-items:baseline; gap:0.6rem 1.2rem;
-  }
-  .fx-current .fx-rate{
-    font-family:"SF Mono","Consolas",monospace; font-variant-numeric:tabular-nums;
-    font-size:1.9rem; font-weight:700; color:var(--route);
-  }
-  .fx-current .fx-sub{ font-size:0.85rem; color:var(--ink-soft); }
-  .fx-current .fx-updated{ font-size:0.76rem; color:var(--ink-soft); flex-basis:100%; }
-  .fx-current .fx-loading, .fx-current .fx-error{ font-size:0.9rem; color:var(--ink-soft); }
-  .fx-current .fx-error{ color:var(--warn); }
-  .fx-current .fx-delta-up{ color:#b23b3b; font-weight:700; }
-  .fx-current .fx-delta-down{ color:#2f6f4f; font-weight:700; }
-
-  .fx-charts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
-  .fx-chart-card{
-    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-    padding:0.95rem 1.05rem 0.85rem; box-shadow:var(--shadow);
-  }
-  .fx-chart-card h3{ margin:0 0 0.6rem; font-size:0.88rem; color:var(--ink-soft); font-weight:700; }
-  .fx-svg{ width:100%; height:auto; display:block; }
-  .fx-area{ fill:var(--route-soft); stroke:none; }
-  .fx-line{ fill:none; stroke:var(--route); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-  .fx-dot{ fill:var(--route); stroke:var(--surface); stroke-width:1.5; }
-  .fx-chart-meta{
-    display:flex; justify-content:space-between; margin-top:0.5rem;
-    font-family:"SF Mono","Consolas",monospace; font-size:0.72rem; color:var(--ink-soft);
-  }
-  .fx-note{ margin-top:1.1rem; font-size:0.8rem; color:var(--ink-soft); max-width:70ch; }
-
   footer{ max-width:920px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
 
   @media print{
@@ -373,11 +332,11 @@
       <div class="stat"><span class="n">FRA→FRA</span><span class="l">픽업 · 반납</span></div>
     </div>
     <div class="hero-links">
-      <a class="hero-link" href="#weather">
+      <a class="hero-link" href="german-weather.html">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg>
         <span>날씨</span>
       </a>
-      <a class="hero-link" href="#exchange">
+      <a class="hero-link" href="german-exchange.html">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
         <span>환율</span>
       </a>
@@ -389,11 +348,11 @@
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v7a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2"/><path d="M6 11v11"/><path d="M18 2c-1.7 0-3 2-3 5s1.3 5 3 5v9"/></svg>
         <span>맛집투어</span>
       </a>
-      <a class="hero-link" href="#rental">
+      <a class="hero-link" href="german-rental-guide.html">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg>
         <span>렌터카 준비</span>
       </a>
-      <a class="hero-link" href="#rules">
+      <a class="hero-link" href="german-driving-rules.html">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg>
         <span>운전 규칙</span>
       </a>
@@ -685,61 +644,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="weather">
-    <span class="eyebrow">Climate Reference · 예보 아님</span>
-    <h2>여행 기간 평년 기후</h2>
-    <p class="lede">9월 19일은 오늘(7월 29일)로부터 약 7주 뒤라 실제 일기예보는 아직 나오지 않습니다. 아래는 최근 평년치 기준 참고용 기후 정보이며, 실제 예보는 출발 7~10일 전 날씨 앱에서 다시 확인하세요.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>날짜</th><th>지역</th><th>평년 최고/최저</th><th>참고</th></tr></thead>
-        <tbody>
-          <tr><td>9/19 (토)</td><td>프랑크푸르트 → 밤베르크 → 로텐부르크</td><td class="mono">18°C / 9°C</td><td>선선한 초가을, 저녁엔 겉옷 필요</td></tr>
-          <tr><td>9/20 (일)</td><td>밤베르크 · 뉘른베르크 (프랑켄)</td><td class="mono">18°C / 9°C</td><td>월 강수일 약 13일 — 우산 챙기기</td></tr>
-          <tr><td>9/21 (월)</td><td>뮌헨 → 퓌센 (알프스 인근)</td><td class="mono">16°C / 8°C</td><td>옥토버페스트 기간, 야외는 쌀쌀할 수 있어 겉옷 필수</td></tr>
-          <tr><td>9/22 (화)</td><td>퓌센 · 알고이 알프스</td><td class="mono">15°C / 7°C</td><td>월 강수량 약 144mm로 구간 중 가장 많음</td></tr>
-          <tr><td>9/23 (수)</td><td>켐프텐 → 흑림 이동</td><td class="mono">17°C / 8°C</td><td>-</td></tr>
-          <tr><td>9/24 (목)</td><td>흑림 · 프라이부르크 · 메칭겐 · 슈투트가르트</td><td class="mono">18°C / 9°C</td><td>-</td></tr>
-          <tr><td>9/25 (금)</td><td>슈투트가르트 → 하이델베르크 → 모젤 → 뤼데스하임</td><td class="mono">17–18°C / 8–9°C</td><td>이동 지역이 넓어 구간별 편차 있음</td></tr>
-          <tr><td>9/26 (토)</td><td>뤼데스하임 → 비스바덴 → 프랑크푸르트</td><td class="mono">18°C / 9°C</td><td>일몰 약 19:15 — 저녁 반납 운전 시 감안</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="exchange">
-    <span class="eyebrow">Live Rate · ECB 기준</span>
-    <h2>유로 환율</h2>
-    <p class="lede">유럽중앙은행(ECB) 공식 기준환율입니다. 페이지를 열 때마다 최신 데이터를 자동으로 불러옵니다.</p>
-
-    <div class="fx-current" id="fxCurrent">
-      <span class="fx-loading">환율 불러오는 중…</span>
-    </div>
-
-    <div class="fx-charts">
-      <div class="fx-chart-card">
-        <h3>최근 1주일</h3>
-        <svg id="fxSvg-7d" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
-        <div class="fx-chart-meta" id="fxMeta-7d"></div>
-      </div>
-      <div class="fx-chart-card">
-        <h3>최근 1개월</h3>
-        <svg id="fxSvg-1m" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
-        <div class="fx-chart-meta" id="fxMeta-1m"></div>
-      </div>
-      <div class="fx-chart-card">
-        <h3>최근 3개월</h3>
-        <svg id="fxSvg-3m" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
-        <div class="fx-chart-meta" id="fxMeta-3m"></div>
-      </div>
-      <div class="fx-chart-card">
-        <h3>최근 1년</h3>
-        <svg id="fxSvg-1y" class="fx-svg" viewBox="0 0 300 110" preserveAspectRatio="none"></svg>
-        <div class="fx-chart-meta" id="fxMeta-1y"></div>
-      </div>
-    </div>
-    <p class="fx-note">데이터 출처: <a href="https://www.frankfurter.dev/" target="_blank" rel="noopener">Frankfurter.dev</a> (유럽중앙은행 기준환율, 영업일 기준 갱신 · 주말·휴장일은 직전 영업일 값). 환전 시 실제 적용 환율은 은행·환전소마다 다르니 참고용으로만 활용하세요.</p>
   </section>
 
   <div id="itinerary">
@@ -1043,91 +947,6 @@
     </div>
   </section>
 
-  <section id="rental">
-    <span class="eyebrow">Before You Drive · 참고용</span>
-    <h2>렌터카 준비 가이드</h2>
-    <p class="lede">픽업 카운터에서 당황하지 않으려면 서류와 보험 조건을 미리 확인해두세요.</p>
-    <div class="grid cols-2">
-      <div class="card">
-        <h3>필수 서류</h3>
-        <ul>
-          <li>여권 (유효기간 6개월 이상)</li>
-          <li>한국 운전면허증 원본</li>
-          <li>국제운전면허증 (제네바협약)</li>
-          <li>예약 확인서</li>
-          <li>예치금 결제용 신용카드 (본인 명의, 엠보싱)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>나이 · 예치금</h3>
-        <ul>
-          <li>대여 가능 연령 보통 만 21~25세 이상, 업체별 상이</li>
-          <li>26세 미만은 영young driver 추가요금 붙을 수 있음</li>
-          <li>예치금(보증금) 300~1,500유로 카드 한도로 홀딩</li>
-          <li>반납 후 3~4주 내 자동 환불</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>보험</h3>
-        <ul>
-          <li>기본 자차보험(CDW) 자기부담금 확인 — 보통 750~1,500유로</li>
-          <li>완전자차(Super CDW / 자기부담금 0) 추가 권장</li>
-          <li>유리·타이어 보험(Glass & Tire) 옵션 확인</li>
-          <li>국내 카드사 렌터카 자차보험 특약 여부 사전 확인</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>차량 인수 체크</h3>
-        <ul>
-          <li>외관 흠집·기스 사진/영상으로 기록</li>
-          <li>연료 정책 확인 (보통 Full-to-Full)</li>
-          <li>연료 타입 확인 — 디젤(Diesel) vs 가솔린(Benzin), 주유구 라벨 확인</li>
-          <li>삼각대·형광조끼·구급함 비치 여부 (법적 의무 비품)</li>
-          <li>내비게이션/하이패스 단말기 유무</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="rules">
-    <span class="eyebrow">On the Road · 참고용</span>
-    <h2>독일 운전 핵심 규칙</h2>
-    <p class="lede">한국과 다른 표지판·관행 위주로 정리했습니다. 모르면 벌금보다 사고 위험이 커지는 항목들입니다.</p>
-    <div class="grid cols-2">
-      <div class="card rule">
-        <h3><span class="kicker">Speed</span>아우토반 속도</h3>
-        <p>구간 대부분은 속도 무제한이지만 권장속도(Richtgeschwindigkeit) 130km/h. 표지판이 있는 구간(도심 인근, 공사구간, 곡선구간)은 80~120km/h 제한을 반드시 준수하세요.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">Parking</span>파크샤이베 (주차 시계)</h3>
-        <p>파란 바탕 &ldquo;P&rdquo; 구역(Blaue Zone)은 무료 주차 시 대시보드에 도착시간을 표시하는 파란 시계판(Parkscheibe)이 필요합니다. 렌터카 인수 시 비치 여부를 확인하세요.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">Zone</span>환경 스티커 (Umweltplakette)</h3>
-        <p>뮌헨·슈투트가르트 등 대도시 환경구역(Umweltzone) 진입에는 녹색 배출가스 스티커가 필요합니다. 독일 렌터카는 대부분 기본 부착되어 있으나 인수 시 재확인하세요.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">Toll</span>통행료</h3>
-        <p>독일 자체 고속도로는 승용차 통행료가 없습니다. 단 오스트리아·스위스로 넘어갈 경우 비넷(Vignette)을 국경 주유소에서 미리 구매해야 합니다.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">Alcohol</span>음주 기준</h3>
-        <p>혈중알코올농도 0.05% 이하 (2년 미만 초보운전자는 0.0%). 국내보다 기준이 엄격하니 음주 후 운전은 금물입니다.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">Priority</span>우선통행 (Rechts vor Links)</h3>
-        <p>신호·표지판이 없는 교차로는 오른쪽에서 오는 차량이 우선입니다. 로텐부르크·흑림 등 구시가 좁은 골목에서 특히 주의하세요.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">Winter</span>동절기 타이어</h3>
-        <p>겨울(대략 10월~부활절) 노면 상황에는 동절기 타이어 장착이 사실상 의무(상황 규정). 겨울 여행이라면 렌터카 예약 시 명시하세요.</p>
-      </div>
-      <div class="card rule">
-        <h3><span class="kicker">SOS</span>응급 번호</h3>
-        <p>112 — 경찰·구급·소방 공통, EU 전역 무료 통화. 사고 시 삼각대 설치, 형광조끼 착용 후 갓길로 대피하세요.</p>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -1195,86 +1014,5 @@
     }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
     targets.forEach(function(t){ obs.observe(t); });
   }
-
-  function fmtDate(d){
-    var y = d.getFullYear(), m = ('0' + (d.getMonth() + 1)).slice(-2), day = ('0' + d.getDate()).slice(-2);
-    return y + '-' + m + '-' + day;
-  }
-  function addDays(date, days){ var d = new Date(date); d.setDate(d.getDate() + days); return d; }
-  function addMonths(date, months){ var d = new Date(date); d.setMonth(d.getMonth() + months); return d; }
-  function fmtKRW(n){ return Math.round(n).toLocaleString('ko-KR'); }
-
-  function drawFxChart(svgId, entries){
-    var svg = document.getElementById(svgId);
-    if(!svg || !entries.length) return;
-    var w = 300, h = 110, padY = 10;
-    var rates = entries.map(function(e){ return e.rate; });
-    var min = Math.min.apply(null, rates), max = Math.max.apply(null, rates);
-    var range = (max - min) || 1;
-    var stepX = entries.length > 1 ? w / (entries.length - 1) : 0;
-    var pts = entries.map(function(e, i){
-      var x = i * stepX;
-      var y = padY + (1 - (e.rate - min) / range) * (h - 2 * padY);
-      return [x, y];
-    });
-    var lineD = 'M' + pts.map(function(p){ return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' L');
-    var areaD = lineD + ' L' + w + ',' + h + ' L0,' + h + ' Z';
-    var last = pts[pts.length - 1];
-    svg.innerHTML =
-      '<path class="fx-area" d="' + areaD + '"/>' +
-      '<path class="fx-line" d="' + lineD + '"/>' +
-      '<circle class="fx-dot" cx="' + last[0].toFixed(1) + '" cy="' + last[1].toFixed(1) + '" r="3.2"/>';
-  }
-
-  function renderFxMeta(elId, entries){
-    var el = document.getElementById(elId);
-    if(!el) return;
-    if(!entries.length){ el.textContent = '데이터 없음'; return; }
-    var rates = entries.map(function(e){ return e.rate; });
-    var min = Math.min.apply(null, rates), max = Math.max.apply(null, rates);
-    var last = entries[entries.length - 1].rate;
-    el.innerHTML = '<span>최저 ' + fmtKRW(min) + '</span><span>최고 ' + fmtKRW(max) + '</span><span>최신 ' + fmtKRW(last) + '</span>';
-  }
-
-  (function initFx(){
-    var fxCurrentEl = document.getElementById('fxCurrent');
-    if(!fxCurrentEl) return;
-    var today = new Date();
-
-    fetch('https://api.frankfurter.dev/v1/latest?from=EUR&to=KRW')
-      .then(function(r){ return r.json(); })
-      .then(function(data){
-        var rate = data.rates.KRW;
-        fxCurrentEl.innerHTML =
-          '<span class="fx-rate">1 EUR = ' + fmtKRW(rate) + ' KRW</span>' +
-          '<span class="fx-sub">1,000,000원 ≈ ' + (1000000 / rate).toFixed(0) + ' EUR · 25만원 예산 ≈ ' + (250000 / rate).toFixed(0) + ' EUR</span>' +
-          '<span class="fx-updated">ECB 기준일 ' + data.date + ' · 지금 브라우저에서 불러온 값입니다.</span>';
-      })
-      .catch(function(){
-        fxCurrentEl.innerHTML = '<span class="fx-error">환율 정보를 불러오지 못했습니다. 인터넷 연결을 확인하거나 새로고침 해주세요.</span>';
-      });
-
-    var ranges = [
-      { id: '7d', start: addDays(today, -7) },
-      { id: '1m', start: addMonths(today, -1) },
-      { id: '3m', start: addMonths(today, -3) },
-      { id: '1y', start: addMonths(today, -12) }
-    ];
-    ranges.forEach(function(r){
-      var url = 'https://api.frankfurter.dev/v1/' + fmtDate(r.start) + '..' + fmtDate(today) + '?from=EUR&to=KRW';
-      fetch(url)
-        .then(function(res){ return res.json(); })
-        .then(function(data){
-          var entries = Object.keys(data.rates).sort().map(function(date){
-            return { date: date, rate: data.rates[date].KRW };
-          });
-          drawFxChart('fxSvg-' + r.id, entries);
-          renderFxMeta('fxMeta-' + r.id, entries);
-        })
-        .catch(function(){
-          renderFxMeta('fxMeta-' + r.id, []);
-        });
-    });
-  })();
 })();
 </script>
