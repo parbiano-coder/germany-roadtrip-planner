@@ -1,0 +1,368 @@
+<title>독일 맛집투어 — 7박 8일 로드트립 미식 가이드</title>
+<meta name="description" content="로텐부르크부터 뤼데스하임까지, 여행 경로상 도시별 현지 맛집·향토음식 가이드">
+<style>
+  :root{
+    --bg: #efece0;
+    --bg-soft: #f7f5ec;
+    --surface: #fffdf7;
+    --ink: #1e2a2f;
+    --ink-soft: #4c5a5f;
+    --line: #d6d0ba;
+    --route: #0b3c6e;
+    --route-soft: #dfe8f0;
+    --sign: #6e4429;
+    --sign-soft: #ece1d5;
+    --warn: #b96a12;
+    --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+    --radius: 3px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+      --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+      --warn: #e3a94a; --warn-soft: #3a2e19;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+    --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+    --warn: #e3a94a; --warn-soft: #3a2e19;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"]{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Noto Serif KR", "Nanum Myeongjo", serif;
+    line-height:1.65; font-size:16px;
+  }
+  h1,h2,h3,.label{
+    font-family: -apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,Helvetica,Arial,sans-serif;
+    font-stretch:condensed; font-weight:800; letter-spacing:-0.01em; text-wrap:balance;
+  }
+  .mono{ font-family:"SF Mono","Consolas","Roboto Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums; }
+  .eyebrow{
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,sans-serif;
+    text-transform:uppercase; letter-spacing:0.14em; font-size:0.72rem; font-weight:700; color:var(--route);
+  }
+  a{ color:var(--route); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--route); outline-offset:2px; }
+
+  header.hero{
+    background:linear-gradient(180deg, var(--bg-soft), var(--bg));
+    border-bottom:1px solid var(--line);
+    padding:3.2rem 1.5rem 2.4rem;
+  }
+  .hero-inner{ max-width:920px; margin:0 auto; }
+  .hero h1{ font-size:clamp(1.9rem,4.6vw,2.9rem); margin:0.5rem 0 0.7rem; }
+  .hero p.sub{ max-width:60ch; color:var(--ink-soft); font-size:1.05rem; margin:0 0 1rem; }
+  .back-link{
+    display:inline-flex; align-items:center; gap:0.35rem;
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.85rem; font-weight:700; text-decoration:none;
+  }
+
+  nav.foodnav{
+    position:sticky; top:0; z-index:40;
+    background:var(--surface); border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+  }
+  .foodnav-scroll{
+    max-width:960px; margin:0 auto; display:flex; gap:0.35rem; overflow-x:auto;
+    padding:0.6rem 1rem; scrollbar-width:thin;
+  }
+  .foodnav a{
+    flex:none; display:inline-flex; align-items:center; gap:0.3rem;
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.8rem; font-weight:700; color:var(--ink-soft); text-decoration:none;
+    padding:0.42rem 0.7rem; border-radius:2px; border:1px solid transparent; white-space:nowrap;
+  }
+  .foodnav a:hover{ color:var(--route); border-color:var(--line); }
+
+  main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
+  section.city{ padding:2.6rem 0; border-bottom:1px solid var(--line); }
+  section.city:last-of-type{ border-bottom:none; }
+  section.city .eyebrow{ display:block; margin-bottom:0.4rem; }
+  section.city h2{ font-size:1.5rem; margin:0 0 0.3rem; }
+  section.city p.lede{ color:var(--ink-soft); max-width:64ch; margin:0 0 1.4rem; font-size:0.95rem; }
+
+  .food-grid{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+  .food-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:1.1rem 1.2rem; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:0.55rem;
+  }
+  .food-card h3{ margin:0; font-size:1.05rem; color:var(--ink); }
+  .food-meta{ display:flex; flex-wrap:wrap; gap:0.5rem 1rem; font-size:0.82rem; color:var(--ink-soft); }
+  .food-meta b{ color:var(--ink); font-weight:700; }
+  .food-desc{ margin:0; font-size:0.92rem; color:var(--ink-soft); }
+  .food-order{
+    background:var(--sign-soft); border-radius:2px; padding:0.55rem 0.8rem; font-size:0.88rem; color:var(--ink);
+  }
+  .food-order b{ color:var(--sign); }
+  .food-links{ display:flex; gap:1rem; font-size:0.82rem; font-weight:700; }
+
+  .region-note{
+    background:var(--route-soft); border-radius:2px; padding:0.7rem 1rem; margin-bottom:1.6rem;
+    font-size:0.85rem; color:var(--ink); max-width:70ch;
+  }
+  .drink-strip{
+    display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.4rem;
+  }
+  .drink-chip{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:20px;
+    padding:0.3rem 0.8rem; font-size:0.8rem; color:var(--ink-soft);
+  }
+
+  footer{ max-width:920px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
+
+  @media print{ nav.foodnav{ display:none; } section.city{ break-inside:avoid; } }
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div style="display:flex;gap:1.1rem;flex-wrap:wrap;">
+      <a class="back-link" href="index.html">← 여행 플래너</a>
+      <a class="back-link" href="german-must-visit.html">꼭 가야할 장소 →</a>
+    </div>
+    <span class="eyebrow" style="display:block;margin-top:0.9rem;">Food Tour · Deutschland</span>
+    <h1>독일 맛집투어</h1>
+    <p class="sub">7박 8일 여행 경로를 따라가며 도시별 현지 맛집과 꼭 먹어야 할 향토음식을 정리했습니다. 뷔르츠부르크부터 뤼데스하임까지, 프랑켄·바이에른·흑림·슈바벤·라인가우 5개 미식 지역을 지나갑니다.</p>
+  </div>
+</header>
+
+<nav class="foodnav" aria-label="도시별 빠른 이동">
+  <div class="foodnav-scroll">
+    <a href="#wurzburg">뷔르츠부르크</a>
+    <a href="#rothenburg">로텐부르크</a>
+    <a href="#nurnberg">뉘른베르크</a>
+    <a href="#fussen">퓌센</a>
+    <a href="#titisee">티티제</a>
+    <a href="#freiburg">프라이부르크</a>
+    <a href="#stuttgart">슈투트가르트</a>
+    <a href="#heidelberg">하이델베르크</a>
+    <a href="#rudesheim">뤼데스하임</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="city" id="wurzburg">
+    <span class="eyebrow">Day 1 · Franken</span>
+    <h2>뷔르츠부르크</h2>
+    <p class="lede">프랑켄 와인의 심장부. 오래된 와이너리 부속 식당(Weinstube)에서 화이트와인 질바너(Silvaner)와 함께하는 식사가 이 지역 방식입니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Bürgerspital Weinstuben</h3>
+        <div class="food-meta"><span>📍 구시가, 마르크트 인근</span></div>
+        <p class="food-desc">1319년 설립된 자선 와이너리(Bürgerspital)에 딸린 식당. 120헥타르 자체 포도밭에서 나는 프랑켄 와인과 함께 향토요리를 냅니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 보크스보이텔 병의 질바너(Silvaner) 화이트와인 + 프렌키셰 슈니첼</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Buergerspital+Weinstuben+Wuerzburg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Backöfele</h3>
+        <div class="food-meta"><span>📍 구시가 골목</span></div>
+        <p class="food-desc">35년 전통, 목조 인테리어의 아늑한 향토 식당. 소박하지만 진한 프랑켄 가정식으로 현지인들도 즐겨 찾습니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 프렌키셰 자우어브라텐(향토식 사우어브라텐) + 감자경단</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Backoefele+Wuerzburg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="rothenburg">
+    <span class="eyebrow">Day 1 · Franken</span>
+    <h2>로텐부르크 오프 데어 타우버</h2>
+    <p class="lede">중세 성벽 마을. 골목 어디서나 눈에 띄는 &ldquo;슈네발(Schneeball)&rdquo;은 이 도시의 상징 디저트입니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Alter Keller</h3>
+        <div class="food-meta"><span>📍 구시가 중심</span></div>
+        <p class="food-desc">가성비 좋은 프랑켄 가정식과 친절한 서비스로 현지인·여행자 모두에게 인기 — 웨이팅이 길 수 있어 예약을 권장합니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 프렌키셰 자우어브라텐, 후식으로 슈네발</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Alter+Keller+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Ratsstube</h3>
+        <div class="food-meta"><span>📍 마르크트 광장 앞</span></div>
+        <p class="food-desc">중세풍 아치형 홀에서 즐기는 계절 프랑켄 요리. 로컬 와인과 켈러비어(무여과 생맥주)를 함께 즐길 수 있습니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 켈러비어(Kellerbier) + 계절 프랑켄 요리</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Ratsstube+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="nurnberg">
+    <span class="eyebrow">Day 2 · Franken</span>
+    <h2>뉘른베르크</h2>
+    <p class="lede">새끼손가락만 한 뉘른베르거 브랏부어스트의 본고장. &ldquo;3 im Weckla&rdquo;(작은 빵에 소시지 3개)가 표준 주문법입니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Bratwursthäusle</h3>
+        <div class="food-meta"><span>📍 구시가, 성 자발트 교회 옆</span><span><b>Tripadvisor 4.0</b>/998+ 리뷰</span></div>
+        <p class="food-desc">1313년부터 이어진 정통 브랏하우스. 참나무 장작 그릴에서 직접 구워내며, 합석 테이블에서 현지인들과 나란히 식사하게 됩니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 뉘른베르거 브랏부어스트 3in1 빵 세트 + 자우어크라우트</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Bratwursthaeusle+Nuernberg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Zum Gulden Stern</h3>
+        <div class="food-meta"><span>📍 구시가</span></div>
+        <p class="food-desc">&ldquo;세계에서 가장 오래된 브랏부어스트 주방&rdquo;을 자처하는 노포. 너도밤나무 장작으로 구운 소시지가 특징입니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 너도밤나무 장작구이 브랏부어스트 + 감자샐러드</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Zum+Gulden+Stern+Nuernberg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="fussen">
+    <span class="eyebrow">Day 3–4 · Bayern</span>
+    <h2>퓌센 · 슈방가우</h2>
+    <p class="lede">알프스 자락의 바이에른 향토음식. 노이슈반슈타인 관람 전후로 들르기 좋은 곳들입니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Restaurant Hirsch</h3>
+        <div class="food-meta"><span>📍 퓌센 구시가</span><span><b>평점 4.3</b></span></div>
+        <p class="food-desc">독일 맥주·와인 셀렉션이 풍부한 호텔 부속 레스토랑. 든든한 바이에른 요리를 정석대로 냅니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 슈바인스학세(족발구이) + 바이스비어</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Hirsch+Fuessen" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Gasthaus Zum Schwanen</h3>
+        <div class="food-meta"><span>📍 브로트마르크트 광장(구시가)</span></div>
+        <p class="food-desc">푸짐한 1인분과 친절한 서비스로 정평이 난 바이에른 전통 식당. 캐주얼하게 들르기 좋습니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 슈페츨레, 슈바이네브라텐(돼지고기 구이)</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Gasthaus+Zum+Schwanen+Fuessen" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="titisee">
+    <span class="eyebrow">Day 5 · Schwarzwald</span>
+    <h2>티티제 (흑림)</h2>
+    <p class="lede">흑림 하면 역시 슈바르츠발더 키르쉬토르테(블랙 포레스트 케이크). 호수 뷰와 함께 즐기세요.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Café Restaurant Seeblick</h3>
+        <div class="food-meta"><span>📍 티티제 호숫가</span></div>
+        <p class="food-desc">호수가 보이는 테라스와 겨울정원에서 즐기는 든든한 독일 요리. 후식으로 소문난 흑림 케이크가 명물입니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 슈바르츠발더 키르쉬토르테(흑림 체리케이크)</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Restaurant+Seeblick+Titisee" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Schwarzwaldgasthof-Hotel Zum Löwen</h3>
+        <div class="food-meta"><span>📍 티티제노이슈타트</span></div>
+        <p class="food-desc">잘 보존된 전통 흑림 스타일 여관. 큼직한 1인분과 훈제 소시지로 호평받는 곳입니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 슈바인스학세, 훈제 브랏부어스트</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Schwarzwaldgasthof+Zum+Loewen+Titisee-Neustadt" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="freiburg">
+    <span class="eyebrow">Day 6 · Baden</span>
+    <h2>프라이부르크</h2>
+    <p class="lede">대학 도시 특유의 활기 넘치는 미식 씬. 짧게 들르는 날이니 빠르게 먹을 수 있는 마르크트할레도 좋은 선택입니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Markthalle</h3>
+        <div class="food-meta"><span>📍 뮌스터 광장 인근</span><span><b>평점 4.40</b>/5,141+ 리뷰</span></div>
+        <p class="food-desc">1800년대 건물을 개조한 실내 푸드홀. 세계 각국 음식 가판대가 모여 있어 짧은 시간에 다양하게 맛보기 좋습니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 원하는 스탠드에서 골라 먹는 스트리트푸드 + 로컬 와인 한 잔</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Markthalle+Freiburg+im+Breisgau" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Tacheles</h3>
+        <div class="food-meta"><span>📍 900년 된 지하 와인셀러</span></div>
+        <p class="food-desc">대학생과 현지인들로 늘 북적이는 활기찬 분위기. 슈니첼 메뉴만 24가지에 달합니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 24종 슈니첼 중 택1</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Tacheles+Freiburg+im+Breisgau" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="stuttgart">
+    <span class="eyebrow">Day 6–7 · Schwaben</span>
+    <h2>슈투트가르트</h2>
+    <p class="lede">슈바벤 요리의 본고장. 마울타셴(독일식 만두)과 슈페츨레는 꼭 한 번씩 먹어봐야 할 메뉴입니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Zum Ackerbürger</h3>
+        <div class="food-meta"><span>📍 시내, 목조 계단 위 반목조 가옥</span><span><b>Tripadvisor 4.5</b>/454 리뷰</span></div>
+        <p class="food-desc">가파른 나무계단을 올라가야 하는 반목조 고가옥. 슈바벤 최고 맛집 중 하나로 꼽힙니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 마울타셴, 츠비벨로스트브라텐(양파 로스트비프)</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Zum+Ackerbuerger+Stuttgart" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Weinstube Am Stadtgraben</h3>
+        <div class="food-meta"><span>📍 바트칸슈타트</span><span><b>Tripadvisor 4.5</b>/625 리뷰</span></div>
+        <p class="food-desc">전통 슈바벤 와인바(Weinstube)에서 즐기는 계절 향토요리. 로컬 와인 셀렉션이 탄탄합니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 츠비벨로스트브라텐 + 슈페츨레</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Weinstube+Am+Stadtgraben+Stuttgart" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="heidelberg">
+    <span class="eyebrow">Day 7 · Rhein-Neckar</span>
+    <h2>하이델베르크</h2>
+    <p class="lede">대학 도시답게 오래된 학생 선술집이 많습니다. 성 관람 후 구시가에서 가볍게 들르기 좋습니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Zum Güldenen Schaf</h3>
+        <div class="food-meta"><span>📍 구시가 중심</span></div>
+        <p class="food-desc">1749년부터 이어온 하이델베르크의 오랜 사랑방. 음식·서비스·분위기 모두 균형 잡혀 있습니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 슈바인스학세, 향토 소시지 플래터</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Zum+Gueldenen+Schaf+Heidelberg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Zum Seppl</h3>
+        <div class="food-meta"><span>📍 하웁트슈트라세</span></div>
+        <p class="food-desc">17세기 말부터 이어진, 하이델베르크에서 가장 오래된 학생 선술집 중 하나. 옛 사진으로 가득한 벽이 인상적입니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 독일 정통 요리 + 다양한 맥주 셀렉션</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Zum+Seppl+Heidelberg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="rudesheim">
+    <span class="eyebrow">Day 7 · Rheingau</span>
+    <h2>뤼데스하임 암 라인</h2>
+    <p class="lede">여행의 마지막 밤은 라인가우 리슬링 와인과 함께. 케이블카 탄 뒤 강변에서 저녁을 즐기기 좋습니다.</p>
+    <div class="food-grid">
+      <div class="food-card">
+        <h3>Ratsstube</h3>
+        <div class="food-meta"><span>📍 구시가</span></div>
+        <p class="food-desc">지중해풍 분위기의 선 테라스가 있는 레스토랑. 방문객들이 &ldquo;뤼데스하임 최고의 레스토랑&rdquo;으로 꼽는 곳입니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 라인가우 리슬링 + 향토 요리</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Ratsstube+Ruedesheim+am+Rhein" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+      <div class="food-card">
+        <h3>Schlossschänke Schloss Johannisberg</h3>
+        <div class="food-meta"><span>📍 요하니스베르크 성 와이너리</span></div>
+        <p class="food-desc">세계적으로 유명한 리슬링 와이너리 성 안의 레스토랑. 포도밭 뷰와 함께하는 점심 식사가 인상적입니다.</p>
+        <div class="food-order"><b>🍽️ 꼭 시켜야 할 메뉴</b> — 성 소유 포도밭의 리슬링 + 향토요리</div>
+        <div class="food-links"><a href="https://www.google.com/maps/search/?api=1&query=Schlossschaenke+Schloss+Johannisberg" target="_blank" rel="noopener">🗺️ 구글맵</a></div>
+      </div>
+    </div>
+    <div class="drink-strip">
+      <span class="drink-chip">🍷 프랑켄 와인 · 질바너</span>
+      <span class="drink-chip">🍺 켈러비어(무여과 생맥주)</span>
+      <span class="drink-chip">🍰 슈네발 (로텐부르크)</span>
+      <span class="drink-chip">🌭 뉘른베르거 브랏부어스트</span>
+      <span class="drink-chip">🍰 슈바르츠발더 키르쉬토르테 (흑림)</span>
+      <span class="drink-chip">🥟 마울타셴 (슈투트가르트)</span>
+      <span class="drink-chip">🍷 라인가우 리슬링 (뤼데스하임)</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  각 맛집 정보는 2026년 웹 검색 기준으로 조사한 참고 자료입니다. 평점·리뷰 수는 조사 시점 기준이며 실시간으로 변동될 수 있으니, 방문 전 구글맵에서 최신 평점·영업시간·예약 필요 여부를 다시 확인하세요. 일요일에는 문을 닫는 곳이 많으니(9/20, 9/26 방문 시 특히) 미리 확인을 권장합니다.
+</footer>

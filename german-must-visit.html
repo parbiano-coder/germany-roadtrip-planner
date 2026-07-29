@@ -1,0 +1,363 @@
+<title>독일 꼭 가야할 장소 — 7박 8일 로드트립 명소 가이드</title>
+<meta name="description" content="여행 경로를 지도로 보고, 구간별 핵심 명소와 그 의미를 살펴보는 가이드">
+<style>
+  :root{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+    --radius: 3px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+      --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+      --warn: #e3a94a; --warn-soft: #3a2e19;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14181a; --bg-soft: #1a1f21; --surface: #1e2426; --ink: #e9e4d6; --ink-soft: #a9b0ac;
+    --line: #333a3c; --route: #6fa3d8; --route-soft: #223245; --sign: #c99b6e; --sign-soft: #302722;
+    --warn: #e3a94a; --warn-soft: #3a2e19;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+  :root[data-theme="light"]{
+    --bg: #efece0; --bg-soft: #f7f5ec; --surface: #fffdf7; --ink: #1e2a2f; --ink-soft: #4c5a5f;
+    --line: #d6d0ba; --route: #0b3c6e; --route-soft: #dfe8f0; --sign: #6e4429; --sign-soft: #ece1d5;
+    --warn: #b96a12; --warn-soft: #f6e5cd;
+    --shadow: 0 1px 2px rgba(30,20,10,0.06), 0 8px 24px -12px rgba(30,20,10,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Noto Serif KR", "Nanum Myeongjo", serif;
+    line-height:1.65; font-size:16px;
+  }
+  h1,h2,h3,.label{
+    font-family: -apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,Helvetica,Arial,sans-serif;
+    font-stretch:condensed; font-weight:800; letter-spacing:-0.01em; text-wrap:balance;
+  }
+  .mono{ font-family:"SF Mono","Consolas","Roboto Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums; }
+  .eyebrow{
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,sans-serif;
+    text-transform:uppercase; letter-spacing:0.14em; font-size:0.72rem; font-weight:700; color:var(--route);
+  }
+  a{ color:var(--route); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--route); outline-offset:2px; }
+
+  header.hero{
+    background:linear-gradient(180deg, var(--bg-soft), var(--bg));
+    border-bottom:1px solid var(--line); padding:3.2rem 1.5rem 2.4rem;
+  }
+  .hero-inner{ max-width:960px; margin:0 auto; }
+  .hero h1{ font-size:clamp(1.9rem,4.6vw,2.9rem); margin:0.9rem 0 0.7rem; }
+  .hero p.sub{ max-width:64ch; color:var(--ink-soft); font-size:1.05rem; margin:0; }
+  .crumb-links{ display:flex; gap:1.1rem; flex-wrap:wrap; }
+  .crumb-links a{
+    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.85rem; font-weight:700; text-decoration:none;
+  }
+
+  nav.mvnav{
+    position:sticky; top:0; z-index:40;
+    background:var(--surface); border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+  }
+  .mvnav-scroll{
+    max-width:960px; margin:0 auto; display:flex; gap:0.35rem; overflow-x:auto;
+    padding:0.6rem 1rem; scrollbar-width:thin;
+  }
+  .mvnav a{
+    flex:none; font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.8rem; font-weight:700; color:var(--ink-soft); text-decoration:none;
+    padding:0.42rem 0.7rem; border-radius:2px; border:1px solid transparent; white-space:nowrap;
+  }
+  .mvnav a:hover{ color:var(--route); border-color:var(--line); }
+
+  main{ max-width:960px; margin:0 auto; padding:0 1.5rem; }
+  section{ padding:2.8rem 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  section > .eyebrow{ display:block; margin-bottom:0.4rem; }
+  section > h2{ font-size:1.5rem; margin:0 0 0.4rem; }
+  section > p.lede{ color:var(--ink-soft); max-width:66ch; margin:0 0 1.4rem; font-size:0.95rem; }
+
+  #map{ height:480px; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  .leaflet-popup-content-wrapper{ border-radius:3px; }
+
+  .region-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.9rem; margin-top:1.2rem; }
+  .region-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:0.9rem 1rem; box-shadow:var(--shadow);
+  }
+  .region-card .dot{ display:inline-block; width:0.7rem; height:0.7rem; border-radius:50%; margin-right:0.5rem; vertical-align:middle; }
+  .region-card h3{ display:inline; font-size:0.98rem; margin:0; vertical-align:middle; }
+  .region-card .days{
+    display:block; font-family:"SF Mono","Consolas",monospace; font-size:0.72rem; color:var(--ink-soft);
+    margin:0.25rem 0 0.4rem 1.2rem;
+  }
+  .region-card p{ margin:0; font-size:0.86rem; color:var(--ink-soft); }
+
+  .landmark-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.3rem; }
+  .landmark-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
+  }
+  .landmark-card img{ width:100%; height:180px; object-fit:cover; display:block; background:var(--bg-soft); }
+  .landmark-body{ padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:0.7rem; flex:1; }
+  .landmark-body h3{ margin:0; font-size:1.05rem; }
+  .landmark-tag{ font-family:"SF Mono","Consolas",monospace; font-size:0.72rem; color:var(--route); }
+  .landmark-desc{ margin:0; font-size:0.9rem; color:var(--ink-soft); }
+  .meaning-box{ background:var(--warn-soft); border-radius:2px; padding:0.65rem 0.85rem; font-size:0.85rem; color:var(--ink); margin-top:auto; }
+  .meaning-box .mb-label{
+    display:block; color:var(--warn); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; margin-bottom:0.3rem;
+  }
+
+  .pop-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+  .pop-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow);
+  }
+  .pop-card img{ width:100%; height:130px; object-fit:cover; display:block; background:var(--bg-soft); }
+  .pop-body{ padding:0.8rem 0.9rem 1rem; }
+  .pop-body h3{ margin:0 0 0.3rem; font-size:0.95rem; }
+  .pop-body p{ margin:0; font-size:0.84rem; color:var(--ink-soft); }
+
+  footer{ max-width:960px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
+  @media print{ nav.mvnav{ display:none; } #map{ display:none; } }
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="crumb-links">
+      <a href="index.html">← 여행 플래너</a>
+      <a href="german-food-tour.html">맛집투어 →</a>
+    </div>
+    <span class="eyebrow" style="display:block;margin-top:0.9rem;">Must Visit · Deutschland</span>
+    <h1>꼭 가야할 장소</h1>
+    <p class="sub">독일을 여행한다면 놓치지 말아야 할 대표 명소들, 그리고 7박 8일 경로가 지나가는 4개 권역을 지도로 살펴보세요.</p>
+  </div>
+</header>
+
+<nav class="mvnav" aria-label="빠른 이동">
+  <div class="mvnav-scroll">
+    <a href="#map-section">지도</a>
+    <a href="#landmarks">핵심 명소</a>
+    <a href="#popular">인기 관광지</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="map-section">
+    <span class="eyebrow">Route Map</span>
+    <h2>경로 지도</h2>
+    <p class="lede">색깔은 구간(권역)을 나타냅니다. 마커를 클릭하면 도시명과 방문 일차가 표시됩니다. 회색 마커(뮌헨)는 이번 여행에서는 가지 않는 참고용 위치입니다.</p>
+    <div id="map"></div>
+    <div class="region-grid">
+      <div class="region-card">
+        <span class="dot" style="background:#e2725b;"></span><h3>프랑켄</h3>
+        <span class="days">1~2일차 · 9/19–20</span>
+        <p>뷔르츠부르크·로텐부르크·밤베르크·뉘른베르크 — 와인과 브랏부어스트, 중세 성벽 마을의 땅</p>
+      </div>
+      <div class="region-card">
+        <span class="dot" style="background:#c2492f;"></span><h3>바이에른 알프스</h3>
+        <span class="days">3~4일차 · 9/21–22</span>
+        <p>아우크스부르크·퓌센·켐프텐 — 동화 속 성이 서 있는 알고이 산악 지역</p>
+      </div>
+      <div class="region-card">
+        <span class="dot" style="background:#2f6f4f;"></span><h3>흑림 · 슈바벤</h3>
+        <span class="days">5~6일차 · 9/23–24</span>
+        <p>티티제·프라이부르크·메칭겐·슈투트가르트 — 울창한 숲과 독일 자동차 산업의 땅</p>
+      </div>
+      <div class="region-card">
+        <span class="dot" style="background:#3a6ea5;"></span><h3>라인 · 모젤</h3>
+        <span class="days">7~8일차 · 9/25–26</span>
+        <p>하이델베르크·베른카슈텔쿠에스·뤼데스하임·비스바덴 — 고성과 와인가도가 이어지는 강변</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="landmarks">
+    <span class="eyebrow">Must Visit</span>
+    <h2>핵심 명소</h2>
+    <p class="lede">경로상에서 꼭 들르는 대표 명소와 그 역사적·문화적 의미를 함께 정리했습니다.</p>
+    <div class="landmark-grid">
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/500px-Schloss_Neuschwanstein_2013.jpg" alt="노이슈반슈타인 성" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">4일차 · 퓌센</span>
+          <h3>노이슈반슈타인 성</h3>
+          <p class="landmark-desc">독일 여행 사진의 대표 이미지. 알프스 자락 절벽 위에 세워진 순백의 성입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>바이에른 왕 루트비히 2세가 현실 정치에서 도피해 지은 개인적 낭만의 공간. 완공 전 왕이 의문사하며 미완성으로 남았고, 훗날 디즈니 성의 실제 모티브가 되었습니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 오프 데어 타우버" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">1일차 · 로텐부르크</span>
+          <h3>로텐부르크 성벽 구시가</h3>
+          <p class="landmark-desc">동화책 삽화 같은 목조 가옥과 붉은 지붕이 성벽 안에 고스란히 남아있는 마을입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>2차대전 폭격 위기에서 기적적으로 살아남은 몇 안 되는 독일 중세 도시. 종전 직전 미군 사령관이 파괴 명령을 거부하며 지켜낸 역사가 전해집니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nuernberg_Burg_Panorama_PtGUI.jpg/500px-Nuernberg_Burg_Panorama_PtGUI.jpg" alt="뉘른베르크 카이저부르크" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">2일차 · 뉘른베르크</span>
+          <h3>카이저부르크 (뉘른베르크 성)</h3>
+          <p class="landmark-desc">구시가 언덕 위에서 붉은 지붕들을 내려다보는 신성로마제국의 상징적 요새입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>중세 황제들이 제국의회를 열던 권력의 중심지였다가, 20세기엔 나치 전당대회 도시로 악용되고 종전 후 전범재판이 열린 곳이라는 이중적 무게를 지닙니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg/500px-2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg" alt="뷔르츠부르크 레지덴츠" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">1일차 · 뷔르츠부르크</span>
+          <h3>뷔르츠부르크 레지덴츠</h3>
+          <p class="landmark-desc">화려한 바로크 궁전 내부의 계단홀 천장 전체를 뒤덮은 거대한 프레스코화가 압권입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>티에폴로가 그린 세계 최대 규모 프레스코 천장화로 유명한 유네스코 세계유산. 밤베르크 주교의 권력을 과시하려 지어져 &ldquo;독일의 베르사유&rdquo;로 불립니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg" alt="하이델베르크 성" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">7일차 · 하이델베르크</span>
+          <h3>하이델베르크 성</h3>
+          <p class="landmark-desc">네카어강과 구시가를 굽어보는 붉은 사암 성. 폐허가 된 모습 그대로가 매력입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>독일 낭만주의를 상징하는 &ldquo;폐허의 미학&rdquo;. 전쟁으로 반쯤 무너진 뒤 완전히 복원하지 않고 그 모습 그대로 남겨, 오히려 낭만주의 시인들에게 영감을 준 독특한 사례입니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Freiburger_M%C3%BCnster_-_FaB.jpg/500px-Freiburger_M%C3%BCnster_-_FaB.jpg" alt="프라이부르크 뮌스터" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">6일차 · 프라이부르크</span>
+          <h3>프라이부르크 뮌스터</h3>
+          <p class="landmark-desc">구시가 어디서나 보이는 116m 첨탑. 정교한 레이스 세공 같은 첨탑 장식이 특징입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>약 600년에 걸쳐 완공된 첨탑은 &ldquo;세계에서 가장 아름다운 첨탑&rdquo;이라는 평가를 받습니다. 2차대전 폭격에서 거의 유일하게 살아남아 프라이부르크 재건의 상징이 되었습니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Niederwalddenkmal_ohne_Personen.jpg/500px-Niederwalddenkmal_ohne_Personen.jpg" alt="니더발트 기념비" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">7일차 · 뤼데스하임</span>
+          <h3>니더발트 기념비 (케이블카 정상)</h3>
+          <p class="landmark-desc">뤼데스하임 케이블카를 타고 오르면 만나는 거대한 게르마니아 여신상과 라인강 전망입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>1871년 독일 통일을 기념해 세운 상징물. 라인강을 내려다보는 언덕 위에서, 통일 독일제국이 품었던 자신감을 그대로 느낄 수 있습니다.</div>
+        </div>
+      </div>
+
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시가" loading="lazy">
+        <div class="landmark-body">
+          <span class="landmark-tag">2일차 · 밤베르크</span>
+          <h3>밤베르크 구시가</h3>
+          <p class="landmark-desc">레그니츠강이 감싸안은 언덕 위 수도원과 강 위에 떠 있는 듯한 시청사가 인상적입니다.</p>
+          <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>구시가 전체가 유네스코 세계유산으로 지정된 드문 도시. 시청사가 강 한가운데 인공섬 위에 지어진 독특한 구조는 주교와 시민 사이 권력 다툼이 낳은 타협의 결과라는 이야기가 전해집니다.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="popular">
+    <span class="eyebrow">Popular</span>
+    <h2>인기 관광지</h2>
+    <p class="lede">경로에서 함께 둘러보기 좋은 인기 스팟만 따로 모았습니다.</p>
+    <div class="pop-grid">
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Schloss_Hohenschwangau_2021.jpg/500px-Schloss_Hohenschwangau_2021.jpg" alt="호엔슈방가우 성" loading="lazy">
+        <div class="pop-body"><h3>호엔슈방가우 성</h3><p>루트비히 2세가 유년기를 보낸 노란 성 — 노이슈반슈타인 바로 옆</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Titisee-blick_von_hochfirst.jpg/500px-Titisee-blick_von_hochfirst.jpg" alt="티티제 호수" loading="lazy">
+        <div class="pop-body"><h3>티티제 호수</h3><p>흑림 한가운데 자리한 빙하호 — 산책과 보트 대여</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mercedes-Benz_Museum_201312_08_blue_hour.jpg/500px-Mercedes-Benz_Museum_201312_08_blue_hour.jpg" alt="메르세데스-벤츠 박물관" loading="lazy">
+        <div class="pop-body"><h3>메르세데스-벤츠 박물관</h3><p>자동차의 역사 그 자체 — 나선형 전시 동선이 특징</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Porsche-Museum_Main_Entrance.JPG/500px-Porsche-Museum_Main_Entrance.JPG" alt="포르쉐 박물관" loading="lazy">
+        <div class="pop-body"><h3>포르쉐 박물관</h3><p>공중에 뜬 듯한 독특한 건축, 스포츠카 팬이라면 필수코스</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Fugger_Fuggerei_Herrengasse.jpg/500px-Fugger_Fuggerei_Herrengasse.jpg" alt="아우크스부르크 푸거라이" loading="lazy">
+        <div class="pop-body"><h3>푸거라이 (아우크스부르크)</h3><p>1521년 설립된 세계에서 가장 오래된 사회주택 — 지금도 실제 주민이 삽니다</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg/500px-Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg" alt="베른카슈텔쿠에스" loading="lazy">
+        <div class="pop-body"><h3>베른카슈텔쿠에스</h3><p>모젤강을 따라 늘어선 포도밭과 목조가옥 와인마을</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg/500px-Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg" alt="슈투트가르트 노이에스 슐로스" loading="lazy">
+        <div class="pop-body"><h3>슈투트가르트 슐로스광장</h3><p>노이에스 슐로스와 분수가 있는 시내 중심 광장</p></div>
+      </div>
+      <div class="pop-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Panoramic_View_of_R%C3%BCdesheim_am_Rhein_20140928_1.jpg/500px-Panoramic_View_of_R%C3%BCdesheim_am_Rhein_20140928_1.jpg" alt="뤼데스하임 파노라마" loading="lazy">
+        <div class="pop-body"><h3>뤼데스하임 구시가·드로셀가세</h3><p>라인강변 와인 마을의 좁은 골목, 저녁 산책 명소</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  지도는 OpenStreetMap 데이터를 사용합니다 (© OpenStreetMap contributors). 이미지는 Wikimedia Commons 제공입니다. 명소 설명은 일반적으로 알려진 역사적 사실을 바탕으로 요약한 참고 자료이니, 정확한 세부 사항은 현지 안내판·공식 자료를 참고하세요.
+</footer>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  if (typeof L === 'undefined') return;
+  var map = L.map('map', { scrollWheelZoom: false }).setView([48.9, 9.3], 6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  var franken = '#e2725b', alps = '#c2492f', schwarzwald = '#2f6f4f', rhein = '#3a6ea5', ref = '#9aa3a8';
+
+  var stops = [
+    [50.11, 8.68, '프랑크푸르트 공항', '1·8일차 · 픽업/반납', franken],
+    [49.79, 9.93, '뷔르츠부르크', '1일차 · 경유', franken],
+    [49.38, 10.18, '로텐부르크', '1일차 · 숙박', franken],
+    [49.89, 10.89, '밤베르크', '2일차 · 경유', franken],
+    [49.45, 11.08, '뉘른베르크', '2일차 · 숙박', franken],
+    [48.37, 10.90, '아우크스부르크', '3일차 · 경유', alps],
+    [47.57, 10.70, '퓌센', '3~4일차 · 숙박(2박)', alps],
+    [47.73, 10.32, '켐프텐', '5일차 · 경유', alps],
+    [47.92, 8.15, '티티제(흑림)', '5일차 · 숙박', schwarzwald],
+    [47.995, 7.85, '프라이부르크', '6일차 · 경유', schwarzwald],
+    [48.54, 9.28, '메칭겐', '6일차 · 경유(아울렛)', schwarzwald],
+    [48.78, 9.18, '슈투트가르트', '6일차 · 숙박', schwarzwald],
+    [49.41, 8.71, '하이델베르크', '7일차 · 경유', rhein],
+    [49.92, 7.07, '베른카슈텔쿠에스', '7일차 · 경유', rhein],
+    [49.98, 7.91, '뤼데스하임', '7일차 · 숙박', rhein],
+    [50.08, 8.24, '비스바덴', '8일차 · 경유', rhein]
+  ];
+
+  var routeLine = stops.map(function(s){ return [s[0], s[1]]; });
+  L.polyline(routeLine, { color: '#0b3c6e', weight: 2, opacity: 0.45, dashArray: '4 5' }).addTo(map);
+
+  stops.forEach(function(s){
+    L.circleMarker([s[0], s[1]], {
+      radius: 7, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: 0.95
+    }).addTo(map).bindPopup('<b>' + s[2] + '</b><br>' + s[3]);
+  });
+
+  L.circleMarker([48.14, 11.58], {
+    radius: 6, color: '#fffdf7', weight: 2, fillColor: ref, fillOpacity: 0.85
+  }).addTo(map).bindPopup('<b>뮌헨</b><br>이번 여행에서는 방문하지 않는 참고 위치');
+})();
+</script>
