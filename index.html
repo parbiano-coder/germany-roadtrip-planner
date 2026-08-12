@@ -102,7 +102,7 @@
 
   /* ---------- Sticky top cross-page bar ---------- */
   nav.topbar{
-    position:sticky; top:0; z-index:60; height:56px;
+    position:sticky; top:0; z-index:1000; height:56px;
     background:var(--surface); border-bottom:1px solid var(--line); box-shadow:var(--shadow);
     display:flex; align-items:center;
   }
@@ -129,7 +129,7 @@
 
   /* ---------- Sticky day nav ---------- */
   nav.daynav{
-    position:sticky; top:56px; z-index:40;
+    position:sticky; top:56px; z-index:999;
     background:var(--surface);
     border-bottom:1px solid var(--line);
     box-shadow: var(--shadow);
@@ -428,12 +428,6 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <h1>여행 계획</h1>
-  </div>
-</header>
-
 <nav class="daynav" aria-label="빠른 이동">
   <div class="daynav-scroll">
     <a href="#route">경로</a>
@@ -536,7 +530,7 @@
     </details>
 
     <details class="day" id="day2">
-      <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 밤베르크(선택) → 뉘른베르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 뉘른베르크 (밤베르크 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 155km · 약 2시간 10분(선택 스톱 밤베르크 제외 시 · 추정치)</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span><span><b>숙박지</b> 뉘른베르크</span></div>
       <div id="day2map" class="day-leaflet-map"></div>
@@ -546,14 +540,13 @@
           <ul>
             <li>오전 뷔르츠부르크 레지덴츠 궁전 &amp; 구시가 관광 (09:00 개장에 맞춰 일찍 시작하면 여유, 약 1.5~2시간)</li>
             <li>로맨틱 가도(Romantische Straße)를 타고 로텐부르크로 이동 (65km, 약 1시간), 성곽길 도보 한 바퀴(약 2.5km) &amp; 구시가 산책</li>
-            <li>북쪽 밤베르크로 이동 (100km, 약 1시간20분), 구시가·구시청사(Altes Rathaus)·레그니츠강 뷰포인트 도보 관광 (약 1.5~2시간)</li>
-            <li>다시 남쪽 뉘른베르크로 이동 (60km, 약 50분)</li>
+            <li>로텐부르크에서 뉘른베르크로 직행 (90km, 약 1시간 10분 · 추정) — 밤베르크는 시간 되면 들르는 선택 스톱(왕복 경유 시 100km·1시간20분 + 60km·50분, 구시가·구시청사·레그니츠강 뷰포인트 도보 관광 약 1.5~2시간)</li>
             <li>뉘른베르크 성 &amp; 구시가, 카이저부르크 성, 중앙 광장 소시지 맛집(뉘른베르거 브랏부어스트)</li>
           </ul>
         </div>
         <div>
           <h4>팁</h4>
-          <p class="tip">오늘은 뷔르츠부르크·로텐부르크·밤베르크·뉘른베르크까지 4개 도시를 도는 꽉 찬 날입니다(약 3시간 이동 + 도보관광). 일요일이라 상점은 대부분 휴무지만 성·박물관·구시가 관람엔 지장 없습니다. 시간이 빠듯하면 밤베르크 체류를 짧게 줄이거나, 로텐부르크를 성곽길 위주로 압축하세요. 구시가 대부분이 환경구역이므로 환경 스티커 부착 여부도 확인하세요.</p>
+          <p class="tip">기본 경로는 뷔르츠부르크·로텐부르크·뉘른베르크 3개 도시로, 155km·약 2시간 10분입니다. 밤베르크는 선택 스톱이니 시간이 되면 들르세요(들르면 총 225km·약 3시간 10분). 일요일이라 상점은 대부분 휴무지만 성·박물관·구시가 관람엔 지장 없습니다. 구시가 대부분이 환경구역이므로 환경 스티커 부착 여부도 확인하세요.</p>
         </div>
       </div>
       <div class="sight-list">
@@ -873,7 +866,7 @@
     </details>
 
     <details class="day" id="day7">
-      <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → 슈투트가르트(선택) → 하이델베르크 → 베른카슈텔쿠에스(선택) → 뤼데스하임</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → 하이델베르크 → 뤼데스하임 (슈투트가르트·베른카슈텔쿠에스 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 210km · 약 2시간 30분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시 · 추정치)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span><span><b>숙박지</b> Trechtingshausen</span></div>
       <div id="day7map" class="day-leaflet-map"></div>
@@ -881,21 +874,30 @@
         <div>
           <h4>오늘의 동선</h4>
           <ul>
-            <li>메칭겐에서 슈투트가르트로 이동 (30km·30분) — 시간이 빠듯하면 밤베르크처럼 건너뛸 수 있는 선택 스톱</li>
-            <li>오전 메르세데스-벤츠 박물관 또는 포르쉐 박물관 중 택1 관람 (둘 다 화–일 운영)</li>
-            <li>A81 → A6으로 하이델베르크 이동 (120km·1시간 18분), 성 &amp; 철학자의 길·구시가 반나절 관광 (숙박 없음)</li>
-            <li>A61 → B50으로 모젤 와인 마을 베른카슈텔쿠에스 이동 (150km·1시간 54분), 마르크트광장·란트스후트 성터 도보 관광 (약 1시간) — 이 역시 선택 스톱</li>
-            <li>라인강변 뤼데스하임 도착 (95km·1시간 18분), 저녁 드로셀가세(Drosselgasse) 산책</li>
+            <li>메칭겐에서 하이델베르크로 직행 (100km·1시간 5분 · 추정) — 시간 여유 있으면 도중에 슈투트가르트 들러 메르세데스-벤츠 또는 포르쉐 박물관 관람(둘 다 화–일 운영, 왕복 경유 시 30km·30분 + 120km·1시간18분 — 밤베르크처럼 선택 스톱)</li>
+            <li>하이델베르크 성 &amp; 철학자의 길·구시가 반나절 관광 (숙박 없음)</li>
+            <li>하이델베르크에서 뤼데스하임으로 직행 (100km·1시간 10분 · 추정) — 시간 여유 있으면 모젤 와인 마을 베른카슈텔쿠에스 들러 마르크트광장·란트스후트 성터 도보 관광(약 1시간, 왕복 경유 시 150km·1시간54분 + 95km·1시간18분 — 이 역시 선택 스톱)</li>
+            <li>라인강변 뤼데스하임 도착, 저녁 드로셀가세(Drosselgasse) 산책</li>
           </ul>
         </div>
         <div>
           <h4>팁</h4>
-          <p class="tip">이동 거리·볼거리 모두 매우 많은 날입니다(총 395km·약 5시간 순수 주행). 슈투트가르트와 베른카슈텔쿠에스는 밤베르크처럼 선택 스톱이니, 시간이 빠듯하면 둘 중 하나 혹은 둘 다 건너뛰고 하이델베르크 위주로 압축하세요. 참고로 분데스리가는 9/19~20이 이번 여행 기간 중 유일한 경기 주간이고(슈투트가르트 홈경기는 9/19 18:30, 도착일이라 관람 불가), 9/26 주말은 A매치 기간이라 경기 자체가 없어 이번 여행과 맞는 직관 기회는 없습니다.</p>
+          <p class="tip">기본 경로는 메칭겐·하이델베르크·뤼데스하임으로, 210km·약 2시간 30분입니다. 슈투트가르트(자동차 박물관)와 베른카슈텔쿠에스(모젤 와인마을)는 밤베르크처럼 선택 스톱이니 시간이 될 때만 들르세요(둘 다 들르면 총 395km·약 5시간까지 늘어납니다). 참고로 분데스리가는 9/19~20이 이번 여행 기간 중 유일한 경기 주간이고(슈투트가르트 홈경기는 9/19 18:30, 도착일이라 관람 불가), 9/26 주말은 A매치 기간이라 경기 자체가 없어 이번 여행과 맞는 직관 기회는 없습니다.</p>
         </div>
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
       <div class="landmark-grid">
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg" alt="하이델베르크 성 (Schlossticket)" loading="lazy">
+        <div class="landmark-body">
+        <h3>하이델베르크 성 (Schlossticket)</h3>
+        <p class="landmark-desc">네카어강과 구시가를 굽어보는 붉은 사암 성. 폐허가 된 모습 그대로가 매력입니다.</p>
+        <div class="landmark-meta">대략 매일 09:00–18:00로 알려져 있으나 요일별 정확한 시간은 공식 사이트 미확인 — 방문 전 재확인 권장 · <span class="landmark-price">€11(등산열차 포함)</span> · <a href="https://www.schloss-heidelberg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Heidelberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 성 등산철도 승강장 건물 내부(P12 Kornmarkt/Schloss) · 유료(1시간 €2.50, 5시간 €11.50)</div>
+        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>독일 낭만주의를 상징하는 &ldquo;폐허의 미학&rdquo;. 전쟁으로 반쯤 무너진 뒤 완전히 복원하지 않고 그 모습 그대로 남겨, 오히려 낭만주의 시인들에게 영감을 준 독특한 사례입니다.</div>
+        </div>
+      </div>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mercedes-Benz_Museum_201312_08_blue_hour.jpg/500px-Mercedes-Benz_Museum_201312_08_blue_hour.jpg" alt="메르세데스-벤츠 박물관" loading="lazy">
         <div class="landmark-body">
@@ -912,16 +914,6 @@
         <p class="landmark-desc">공중에 뜬 듯한 독특한 건축이 인상적인 박물관. 스포츠카 팬이라면 필수 코스입니다.</p>
         <div class="landmark-meta">화–일 09:00–18:00 (월 휴관) · <span class="landmark-price">성인 €8(여러 소스 확인, 기존 €12는 오기로 추정 — 현장 재확인 권장)</span> · <a href="https://www.porsche.com/germany/aboutporsche/porschemuseum/" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Porsche+Museum+Stuttgart" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
-        </div>
-      </div>
-      <div class="landmark-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg" alt="하이델베르크 성 (Schlossticket)" loading="lazy">
-        <div class="landmark-body">
-        <h3>하이델베르크 성 (Schlossticket)</h3>
-        <p class="landmark-desc">네카어강과 구시가를 굽어보는 붉은 사암 성. 폐허가 된 모습 그대로가 매력입니다.</p>
-        <div class="landmark-meta">대략 매일 09:00–18:00로 알려져 있으나 요일별 정확한 시간은 공식 사이트 미확인 — 방문 전 재확인 권장 · <span class="landmark-price">€11(등산열차 포함)</span> · <a href="https://www.schloss-heidelberg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Heidelberg" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 성 등산철도 승강장 건물 내부(P12 Kornmarkt/Schloss) · 유료(1시간 €2.50, 5시간 €11.50)</div>
-        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>독일 낭만주의를 상징하는 &ldquo;폐허의 미학&rdquo;. 전쟁으로 반쯤 무너진 뒤 완전히 복원하지 않고 그 모습 그대로 남겨, 오히려 낭만주의 시인들에게 영감을 준 독특한 사례입니다.</div>
         </div>
       </div>
       <div class="landmark-card">
