@@ -331,6 +331,15 @@
   }
   .landmark-card img{ width:100%; height:170px; object-fit:cover; display:block; background:var(--bg-soft); }
   html.photos-off .landmark-card img{ display:none; }
+  .booking-note{
+    margin:0.6rem 0 1rem; padding:0.7rem 0.9rem; border-radius:var(--radius);
+    background:var(--warn-soft); border:1px solid var(--warn);
+    font-size:0.82rem; line-height:1.6; color:var(--ink);
+  }
+  .booking-note b{ color:var(--warn); }
+  .booking-note ul{ margin:0.3rem 0 0; padding-left:1.1rem; }
+  .booking-note li{ margin:0.15rem 0; }
+  .booking-note .cash-note{ margin-top:0.5rem; padding-top:0.5rem; border-top:1px dashed var(--warn); }
   button.topbar-item{ background:none; border:1px solid transparent; cursor:pointer; font:inherit; }
   button.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
   html.photos-off .photo-toggle .tb-icon{ background:var(--warn-soft); color:var(--warn); }
@@ -937,6 +946,7 @@
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 290km · 약 3시간 30분</span><span><b>테마</b> 뮌헨 반나절 관광 &amp; 알프스 관문 마을로</span></div>
       <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 1일차) · 무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
+      <div class="booking-note"><b>⚠️ 사전예약 참고</b> 님펜부르크 궁전(시간 되면 들를 경우)은 타임슬롯 사전예약이 필수입니다 — 현장 구매가 안 되니 방문 계획이 있다면 미리 온라인 예약하세요.</div>
       <div id="day3map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -1128,6 +1138,10 @@
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 130km · 약 2시간</span><span><b>테마</b> 동화 속 성 완주 + 알프스 소도시 루프 (빡빡한 하루)</span></div>
       <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 2일차, 전날과 동일 숙소) · 무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
+      <div class="booking-note">
+        <div><b>⚠️ 사전예약 사실상 필수</b> 노이슈반슈타인 성·호엔슈방가우 성은 성수기 현장 구매 티켓이 오전 8~10시 사이 매진되는 경우가 많습니다. 예약 없이 당일 줄을 서면 2시간 이상 대기하고도 입장에 실패할 수 있어요 — 최대 8주 전 온라인 예매를 강력 권장합니다.</div>
+        <div style="margin-top:0.4rem;"><b>예약 권장</b> 에탈 수도원 양조장 투어는 이메일 예약 확인을 받아야 자리가 보장됩니다(현장 구매만으로는 자리가 없을 수 있음).</div>
+      </div>
       <div id="day4map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -1401,6 +1415,10 @@
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 210km · 약 2시간 30분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시 · 추정치)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span></div>
       <div class="stay-detail"><b>숙박지</b> Trechtingshausen · 무료주차 · 아파트(80㎡) · 더블+대형더블 · 냉장고 · 전기주전자 · 커피머신 등 간이주방</div>
+      <div class="booking-note">
+        <div><b>현장구매 가능, 온라인 예매 권장</b> 메르세데스-벤츠 박물관·포르쉐 박물관은 타임슬롯 티켓제입니다. 평일엔 현장 구매로도 충분하지만, 주말·성수기엔 대기줄을 건너뛰려면 온라인 예매가 낫습니다.</div>
+        <div style="margin-top:0.4rem;"><b>예약 권장(대기 방지)</b> 하이델베르크 학생감옥·대학교박물관은 예약 없이도 방문 가능하지만, 대기 없이 보려면 최대 1주 전 전화 예약을 권장합니다.</div>
+      </div>
       <div id="day7map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -1647,6 +1665,7 @@
           <li>독일 전압 230V / Type F 플러그 — 멀티어댑터 준비</li>
           <li>유심 또는 로밍 데이터 (내비게이션 필수)</li>
           <li>주유는 셀프 &ndash; 주유 후 매장에서 계산(주유기 번호 말하기)</li>
+          <li>💶 소도시 주차기계(Parkscheinautomat)는 카드·애플페이 없이 동전만 받는 경우가 많음 — €1~2 동전을 넉넉히 준비. 오래된 소도시 식당·상점도 카드 미지원인 곳이 있으니 소액 현금을 항상 챙겨두기</li>
         </ul>
       </div>
     </div>
