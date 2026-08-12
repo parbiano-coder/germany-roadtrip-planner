@@ -282,7 +282,8 @@
   .landmark-meta{ font-size:0.8rem; color:var(--ink-soft); }
   .landmark-meta .landmark-price{ color:var(--route); font-weight:700; font-family:"SF Mono","Consolas",monospace; }
   .landmark-parking{ font-size:0.78rem; color:var(--ink-soft); }
-    .stay-detail{ margin:-0.3rem 0 1rem; padding:0.6rem 0.9rem; background:var(--sign-soft); border-radius:2px; font-size:0.85rem; line-height:1.6; color:var(--ink); }
+    .stay-detail{ margin:-0.3rem 0 1rem; font-family:"SF Mono","Consolas",monospace; font-size:0.82rem; line-height:1.6; color:var(--ink-soft); }
+  .stay-detail b{ color:var(--sign); }
   .stay-detail b{ color:var(--sign); }
     .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
   @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
@@ -507,7 +508,7 @@
       <summary class="day-head"><span class="num mono">01</span><span class="day-date mono">9/19(토)</span><h3>프랑크푸르트 공항 (픽업, 17:40 입국) → 뷔르츠부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 120km · 약 1시간 20분 (논스톱)</span><span><b>테마</b> 17:40 입국 &amp; 이동만 하는 날</span></div>
-      <div class="stay-detail"><b>숙박지</b> 웨틴겐<br>무료주차 · 아파트(45㎡) · 싱글+더블</div>
+      <div class="stay-detail"><b>숙박지</b> 웨틴겐 · 무료주차 · 아파트(45㎡) · 싱글+더블</div>
       <div id="day1map" class="day-leaflet-map"></div>
       <div class="sight-list">
         <h4>렌터카 픽업 (Hertz)</h4>
@@ -530,18 +531,6 @@
         </div>
       </div>
       <div class="sight-list">
-        <h4>맛집 (뷔르츠부르크)</h4>
-        <div class="sight"><span class="sight-name">Bürgerspital Weinstuben</span><span class="sight-hours">구시가·마르크트 인근 · 1319년 설립 자선 와이너리 부속 식당</span><span class="sight-price">꼭 시켜야 할 메뉴: 질바너 화이트와인 + 프렌키셰 슈니첼 · <a href="https://www.google.com/maps/search/?api=1&query=Buergerspital+Weinstuben+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Backöfele</span><span class="sight-hours">구시가 골목 · 35년 전통 향토 식당</span><span class="sight-price">꼭 시켜야 할 메뉴: 프렌키셰 자우어브라텐 + 감자경단 · <a href="https://www.google.com/maps/search/?api=1&query=Backoefele+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
-      </div>
-      <div class="sight-list">
-        <h4>인터내셔널 옵션 (뷔르츠부르크)</h4>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">검색으로 찾은 이름·카테고리만입니다. 정확한 영업시간·구글 평점·브레이크타임은 지도 링크에서 방문 전 꼭 확인하세요.</p>
-        <div class="sight"><span class="sight-name">Locanda Würzburg</span><span class="sight-hours">이탈리안</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Locanda+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Trattoria Lugana</span><span class="sight-hours">이탈리안</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Trattoria+Lugana+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Chay Viet Tadilen</span><span class="sight-hours">동남아식(베트남)</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Chay+Viet+Tadilen+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
-      </div>
-      <div class="sight-list">
         <h4>대형 슈퍼마켓 — 이동시간 안 늘고 영업시간 여유있는 순</h4>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">20:20~20:50 도착 예상이라 매우 빠듯합니다(대부분 20시 마감). 1·2번은 경로에서 거의 벗어나지 않고, 3번은 24시간이라 늦어져도 확실한 대안입니다.</p>
         <div class="sight"><span class="sight-name">① Netto Marken-Discount (Helmstadt)</span><span class="sight-hours">Würzburger Straße 35a, 97264 Helmstadt · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">위팅엔과 같은 생활권, 경로 이탈 거의 없음 · <a href="https://www.google.com/maps/search/?api=1&query=Netto+Marken-Discount+Wuerzburger+Strasse+35a+Helmstadt" target="_blank" rel="noopener">지도</a></span></div>
@@ -555,6 +544,7 @@
         <div class="sight"><span class="sight-name">Zur Alten Brauerei Zapf</span><span class="sight-hours">Kirchplatz 2, 97292 Uettingen · 토 17:00–21:30</span><span class="sight-price">숙소 겸 자체 양조장 식당(도보 0분) · ☎ 09369-8221 · <a href="https://www.google.com/maps/search/?api=1&query=Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
         <div class="sight"><span class="sight-name">Da Pippo (Ristorante &amp; Pizzeria)</span><span class="sight-hours">Hauptstraße 4, 97292 Uettingen · 토 17:00–22:00</span><span class="sight-price">이탈리안 · 도보 약 1분(약 30m) · ☎ 09369-2230 · <a href="https://www.google.com/maps/search/?api=1&query=Da+Pippo+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
         <div class="sight"><span class="sight-name">Fränkischer Landgasthof Uettingen</span><span class="sight-hours">Marktheidenfelderstraße 3a, 97292 Uettingen · 토 11:30–13:30, 17:00부터</span><span class="sight-price">프랑켄 향토 요리 · 도보 약 2~3분(약 150m) · <a href="https://www.google.com/maps/search/?api=1&query=Fraenkischer+Landgasthof+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Meau's Thai Restaurant</span><span class="sight-hours">Am Graben 1, 97292 Uettingen · 토 17:00–22:00</span><span class="sight-price">태국 음식 · ☎ 09369 982 4370 · <a href="https://www.google.com/maps/search/?api=1&query=Meaus+Thai+Restaurant+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">도보 거리는 좌표 기준 직선거리로 추정한 값입니다(실제 동선은 조금 더 걸릴 수 있음). 도착이 늦어질 수 있으니 예약·영업 여부는 당일 다시 확인하세요.</p>
       </div>
     </div>
@@ -564,7 +554,7 @@
       <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 뉘른베르크 (밤베르크 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 155km · 약 2시간 10분(선택 스톱 밤베르크 제외 시 · 추정치)</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span></div>
-      <div class="stay-detail"><b>숙박지</b> 뉘른베르크<br>무료주차(인근 공영주차장) · 아파트(45㎡) · 2베드룸(싱글+더블)<br>전자레인지 · 냉장고 · 전기주전자</div>
+      <div class="stay-detail"><b>숙박지</b> 뉘른베르크 · 무료주차(인근 공영주차장) · 아파트(45㎡) · 2베드룸(싱글+더블) · 전자레인지 · 냉장고 · 전기주전자</div>
       <div id="day2map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -595,6 +585,20 @@
         </div>
       </div>
       <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>마리엔베르크 요새(Festung Marienberg)</h3>
+        <p class="landmark-desc">마인강 건너 언덕 위에서 뷔르츠부르크 구시가 전체를 내려다보는 요새. 궁정과 정원은 무료로 둘러볼 수 있습니다.</p>
+        <div class="landmark-meta">요새 부지 4–10월 09:00–18:00 · 11–3월 10:00–16:30 (월요일 휴관) · <span class="landmark-price">부지 무료, 내부 박물관(Museum für Franken)은 별도 유료</span> · <a href="https://www.schloesser.bayern.de/deutsch/schloss/objekte/wu_fest.htm" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Festung+Marienberg+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>알테 마인교(Alte Mainbrücke)</h3>
+        <p class="landmark-desc">성인 조각상들이 늘어선 보행자 다리로, 다리 위에서 보는 마리엔베르크 요새 전망이 특히 유명합니다.</p>
+        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Alte+Mainbruecke+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 성벽 구시가" loading="lazy">
         <div class="landmark-body">
         <h3>로텐부르크 성벽 구시가</h3>
@@ -609,6 +613,14 @@
         <h3>로텐부르크 중세범죄박물관</h3>
         <p class="landmark-desc">중세 사법제도와 고문·처벌 도구를 전시하는 유럽 최대 규모의 법률사 박물관입니다.</p>
         <div class="landmark-meta">10:00–18:00 연중무휴 · <span class="landmark-price">성인 €10.50</span> · <a href="https://www.kriminalmuseum.eu" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Mittelalterliches+Kriminalmuseum+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>플뢴라인(Plönlein)</h3>
+        <p class="landmark-desc">두 갈래 골목 사이에 작은 분수와 목조가옥이 서 있는 삼각지대로, 로텐부르크에서 가장 많이 촬영되는 포토스팟입니다.</p>
+        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Ploenlein+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
         </div>
       </div>
@@ -631,6 +643,48 @@
         </div>
       </div>
       <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>진벨투름(Sinwellturm)</h3>
+        <p class="landmark-desc">카이저부르크 안의 원형 탑. 나선 계단을 올라가면 뉘른베르크 구시가 전체가 내려다보입니다.</p>
+        <div class="landmark-meta">카이저부르크 관람시간과 동일(09:00–18:00, 4–9월) · <span class="landmark-price">카이저부르크 통합권에 포함</span> · <a href="https://www.google.com/maps/search/?api=1&query=Sinwellturm+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>알브레히트 뒤러 하우스(Albrecht-Dürer-Haus)</h3>
+        <p class="landmark-desc">독일 르네상스 화가 알브레히트 뒤러가 실제로 살고 작업했던 목조 가옥. 판화 인쇄 시연도 볼 수 있습니다.</p>
+        <div class="landmark-meta">화–금 10:00–17:00(목 ~20:00) · 토·일 10:00–18:00 (월요일 휴관) · <span class="landmark-price">유료(현장 확인 권장)</span> · <a href="https://museen.nuernberg.de/duererhaus" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Albrecht+Duerer+Haus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>헹커슈텍(Henkersteg)</h3>
+        <p class="landmark-desc">페그니츠강 위에 놓인 목조 지붕 다리로, 중세 사형집행인이 살던 탑과 이어져 이런 이름이 붙었습니다. 사진 명소입니다.</p>
+        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Henkersteg+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>장난감박물관(Spielzeugmuseum)</h3>
+        <p class="landmark-desc">수백 년 역사의 독일 장난감 산업 수도 뉘른베르크의 장난감·인형·모형 컬렉션을 모은 박물관입니다.</p>
+        <div class="landmark-meta">화–금 10:00–17:00 · 토·일 10:00–18:00 (월요일 휴관) · <span class="landmark-price">유료(현장 확인 권장)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Spielzeugmuseum+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>수공예마을(Handwerkerhof)</h3>
+        <p class="landmark-desc">중앙역 바로 옆 성벽 안에 재현한 중세 장인 마을. 유리공예·금속공예 등 공방과 기념품점, 소시지집이 모여 있습니다.</p>
+        <div class="landmark-meta">매장별 상이(대략 10:00–18:00, 겨울철 단축 운영) · <span class="landmark-price">입장 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Handwerkerhof+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>성 요한 묘지(St. Johannisfriedhof)</h3>
+        <p class="landmark-desc">알브레히트 뒤러를 비롯한 뉘른베르크 명사들이 묻힌 역사적인 묘지. 평평하게 눕힌 청동 묘비들이 독특합니다.</p>
+        <div class="landmark-meta">대략 07:30–19:00(계절별 상이) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=St+Johannisfriedhof+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        </div>
+      </div>
+      <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시청사(Altes Rathaus)" loading="lazy">
         <div class="landmark-body">
         <h3>밤베르크 구시청사(Altes Rathaus)</h3>
@@ -641,6 +695,18 @@
         </div>
       </div>
       </div>
+      </div>
+      <div class="sight-list">
+        <h4>맛집 (뷔르츠부르크)</h4>
+        <div class="sight"><span class="sight-name">Bürgerspital Weinstuben</span><span class="sight-hours">구시가·마르크트 인근 · 1319년 설립 자선 와이너리 부속 식당</span><span class="sight-price">꼭 시켜야 할 메뉴: 질바너 화이트와인 + 프렌키셰 슈니첼 · <a href="https://www.google.com/maps/search/?api=1&query=Buergerspital+Weinstuben+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Backöfele</span><span class="sight-hours">구시가 골목 · 35년 전통 향토 식당</span><span class="sight-price">꼭 시켜야 할 메뉴: 프렌키셰 자우어브라텐 + 감자경단 · <a href="https://www.google.com/maps/search/?api=1&query=Backoefele+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
+      </div>
+      <div class="sight-list">
+        <h4>인터내셔널 옵션 (뷔르츠부르크)</h4>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">검색으로 찾은 이름·카테고리만입니다. 정확한 영업시간·구글 평점·브레이크타임은 지도 링크에서 방문 전 꼭 확인하세요.</p>
+        <div class="sight"><span class="sight-name">Locanda Würzburg</span><span class="sight-hours">이탈리안</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Locanda+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Trattoria Lugana</span><span class="sight-hours">이탈리안</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Trattoria+Lugana+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Chay Viet Tadilen</span><span class="sight-hours">동남아식(베트남)</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Chay+Viet+Tadilen+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       <div class="sight-list">
         <h4>맛집 (로텐부르크·뉘른베르크)</h4>
@@ -663,7 +729,7 @@
       <summary class="day-head"><span class="num mono">03</span><span class="day-date mono">9/21(월)</span><h3>뉘른베르크 → 뮌헨 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 290km · 약 3시간 30분</span><span><b>테마</b> 뮌헨 반나절 관광 &amp; 알프스 관문 마을로</span></div>
-      <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 1일차)<br>무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
+      <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 1일차) · 무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
       <div id="day3map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -732,7 +798,7 @@
       <summary class="day-head"><span class="num mono">04</span><span class="day-date mono">9/22(화)</span><h3>퓌센 → 오버아머가우 → 에탈 → 가르미슈 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 130km (오후 루프)</span><span><b>테마</b> 동화 속 성 완주 + 알프스 소도시 루프 (빡빡한 하루)</span></div>
-      <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 2일차, 전날과 동일 숙소)<br>무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
+      <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 2일차, 전날과 동일 숙소) · 무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
       <div id="day4map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -814,7 +880,7 @@
       <summary class="day-head"><span class="num mono">05</span><span class="day-date mono">9/23(수)</span><h3>퓌센 → 켐프텐 → 보덴제(선택) → 티티제 → 프라이부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 315km · 약 4시간 6분 (초장거리 이동일)</span><span><b>테마</b> 알고이에서 흑림 거쳐 프라이부르크까지</span></div>
-      <div class="stay-detail"><b>숙박지</b> 프라이부르크 임 브라이스가우<br>무료주차(인근 공영주차장) · 호텔(34㎡) · 싱글+대형더블<br>* 조식 포함</div>
+      <div class="stay-detail"><b>숙박지</b> 프라이부르크 임 브라이스가우 · 무료주차(인근 공영주차장) · 호텔(34㎡) · 싱글+대형더블 · 조식 포함</div>
       <div id="day5map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -862,7 +928,7 @@
       <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 110km · 약 1시간 18분 (쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 아울렛 쇼핑</span></div>
-      <div class="stay-detail"><b>숙박지</b> 메칭겐<br>무료주차(숙소 전용) · 아파트(38㎡) · 싱글2+더블<br>냉장고 · 전기주전자 · 쿡탑 등 간이주방</div>
+      <div class="stay-detail"><b>숙박지</b> 메칭겐 · 무료주차(숙소 전용) · 아파트(38㎡) · 싱글2+더블 · 냉장고 · 전기주전자 · 쿡탑 등 간이주방</div>
       <div id="day6map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -938,7 +1004,7 @@
       <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → 하이델베르크 → 뤼데스하임 (슈투트가르트·베른카슈텔쿠에스 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 210km · 약 2시간 30분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시 · 추정치)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span></div>
-      <div class="stay-detail"><b>숙박지</b> Trechtingshausen<br>무료주차 · 아파트(80㎡) · 더블+대형더블<br>냉장고 · 전기주전자 · 커피머신 등 간이주방</div>
+      <div class="stay-detail"><b>숙박지</b> Trechtingshausen · 무료주차 · 아파트(80㎡) · 더블+대형더블 · 냉장고 · 전기주전자 · 커피머신 등 간이주방</div>
       <div id="day7map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
