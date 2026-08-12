@@ -340,9 +340,27 @@
   .booking-note ul{ margin:0.3rem 0 0; padding-left:1.1rem; }
   .booking-note li{ margin:0.15rem 0; }
   .booking-note .cash-note{ margin-top:0.5rem; padding-top:0.5rem; border-top:1px dashed var(--warn); }
-  button.topbar-item{ background:none; border:1px solid transparent; cursor:pointer; font:inherit; }
-  button.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
-  html.photos-off .photo-toggle .tb-icon{ background:var(--warn-soft); color:var(--warn); }
+  .photo-toggle-switch{
+    position:fixed; right:1rem; bottom:1rem; z-index:1001;
+    display:flex; align-items:center; gap:0.5rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:999px;
+    padding:0.5rem 0.8rem; box-shadow:var(--shadow); cursor:pointer;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.78rem; font-weight:700; color:var(--ink-soft);
+  }
+  .photo-toggle-switch:hover{ border-color:var(--route); }
+  .pts-track{
+    width:2.2rem; height:1.2rem; border-radius:999px; background:var(--line);
+    position:relative; flex:none; transition:background 0.15s;
+  }
+  .pts-thumb{
+    position:absolute; top:0.12rem; left:0.12rem; width:0.96rem; height:0.96rem;
+    border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,0.35);
+    transition:transform 0.15s;
+  }
+  .photo-toggle-switch[aria-pressed="true"] .pts-track{ background:var(--route); }
+  .photo-toggle-switch[aria-pressed="true"] .pts-thumb{ transform:translateX(1rem); }
+  @media (max-width:640px){ .photo-toggle-switch{ right:0.7rem; bottom:0.7rem; padding:0.45rem 0.7rem; } }
   .landmark-body{ padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:0.6rem; }
   .landmark-body h3{ margin:0; font-size:1.02rem; }
   .landmark-desc{ margin:0; font-size:0.88rem; color:var(--ink-soft); }
@@ -497,18 +515,20 @@
     <a class="topbar-item" href="german-driving-rules.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg></span>운전 규칙</a>
     <a class="topbar-item" href="index.html#checklist"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</a>
     <a class="topbar-item" href="index.html#info"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>비상연락처</a>
-    <button type="button" class="topbar-item photo-toggle" id="photoToggle" aria-pressed="true"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-4.5-4.5-3.5 3.5-2-2L3 19"/></svg></span><span class="pt-label">사진 켜짐</span></button>
   </div>
 </nav>
+
+<button type="button" class="photo-toggle-switch" id="photoToggle" aria-pressed="true">
+  <span class="pts-label">사진</span>
+  <span class="pts-track"><span class="pts-thumb"></span></span>
+</button>
 
 <script>
 (function(){
   var btn = document.getElementById('photoToggle');
-  var label = btn.querySelector('.pt-label');
   function render(){
     var off = document.documentElement.classList.contains('photos-off');
     btn.setAttribute('aria-pressed', String(!off));
-    label.textContent = off ? '사진 꺼짐' : '사진 켜짐';
   }
   btn.addEventListener('click', function(){
     var off = document.documentElement.classList.toggle('photos-off');
@@ -1270,7 +1290,7 @@
     </details>
 
     <details class="day" id="day6">
-      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 블랙 포레스트 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 110km · 약 1시간 18분 (쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 아울렛 쇼핑</span></div>
       <div class="stay-detail"><b>숙박지</b> 메칭겐 · 무료주차(숙소 전용) · 아파트(38㎡) · 싱글2+더블 · 냉장고 · 전기주전자 · 쿡탑 등 간이주방</div>
