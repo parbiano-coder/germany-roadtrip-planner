@@ -282,6 +282,8 @@
   .landmark-meta{ font-size:0.8rem; color:var(--ink-soft); }
   .landmark-meta .landmark-price{ color:var(--route); font-weight:700; font-family:"SF Mono","Consolas",monospace; }
   .landmark-parking{ font-size:0.78rem; color:var(--ink-soft); }
+    .stay-detail{ margin:-0.3rem 0 1rem; padding:0.6rem 0.9rem; background:var(--sign-soft); border-radius:2px; font-size:0.85rem; line-height:1.6; color:var(--ink); }
+  .stay-detail b{ color:var(--sign); }
     .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
   @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
   svg.day-map{ width:100%; height:auto; display:block; max-height:280px; }
@@ -504,7 +506,8 @@
     <details class="day" id="day1">
       <summary class="day-head"><span class="num mono">01</span><span class="day-date mono">9/19(토)</span><h3>프랑크푸르트 공항 (픽업, 17:40 입국) → 뷔르츠부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 120km · 약 1시간 20분 (논스톱)</span><span><b>테마</b> 17:40 입국 &amp; 이동만 하는 날</span><span><b>숙박지</b> 웨틴겐</span></div>
+      <div class="day-meta"><span><b>주행</b> 120km · 약 1시간 20분 (논스톱)</span><span><b>테마</b> 17:40 입국 &amp; 이동만 하는 날</span></div>
+      <div class="stay-detail"><b>숙박지</b> 웨틴겐<br>무료주차 · 아파트(45㎡) · 싱글+더블</div>
       <div id="day1map" class="day-leaflet-map"></div>
       <div class="sight-list">
         <h4>렌터카 픽업 (Hertz)</h4>
@@ -539,18 +542,20 @@
         <div class="sight"><span class="sight-name">Chay Viet Tadilen</span><span class="sight-hours">동남아식(베트남)</span><span class="sight-price">검색 상위 노출 · <a href="https://www.google.com/maps/search/?api=1&query=Chay+Viet+Tadilen+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       <div class="sight-list">
-        <h4>대형 슈퍼마켓 (공항→위팅엔 경로 상)</h4>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">모두 월–토 07:00–20:00, 일요일 휴무입니다. 20:20~20:50 도착 예상이라 시간이 매우 빠듯하니(20시 마감), 늦어질 것 같으면 공항 인근 주유소 매점에서 최소한만 해결하는 것도 방법입니다.</p>
-        <div class="sight"><span class="sight-name">E center Weidenhammer (Marktheidenfeld)</span><span class="sight-hours">Äußerer Ring 51, 97828 Marktheidenfeld · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">A3에서 위팅엔 직전, 가장 큰 매장 · <a href="https://www.google.com/maps/search/?api=1&query=E+center+Weidenhammer+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Kaufland (Würzburg-Lengfeld)</span><span class="sight-hours">Industriestraße 3, 97076 Würzburg · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">☎ +49 931 4543470 · <a href="https://www.google.com/maps/search/?api=1&query=Kaufland+Industriestrasse+3+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">REWE (Rottendorfer Straße, 뷔르츠부르크)</span><span class="sight-hours">Rottendorfer Straße 67, 97074 Würzburg · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">뷔르츠부르크 시내 경유 시 · <a href="https://www.google.com/maps/search/?api=1&query=REWE+Rottendorfer+Strasse+67+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
+        <h4>대형 슈퍼마켓 — 이동시간 안 늘고 영업시간 여유있는 순</h4>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">20:20~20:50 도착 예상이라 매우 빠듯합니다(대부분 20시 마감). 1·2번은 경로에서 거의 벗어나지 않고, 3번은 24시간이라 늦어져도 확실한 대안입니다.</p>
+        <div class="sight"><span class="sight-name">① Netto Marken-Discount (Helmstadt)</span><span class="sight-hours">Würzburger Straße 35a, 97264 Helmstadt · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">위팅엔과 같은 생활권, 경로 이탈 거의 없음 · <a href="https://www.google.com/maps/search/?api=1&query=Netto+Marken-Discount+Wuerzburger+Strasse+35a+Helmstadt" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">② E center Weidenhammer (Marktheidenfeld)</span><span class="sight-hours">Äußerer Ring 51, 97828 Marktheidenfeld · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">A3에서 위팅엔 직전, 셋 중 가장 큰 매장 · <a href="https://www.google.com/maps/search/?api=1&query=E+center+Weidenhammer+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">③ Aral Tankstelle (A3 Würzburg-Süd)</span><span class="sight-hours">A3 Würzburg Süd, 97084 Würzburg · 24시간 연중무휴</span><span class="sight-price">주유소 매점(소규모) · A3 경로 위, 20시 넘어도 확실 · <a href="https://www.google.com/maps/search/?api=1&query=Aral+Tankstelle+A3+Wuerzburg+Sued" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">④ Kaufland (Würzburg-Lengfeld)</span><span class="sight-hours">Industriestraße 3, 97076 Würzburg · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">뷔르츠부르크 시내 경유 필요 · ☎ +49 931 4543470 · <a href="https://www.google.com/maps/search/?api=1&query=Kaufland+Industriestrasse+3+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">⑤ REWE (Rottendorfer Straße, 뷔르츠부르크)</span><span class="sight-hours">Rottendorfer Straße 67, 97074 Würzburg · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">뷔르츠부르크 시내 경유 필요 · <a href="https://www.google.com/maps/search/?api=1&query=REWE+Rottendorfer+Strasse+67+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       <div class="sight-list">
-        <h4>저녁 식사 (위팅엔, 도보권)</h4>
-        <div class="sight"><span class="sight-name">Zur Alten Brauerei Zapf</span><span class="sight-hours">Kirchplatz 2, 97292 Uettingen · 토 17:00–21:30</span><span class="sight-price">숙소 겸 자체 양조장 식당 · ☎ 09369-8221 · <a href="https://www.google.com/maps/search/?api=1&query=Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Da Pippo (Ristorante &amp; Pizzeria)</span><span class="sight-hours">Hauptstraße 4, 97292 Uettingen · 토 17:00–22:00</span><span class="sight-price">이탈리안 · ☎ 09369-2230 · <a href="https://www.google.com/maps/search/?api=1&query=Da+Pippo+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Fränkischer Landgasthof Uettingen</span><span class="sight-hours">Marktheidenfelderstraße 3a, 97292 Uettingen · 토 11:30–13:30, 17:00부터</span><span class="sight-price">프랑켄 향토 요리 · <a href="https://www.google.com/maps/search/?api=1&query=Fraenkischer+Landgasthof+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">모두 위팅엔 마을 안, 도보 5~10분 거리입니다. 도착이 늦어질 수 있으니 예약·영업 여부는 당일 다시 확인하세요.</p>
+        <h4>저녁 식사 (위팅엔, Brauerei Zapf 기준 도보 거리)</h4>
+        <div class="sight"><span class="sight-name">Zur Alten Brauerei Zapf</span><span class="sight-hours">Kirchplatz 2, 97292 Uettingen · 토 17:00–21:30</span><span class="sight-price">숙소 겸 자체 양조장 식당(도보 0분) · ☎ 09369-8221 · <a href="https://www.google.com/maps/search/?api=1&query=Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Da Pippo (Ristorante &amp; Pizzeria)</span><span class="sight-hours">Hauptstraße 4, 97292 Uettingen · 토 17:00–22:00</span><span class="sight-price">이탈리안 · 도보 약 1분(약 30m) · ☎ 09369-2230 · <a href="https://www.google.com/maps/search/?api=1&query=Da+Pippo+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Fränkischer Landgasthof Uettingen</span><span class="sight-hours">Marktheidenfelderstraße 3a, 97292 Uettingen · 토 11:30–13:30, 17:00부터</span><span class="sight-price">프랑켄 향토 요리 · 도보 약 2~3분(약 150m) · <a href="https://www.google.com/maps/search/?api=1&query=Fraenkischer+Landgasthof+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">도보 거리는 좌표 기준 직선거리로 추정한 값입니다(실제 동선은 조금 더 걸릴 수 있음). 도착이 늦어질 수 있으니 예약·영업 여부는 당일 다시 확인하세요.</p>
       </div>
     </div>
     </details>
@@ -558,7 +563,8 @@
     <details class="day" id="day2">
       <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 뉘른베르크 (밤베르크 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 155km · 약 2시간 10분(선택 스톱 밤베르크 제외 시 · 추정치)</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span><span><b>숙박지</b> 뉘른베르크</span></div>
+      <div class="day-meta"><span><b>주행</b> 155km · 약 2시간 10분(선택 스톱 밤베르크 제외 시 · 추정치)</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span></div>
+      <div class="stay-detail"><b>숙박지</b> 뉘른베르크<br>무료주차(인근 공영주차장) · 아파트(45㎡) · 2베드룸(싱글+더블)<br>전자레인지 · 냉장고 · 전기주전자</div>
       <div id="day2map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -656,7 +662,8 @@
     <details class="day" id="day3">
       <summary class="day-head"><span class="num mono">03</span><span class="day-date mono">9/21(월)</span><h3>뉘른베르크 → 뮌헨 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 290km · 약 3시간 30분</span><span><b>테마</b> 뮌헨 반나절 관광 &amp; 알프스 관문 마을로</span><span><b>숙박지</b> 퓌센</span></div>
+      <div class="day-meta"><span><b>주행</b> 290km · 약 3시간 30분</span><span><b>테마</b> 뮌헨 반나절 관광 &amp; 알프스 관문 마을로</span></div>
+      <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 1일차)<br>무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
       <div id="day3map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -724,7 +731,8 @@
     <details class="day" id="day4">
       <summary class="day-head"><span class="num mono">04</span><span class="day-date mono">9/22(화)</span><h3>퓌센 → 오버아머가우 → 에탈 → 가르미슈 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 약 130km (오후 루프)</span><span><b>테마</b> 동화 속 성 완주 + 알프스 소도시 루프 (빡빡한 하루)</span><span><b>숙박지</b> 퓌센</span></div>
+      <div class="day-meta"><span><b>주행</b> 약 130km (오후 루프)</span><span><b>테마</b> 동화 속 성 완주 + 알프스 소도시 루프 (빡빡한 하루)</span></div>
+      <div class="stay-detail"><b>숙박지</b> 퓌센 (2박 중 2일차, 전날과 동일 숙소)<br>무료주차 또는 유료주차(€15/1일, 숙소 인근) · 아파트(20㎡) · 더블+대형더블</div>
       <div id="day4map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -805,7 +813,8 @@
     <details class="day" id="day5">
       <summary class="day-head"><span class="num mono">05</span><span class="day-date mono">9/23(수)</span><h3>퓌센 → 켐프텐 → 보덴제(선택) → 티티제 → 프라이부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 315km · 약 4시간 6분 (초장거리 이동일)</span><span><b>테마</b> 알고이에서 흑림 거쳐 프라이부르크까지</span><span><b>숙박지</b> 프라이부르크</span></div>
+      <div class="day-meta"><span><b>주행</b> 315km · 약 4시간 6분 (초장거리 이동일)</span><span><b>테마</b> 알고이에서 흑림 거쳐 프라이부르크까지</span></div>
+      <div class="stay-detail"><b>숙박지</b> 프라이부르크 임 브라이스가우<br>무료주차(인근 공영주차장) · 호텔(34㎡) · 싱글+대형더블<br>* 조식 포함</div>
       <div id="day5map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -852,7 +861,8 @@
     <details class="day" id="day6">
       <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 110km · 약 1시간 18분 (쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 아울렛 쇼핑</span><span><b>숙박지</b> 메칭겐</span></div>
+      <div class="day-meta"><span><b>주행</b> 110km · 약 1시간 18분 (쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 아울렛 쇼핑</span></div>
+      <div class="stay-detail"><b>숙박지</b> 메칭겐<br>무료주차(숙소 전용) · 아파트(38㎡) · 싱글2+더블<br>냉장고 · 전기주전자 · 쿡탑 등 간이주방</div>
       <div id="day6map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -927,7 +937,8 @@
     <details class="day" id="day7">
       <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → 하이델베르크 → 뤼데스하임 (슈투트가르트·베른카슈텔쿠에스 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 210km · 약 2시간 30분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시 · 추정치)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span><span><b>숙박지</b> Trechtingshausen</span></div>
+      <div class="day-meta"><span><b>주행</b> 210km · 약 2시간 30분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시 · 추정치)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span></div>
+      <div class="stay-detail"><b>숙박지</b> Trechtingshausen<br>무료주차 · 아파트(80㎡) · 더블+대형더블<br>냉장고 · 전기주전자 · 커피머신 등 간이주방</div>
       <div id="day7map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
