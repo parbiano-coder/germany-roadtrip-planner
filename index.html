@@ -241,10 +241,10 @@
     display:inline-block; width:0.62rem; height:0.62rem; border-radius:50%;
     margin-right:0.4rem; vertical-align:middle;
   }
-  .map-legend .lg-stay{ background:var(--route); }
-  .map-legend .lg-way{ background:var(--sign); }
-  .map-legend .lg-optional{ background:none; border:1.5px dashed var(--sign); }
-  .map-legend .lg-ref{ background:var(--ink-soft); opacity:0.55; }
+  .map-legend .lg-stay{ background:var(--ink-soft); width:0.95rem; height:0.95rem; }
+  .map-legend .lg-way{ background:var(--ink-soft); }
+  .map-legend .lg-optional{ background:none; border:1.5px dashed var(--ink-soft); }
+  .map-legend .lg-ref{ background:var(--ink-soft); opacity:0.4; }
   .route-subhead{
     margin:2.2rem 0 0.6rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em;
     color:var(--ink-soft); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
@@ -457,11 +457,12 @@
 
     <div id="map"></div>
     <div class="map-legend">
-      <span><i class="lg-stay"></i>숫자 = 숙박 도시</span>
-      <span><i class="lg-way"></i>방문 도시</span>
-      <span><i class="lg-optional"></i>선택 스톱</span>
-      <span><i class="lg-ref"></i>미방문</span>
+      <span><i class="lg-stay"></i>큰 원 = 숙박 도시</span>
+      <span><i class="lg-way"></i>작은 원 = 방문 도시</span>
+      <span><i class="lg-optional"></i>점선 테두리 = 선택 스톱</span>
+      <span><i class="lg-ref"></i>회색 = 미방문</span>
     </div>
+    <p class="map-legend-note">색상은 권역을 나타냅니다 — 아래 권역 카드의 색과 같습니다.</p>
     <p class="map-legend-note">마커를 클릭하면 도시명과 방문 일차가 표시됩니다.</p>
     <div class="region-grid">
       <div class="region-card">
@@ -594,16 +595,6 @@
         </div>
       </div>
       <div class="landmark-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시청사(Altes Rathaus)" loading="lazy">
-        <div class="landmark-body">
-        <h3>밤베르크 구시청사(Altes Rathaus)</h3>
-        <p class="landmark-desc">레그니츠강 한가운데 인공섬 위에 세워진 독특한 시청사. 강 양쪽 다리에서 보는 모습이 밤베르크의 상징입니다.</p>
-        <div class="landmark-meta">다리 위 외관은 상시 관람 무료 · 내부 도자기 박물관은 화–일 09:30–16:30 · <span class="landmark-price">외관 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Bamberg" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 구시청사 도보 5분(Parkhaus Geyerswörth) · 유료(30분당 €1, 1일 최대 €18)</div>
-        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>밤베르크 구시가 전체가 유네스코 세계유산으로 지정된 드문 도시. 시청사가 강 한가운데 인공섬 위에 지어진 독특한 구조는 주교와 시민 사이 권력 다툼이 낳은 타협의 결과라는 이야기가 전해집니다.</div>
-        </div>
-      </div>
-      <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nuernberg_Burg_Panorama_PtGUI.jpg/500px-Nuernberg_Burg_Panorama_PtGUI.jpg" alt="카이저부르크 뉘른베르크" loading="lazy">
         <div class="landmark-body">
         <h3>카이저부르크 뉘른베르크</h3>
@@ -619,6 +610,16 @@
         <p class="landmark-desc">뉘른베르크 전범재판이 실제로 열렸던 법정 600호를 그대로 보존한 기념관입니다.</p>
         <div class="landmark-meta">10:00–18:00 (화요일 휴관) · <span class="landmark-price">€7.50</span> · <a href="https://museen.nuernberg.de/memorium-nuernberger-prozesse" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Memorium+Nuernberger+Prozesse" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 주변 노상 유료주차 위주 · 현장 확인 권장</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시청사(Altes Rathaus)" loading="lazy">
+        <div class="landmark-body">
+        <h3>밤베르크 구시청사(Altes Rathaus)</h3>
+        <p class="landmark-desc">레그니츠강 한가운데 인공섬 위에 세워진 독특한 시청사. 강 양쪽 다리에서 보는 모습이 밤베르크의 상징입니다.</p>
+        <div class="landmark-meta">다리 위 외관은 상시 관람 무료 · 내부 도자기 박물관은 화–일 09:30–16:30 · <span class="landmark-price">외관 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Bamberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 구시청사 도보 5분(Parkhaus Geyerswörth) · 유료(30분당 €1, 1일 최대 €18)</div>
+        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>밤베르크 구시가 전체가 유네스코 세계유산으로 지정된 드문 도시. 시청사가 강 한가운데 인공섬 위에 지어진 독특한 구조는 주교와 시민 사이 권력 다툼이 낳은 타협의 결과라는 이야기가 전해집니다.</div>
         </div>
       </div>
       </div>
@@ -845,7 +846,7 @@
         </div>
         <div>
           <h4>팁</h4>
-          <p class="tip">트리베르크 폭포·뻐꾸기시계 원조 마을은 이번엔 밤베르크처럼 옵션으로 남겨뒀습니다 — 가려면 프라이부르크에서 왕복 약 1시간 40분이 추가로 필요합니다. 이미 5일차 티티제에서 뻐꾸기시계 공방을 들르니 꼭 가야 하는 코스는 아닙니다. 벤츠·포르쉐 박물관은 다음날(7일차) 오전으로 이어집니다.</p>
+          <p class="tip">트리베르크 폭포·뻐꾸기시계 원조 마을은 이번엔 밤베르크처럼 선택 사항으로 남겨뒀습니다 — 가려면 프라이부르크에서 왕복 약 1시간 40분이 추가로 필요합니다. 이미 5일차 티티제에서 뻐꾸기시계 공방을 들르니 꼭 가야 하는 코스는 아닙니다. 벤츠·포르쉐 박물관은 다음날(7일차) 오전으로 이어집니다.</p>
         </div>
       </div>
       <div class="sight-list">
@@ -876,7 +877,7 @@
       </div>
       <div class="landmark-card">
         <div class="landmark-body">
-        <h3>[옵션] 트리베르크 폭포(Triberger Wasserfälle)</h3>
+        <h3>[선택] 트리베르크 폭포(Triberger Wasserfälle)</h3>
         <p class="landmark-desc">독일에서 가장 높은 폭포. 프라이부르크에서 왕복 약 1시간 40분 걸려 이번 일정에서는 선택 사항입니다.</p>
         <div class="landmark-meta">상시 개방(입장료 징수 09:00–19:00) · <span class="landmark-price">€7~9(시즌별 상이)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Triberger+Wasserfaelle" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 시내 곳곳 소규모 주차장 · 유료(시간당 약 €1~2) · 현장 확인 권장</div>
@@ -941,15 +942,6 @@
         </div>
       </div>
       <div class="landmark-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg/500px-Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg" alt="슈투트가르트 슐로스광장" loading="lazy">
-        <div class="landmark-body">
-        <h3>슈투트가르트 슐로스광장</h3>
-        <p class="landmark-desc">노이에스 슐로스와 분수가 있는 시내 중심 광장. 슈투트가르트를 짧게 들를 때 가장 먼저 갈 만한 곳입니다.</p>
-        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Schlossplatz+Stuttgart" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 중앙역·시내 중심(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
-        </div>
-      </div>
-      <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg" alt="하이델베르크 성 (Schlossticket)" loading="lazy">
         <div class="landmark-body">
         <h3>하이델베르크 성 (Schlossticket)</h3>
@@ -966,6 +958,15 @@
         <p class="landmark-desc">모젤강을 따라 늘어선 포도밭과 목조가옥이 어우러진 와인마을입니다.</p>
         <div class="landmark-meta">광장 상시 개방 · 성터는 도보 약 30분 등반(전망 무료) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Marktplatz+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 마르크트광장 도보 몇 분(P3/P4 Moselufer) · 유료(요금 미확인, 현장 정산기 확인)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg/500px-Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg" alt="슈투트가르트 슐로스광장" loading="lazy">
+        <div class="landmark-body">
+        <h3>슈투트가르트 슐로스광장</h3>
+        <p class="landmark-desc">노이에스 슐로스와 분수가 있는 시내 중심 광장. 슈투트가르트를 짧게 들를 때 가장 먼저 갈 만한 곳입니다.</p>
+        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Schlossplatz+Stuttgart" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역·시내 중심(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
         </div>
       </div>
       </div>
@@ -1137,8 +1138,9 @@
   L.polyline(routeLine, { color: '#0b3c6e', weight: 2, opacity: 0.45, dashArray: '4 5' }).addTo(map);
 
   stops.forEach(function(s){
+    var isStay = s[3].indexOf('숙박') !== -1;
     L.circleMarker([s[0], s[1]], {
-      radius: 7, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: s[5] ? 0.5 : 0.95,
+      radius: isStay ? 10 : 6, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: s[5] ? 0.5 : 0.95,
       dashArray: s[5] ? '3 2' : null
     }).addTo(map).bindPopup('<b>' + s[2] + '</b><br>' + s[3]);
   });
