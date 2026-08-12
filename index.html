@@ -199,7 +199,22 @@
   }
 
   /* ---------- Germany map ---------- */
-  .map-wrap{
+  #map{ height:480px; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  .leaflet-popup-content-wrapper{ border-radius:3px; }
+  .map-legend-note{ margin:0.8rem 0 0; font-size:0.78rem; color:var(--ink-soft); text-align:center; }
+  .region-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.9rem; margin-top:1.2rem; }
+  .region-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:0.9rem 1rem; box-shadow:var(--shadow);
+  }
+  .region-card .dot{ display:inline-block; width:0.7rem; height:0.7rem; border-radius:50%; margin-right:0.5rem; vertical-align:middle; }
+  .region-card h3{ display:inline; font-size:0.98rem; margin:0; vertical-align:middle; }
+  .region-card .days{
+    display:block; font-family:"SF Mono","Consolas",monospace; font-size:0.72rem; color:var(--ink-soft);
+    margin:0.25rem 0 0.4rem 1.2rem;
+  }
+  .region-card p{ margin:0; font-size:0.86rem; color:var(--ink-soft); }
+    .map-wrap{
     background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
     box-shadow:var(--shadow); padding:1.4rem 1.2rem 1rem; max-width:640px; margin:0 auto;
   }
@@ -264,10 +279,11 @@
   }
   @media (max-width:640px){ .day-chip::after{ right:-0.68rem; font-size:0.9rem; } }
   .day-chip:nth-child(4n)::after{ content:none; }
-  .day-chip:nth-child(4)::before{
-    content:"↓"; position:absolute; left:50%; bottom:-1.4rem; transform:translateX(-50%);
-    color:var(--ink-soft); font-size:1.05rem; pointer-events:none;
+  .day-chip:nth-child(5)::before{
+    content:"→"; position:absolute; top:50%; left:-1.15rem; transform:translateY(-50%);
+    color:var(--ink-soft); font-size:1.2rem; font-weight:700; pointer-events:none;
   }
+  @media (max-width:640px){ .day-chip:nth-child(5)::before{ left:-0.68rem; font-size:0.9rem; } }
   .day-chip:hover, .day-chip:focus-visible{ border-color:var(--route); }
   .dc-label{
     display:block; font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
@@ -418,116 +434,29 @@
     <h2>지도로 보는 전체 경로</h2>
     <p class="lede">프랑크푸르트 공항에서 출발해 반시계 방향으로 도는 순환 코스입니다. 뮌헨·베를린·함부르크·쾰른은 이번 여행에서 가지 않지만 위치 참고용으로 표시했습니다.</p>
 
-    <div class="map-wrap">
-      <svg viewBox="0 0 640 860" role="img" aria-labelledby="mapTitle mapDesc" class="de-map">
-        <title id="mapTitle">독일 지도 위 로드트립 경로</title>
-        <desc id="mapDesc">프랑크푸르트 공항에서 출발해 뷔르츠부르크(야간 도착), 로텐부르크, 밤베르크, 뉘른베르크, 뮌헨(반나절), 퓌센(2박, 오버아머가우·에탈·파르트나흐클람 포함), 켐프텐, 티티제, 프라이부르크, 메칭겐, 슈투트가르트, 하이델베르크, 베른카슈텔쿠에스, 뤼데스하임, 비스바덴을 거쳐 다시 프랑크푸르트 공항으로 돌아오는 7박 8일 경로. 베를린·함부르크·쾰른은 방문하지 않는 참고용 위치입니다.</desc>
-        <defs>
-          <pattern id="gridDots" width="26" height="26" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="var(--ink)" opacity="0.14" />
-          </pattern>
-        </defs>
-        <path class="de-land" d="M177.1,21.8 L245.1,27.3 L306.4,76.2 L360.9,54.4 L428.9,119.7 L503.9,76.2 L572.1,130.6 L599.2,239.4 L612.8,359.2 L578.7,457.3 L456.1,533.3 L462.9,609.6 L544.7,696.7 L483.5,805.6 L381.3,827.4 L313.2,843.6 L275.7,811.0 L132.8,805.6 L122.5,772.9 L142.9,664.0 L122.5,641.9 L40.8,609.6 L20.4,538.9 L13.6,473.6 L6.8,440.9 L88.5,304.8 L88.5,152.4 L183.9,130.6 Z"/>
-        <path d="M177.1,21.8 L245.1,27.3 L306.4,76.2 L360.9,54.4 L428.9,119.7 L503.9,76.2 L572.1,130.6 L599.2,239.4 L612.8,359.2 L578.7,457.3 L456.1,533.3 L462.9,609.6 L544.7,696.7 L483.5,805.6 L381.3,827.4 L313.2,843.6 L275.7,811.0 L132.8,805.6 L122.5,772.9 L142.9,664.0 L122.5,641.9 L40.8,609.6 L20.4,538.9 L13.6,473.6 L6.8,440.9 L88.5,304.8 L88.5,152.4 L183.9,130.6 Z" fill="url(#gridDots)"/>
-
-        <path class="route-casing" d="M196.1,543.2 L281.2,578.1 L298.2,622.7 L346.6,567.2 L359.5,615.1 L393.5,757.7 L333.6,819.7 L307.7,802.3 L160.0,781.6 L139.6,773.4 L236.9,714.1 L230.1,687.9 L198.1,619.4 L86.5,563.9 L143.7,557.4 L166.1,546.5 L196.1,543.2"/>
-        <path class="route-line" d="M196.1,543.2 L281.2,578.1 L298.2,622.7 L346.6,567.2 L359.5,615.1 L393.5,757.7 L333.6,819.7 L307.7,802.3 L160.0,781.6 L139.6,773.4 L236.9,714.1 L230.1,687.9 L198.1,619.4 L86.5,563.9 L143.7,557.4 L166.1,546.5 L196.1,543.2"/>
-
-        <g>
-          <circle class="badge-circle start" cx="186" cy="532" r="11"/>
-          <text class="badge-text" x="186" y="532">1</text>
-          <circle class="badge-circle start" cx="208" cy="555" r="11"/>
-          <text class="badge-text" x="208" y="555">8</text>
-          <text class="city-label" x="196" y="586" text-anchor="middle">프랑크푸르트 공항</text>
-          <text class="city-sub" x="196" y="599" text-anchor="middle">FRA · 픽업 / 반납</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="281.2" cy="578.1" r="11"/>
-          <text class="badge-text" x="281.2" y="578.1">1</text>
-          <text class="city-label" x="298" y="585" text-anchor="start">뷔르츠부르크</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle" cx="298.2" cy="622.7" r="6"/>
-          <text class="waypoint-label" x="315" y="626" text-anchor="start">로텐부르크</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle optional" cx="346.6" cy="567.2" r="6"/>
-          <text class="waypoint-label" x="363" y="564" text-anchor="start">밤베르크</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="359.5" cy="615.1" r="11"/>
-          <text class="badge-text" x="359.5" y="615.1">2</text>
-          <text class="city-label" x="376" y="612" text-anchor="start">뉘른베르크</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle" cx="393.5" cy="757.7" r="6"/>
-          <text class="waypoint-label" x="410" y="754" text-anchor="start">뮌헨</text>
-          <text class="city-sub" x="410" y="766" text-anchor="start">옥토버페스트 반나절</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="333.6" cy="819.7" r="13"/>
-          <text class="badge-text" x="333.6" y="819.7" style="font-size:9px">3·4</text>
-          <text class="city-label" x="352" y="845" text-anchor="start">퓌센 (2박)</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle" cx="307.7" cy="802.3" r="6"/>
-          <text class="waypoint-label" x="270" y="788" text-anchor="end">켐프텐</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle" cx="160.0" cy="781.6" r="6"/>
-          <text class="waypoint-label" x="178" y="785" text-anchor="start">티티제(흑림)</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="139.6" cy="773.4" r="11"/>
-          <text class="badge-text" x="139.6" y="773.4">5</text>
-          <text class="city-label" x="118" y="752" text-anchor="end">프라이부르크</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="236.9" cy="714.1" r="11"/>
-          <text class="badge-text" x="236.9" y="714.1">6</text>
-          <text class="city-label" x="252" y="732" text-anchor="start">메칭겐(아울렛)</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle optional" cx="230.1" cy="687.9" r="6"/>
-          <text class="waypoint-label" x="212" y="684" text-anchor="end">슈투트가르트</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle" cx="198.1" cy="619.4" r="6"/>
-          <text class="waypoint-label" x="180" y="616" text-anchor="end">하이델베르크</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle optional" cx="86.5" cy="563.9" r="6"/>
-          <text class="waypoint-label" x="68" y="561" text-anchor="end">베른카슈텔쿠에스</text>
-        </g>
-        <g>
-          <circle class="badge-circle" cx="143.7" cy="557.4" r="11"/>
-          <text class="badge-text" x="143.7" y="557.4">7</text>
-          <text class="city-label" x="128" y="540" text-anchor="end">뤼데스하임</text>
-        </g>
-        <g>
-          <circle class="waypoint-circle optional" cx="166.1" cy="546.5" r="6"/>
-          <text class="waypoint-label" x="166" y="568" text-anchor="middle">비스바덴</text>
-        </g>
-
-        <g>
-          <circle class="ref-circle" cx="517.4" cy="280.9" r="5"/>
-          <text class="ref-label" x="534" y="285" text-anchor="start">베를린</text>
-        </g>
-        <g>
-          <circle class="ref-circle" cx="285.3" cy="168.7" r="5"/>
-          <text class="ref-label" x="302" y="173" text-anchor="start">함부르크</text>
-        </g>
-        <g>
-          <circle class="ref-circle" cx="79.0" cy="452.9" r="5"/>
-          <text class="ref-label" x="96" y="457" text-anchor="start">쾰른</text>
-        </g>
-      </svg>
-    </div>
-    <div class="map-legend">
-      <span><i class="lg-stay"></i>숫자 = 숙박 도시</span>
-      <span><i class="lg-way"></i>방문 도시</span>
-      <span><i class="lg-optional"></i>선택 스톱</span>
-      <span><i class="lg-ref"></i>미방문</span>
+    <div id="map"></div>
+    <p class="map-legend-note">마커를 클릭하면 도시명과 방문 일차가 표시됩니다. 점선 테두리 마커는 시간 되면 들르는 선택 스톱, 회색 마커는 이번 여행에서 가지 않는 참고용 위치입니다.</p>
+    <div class="region-grid">
+      <div class="region-card">
+        <span class="dot" style="background:#e2725b;"></span><h3>프랑켄</h3>
+        <span class="days">1~2일차 · 9/19–20</span>
+        <p>뷔르츠부르크·로텐부르크·밤베르크·뉘른베르크 — 와인과 브랏부어스트, 중세 성벽 마을의 땅</p>
+      </div>
+      <div class="region-card">
+        <span class="dot" style="background:#c2492f;"></span><h3>바이에른 알프스</h3>
+        <span class="days">3~4일차 · 9/21–22</span>
+        <p>뮌헨(옥토버페스트 반나절)·퓌센·켐프텐 — 동화 속 성이 서 있는 알고이 산악 지역</p>
+      </div>
+      <div class="region-card">
+        <span class="dot" style="background:#2f6f4f;"></span><h3>흑림 · 슈바벤</h3>
+        <span class="days">5~6일차 · 9/23–24</span>
+        <p>티티제·프라이부르크·메칭겐·슈투트가르트 — 울창한 숲과 독일 자동차 산업의 땅</p>
+      </div>
+      <div class="region-card">
+        <span class="dot" style="background:#3a6ea5;"></span><h3>라인 · 모젤</h3>
+        <span class="days">7~8일차 · 9/25–26</span>
+        <p>하이델베르크·베른카슈텔쿠에스·뤼데스하임·비스바덴 — 고성과 와인가도가 이어지는 강변</p>
+      </div>
     </div>
 
     <h3 class="route-subhead">일정 한눈에 보기</h3>
@@ -600,7 +529,7 @@
     </details>
 
     <details class="day" id="day2">
-      <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 밤베르크 → 뉘른베르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 밤베르크(선택) → 뉘른베르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 225km · 약 2시간 55분</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span><span><b>숙박지</b> 뉘른베르크</span></div>
       <div class="day-map-wrap">
@@ -735,7 +664,7 @@
     </details>
 
     <details class="day" id="day4">
-      <summary class="day-head"><span class="num mono">04</span><span class="day-date mono">9/22(화)</span><h3>퓌센 체류 — 노이슈반슈타인 성 &amp; 오버아머가우·에탈·파르트나흐클람</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">04</span><span class="day-date mono">9/22(화)</span><h3>퓌센 → 오버아머가우 → 에탈 → 가르미슈 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 130km (오후 루프)</span><span><b>테마</b> 동화 속 성 완주 + 알프스 소도시 루프 (빡빡한 하루)</span><span><b>숙박지</b> 퓌센</span></div>
       <div class="day-map-wrap">
@@ -1142,6 +1071,64 @@
 
 
 </main>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  if (typeof L === 'undefined') return;
+  var mapEl = document.getElementById('map');
+  if (!mapEl) return;
+  var map = L.map('map', { scrollWheelZoom: false }).setView([48.9, 9.3], 6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  var franken = '#e2725b', alps = '#c2492f', schwarzwald = '#2f6f4f', rhein = '#3a6ea5', ref = '#9aa3a8';
+
+  var stops = [
+    [50.11, 8.68, '프랑크푸르트 공항', '1·8일차 · 픽업/반납', franken, false],
+    [49.79, 9.93, '뷔르츠부르크', '1일차 · 숙박', franken, false],
+    [49.38, 10.18, '로텐부르크', '2일차 · 방문', franken, false],
+    [49.89, 10.89, '밤베르크', '2일차 · 선택 스톱', franken, true],
+    [49.45, 11.08, '뉘른베르크', '2일차 · 숙박', franken, false],
+    [48.14, 11.58, '뮌헨', '3일차 · 반나절 방문(옥토버페스트)', alps, false],
+    [47.57, 10.70, '퓌센', '3~4일차 · 숙박(2박)', alps, false],
+    [47.73, 10.32, '켐프텐', '5일차 · 방문', alps, false],
+    [47.92, 8.15, '티티제(흑림)', '5일차 · 방문', schwarzwald, false],
+    [47.995, 7.85, '프라이부르크', '5일차 · 숙박', schwarzwald, false],
+    [48.54, 9.28, '메칭겐', '6일차 · 숙박(아울렛)', schwarzwald, false],
+    [48.78, 9.18, '슈투트가르트', '7일차 · 선택 스톱', schwarzwald, true],
+    [49.41, 8.71, '하이델베르크', '7일차 · 방문', rhein, false],
+    [49.92, 7.07, '베른카슈텔쿠에스', '7일차 · 선택 스톱', rhein, true],
+    [49.98, 7.91, '뤼데스하임', '7일차 · 숙박', rhein, false],
+    [50.08, 8.24, '비스바덴', '8일차 · 선택 스톱', rhein, true]
+  ];
+
+  var refPoints = [
+    [52.52, 13.40, '베를린'],
+    [53.55, 9.99, '함부르크'],
+    [50.94, 6.96, '쾰른']
+  ];
+
+  var routeLine = stops.map(function(s){ return [s[0], s[1]]; });
+  L.polyline(routeLine, { color: '#0b3c6e', weight: 2, opacity: 0.45, dashArray: '4 5' }).addTo(map);
+
+  stops.forEach(function(s){
+    L.circleMarker([s[0], s[1]], {
+      radius: 7, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: s[5] ? 0.5 : 0.95,
+      dashArray: s[5] ? '3 2' : null
+    }).addTo(map).bindPopup('<b>' + s[2] + '</b><br>' + s[3]);
+  });
+
+  refPoints.forEach(function(r){
+    L.circleMarker([r[0], r[1]], {
+      radius: 5, color: '#fffdf7', weight: 1.5, fillColor: ref, fillOpacity: 0.85
+    }).addTo(map).bindPopup('<b>' + r[2] + '</b><br>미방문 참고 위치');
+  });
+})();
+</script>
 
 <footer>
   이 페이지는 여행 준비를 돕기 위한 참고 자료입니다. 실제 규정(속도제한, 환경구역, 통행료 등)은 방문 시점 기준으로 렌터카사·공식 채널에서 다시 확인하세요.
