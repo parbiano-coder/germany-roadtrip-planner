@@ -199,7 +199,8 @@
   }
 
   /* ---------- Germany map ---------- */
-  #map{ height:480px; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  #map{ height:640px; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  @media (max-width:640px){ #map{ height:460px; } }
   .leaflet-popup-content-wrapper{ border-radius:3px; }
   .map-legend-note{ margin:0.8rem 0 0; font-size:0.78rem; color:var(--ink-soft); text-align:center; }
   .region-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.9rem; margin-top:1.2rem; }
@@ -257,7 +258,8 @@
   .map-caption{ text-align:center; margin:0.9rem 0 0; font-size:0.78rem; color:var(--ink-soft); }
 
   /* ---------- Per-day zoomed maps ---------- */
-  .day-leaflet-map{ height:260px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
   svg.day-map{ width:100%; height:auto; display:block; max-height:280px; }
   .route-casing.optional, .route-line.optional{ stroke-dasharray:5 4; }
   .leg-map-label{
@@ -485,8 +487,6 @@
   </section>
 
   <div id="itinerary">
-
-    <p class="itin-note">각 일자의 명소 운영시간·입장료는 2026년 검색 기준입니다. 요일별 휴관일이 있는 곳이 많으니 방문 직전 공식 홈페이지에서 다시 확인하세요.</p>
 
     <details class="day" id="day1">
       <summary class="day-head"><span class="num mono">01</span><span class="day-date mono">9/19(토)</span><h3>프랑크푸르트 공항 (픽업, 17:40 입국) → 뷔르츠부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
@@ -809,6 +809,8 @@
     </div>
     </details>
 
+    <p class="itin-note">각 일자의 명소 운영시간·입장료는 2026년 검색 기준입니다. 요일별 휴관일이 있는 곳이 많으니 방문 직전 공식 홈페이지에서 다시 확인하세요.</p>
+
   </div>
 
   <section id="checklist">
@@ -873,11 +875,6 @@
   if (typeof L === 'undefined') return;
   var mapEl = document.getElementById('map');
   if (!mapEl) return;
-  var map = L.map('map', { scrollWheelZoom: false }).setView([48.9, 9.3], 6);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 18
-  }).addTo(map);
 
   var franken = '#e2725b', alps = '#c2492f', schwarzwald = '#2f6f4f', rhein = '#3a6ea5', ref = '#9aa3a8';
 
@@ -899,6 +896,13 @@
     [49.98, 7.91, '뤼데스하임', '7일차 · 숙박', rhein, false],
     [50.08, 8.24, '비스바덴', '8일차 · 선택 스톱', rhein, true]
   ];
+
+  var map = L.map('map', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+  map.fitBounds(L.latLngBounds(stops.map(function(s){ return [s[0], s[1]]; })), { padding: [24, 24] });
 
   var refPoints = [
     [52.52, 13.40, '베를린'],
