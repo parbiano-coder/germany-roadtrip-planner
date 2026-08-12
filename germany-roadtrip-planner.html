@@ -372,6 +372,9 @@
   .stay-detail b{ color:var(--sign); }
     .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
   @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
+  .walk-map{ height:320px; margin:0.6rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
+  @media (max-width:640px){ .walk-map{ height:260px; } }
+  .walk-map-note{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 0.6rem; }
   svg.day-map{ width:100%; height:auto; display:block; max-height:280px; }
   .route-casing.optional, .route-line.optional{ stroke-dasharray:5 4; }
   .leg-map-label{
@@ -709,6 +712,10 @@
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Alte+Mainbruecke+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
         </div>
       </div>
+      </div>
+      <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교 → 마리엔베르크 요새</p>
+      <div id="walkmap-wuerzburg" class="walk-map"></div>
+      <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 성벽 구시가" loading="lazy">
         <div class="landmark-body">
@@ -790,6 +797,10 @@
         <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
         </div>
       </div>
+      </div>
+      <p class="walk-map-note">지도별 추천 코스 — 로텐부르크: 시청 탑 → 크리스마스박물관 → 성 야코프 교회 → 제국 도시 박물관 → 성곽 정원 → 중세범죄박물관 → 플뢴라인 → 수공업자의 집</p>
+      <div id="walkmap-rothenburg" class="walk-map"></div>
+      <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nuernberg_Burg_Panorama_PtGUI.jpg/500px-Nuernberg_Burg_Panorama_PtGUI.jpg" alt="카이저부르크 뉘른베르크" loading="lazy">
         <div class="landmark-body">
@@ -920,6 +931,10 @@
         <div class="landmark-meta">대략 07:30–19:00(계절별 상이) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=St+Johannisfriedhof+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         </div>
       </div>
+      </div>
+      <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크·진벨투름 → 뒤러 하우스 → 장난감박물관 → 헹커슈텍 → 성 제발두스 교회 → 구 시청 → 펨보하우스 → 중앙시장 → 게르만 국립박물관 → 철도박물관 → 수공예마을 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 전범재판 기념관·성 요한 묘지·나치전당대회장)</p>
+      <div id="walkmap-nuernberg" class="walk-map"></div>
+      <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시청사(Altes Rathaus)" loading="lazy">
         <div class="landmark-body">
@@ -1834,6 +1849,74 @@
     ]}
   };
 
+  var WALK = {
+    wuerzburg: { day:'day2', points:[
+      [49.7928,9.9392,'레지덴츠 궁전'],
+      [49.7930,9.9257,'알테 마인교'],
+      [49.7898,9.9192,'마리엔베르크 요새']
+    ]},
+    rothenburg: { day:'day2', points:[
+      [49.3772,10.1785,'시청 탑'],
+      [49.3767,10.1783,'크리스마스박물관'],
+      [49.3779,10.1777,'성 야코프 교회'],
+      [49.3784,10.1757,'제국 도시 박물관'],
+      [49.3760,10.1738,'성곽 정원'],
+      [49.3756,10.1792,'중세범죄박물관'],
+      [49.3740,10.1803,'플뢴라인'],
+      [49.3766,10.1814,'수공업자의 집']
+    ]},
+    nuernberg: { day:'day2', points:[
+      [49.4579,11.0748,'카이저부르크·진벨투름'],
+      [49.4572,11.0738,'뒤러 하우스'],
+      [49.4546,11.0743,'장난감박물관'],
+      [49.4531,11.0731,'헹커슈텍'],
+      [49.4553,11.0764,'성 제발두스 교회'],
+      [49.4552,11.0773,'구 시청'],
+      [49.4566,11.0771,'펨보하우스'],
+      [49.4537,11.0773,'중앙시장'],
+      [49.4481,11.0762,'게르만 국립박물관'],
+      [49.4455,11.0744,'철도박물관'],
+      [49.4474,11.0812,'수공예마을']
+    ], outliers:[
+      [49.4544,11.0483,'전범재판 기념관'],
+      [49.4596,11.0608,'성 요한 묘지'],
+      [49.4338,11.1125,'나치전당대회장']
+    ]}
+  };
+
+  var walkInitialized = {};
+  function initWalkMap(key){
+    if (walkInitialized[key]) return;
+    var wm = WALK[key];
+    var el = document.getElementById('walkmap-' + key);
+    if (!el || !wm) return;
+    walkInitialized[key] = true;
+
+    var map = L.map('walkmap-' + key, { scrollWheelZoom: false });
+    el.__leafletMap = map;
+    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map: &copy; OpenTopoMap (CC-BY-SA) &middot; Data: &copy; OpenStreetMap contributors, SRTM',
+      maxZoom: 17
+    }).addTo(map);
+
+    var allPts = wm.points.concat(wm.outliers || []);
+    map.fitBounds(L.latLngBounds(allPts.map(function(p){ return [p[0], p[1]]; })), { padding: [22, 22] });
+
+    for (var i = 1; i < wm.points.length; i++) {
+      var a = wm.points[i-1], b = wm.points[i];
+      L.polyline([[a[0],a[1]],[b[0],b[1]]], { color: '#0b3c6e', weight: 3, opacity: 0.8 }).addTo(map);
+    }
+
+    wm.points.forEach(function(p, i){
+      L.circleMarker([p[0], p[1]], { radius: 7, color: '#fffdf7', weight: 2, fillColor: '#0b3c6e', fillOpacity: 0.95 })
+        .addTo(map).bindPopup('<b>' + (i+1) + '. ' + p[2] + '</b>');
+    });
+    (wm.outliers || []).forEach(function(p){
+      L.circleMarker([p[0], p[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.85, dashArray: '2 2' })
+        .addTo(map).bindPopup('<b>' + p[2] + '</b><br>도보권 밖 &middot; 별도 이동 필요');
+    });
+  }
+
   var initialized = {};
 
   function initDayMap(dayId){
@@ -1888,6 +1971,17 @@
     });
   }
 
+  function initWalkMapsForDay(dayId){
+    Object.keys(WALK).forEach(function(key){
+      if (WALK[key].day !== dayId) return;
+      initWalkMap(key);
+      setTimeout(function(){
+        var e = document.getElementById('walkmap-' + key);
+        if (e && e.__leafletMap) e.__leafletMap.invalidateSize();
+      }, 60);
+    });
+  }
+
   document.querySelectorAll('details.day').forEach(function(det){
     det.addEventListener('toggle', function(){
       if (det.open) {
@@ -1897,12 +1991,13 @@
           var mapEl = document.getElementById(dayId + 'map');
           if (mapEl && mapEl.__leafletMap) mapEl.__leafletMap.invalidateSize();
         }, 60);
+        initWalkMapsForDay(dayId);
       }
     });
   });
 
   // if a day is already open on load (e.g. via #dayN hash), init it
-  document.querySelectorAll('details.day[open]').forEach(function(det){ initDayMap(det.id); });
+  document.querySelectorAll('details.day[open]').forEach(function(det){ initDayMap(det.id); initWalkMapsForDay(det.id); });
 })();
 </script>
 
