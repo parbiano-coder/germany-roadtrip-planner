@@ -281,6 +281,7 @@
   .landmark-desc{ margin:0; font-size:0.88rem; color:var(--ink-soft); }
   .landmark-meta{ font-size:0.8rem; color:var(--ink-soft); }
   .landmark-meta .landmark-price{ color:var(--route); font-weight:700; font-family:"SF Mono","Consolas",monospace; }
+  .landmark-parking{ font-size:0.78rem; color:var(--ink-soft); }
     .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
   @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
   svg.day-map{ width:100%; height:auto; display:block; max-height:280px; }
@@ -536,7 +537,7 @@
     <details class="day" id="day2">
       <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 밤베르크(선택) → 뉘른베르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 225km · 약 2시간 55분</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span><span><b>숙박지</b> 뉘른베르크</span></div>
+      <div class="day-meta"><span><b>주행</b> 155km · 약 2시간 10분(선택 스톱 밤베르크 제외 시 · 추정치)</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span><span><b>숙박지</b> 뉘른베르크</span></div>
       <div id="day2map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -570,6 +571,7 @@
         <h3>뷔르츠부르크 레지덴츠 궁전</h3>
         <p class="landmark-desc">화려한 바로크 궁전 내부의 계단홀 천장 전체를 뒤덮은 거대한 프레스코화가 압권입니다.</p>
         <div class="landmark-meta">09:00–18:00 (4–10월, 마지막 입장 17:15) · <span class="landmark-price">성인 €10</span> · <a href="https://www.residenz-wuerzburg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Residenz+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 레지덴츠 정문 도보 1분 · 유료(시간당 €1.70→€1.20, 1일 최대 €11)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>티에폴로가 그린 세계 최대 규모 프레스코 천장화로 유명한 유네스코 세계유산. 밤베르크 주교의 권력을 과시하려 지어져 &ldquo;독일의 베르사유&rdquo;로 불립니다.</div>
         </div>
       </div>
@@ -579,6 +581,7 @@
         <h3>로텐부르크 성벽 구시가</h3>
         <p class="landmark-desc">동화책 삽화 같은 목조 가옥과 붉은 지붕이 성벽 안에 고스란히 남아있는 마을입니다.</p>
         <div class="landmark-meta">성벽 도보 한바퀴 약 2.5km, 상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Rothenburg+ob+der+Tauber+Stadtmauer" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>2차대전 폭격 위기에서 기적적으로 살아남은 몇 안 되는 독일 중세 도시. 종전 직전 미군 사령관이 파괴 명령을 거부하며 지켜낸 역사가 전해집니다.</div>
         </div>
       </div>
@@ -587,6 +590,7 @@
         <h3>로텐부르크 중세범죄박물관</h3>
         <p class="landmark-desc">중세 사법제도와 고문·처벌 도구를 전시하는 유럽 최대 규모의 법률사 박물관입니다.</p>
         <div class="landmark-meta">10:00–18:00 연중무휴 · <span class="landmark-price">성인 €10.50</span> · <a href="https://www.kriminalmuseum.eu" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Mittelalterliches+Kriminalmuseum+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -595,6 +599,7 @@
         <h3>밤베르크 구시청사(Altes Rathaus)</h3>
         <p class="landmark-desc">레그니츠강 한가운데 인공섬 위에 세워진 독특한 시청사. 강 양쪽 다리에서 보는 모습이 밤베르크의 상징입니다.</p>
         <div class="landmark-meta">다리 위 외관은 상시 관람 무료 · 내부 도자기 박물관은 화–일 09:30–16:30 · <span class="landmark-price">외관 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Bamberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 구시청사 도보 5분(Parkhaus Geyerswörth) · 유료(30분당 €1, 1일 최대 €18)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>밤베르크 구시가 전체가 유네스코 세계유산으로 지정된 드문 도시. 시청사가 강 한가운데 인공섬 위에 지어진 독특한 구조는 주교와 시민 사이 권력 다툼이 낳은 타협의 결과라는 이야기가 전해집니다.</div>
         </div>
       </div>
@@ -604,6 +609,7 @@
         <h3>카이저부르크 뉘른베르크</h3>
         <p class="landmark-desc">구시가 언덕 위에서 붉은 지붕들을 내려다보는 신성로마제국의 상징적 요새입니다.</p>
         <div class="landmark-meta">09:00–18:00 (4–9월) · <span class="landmark-price">통합권 €10(2026년 인상가)</span> · <a href="https://www.kaiserburg-nuernberg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kaiserburg+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>중세 황제들이 제국의회를 열던 권력의 중심지였다가, 20세기엔 나치 전당대회 도시로 악용되고 종전 후 전범재판이 열린 곳이라는 이중적 무게를 지닙니다.</div>
         </div>
       </div>
@@ -612,6 +618,7 @@
         <h3>전범재판 기념관(Courtroom 600)</h3>
         <p class="landmark-desc">뉘른베르크 전범재판이 실제로 열렸던 법정 600호를 그대로 보존한 기념관입니다.</p>
         <div class="landmark-meta">10:00–18:00 (화요일 휴관) · <span class="landmark-price">€7.50</span> · <a href="https://museen.nuernberg.de/memorium-nuernberger-prozesse" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Memorium+Nuernberger+Prozesse" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 주변 노상 유료주차 위주 · 현장 확인 권장</div>
         </div>
       </div>
       </div>
@@ -658,6 +665,7 @@
         <h3>마리엔 광장 & 노이에스 라트하우스 글로켄슈필</h3>
         <p class="landmark-desc">뮌헨 구시가 중심 광장. 신 시청사 탑에서 매일 정오 열리는 글로켄슈필 인형극이 명물입니다.</p>
         <div class="landmark-meta">글로켄슈필 공연 매일 11:00·12:00 (3–10월엔 17:00 추가) · <span class="landmark-price">광장 관람 무료</span> · <a href="https://www.muenchen.de/en/sights/munich-glockenspiel" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Neues+Rathaus+Muenchen" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ U4/U5 테레지엔비제역 P+R 후 지하철 권장 · 유료(1일권 €2, P+R Heimeranplatz)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -665,6 +673,7 @@
         <h3>프라우엔교회(Frauenkirche)</h3>
         <p class="landmark-desc">뮌헨의 상징인 두 개의 양파 지붕 탑이 특징인 후기 고딕 성당입니다.</p>
         <div class="landmark-meta">일반적으로 07:30–20:00 (미사 시간 제외, 방문 전 확인 권장) · <span class="landmark-price">본당 무료</span> · <a href="https://www.muenchner-dom.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Frauenkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ U4/U5 테레지엔비제역 P+R 후 지하철 권장 · 유료(1일권 €2, P+R Heimeranplatz)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -672,6 +681,7 @@
         <h3>빅투알리엔마르크트(Viktualienmarkt)</h3>
         <p class="landmark-desc">1807년부터 이어진 뮌헨 최대 상설 식료품 시장. 노천 비어가든에서 맥주 한 잔 즐기기 좋습니다.</p>
         <div class="landmark-meta">월–토 08:00–20:00(매장별 상이) · 일요일 휴무 · <span class="landmark-price">구경 무료, 간식·맥주는 유료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Viktualienmarkt+Muenchen" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ U4/U5 테레지엔비제역 P+R 후 지하철 권장 · 유료(1일권 €2, P+R Heimeranplatz)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -680,6 +690,7 @@
         <h3>테레지엔비제 (옥토버페스트 축제장)</h3>
         <p class="landmark-desc">9월 19일부터 열리는 세계 최대 맥주 축제 현장. 이번 여행은 숙박 없이 반나절만 들러 분위기를 느낍니다.</p>
         <div class="landmark-meta">9/19(개막)–10/4, 월–목 10:00–23:30 · 금 10:00–24:00 · 토 09:00–24:00 · 일 09:00–23:30 · <span class="landmark-price">부지 산책 무료(Oide Wiesn 구역만 €4)</span> · <a href="https://www.oktoberfest.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Theresienwiese+Muenchen" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ P+R Heimeranplatz → U4/U5 연결 · 유료(1일권 €2, 직접 주차보다 저렴)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>1810년 바이에른 왕세자의 결혼을 축하하는 경마 대회에서 시작된 축제. 축제 기간엔 뮌헨 숙박비가 평소의 2~3배로 뛰어, 이번 일정은 반나절만 들르도록 짰습니다.</div>
         </div>
       </div>
@@ -731,6 +742,7 @@
         <h3>노이슈반슈타인 성</h3>
         <p class="landmark-desc">독일 여행 사진의 대표 이미지. 알프스 자락 절벽 위에 세워진 순백의 성입니다.</p>
         <div class="landmark-meta">09:00–18:00 (3/28–10/15) · 티켓센터 08:00–16:00 · <span class="landmark-price">성인 €21 · 18세 미만 무료</span> · <a href="https://www.hohenschwangau.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Neuschwanstein" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1 추가)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>바이에른 왕 루트비히 2세가 현실 정치에서 도피해 지은 개인적 낭만의 공간. 완공 전 왕이 의문사하며 미완성으로 남았고, 훗날 디즈니 성의 실제 모티브가 되었습니다.</div>
         </div>
       </div>
@@ -740,6 +752,7 @@
         <h3>호엔슈방가우 성</h3>
         <p class="landmark-desc">루트비히 2세가 유년기를 보낸 노란 성 — 노이슈반슈타인 바로 옆에 자리합니다.</p>
         <div class="landmark-meta">08:00–16:30 (3/28–10/15) · <span class="landmark-price">성인 €23.50</span> · <a href="https://www.hohenschwangau.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Hohenschwangau" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1 추가)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -747,6 +760,7 @@
         <h3>에탈 수도원(Kloster Ettal)</h3>
         <p class="landmark-desc">1330년 창건된 베네딕트회 수도원. 자체 양조장·증류소를 운영하는 것으로도 유명합니다.</p>
         <div class="landmark-meta">바실리카 매일 08:00–18:00 · 양조장 투어 화·금 15:00 · 증류소 투어 월·목 16:00 · <span class="landmark-price">바실리카 무료 · 양조장 €12 · 증류소 €9</span> · <a href="https://www.kloster-ettal.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kloster+Ettal" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 수도원 바로 앞(Großer Parkplatz Klosterhof) · 유료(1일 약 €3)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -754,6 +768,7 @@
         <h3>파르트나흐클람(Partnachklamm)</h3>
         <p class="landmark-desc">가르미슈파르텐키르헨 인근의 좁고 깊은 협곡. 암벽을 따라 낸 트레킹 코스가 장관입니다.</p>
         <div class="landmark-meta">6–9월 08:00–20:00 (매표 마감 30분 전) · <span class="landmark-price">성인 €10 · 6~17세 €5</span> · <a href="https://www.partnachklamm.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Partnachklamm" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 입구까지 도보 25~30분(P21 Olympia-Skistadion) · 유료(1일권 €5)</div>
         </div>
       </div>
       </div>
@@ -806,6 +821,7 @@
         <h3>티티제 호수</h3>
         <p class="landmark-desc">흑림 한가운데 자리한 빙하호. 호숫가 산책과 보트 대여를 즐길 수 있습니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">호숫가 산책 무료(보트는 유료)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Titisee" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 호숫가 바로 앞(Parkplatz am See) · 유료(4시간 €8, 이후 최대 €9)</div>
         </div>
       </div>
       </div>
@@ -846,6 +862,7 @@
         <h3>프라이부르크 뮌스터 전망대</h3>
         <p class="landmark-desc">구시가 어디서나 보이는 116m 첨탑. 정교한 레이스 세공 같은 첨탑 장식이 특징입니다.</p>
         <div class="landmark-meta">월–토 11:00–16:00, 일·공휴일 13:00–17:00 · 본당 무료 · <span class="landmark-price">전망대 €5</span> · <a href="https://www.freiburgermuenster.info" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Freiburger+Muenster" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 뮌스터 도보 5~10분(Parkhaus Am Martinstor) · 유료(시간당 €3, 24시간 최대 €22)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>약 600년에 걸쳐 완공된 첨탑은 &ldquo;세계에서 가장 아름다운 첨탑&rdquo;이라는 평가를 받습니다. 2차대전 폭격에서 거의 유일하게 살아남아 프라이부르크 재건의 상징이 되었습니다.</div>
         </div>
       </div>
@@ -854,6 +871,7 @@
         <h3>아울렛시티 메칭겐</h3>
         <p class="landmark-desc">유럽 최대급 명품 아울렛 타운. 100여 개 브랜드 아울렛 매장이 모여 있습니다.</p>
         <div class="landmark-meta">월–금 10:00–20:00 · 토 09:00–20:00 · 일요일 휴무 · <span class="landmark-price">매장별 상이</span> · <a href="https://www.outletcity.com" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Outletcity+Metzingen" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 아울렛 도보 8~12분(P4) · 무료</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -861,6 +879,7 @@
         <h3>[옵션] 트리베르크 폭포(Triberger Wasserfälle)</h3>
         <p class="landmark-desc">독일에서 가장 높은 폭포. 프라이부르크에서 왕복 약 1시간 40분 걸려 이번 일정에서는 선택 사항입니다.</p>
         <div class="landmark-meta">상시 개방(입장료 징수 09:00–19:00) · <span class="landmark-price">€7~9(시즌별 상이)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Triberger+Wasserfaelle" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 시내 곳곳 소규모 주차장 · 유료(시간당 약 €1~2) · 현장 확인 권장</div>
         </div>
       </div>
       </div>
@@ -876,7 +895,7 @@
     <details class="day" id="day7">
       <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → 슈투트가르트(선택) → 하이델베르크 → 베른카슈텔쿠에스(선택) → 뤼데스하임</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 395km · 약 5시간 (매우 긴 이동일)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span><span><b>숙박지</b> Trechtingshausen</span></div>
+      <div class="day-meta"><span><b>주행</b> 210km · 약 2시간 30분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시 · 추정치)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span><span><b>숙박지</b> Trechtingshausen</span></div>
       <div id="day7map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -909,6 +928,7 @@
         <h3>메르세데스-벤츠 박물관</h3>
         <p class="landmark-desc">자동차의 역사 그 자체를 보여주는 박물관. 나선형 전시 동선을 따라 시대순으로 관람합니다.</p>
         <div class="landmark-meta">화–일 09:00–18:00 (월 휴관) · <span class="landmark-price">성인 €16(16:30 이후 이브닝 티켓 €8)</span> · <a href="https://group.mercedes-benz.com/company/tradition/museums-historical-sites/mercedes-benz-museum.html" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Mercedes-Benz+Museum+Stuttgart" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -917,6 +937,7 @@
         <h3>포르쉐 박물관</h3>
         <p class="landmark-desc">공중에 뜬 듯한 독특한 건축이 인상적인 박물관. 스포츠카 팬이라면 필수 코스입니다.</p>
         <div class="landmark-meta">화–일 09:00–18:00 (월 휴관) · <span class="landmark-price">성인 €8(여러 소스 확인, 기존 €12는 오기로 추정 — 현장 재확인 권장)</span> · <a href="https://www.porsche.com/germany/aboutporsche/porschemuseum/" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Porsche+Museum+Stuttgart" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -925,6 +946,7 @@
         <h3>슈투트가르트 슐로스광장</h3>
         <p class="landmark-desc">노이에스 슐로스와 분수가 있는 시내 중심 광장. 슈투트가르트를 짧게 들를 때 가장 먼저 갈 만한 곳입니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Schlossplatz+Stuttgart" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역·시내 중심(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -933,6 +955,7 @@
         <h3>하이델베르크 성 (Schlossticket)</h3>
         <p class="landmark-desc">네카어강과 구시가를 굽어보는 붉은 사암 성. 폐허가 된 모습 그대로가 매력입니다.</p>
         <div class="landmark-meta">대략 매일 09:00–18:00로 알려져 있으나 요일별 정확한 시간은 공식 사이트 미확인 — 방문 전 재확인 권장 · <span class="landmark-price">€11(등산열차 포함)</span> · <a href="https://www.schloss-heidelberg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Heidelberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 성 등산철도 승강장 건물 내부(P12 Kornmarkt/Schloss) · 유료(1시간 €2.50, 5시간 €11.50)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>독일 낭만주의를 상징하는 &ldquo;폐허의 미학&rdquo;. 전쟁으로 반쯤 무너진 뒤 완전히 복원하지 않고 그 모습 그대로 남겨, 오히려 낭만주의 시인들에게 영감을 준 독특한 사례입니다.</div>
         </div>
       </div>
@@ -942,6 +965,7 @@
         <h3>베른카슈텔쿠에스 마르크트광장 & 란트스후트 성터</h3>
         <p class="landmark-desc">모젤강을 따라 늘어선 포도밭과 목조가옥이 어우러진 와인마을입니다.</p>
         <div class="landmark-meta">광장 상시 개방 · 성터는 도보 약 30분 등반(전망 무료) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Marktplatz+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 마르크트광장 도보 몇 분(P3/P4 Moselufer) · 유료(요금 미확인, 현장 정산기 확인)</div>
         </div>
       </div>
       </div>
@@ -958,7 +982,7 @@
     <details class="day" id="day8">
       <summary class="day-head"><span class="num mono">08</span><span class="day-date mono">9/26(토)</span><h3>뤼데스하임 → 비스바덴(선택) → 프랑크푸르트 공항 (반납, 19:40 출국)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 75km · 약 1시간 15분</span><span><b>테마</b> 여유로운 마무리 &amp; 출국</span></div>
+      <div class="day-meta"><span><b>주행</b> 65km · 약 50분(선택 스톱 비스바덴 제외 시 · 추정치)</span><span><b>테마</b> 여유로운 마무리 &amp; 출국</span></div>
       <div id="day8map" class="day-leaflet-map"></div>
       <div class="day-body">
         <div>
@@ -991,6 +1015,7 @@
         <h3>뤼데스하임 케이블카(Seilbahn) · 니더발트 기념비</h3>
         <p class="landmark-desc">뤼데스하임 케이블카를 타고 오르면 만나는 거대한 게르마니아 여신상과 라인강 전망입니다.</p>
         <div class="landmark-meta">9월 월–금 09:30–18:00, 토·일 09:30–19:00 · <span class="landmark-price">왕복 €12 · 편도 €7.50</span> · <a href="https://www.seilbahn-ruedesheim.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Seilbahn+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 드로셀가세·구시가 도보권(P10 Feldtor) · 유료(시간당 €2, 1일 최대 €16)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>1871년 독일 통일을 기념해 세운 상징물. 라인강을 내려다보는 언덕 위에서, 통일 독일제국이 품었던 자신감을 그대로 느낄 수 있습니다.</div>
         </div>
       </div>
@@ -999,6 +1024,7 @@
         <h3>비스바덴 쿠어하우스 & 쿠어파크</h3>
         <p class="landmark-desc">1907년 지어진 신고전주의 온천 휴양시설. 카지노와 정원이 딸려있어 산책하기 좋습니다.</p>
         <div class="landmark-meta">공원 상시 개방 · 쿠어하우스 내부는 행사·카지노 일정에 따라 상이 · <span class="landmark-price">공원 산책 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Kurhaus+Wiesbaden" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 쿠어파크·구시가 도보권(Parkhaus Luisenplatz) · 유료(시간당 약 €2, 1일 최대 €20)</div>
         </div>
       </div>
       </div>
