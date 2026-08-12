@@ -276,6 +276,10 @@
     overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
   }
   .landmark-card img{ width:100%; height:170px; object-fit:cover; display:block; background:var(--bg-soft); }
+  html.photos-off .landmark-card img{ display:none; }
+  button.topbar-item{ background:none; border:1px solid transparent; cursor:pointer; font:inherit; }
+  button.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
+  html.photos-off .photo-toggle .tb-icon{ background:var(--warn-soft); color:var(--warn); }
   .landmark-body{ padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:0.6rem; }
   .landmark-body h3{ margin:0; font-size:1.02rem; }
   .landmark-desc{ margin:0; font-size:0.88rem; color:var(--ink-soft); }
@@ -419,6 +423,8 @@
   }
 </style>
 
+<script>if(localStorage.getItem('photosOff')==='1')document.documentElement.classList.add('photos-off');</script>
+
 <nav class="topbar" aria-label="전체 메뉴">
   <div class="topbar-scroll">
     <a class="topbar-item is-current" href="index.html" aria-label="여행 플래너 홈"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></span></a>
@@ -428,8 +434,27 @@
     <a class="topbar-item" href="german-driving-rules.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg></span>운전 규칙</a>
     <a class="topbar-item" href="index.html#checklist"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</a>
     <a class="topbar-item" href="index.html#info"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>비상연락처</a>
+    <button type="button" class="topbar-item photo-toggle" id="photoToggle" aria-pressed="true"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-4.5-4.5-3.5 3.5-2-2L3 19"/></svg></span><span class="pt-label">사진 켜짐</span></button>
   </div>
 </nav>
+
+<script>
+(function(){
+  var btn = document.getElementById('photoToggle');
+  var label = btn.querySelector('.pt-label');
+  function render(){
+    var off = document.documentElement.classList.contains('photos-off');
+    btn.setAttribute('aria-pressed', String(!off));
+    label.textContent = off ? '사진 꺼짐' : '사진 켜짐';
+  }
+  btn.addEventListener('click', function(){
+    var off = document.documentElement.classList.toggle('photos-off');
+    localStorage.setItem('photosOff', off ? '1' : '0');
+    render();
+  });
+  render();
+})();
+</script>
 
 <nav class="daynav" aria-label="빠른 이동">
   <div class="daynav-scroll">
@@ -611,6 +636,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/50_000_Exponate_aus_1000_Jahren_Kriminalgeschichte_zeigt_das_Kriminalmuseum_Rothenburg_ob_der_Tauber._42.jpg?width=500" alt="로텐부르크 중세범죄박물관" loading="lazy">
         <div class="landmark-body">
         <h3>로텐부르크 중세범죄박물관</h3>
         <p class="landmark-desc">중세 사법제도와 고문·처벌 도구를 전시하는 유럽 최대 규모의 법률사 박물관입니다.</p>
@@ -638,6 +664,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_-_Justizpalast_Schwurgerichtssaal_600.jpg?width=500" alt="전범재판 기념관(Courtroom 600)" loading="lazy">
         <div class="landmark-body">
         <h3>전범재판 기념관(Courtroom 600)</h3>
         <p class="landmark-desc">뉘른베르크 전범재판이 실제로 열렸던 법정 600호를 그대로 보존한 기념관입니다.</p>
@@ -768,6 +795,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Frauenkirche_Munich_March_2013.JPG?width=500" alt="프라우엔교회" loading="lazy">
         <div class="landmark-body">
         <h3>프라우엔교회(Frauenkirche)</h3>
         <p class="landmark-desc">뮌헨의 상징인 두 개의 양파 지붕 탑이 특징인 후기 고딕 성당입니다.</p>
@@ -776,6 +804,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Muenchen_Viktualienmarkt.JPG?width=500" alt="빅투알리엔마르크트" loading="lazy">
         <div class="landmark-body">
         <h3>빅투알리엔마르크트(Viktualienmarkt)</h3>
         <p class="landmark-desc">1807년부터 이어진 뮌헨 최대 상설 식료품 시장. 노천 비어가든에서 맥주 한 잔 즐기기 좋습니다.</p>
@@ -853,6 +882,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kloster_Ettal%2C_Bayern.jpg?width=500" alt="에탈 수도원" loading="lazy">
         <div class="landmark-body">
         <h3>에탈 수도원(Kloster Ettal)</h3>
         <p class="landmark-desc">1330년 창건된 베네딕트회 수도원. 자체 양조장·증류소를 운영하는 것으로도 유명합니다.</p>
@@ -861,6 +891,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Garmisch-Partenkirchen_Partnachklamm_02.JPG?width=500" alt="파르트나흐클람" loading="lazy">
         <div class="landmark-body">
         <h3>파르트나흐클람(Partnachklamm)</h3>
         <p class="landmark-desc">가르미슈파르텐키르헨 인근의 좁고 깊은 협곡. 암벽을 따라 낸 트레킹 코스가 장관입니다.</p>
@@ -967,6 +998,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OutletcityMetzingen.jpg?width=500" alt="아울렛시티 메칭겐" loading="lazy">
         <div class="landmark-body">
         <h3>아울렛시티 메칭겐</h3>
         <p class="landmark-desc">유럽 최대급 명품 아울렛 타운. 100여 개 브랜드 아울렛 매장이 모여 있습니다.</p>
@@ -975,6 +1007,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Triberg_Waterfall_2.JPG?width=500" alt="트리베르크 폭포" loading="lazy">
         <div class="landmark-body">
         <h3>[선택] 트리베르크 폭포(Triberger Wasserfälle)</h3>
         <p class="landmark-desc">독일에서 가장 높은 폭포. 프라이부르크에서 왕복 약 1시간 40분 걸려 이번 일정에서는 선택 사항입니다.</p>
@@ -1137,6 +1170,7 @@
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden_Kurhaus.jpg?width=500" alt="비스바덴 쿠어하우스" loading="lazy">
         <div class="landmark-body">
         <h3>비스바덴 쿠어하우스 & 쿠어파크</h3>
         <p class="landmark-desc">1907년 지어진 신고전주의 온천 휴양시설. 카지노와 정원이 딸려있어 산책하기 좋습니다.</p>
