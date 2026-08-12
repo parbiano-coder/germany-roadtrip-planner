@@ -1,6 +1,60 @@
 <title>여행 계획</title>
 <meta name="description" content="2026년 9월 19일~26일, 프랑크푸르트 출발 로맨틱가도–바이에른–블랙 포레스트를 도는 독일 렌터카 로드트립 플래너">
 <style>
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+  }
   :root{
     --bg: #efece0;
     --bg-soft: #f7f5ec;
@@ -55,13 +109,13 @@
     margin:0;
     background:var(--bg);
     color:var(--ink);
-    font-family: Georgia, "Iowan Old Style", "Noto Serif KR", "Nanum Myeongjo", serif;
+    font-family: 'Paperozi', Georgia, "Iowan Old Style", "Noto Serif KR", "Nanum Myeongjo", serif;
     line-height:1.65;
     font-size:16px;
   }
 
   h1,h2,h3, .label{
-    font-family: -apple-system, "Segoe UI", "Pretendard", "Noto Sans KR", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Paperozi', -apple-system, "Segoe UI", "Pretendard", "Noto Sans KR", Roboto, Helvetica, Arial, sans-serif;
     font-stretch: condensed;
     font-weight:800;
     letter-spacing:-0.01em;
@@ -71,7 +125,7 @@
   .mono{ font-family: "SF Mono","Consolas","Roboto Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 
   .eyebrow{
-    font-family: -apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,sans-serif;
+    font-family: 'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",Roboto,sans-serif;
     text-transform:uppercase;
     letter-spacing:0.14em;
     font-size:0.72rem;
@@ -115,7 +169,7 @@
     flex:none; display:inline-flex; align-items:center; gap:0.5rem;
     padding:0.3rem 0.8rem 0.3rem 0.3rem; border-radius:20px; text-decoration:none;
     color:var(--ink-soft); border:1px solid transparent; white-space:nowrap;
-    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-size:0.82rem; font-weight:700;
   }
   .topbar-item .tb-icon{
@@ -143,7 +197,7 @@
   .daynav a{
     flex:none;
     display:inline-flex; align-items:center; gap:0.4rem;
-    font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-size:0.8rem; font-weight:700;
     color:var(--ink-soft);
     text-decoration:none;
@@ -199,7 +253,7 @@
   .tl-row.waypoint .tl-body{ padding:0.5rem 0; }
   .tl-row.leg .tl-body{ padding:0.35rem 0; display:flex; align-items:center; }
   .tl-city{
-    font-weight:700; font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-weight:700; font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-size:0.96rem; color:var(--ink);
   }
   .tl-row.waypoint .tl-city{ font-size:0.9rem; color:var(--sign); }
@@ -247,7 +301,7 @@
   .map-legend .lg-ref{ background:var(--ink-soft); opacity:0.4; }
   .route-subhead{
     margin:2.2rem 0 0.6rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em;
-    color:var(--ink-soft); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    color:var(--ink-soft); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-weight:700;
   }
   .de-map{ width:100%; height:auto; display:block; }
@@ -259,12 +313,12 @@
   .badge-text{ fill:#fff; font-family:"SF Mono","Consolas",monospace; font-weight:700; font-size:10px; text-anchor:middle; dominant-baseline:central; }
   .waypoint-circle{ fill:var(--sign); stroke:var(--surface); stroke-width:1.5; }
   .waypoint-circle.optional{ fill:none; stroke:var(--sign); stroke-width:1.5; stroke-dasharray:2 1.5; }
-  .waypoint-label{ fill:var(--sign); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; font-size:11px; }
-  .city-label{ fill:var(--ink); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; font-size:12.5px; }
+  .waypoint-label{ fill:var(--sign); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; font-size:11px; }
+  .city-label{ fill:var(--ink); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; font-size:12.5px; }
   .city-sub{ fill:var(--ink-soft); font-family:"SF Mono","Consolas",monospace; font-size:8.5px; letter-spacing:0.02em; }
   .ref-circle{ fill:var(--ink-soft); opacity:0.5; }
   .ref-label{
-    fill:var(--ink-soft); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    fill:var(--ink-soft); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-weight:600; font-style:italic; font-size:10.5px; opacity:0.8;
   }
   .map-caption{ text-align:center; margin:0.9rem 0 0; font-size:0.78rem; color:var(--ink-soft); }
@@ -321,7 +375,7 @@
   @media (max-width:640px){ .day-chip:nth-child(5)::before{ left:-0.68rem; font-size:0.9rem; } }
   .day-chip:hover, .day-chip:focus-visible{ border-color:var(--route); }
   .dc-label{
-    display:block; font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    display:block; font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-weight:800; font-size:0.86rem; color:var(--route);
   }
   .dc-date{ font-family:"SF Mono","Consolas",monospace; font-weight:600; font-size:0.72rem; color:var(--ink-soft); margin-left:0.35rem; }
@@ -367,7 +421,7 @@
   .day-meta b{ color:var(--sign); }
   .day-body{ display:grid; grid-template-columns: 1.3fr 1fr; gap:1.4rem; }
   @media (max-width:640px){ .day-body{ grid-template-columns:1fr; } }
-  .day-body h4{ margin:0 0 0.4rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--sign); font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;}
+  .day-body h4{ margin:0 0 0.4rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--sign); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;}
   .day-body ul{ margin:0 0 1rem; padding-left:1.1rem; color:var(--ink); font-size:0.95rem; }
   .day-body li + li{ margin-top:0.3rem; }
   .lodge{
@@ -412,7 +466,7 @@
   .table-wrap{ overflow-x:auto; }
   table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:480px; }
   th,td{ text-align:left; padding:0.55rem 0.7rem; border-bottom:1px solid var(--line); }
-  th{ font-family:-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
+  th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
   td.mono{ color:var(--route); font-weight:700; }
 
   footer{ max-width:920px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
@@ -670,6 +724,69 @@
         <p class="landmark-desc">뉘른베르크 전범재판이 실제로 열렸던 법정 600호를 그대로 보존한 기념관입니다.</p>
         <div class="landmark-meta">10:00–18:00 (화요일 휴관) · <span class="landmark-price">€7.50</span> · <a href="https://museen.nuernberg.de/memorium-nuernberger-prozesse" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Memorium+Nuernberger+Prozesse" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 주변 노상 유료주차 위주 · 현장 확인 권장</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nuremberg_Dokuzentrum.jpg?width=500" alt="나치전당대회장 다큐멘테이션센터" loading="lazy">
+        <div class="landmark-body">
+        <h3>나치전당대회장 다큐멘테이션센터(Dokumentationszentrum Reichsparteitagsgelände)</h3>
+        <p class="landmark-desc">알베르트 슈페어가 설계한 미완성 회의장(Kongresshalle) 안에 있는 나치 전당대회 역사 전시관. 상설전은 리노베이션으로 임시전시 &ldquo;Nuremberg – Place of the Nazi Party Rallies&rdquo;로 대체 운영 중입니다.</p>
+        <div class="landmark-meta">09:00–18:00 · <span class="landmark-price">성인 €7.50</span> · <a href="https://museen.nuernberg.de/dokuzentrum" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Dokumentationszentrum+Reichsparteitagsgelaende" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 현장 노상·전용 주차장 · 현장 확인 권장</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nuernberg_Rathaus_001.JPG?width=500" alt="구 시청" loading="lazy">
+        <div class="landmark-body">
+        <h3>구 시청(Altes Rathaus) · 중세 지하감옥(Lochgefängnisse)</h3>
+        <p class="landmark-desc">하우프트마르크트 옆 옛 시청사. 지하엔 원형 감방과 고문실이 그대로 남은 &ldquo;뉘른베르크 지하감옥&rdquo;이 있어 별도 투어로 둘러볼 수 있습니다.</p>
+        <div class="landmark-meta">지하감옥 화–일 10:00–16:30(투어는 매시 정각, 11:00–18:00) · <span class="landmark-price">지하감옥 성인 €3.50</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/00_3960_Sch%C3%B6ner_Brunnen_-_N%C3%BCrnberg.jpg?width=500" alt="중앙시장" loading="lazy">
+        <div class="landmark-body">
+        <h3>중앙시장(Hauptmarkt) · 아름다운 분수(Schöner Brunnen)</h3>
+        <p class="landmark-desc">구시가 중심 광장. 1385~1396년 지어진 19m 높이의 첨탑형 분수가 상징이며, 황금 고리를 돌리면 소원이 이루어진다는 전설이 있습니다.</p>
+        <div class="landmark-meta">상시 개방(시장은 월–토 오전~오후) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Hauptmarkt+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg%2C_Winklerstra%C3%9Fe_26%2C_Sebalduskirche-20160810-002.jpg?width=500" alt="성 제발두스 교회" loading="lazy">
+        <div class="landmark-body">
+        <h3>성 제발두스 교회(St. Sebaldus)</h3>
+        <p class="landmark-desc">뉘른베르크에서 가장 오래된 교구 교회(13세기). 제발두스 성인의 유해를 모신 청동 성물함이 유명합니다.</p>
+        <div class="landmark-meta">3–12월 09:30–18:00, 1–2월 09:30–16:00 · <span class="landmark-price">관광 입장 €5(예배·기도는 무료)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Sebalduskirche+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Germanisches_Nationalmuseum_020.JPG?width=500" alt="게르만 국립박물관" loading="lazy">
+        <div class="landmark-body">
+        <h3>게르만 국립박물관(Germanisches Nationalmuseum)</h3>
+        <p class="landmark-desc">1852년 설립된 독일 최대 문화사 박물관. 선사시대부터 현대까지 독일어권 문화 전반을 아우르는 방대한 소장품을 자랑합니다.</p>
+        <div class="landmark-meta">화–일 10:00–18:00(수 ~20:30), 월요일 휴관 · <span class="landmark-price">성인 €10</span> · <a href="https://www.gnm.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Germanisches+Nationalmuseum" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_Stadtmuseum_Fembohaus_001.JPG?width=500" alt="펨보하우스 시립박물관" loading="lazy">
+        <div class="landmark-body">
+        <h3>펨보하우스 시립박물관(Stadtmuseum im Fembo-Haus)</h3>
+        <p class="landmark-desc">뉘른베르크에 남은 유일한 완전한 상인 저택(16세기 후기 르네상스 양식). 도시 역사 전반을 오디오가이드와 함께 둘러볼 수 있습니다.</p>
+        <div class="landmark-meta">화–금 10:00–17:00 · 토·일 10:00–18:00(월요일 휴관) · <span class="landmark-price">성인 €7.50</span> · <a href="https://museen.nuernberg.de/fembohaus" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Fembohaus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_-_Verkehrsmuseum.jpg?width=500" alt="독일 철도 박물관" loading="lazy">
+        <div class="landmark-body">
+        <h3>독일 철도 박물관(DB Museum)</h3>
+        <p class="landmark-desc">1899년 개관한 세계에서 가장 오래된 철도 박물관. 독일 최초 증기기관차 &ldquo;아들러(Adler)&rdquo; 복제품 등 역사적 차량을 전시합니다.</p>
+        <div class="landmark-meta">수–금 09:00–17:00 · 토·일·공휴일 10:00–18:00(월·화 휴관) · <span class="landmark-price">성인 €5</span> · <a href="https://dbmuseum.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=DB+Museum+Nuernberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 중앙역 인근(Parkhaus Am Hauptbahnhof) · 유료(시간당 €2.00)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1081,24 +1198,6 @@
       </div>
       </div>
       </div>
-      <div class="sight-list">
-        <h4>블랙 포레스트 드라이브 코스 (참고)</h4>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">이번 일정은 켐프텐→티티제→프라이부르크 직행 경로라 아래 코스를 다 타지는 않습니다. 다음에 블랙 포레스트만 따로 여행할 계획이 있다면 참고하세요.</p>
-        <div class="sight"><span class="sight-name">슈바르츠발트-호흐슈트라세(Schwarzwald-Hochstraße)</span><span class="sight-hours">프로이덴슈타트↔바덴바덴 · 약 60km, 1930년 개통된 가장 오래되고 유명한 관광도로</span><span class="sight-price">국립공원 구간 통과, 전망 포인트多 · <a href="https://www.google.com/maps/search/?api=1&query=Schwarzwaldhochstrasse" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">바디셰 바인슈트라세(Badische Weinstraße)</span><span class="sight-hours">바덴바덴↔스위스 국경 · 약 160km, 블랙 포레스트 서쪽 기슭을 따라가는 와인가도</span><span class="sight-price">포도밭·와이너리 마을 연속 · <a href="https://www.google.com/maps/search/?api=1&query=Badische+Weinstrasse" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">도이체 우렌슈트라세(Deutsche Uhrenstraße)</span><span class="sight-hours">필링겐슈베닝겐→티티제노이슈타트→장크트메르겐→푸르트방겐→로트바일 순환 코스 · 뻐꾸기시계 산업 발상지 마을들을 잇는 원형 루트</span><span class="sight-price">시작점·방향 고정 없는 순환 코스 · <a href="https://www.google.com/maps/search/?api=1&query=Deutsche+Uhrenstrasse" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">슈바르츠발트-텔러슈트라세(Schwarzwald-Tälerstraße)</span><span class="sight-hours">블랙 포레스트 여러 계곡을 잇는 계곡길 · 정확한 구간·거리는 자료마다 상이해 현지 관광안내소 확인 권장</span><span class="sight-price">완만한 계곡 경치 위주 · <a href="https://www.google.com/maps/search/?api=1&query=Schwarzwald+Taelerstrasse" target="_blank" rel="noopener">지도</a></span></div>
-      </div>
-      <div class="sight-list">
-        <h4>블랙 포레스트 하이킹 길 (참고)</h4>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">이번 일정엔 하이킹 시간이 따로 없습니다. 대부분 반나절~하루 코스라 이번엔 생략하고, 다음 블랙 포레스트 여행 때 참고하세요.</p>
-        <div class="sight"><span class="sight-name">펠트베르크 길(Feldbergsteig)</span><span class="sight-hours">약 12km 순환 코스 · 블랙 포레스트 최고봉 펠트베르크(1,493m) 정상까지, 펠트제(Feldsee) 호수와 폭포 경유</span><span class="sight-price">날씨 맑으면 정상에서 알프스까지 조망 · <a href="https://www.google.com/maps/search/?api=1&query=Feldberg+Schwarzwald" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">서쪽의 길(Westweg)</span><span class="sight-hours">블랙 포레스트를 남북으로 종단하는 약 285km 장거리 트레일 · 10~11구간이 펠트베르크를 지남</span><span class="sight-price">전 구간 완주엔 2주 내외 · <a href="https://www.google.com/maps/search/?api=1&query=Westweg+Schwarzwald" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">부타흐 협곡(Wutachschlucht)</span><span class="sight-hours">뢰핑엔·본도르프 인근 · 원시 자연 그대로 남은 협곡, 슐루흐텐슈타이크(7개 협곡 연결 트레일)의 하이라이트</span><span class="sight-price">암벽·폭포 지형 · <a href="https://www.google.com/maps/search/?api=1&query=Wutachschlucht" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">귀텐바흐-지몬스빌더 계곡(Gütenbach-Simonswälder Tal)</span><span class="sight-hours">프라이부르크 북동쪽 계곡 마을 · 야생 그대로의 계곡을 따라 도는 순환 하이킹 코스가 여럿</span><span class="sight-price">고도차 크고 숲·강 지형 다채 · <a href="https://www.google.com/maps/search/?api=1&query=Simonswald" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">파노라마의 길(Panoramaweg)</span><span class="sight-hours">펠트베르크 일대를 도는 프리미엄 파노라마 코스 · 블랙 포레스트 지역 곳곳에 동명의 지역별 파노라마베그가 있어 지역명과 함께 확인 필요</span><span class="sight-price">전망 위주 완만한 코스 · <a href="https://www.google.com/maps/search/?api=1&query=Panoramaweg+Feldberg+Schwarzwald" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">성 마르틴 예배당(Martinskapelle)</span><span class="sight-hours">쇤발트(Schönwald) 인근 · 숲속 작은 순례 예배당까지 이어지는 완만한 산책로</span><span class="sight-price">가족 단위로도 무난한 난이도 · <a href="https://www.google.com/maps/search/?api=1&query=Martinskapelle+Schoenwald" target="_blank" rel="noopener">지도</a></span></div>
-      </div>
     </div>
     </details>
 
@@ -1199,6 +1298,24 @@
         </div>
       </div>
       </div>
+      </div>
+      <div class="sight-list">
+        <h4>블랙 포레스트 드라이브 코스 (참고)</h4>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">프라이부르크가 블랙 포레스트의 관문 도시라 참고로 정리했습니다. 오늘 메칭겐으로 가는 B31→A81 경로가 도이체 우렌슈트라세 권역과 가장 가깝지만, 이번 일정은 직행이라 전 구간을 다 타지는 않습니다. 블랙 포레스트만 따로 여행할 계획이 있다면 참고하세요.</p>
+        <div class="sight"><span class="sight-name">도이체 우렌슈트라세(Deutsche Uhrenstraße)</span><span class="sight-hours">필링겐슈베닝겐→티티제노이슈타트→장크트메르겐→푸르트방겐→로트바일 순환 코스 · 뻐꾸기시계 산업 발상지 마을들을 잇는 원형 루트</span><span class="sight-price">오늘 경로와 가장 가까운 구간 · <a href="https://www.google.com/maps/search/?api=1&query=Deutsche+Uhrenstrasse" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">슈바르츠발트-텔러슈트라세(Schwarzwald-Tälerstraße)</span><span class="sight-hours">블랙 포레스트 여러 계곡을 잇는 계곡길 · 정확한 구간·거리는 자료마다 상이해 현지 관광안내소 확인 권장</span><span class="sight-price">완만한 계곡 경치 위주 · <a href="https://www.google.com/maps/search/?api=1&query=Schwarzwald+Taelerstrasse" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">슈바르츠발트-호흐슈트라세(Schwarzwald-Hochstraße)</span><span class="sight-hours">프로이덴슈타트↔바덴바덴 · 약 60km, 1930년 개통된 가장 오래되고 유명한 관광도로</span><span class="sight-price">오늘 경로에선 북쪽으로 벗어남(별도 방문 필요) · <a href="https://www.google.com/maps/search/?api=1&query=Schwarzwaldhochstrasse" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">바디셰 바인슈트라세(Badische Weinstraße)</span><span class="sight-hours">바덴바덴↔스위스 국경 · 약 160km, 블랙 포레스트 서쪽 기슭을 따라가는 와인가도</span><span class="sight-price">포도밭·와이너리 마을 연속 · <a href="https://www.google.com/maps/search/?api=1&query=Badische+Weinstrasse" target="_blank" rel="noopener">지도</a></span></div>
+      </div>
+      <div class="sight-list">
+        <h4>블랙 포레스트 하이킹 길 (참고)</h4>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">이번 일정엔 하이킹 시간이 따로 없습니다. 대부분 반나절~하루 코스라 이번엔 생략하고, 다음 블랙 포레스트 여행 때 참고하세요.</p>
+        <div class="sight"><span class="sight-name">귀텐바흐-지몬스빌더 계곡(Gütenbach-Simonswälder Tal)</span><span class="sight-hours">프라이부르크 북동쪽 계곡 마을 · 야생 그대로의 계곡을 따라 도는 순환 하이킹 코스가 여럿</span><span class="sight-price">프라이부르크에서 가장 가까움(약 25km) · <a href="https://www.google.com/maps/search/?api=1&query=Simonswald" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">성 마르틴 예배당(Martinskapelle)</span><span class="sight-hours">쇤발트(Schönwald) 인근 · 숲속 작은 순례 예배당까지 이어지는 완만한 산책로</span><span class="sight-price">가족 단위로도 무난한 난이도 · <a href="https://www.google.com/maps/search/?api=1&query=Martinskapelle+Schoenwald" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">펠트베르크 길(Feldbergsteig)</span><span class="sight-hours">약 12km 순환 코스 · 블랙 포레스트 최고봉 펠트베르크(1,493m) 정상까지, 펠트제(Feldsee) 호수와 폭포 경유</span><span class="sight-price">날씨 맑으면 정상에서 알프스까지 조망 · <a href="https://www.google.com/maps/search/?api=1&query=Feldberg+Schwarzwald" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">부타흐 협곡(Wutachschlucht)</span><span class="sight-hours">뢰핑엔·본도르프 인근 · 원시 자연 그대로 남은 협곡, 슐루흐텐슈타이크(7개 협곡 연결 트레일)의 하이라이트</span><span class="sight-price">암벽·폭포 지형 · <a href="https://www.google.com/maps/search/?api=1&query=Wutachschlucht" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">서쪽의 길(Westweg)</span><span class="sight-hours">블랙 포레스트를 남북으로 종단하는 약 285km 장거리 트레일 · 10~11구간이 펠트베르크를 지남</span><span class="sight-price">전 구간 완주엔 2주 내외 · <a href="https://www.google.com/maps/search/?api=1&query=Westweg+Schwarzwald" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">파노라마의 길(Panoramaweg)</span><span class="sight-hours">펠트베르크 일대를 도는 프리미엄 파노라마 코스 · 블랙 포레스트 지역 곳곳에 동명의 지역별 파노라마베그가 있어 지역명과 함께 확인 필요</span><span class="sight-price">전망 위주 완만한 코스 · <a href="https://www.google.com/maps/search/?api=1&query=Panoramaweg+Feldberg+Schwarzwald" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       <div class="sight-list">
         <h4>맛집 (프라이부르크)</h4>
@@ -1421,11 +1538,11 @@
     <p class="lede">체크한 항목은 브라우저에 저장되어 다시 열어도 유지됩니다.</p>
     <div class="grid cols-2">
       <div>
-        <h4 style="font-family:-apple-system,'Segoe UI','Pretendard','Noto Sans KR',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem; color:var(--sign); margin-bottom:0.6rem;">서류 &amp; 소지품</h4>
+        <h4 style="font-family:'Paperozi',-apple-system,'Segoe UI','Pretendard','Noto Sans KR',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem; color:var(--sign); margin-bottom:0.6rem;">서류 &amp; 소지품</h4>
         <ul class="checklist" id="checklist-docs"></ul>
       </div>
       <div>
-        <h4 style="font-family:-apple-system,'Segoe UI','Pretendard','Noto Sans KR',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem; color:var(--sign); margin-bottom:0.6rem;">차량 인수 당일</h4>
+        <h4 style="font-family:'Paperozi',-apple-system,'Segoe UI','Pretendard','Noto Sans KR',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem; color:var(--sign); margin-bottom:0.6rem;">차량 인수 당일</h4>
         <ul class="checklist" id="checklist-pickup"></ul>
       </div>
     </div>
