@@ -309,6 +309,8 @@
   .route-casing{ fill:none; stroke:var(--surface); stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
   .route-line{ fill:none; stroke:var(--route); stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
   .badge-circle{ fill:var(--route); stroke:var(--surface); stroke-width:2; }
+  .nav-car-wrap{ background:none !important; border:none !important; }
+  .nav-car{ width:20px; height:20px; transform-origin:50% 50%; filter:drop-shadow(0 1px 2.5px rgba(0,0,0,0.4)); pointer-events:none; }
   .badge-circle.start{ fill:var(--sign); }
   .badge-text{ fill:#fff; font-family:"SF Mono","Consolas",monospace; font-weight:700; font-size:10px; text-anchor:middle; dominant-baseline:central; }
   .waypoint-circle{ fill:var(--sign); stroke:var(--surface); stroke-width:1.5; }
@@ -1842,6 +1844,60 @@
       radius: 5, color: '#fffdf7', weight: 1.5, fillColor: ref, fillOpacity: 0.85
     }).addTo(map).bindPopup('<b>' + r[2] + '</b><br>미방문 참고 위치');
   });
+
+  // 경로를 따라 움직이는 자동차 — 전체 여정의 진행 방향을 내비게이션처럼 보여줌
+  var fullPath = [];
+  ROUTE_LEGS.forEach(function(leg){ fullPath = fullPath.concat(leg); });
+
+  if (fullPath.length > 1 && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var cum = [0];
+    for (var ci = 1; ci < fullPath.length; ci++) {
+      cum.push(cum[ci - 1] + map.distance(fullPath[ci - 1], fullPath[ci]));
+    }
+    var totalDist = cum[cum.length - 1];
+
+    function bearing(a, b){
+      var φ1 = a[0] * Math.PI / 180, φ2 = b[0] * Math.PI / 180;
+      var Δλ = (b[1] - a[1]) * Math.PI / 180;
+      var y = Math.sin(Δλ) * Math.cos(φ2);
+      var x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+      return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+    }
+
+    function posAt(distAlong){
+      var lo = 0, hi = cum.length - 1;
+      while (lo < hi) {
+        var mid = (lo + hi) >> 1;
+        if (cum[mid] < distAlong) lo = mid + 1; else hi = mid;
+      }
+      var i = Math.max(1, lo);
+      var segStart = cum[i - 1], segEnd = cum[i];
+      var t = segEnd > segStart ? (distAlong - segStart) / (segEnd - segStart) : 0;
+      var a = fullPath[i - 1], b = fullPath[i];
+      return { lat: a[0] + (b[0] - a[0]) * t, lng: a[1] + (b[1] - a[1]) * t, brg: bearing(a, b) };
+    }
+
+    var carIcon = L.divIcon({
+      className: 'nav-car-wrap',
+      html: '<div class="nav-car"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1C13 1 14.5 4 14.5 8L14.5 16C14.5 17.5 13.5 18 10 18C6.5 18 5.5 17.5 5.5 16L5.5 8C5.5 4 7 1 10 1Z" fill="#0b3c6e" stroke="#fffdf7" stroke-width="1"/><rect x="7" y="6" width="6" height="4" rx="1.2" fill="#fffdf7" opacity="0.9"/></svg></div>',
+      iconSize: [20, 20], iconAnchor: [10, 10]
+    });
+    var carMarker = L.marker(fullPath[0], { icon: carIcon, interactive: false, zIndexOffset: 1000 }).addTo(map);
+
+    var DURATION = 30000;
+    var startTs = null;
+    function tick(ts){
+      if (!startTs) startTs = ts;
+      var elapsed = (ts - startTs) % DURATION;
+      var pos = posAt((elapsed / DURATION) * totalDist);
+      carMarker.setLatLng([pos.lat, pos.lng]);
+      var el = carMarker.getElement();
+      var inner = el && el.querySelector('.nav-car');
+      if (inner) inner.style.transform = 'rotate(' + pos.brg + 'deg)';
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
 })();
 </script>
 
