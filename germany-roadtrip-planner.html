@@ -1734,7 +1734,6 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
 <script>
 (function(){
   if (typeof L === 'undefined') return;
@@ -1828,18 +1827,6 @@
       : { color: '#0b3c6e', weight: 4.5, opacity: 0.92 }
     ).addTo(map);
     if (info.label) line.bindTooltip(info.label, { sticky: true });
-
-    if (typeof L.polylineDecorator === 'function') {
-      L.polylineDecorator(line, {
-        patterns: [{
-          offset: '5%', repeat: '7%',
-          symbol: L.Symbol.arrowHead({
-            pixelSize: info.optional ? 8 : 11,
-            pathOptions: { color: '#0b3c6e', fillOpacity: info.optional ? 0.6 : 0.92, weight: 0 }
-          })
-        }]
-      }).addTo(map);
-    }
   });
 
   stops.forEach(function(s){
