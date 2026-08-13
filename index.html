@@ -1737,6 +1737,63 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+// 지도 위를 따라 움직이는 자동차 마커 — 여러 지도(전체 경로 + 일자별 경로)에서 재사용
+window.createRouteCar = function(map, path, opts){
+  opts = opts || {};
+  if (typeof L === 'undefined' || !path || path.length < 2) return null;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
+
+  var cum = [0];
+  for (var i = 1; i < path.length; i++) cum.push(cum[i - 1] + map.distance(path[i - 1], path[i]));
+  var totalDist = cum[cum.length - 1];
+  if (!totalDist) return null;
+
+  function bearing(a, b){
+    var φ1 = a[0] * Math.PI / 180, φ2 = b[0] * Math.PI / 180;
+    var Δλ = (b[1] - a[1]) * Math.PI / 180;
+    var y = Math.sin(Δλ) * Math.cos(φ2);
+    var x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+  }
+
+  function posAt(distAlong){
+    var lo = 0, hi = cum.length - 1;
+    while (lo < hi) {
+      var mid = (lo + hi) >> 1;
+      if (cum[mid] < distAlong) lo = mid + 1; else hi = mid;
+    }
+    var idx = Math.max(1, lo);
+    var segStart = cum[idx - 1], segEnd = cum[idx];
+    var t = segEnd > segStart ? (distAlong - segStart) / (segEnd - segStart) : 0;
+    var a = path[idx - 1], b = path[idx];
+    return { lat: a[0] + (b[0] - a[0]) * t, lng: a[1] + (b[1] - a[1]) * t, brg: bearing(a, b) };
+  }
+
+  var carIcon = L.divIcon({
+    className: 'nav-car-wrap',
+    html: '<div class="nav-car"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1C13 1 14.5 4 14.5 8L14.5 16C14.5 17.5 13.5 18 10 18C6.5 18 5.5 17.5 5.5 16L5.5 8C5.5 4 7 1 10 1Z" fill="#0b3c6e" stroke="#fffdf7" stroke-width="1"/><rect x="7" y="6" width="6" height="4" rx="1.2" fill="#fffdf7" opacity="0.9"/></svg></div>',
+    iconSize: [20, 20], iconAnchor: [10, 10]
+  });
+  var carMarker = L.marker(path[0], { icon: carIcon, interactive: false, zIndexOffset: 1000 }).addTo(map);
+
+  var duration = opts.duration || Math.max(9000, Math.min(30000, totalDist / 1000 * 900));
+  var startTs = null;
+  var rafId;
+  function tick(ts){
+    if (!startTs) startTs = ts;
+    var elapsed = (ts - startTs) % duration;
+    var pos = posAt((elapsed / duration) * totalDist);
+    carMarker.setLatLng([pos.lat, pos.lng]);
+    var el = carMarker.getElement();
+    var inner = el && el.querySelector('.nav-car');
+    if (inner) inner.style.transform = 'rotate(' + pos.brg + 'deg)';
+    rafId = requestAnimationFrame(tick);
+  }
+  rafId = requestAnimationFrame(tick);
+  return carMarker;
+};
+</script>
+<script>
 (function(){
   if (typeof L === 'undefined') return;
   var mapEl = document.getElementById('map');
@@ -1848,56 +1905,7 @@
   // 경로를 따라 움직이는 자동차 — 전체 여정의 진행 방향을 내비게이션처럼 보여줌
   var fullPath = [];
   ROUTE_LEGS.forEach(function(leg){ fullPath = fullPath.concat(leg); });
-
-  if (fullPath.length > 1 && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    var cum = [0];
-    for (var ci = 1; ci < fullPath.length; ci++) {
-      cum.push(cum[ci - 1] + map.distance(fullPath[ci - 1], fullPath[ci]));
-    }
-    var totalDist = cum[cum.length - 1];
-
-    function bearing(a, b){
-      var φ1 = a[0] * Math.PI / 180, φ2 = b[0] * Math.PI / 180;
-      var Δλ = (b[1] - a[1]) * Math.PI / 180;
-      var y = Math.sin(Δλ) * Math.cos(φ2);
-      var x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
-      return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
-    }
-
-    function posAt(distAlong){
-      var lo = 0, hi = cum.length - 1;
-      while (lo < hi) {
-        var mid = (lo + hi) >> 1;
-        if (cum[mid] < distAlong) lo = mid + 1; else hi = mid;
-      }
-      var i = Math.max(1, lo);
-      var segStart = cum[i - 1], segEnd = cum[i];
-      var t = segEnd > segStart ? (distAlong - segStart) / (segEnd - segStart) : 0;
-      var a = fullPath[i - 1], b = fullPath[i];
-      return { lat: a[0] + (b[0] - a[0]) * t, lng: a[1] + (b[1] - a[1]) * t, brg: bearing(a, b) };
-    }
-
-    var carIcon = L.divIcon({
-      className: 'nav-car-wrap',
-      html: '<div class="nav-car"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1C13 1 14.5 4 14.5 8L14.5 16C14.5 17.5 13.5 18 10 18C6.5 18 5.5 17.5 5.5 16L5.5 8C5.5 4 7 1 10 1Z" fill="#0b3c6e" stroke="#fffdf7" stroke-width="1"/><rect x="7" y="6" width="6" height="4" rx="1.2" fill="#fffdf7" opacity="0.9"/></svg></div>',
-      iconSize: [20, 20], iconAnchor: [10, 10]
-    });
-    var carMarker = L.marker(fullPath[0], { icon: carIcon, interactive: false, zIndexOffset: 1000 }).addTo(map);
-
-    var DURATION = 30000;
-    var startTs = null;
-    function tick(ts){
-      if (!startTs) startTs = ts;
-      var elapsed = (ts - startTs) % DURATION;
-      var pos = posAt((elapsed / DURATION) * totalDist);
-      carMarker.setLatLng([pos.lat, pos.lng]);
-      var el = carMarker.getElement();
-      var inner = el && el.querySelector('.nav-car');
-      if (inner) inner.style.transform = 'rotate(' + pos.brg + 'deg)';
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
+  window.createRouteCar(map, fullPath, { duration: 30000 });
 })();
 </script>
 
@@ -2149,13 +2157,16 @@
     Object.keys(dayRoutes).forEach(function(k){ dayRoutes[k].forEach(function(p){ bounds.extend(p); }); });
     map.fitBounds(bounds, { padding: [28, 28] });
 
+    var dayPath = [];
     for (var i = 1; i < day.stops.length; i++) {
       var a = C[day.stops[i-1].c], b = C[day.stops[i].c];
       var line = dayRoutes['leg' + i] || [[a[0],a[1]],[b[0],b[1]]];
       L.polyline(line, {
         color: '#0b3c6e', weight: 3, opacity: 0.85
       }).addTo(map).bindTooltip(day.stops[i].leg, { sticky: true });
+      dayPath = dayPath.concat(line);
     }
+    window.createRouteCar(map, dayPath);
 
     branches.forEach(function(br, bi){
       var fr = C[br.from], via = C[br.via], to = C[br.to];
