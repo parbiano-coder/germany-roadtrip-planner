@@ -311,6 +311,8 @@
   .badge-circle{ fill:var(--route); stroke:var(--surface); stroke-width:2; }
   .nav-car-wrap{ background:none !important; border:none !important; }
   .nav-car{ width:20px; height:20px; transform-origin:50% 50%; filter:drop-shadow(0 1px 2.5px rgba(0,0,0,0.4)); pointer-events:none; }
+  .leaflet-tooltip.rt-tip{ font-size:0.95rem; font-weight:600; line-height:1.45; padding:0.5rem 0.75rem; max-width:240px; white-space:normal; border-radius:6px; border:none; box-shadow:0 4px 16px rgba(0,0,0,0.28); }
+  .leaflet-tooltip.rt-tip b{ color:var(--sign); }
   .badge-circle.start{ fill:var(--sign); }
   .badge-text{ fill:#fff; font-family:"SF Mono","Consolas",monospace; font-weight:700; font-size:10px; text-anchor:middle; dominant-baseline:central; }
   .waypoint-circle{ fill:var(--sign); stroke:var(--surface); stroke-width:1.5; }
@@ -1855,6 +1857,17 @@ window.createRouteCar = function(map, path, opts){
   rafId = requestAnimationFrame(tick);
   return carMarker;
 };
+
+// 마커에 마우스를 올리면(클릭 없이) 정보를 확대해서 보여주는 헬퍼 — 여러 지도에서 재사용
+window.bindHoverInfo = function(layer, html, baseRadius){
+  if (!layer || typeof L === 'undefined') return layer;
+  layer.bindTooltip(html, { sticky: true, direction: 'top', className: 'rt-tip' });
+  if (baseRadius && layer.setRadius) {
+    layer.on('mouseover', function(){ layer.setRadius(baseRadius * 1.6); layer.bringToFront(); });
+    layer.on('mouseout', function(){ layer.setRadius(baseRadius); });
+  }
+  return layer;
+};
 </script>
 <script>
 (function(){
@@ -1954,7 +1967,7 @@ window.createRouteCar = function(map, path, opts){
       ? { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' }
       : { color: '#0b3c6e', weight: 4.5, opacity: 0.92 }
     ).addTo(map);
-    if (info.label) line.bindTooltip(info.label, { sticky: true });
+    if (info.label) line.bindTooltip(info.label, { sticky: true, className: 'rt-tip' });
   });
 
   // 밤베르크는 선택 스톱 — 메인 경로(로텐부르크→뉘른베르크 직행)에서 벗어난 별도 점선으로 표시
@@ -1963,9 +1976,9 @@ window.createRouteCar = function(map, path, opts){
     legOut: [[49.89,10.89],[49.8903,10.8932],[49.8919,10.8926],[49.8909,10.8995],[49.8835,10.903],[49.8835,10.9125],[49.8808,10.9168],[49.8803,10.924],[49.8724,10.9393],[49.8705,10.9492],[49.8449,10.9968],[49.8343,11.0055],[49.811,11.0126],[49.8034,11.0171],[49.7835,11.0385],[49.7684,11.0481],[49.7558,11.0592],[49.7495,11.0601],[49.7382,11.0541],[49.7274,11.054],[49.7188,11.0512],[49.7001,11.0615],[49.6944,11.0618],[49.654,11.0338],[49.6465,11.0215],[49.6362,11.0107],[49.6267,11.0078],[49.6193,11.002],[49.6107,10.9985],[49.5935,10.9978],[49.5859,10.9891],[49.578,10.9882],[49.5661,10.9912],[49.5593,10.9899],[49.5558,11.0049],[49.5414,11.0218],[49.5299,11.0591],[49.5141,11.0899],[49.5058,11.1197],[49.4995,11.1318],[49.4966,11.1332],[49.4932,11.131],[49.4835,11.1192],[49.4767,11.1047],[49.4724,11.1031],[49.4584,11.0893],[49.4522,11.0859],[49.45,11.0802]]
   };
   L.polyline(BAMBERG_BRANCH.legIn, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('131km · 1시간 30분 (선택: 밤베르크 경유)', { sticky: true });
+    .addTo(map).bindTooltip('131km · 1시간 30분 (선택: 밤베르크 경유)', { sticky: true, className: 'rt-tip' });
   L.polyline(BAMBERG_BRANCH.legOut, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('65km · 52분 (선택: 밤베르크 경유)', { sticky: true });
+    .addTo(map).bindTooltip('65km · 52분 (선택: 밤베르크 경유)', { sticky: true, className: 'rt-tip' });
 
   // 슈투트가르트·베른카슈텔쿠에스도 선택 스톱 — 메인 경로(메칭겐→하이델베르크→뤼데스하임 직행)에서 벗어난 별도 점선으로 표시
   var STUTTGART_BRANCH = {
@@ -1973,18 +1986,18 @@ window.createRouteCar = function(map, path, opts){
     legOut: [[48.7798,9.1808],[48.7803,9.1771],[48.7822,9.1773],[48.7862,9.1804],[48.8072,9.1854],[48.8222,9.1736],[48.823,9.1765],[48.8238,9.1724],[48.8316,9.1665],[48.8346,9.1663],[48.839,9.1704],[48.841,9.17],[48.8403,9.1404],[48.8489,9.1242],[48.8529,9.1223],[48.8851,9.1458],[48.9011,9.1541],[48.9156,9.155],[48.9213,9.1583],[48.9262,9.1655],[48.9344,9.188],[48.9483,9.201],[48.9588,9.2176],[48.9717,9.2286],[49,9.234],[49.0127,9.2456],[49.036,9.2553],[49.0477,9.2667],[49.0595,9.2698],[49.0806,9.2887],[49.0966,9.2936],[49.1068,9.3025],[49.1133,9.3033],[49.126,9.3005],[49.1413,9.3063],[49.1506,9.3021],[49.1575,9.2944],[49.1689,9.2554],[49.1824,9.2246],[49.1894,9.1772],[49.1865,9.1267],[49.1991,9.0924],[49.211,9.0739],[49.2147,9.0623],[49.2139,9.0258],[49.2217,8.977],[49.2232,8.9555],[49.2268,8.9406],[49.2277,8.9124],[49.2411,8.8888],[49.246,8.8651],[49.2563,8.8364],[49.2606,8.8097],[49.2758,8.7585],[49.2751,8.742],[49.2808,8.7166],[49.2765,8.6994],[49.2719,8.6585],[49.2743,8.6414],[49.2799,8.6243],[49.2838,8.6224],[49.3145,8.6295],[49.3685,8.6327],[49.3741,8.6443],[49.3961,8.6703],[49.4058,8.6854],[49.41,8.71]]
   };
   L.polyline(STUTTGART_BRANCH.legIn, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('35km · 35분 (선택: 슈투트가르트 경유)', { sticky: true });
+    .addTo(map).bindTooltip('35km · 35분 (선택: 슈투트가르트 경유)', { sticky: true, className: 'rt-tip' });
   L.polyline(STUTTGART_BRANCH.legOut, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('121km · 1시간 28분 (선택: 슈투트가르트 경유)', { sticky: true });
+    .addTo(map).bindTooltip('121km · 1시간 28분 (선택: 슈투트가르트 경유)', { sticky: true, className: 'rt-tip' });
 
   var BERNKASTEL_BRANCH = {
     legIn: [[49.41,8.71],[49.4115,8.712],[49.4137,8.7115],[49.4082,8.6674],[49.4143,8.6427],[49.4417,8.5923],[49.4608,8.5423],[49.4659,8.5399],[49.4798,8.5446],[49.4982,8.5589],[49.5035,8.5608],[49.552,8.5599],[49.5553,8.5569],[49.5531,8.4347],[49.5457,8.4029],[49.5551,8.376],[49.5532,8.3281],[49.5537,8.3173],[49.5559,8.3127],[49.5742,8.2984],[49.5939,8.2891],[49.6042,8.2885],[49.6239,8.2943],[49.6347,8.2948],[49.6469,8.2916],[49.6581,8.283],[49.6863,8.2438],[49.6954,8.2271],[49.6995,8.2142],[49.7021,8.195],[49.6989,8.1749],[49.6995,8.167],[49.7152,8.1383],[49.7218,8.1343],[49.7342,8.1387],[49.743,8.1373],[49.75,8.1317],[49.7626,8.1153],[49.7804,8.1076],[49.789,8.0944],[49.7969,8.0662],[49.8023,8.0549],[49.8083,8.0507],[49.8207,8.0491],[49.8272,8.0423],[49.8337,8.0066],[49.8391,7.9951],[49.8493,7.9809],[49.8859,7.9466],[49.8948,7.9445],[49.9107,7.9492],[49.9169,7.9487],[49.9248,7.9437],[49.9298,7.9349],[49.9331,7.8925],[49.9299,7.8804],[49.9294,7.8689],[49.9249,7.8545],[49.9242,7.8297],[49.9271,7.8234],[49.9372,7.8122],[49.942,7.7966],[49.9534,7.7875],[49.9596,7.7723],[49.9666,7.7633],[49.9718,7.7404],[49.9802,7.7241],[49.9814,7.7094],[49.998,7.688],[49.9991,7.6778],[49.998,7.6654],[49.9861,7.6272],[49.9786,7.6109],[49.9781,7.5925],[49.9685,7.5683],[49.969,7.5627],[49.9798,7.5469],[49.9812,7.5395],[49.9749,7.5239],[49.9742,7.5031],[49.9687,7.4919],[49.9592,7.4553],[49.9569,7.412],[49.9367,7.3639],[49.9369,7.2988],[49.9149,7.2386],[49.907,7.2224],[49.9024,7.2196],[49.8986,7.19],[49.8819,7.1778],[49.8918,7.1574],[49.8909,7.1507],[49.8887,7.1502],[49.888,7.1471],[49.8821,7.1475],[49.8853,7.142],[49.8842,7.1305],[49.8904,7.119],[49.8888,7.1153],[49.8913,7.1138],[49.8905,7.1091],[49.8933,7.1105],[49.8935,7.1078],[49.8968,7.1047],[49.8984,7.1053],[49.8964,7.1041],[49.8986,7.1045],[49.9034,7.0992],[49.903,7.0874],[49.9093,7.0791],[49.9119,7.079],[49.9105,7.0784],[49.9107,7.0699],[49.9154,7.0748],[49.9148,7.0702],[49.9161,7.0721],[49.9199,7.0697]],
     legOut: [[49.9199,7.0697],[49.9161,7.0721],[49.9148,7.0702],[49.9154,7.0748],[49.9107,7.0699],[49.9105,7.0784],[49.9119,7.079],[49.9093,7.0791],[49.903,7.0874],[49.9034,7.0992],[49.8986,7.1045],[49.8964,7.1041],[49.8984,7.1053],[49.8968,7.1047],[49.8936,7.1077],[49.893,7.1107],[49.8908,7.1089],[49.8901,7.1105],[49.8843,7.1107],[49.8775,7.1157],[49.8698,7.135],[49.8572,7.1468],[49.8537,7.1524],[49.853,7.1598],[49.8664,7.1932],[49.8791,7.2136],[49.8856,7.2194],[49.8936,7.2149],[49.907,7.2224],[49.9151,7.2391],[49.9196,7.2547],[49.9354,7.2938],[49.9379,7.3075],[49.9358,7.34],[49.9366,7.364],[49.9572,7.4135],[49.9592,7.4558],[49.9687,7.4923],[49.974,7.5027],[49.9748,7.524],[49.981,7.5387],[49.9803,7.5456],[49.9694,7.5617],[49.9683,7.5677],[49.9782,7.5932],[49.9785,7.611],[49.9858,7.6265],[49.9978,7.665],[49.9989,7.6791],[49.9938,7.6933],[49.9815,7.7088],[49.9799,7.7248],[49.9713,7.7418],[49.9666,7.763],[49.9595,7.7722],[49.9533,7.7874],[49.9414,7.7973],[49.938,7.8103],[49.926,7.8249],[49.9233,7.8342],[49.9249,7.8553],[49.9291,7.8681],[49.9298,7.8804],[49.9329,7.8911],[49.9315,7.9265],[49.9295,7.9345],[49.9309,7.9405],[49.9336,7.9423],[49.9486,7.942],[49.9543,7.9476],[49.9579,7.9427],[49.9678,7.9428],[49.97,7.9313],[49.97,7.9139],[49.9759,7.9112],[49.9771,7.9166],[49.9774,7.9133]]
   };
   L.polyline(BERNKASTEL_BRANCH.legIn, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('178km · 2시간 6분 (선택: 베른카슈텔쿠에스 경유)', { sticky: true });
+    .addTo(map).bindTooltip('178km · 2시간 6분 (선택: 베른카슈텔쿠에스 경유)', { sticky: true, className: 'rt-tip' });
   L.polyline(BERNKASTEL_BRANCH.legOut, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('89km · 1시간 16분 (선택: 베른카슈텔쿠에스 경유)', { sticky: true });
+    .addTo(map).bindTooltip('89km · 1시간 16분 (선택: 베른카슈텔쿠에스 경유)', { sticky: true, className: 'rt-tip' });
 
   // 트리베르크(뻐꾸기시계 원조마을)도 선택 스톱 — 메인 경로(프라이부르크→필링겐슈베닝겐 직행)에서 벗어난 별도 점선으로 표시
   var TRIBERG_BRANCH = {
@@ -1992,22 +2005,25 @@ window.createRouteCar = function(map, path, opts){
     legOut: [[48.1263,8.2333],[48.1272,8.2336],[48.1288,8.2304],[48.1367,8.2366],[48.1388,8.24],[48.1385,8.2418],[48.1322,8.2503],[48.131,8.2585],[48.134,8.2744],[48.1354,8.2758],[48.1365,8.2745],[48.1378,8.2756],[48.1348,8.2786],[48.1345,8.2856],[48.132,8.2855],[48.1307,8.2904],[48.1292,8.2892],[48.1261,8.2907],[48.1283,8.3118],[48.1229,8.3185],[48.1215,8.3237],[48.1232,8.3364],[48.1298,8.352],[48.1314,8.364],[48.1301,8.377],[48.1216,8.3925],[48.1163,8.398],[48.1148,8.404],[48.1114,8.4109],[48.1075,8.4146],[48.1007,8.4178],[48.0954,8.4233],[48.0889,8.4325],[48.0848,8.4404],[48.0773,8.4475],[48.0727,8.4555],[48.0717,8.4608],[48.0668,8.467],[48.0624,8.47],[48.0591,8.47],[48.0602,8.4702],[48.0601,8.4747],[48.0633,8.4786],[48.0619,8.4823],[48.0623,8.4862],[48.0538,8.4876],[48.0539,8.4911],[48.06,8.4906]]
   };
   L.polyline(TRIBERG_BRANCH.legIn, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('59km · 1시간 1분 (선택: 트리베르크 경유)', { sticky: true });
+    .addTo(map).bindTooltip('59km · 1시간 1분 (선택: 트리베르크 경유)', { sticky: true, className: 'rt-tip' });
   L.polyline(TRIBERG_BRANCH.legOut, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('29km · 34분 (선택: 트리베르크 경유)', { sticky: true });
+    .addTo(map).bindTooltip('29km · 34분 (선택: 트리베르크 경유)', { sticky: true, className: 'rt-tip' });
 
   stops.forEach(function(s){
     var isStay = s[3].indexOf('숙박') !== -1;
-    L.circleMarker([s[0], s[1]], {
-      radius: isStay ? 10 : 6, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: s[5] ? 0.5 : 0.95,
+    var baseR = isStay ? 10 : 6;
+    var m = L.circleMarker([s[0], s[1]], {
+      radius: baseR, color: '#fffdf7', weight: 2, fillColor: s[4], fillOpacity: s[5] ? 0.5 : 0.95,
       dashArray: s[5] ? '3 2' : null
     }).addTo(map).bindPopup('<b>' + s[2] + '</b><br>' + s[3]);
+    window.bindHoverInfo(m, '<b>' + s[2] + '</b><br>' + s[3], baseR);
   });
 
   refPoints.forEach(function(r){
-    L.circleMarker([r[0], r[1]], {
+    var m = L.circleMarker([r[0], r[1]], {
       radius: 5, color: '#fffdf7', weight: 1.5, fillColor: ref, fillOpacity: 0.85
     }).addTo(map).bindPopup('<b>' + r[2] + '</b><br>미방문 참고 위치');
+    window.bindHoverInfo(m, '<b>' + r[2] + '</b><br>미방문 참고 위치', 5);
   });
 
   // 경로를 따라 움직이는 자동차 — 전체 여정의 진행 방향을 내비게이션처럼 보여줌
@@ -2309,12 +2325,14 @@ window.createRouteCar = function(map, path, opts){
     map.fitBounds(L.latLngBounds(allPts.map(function(p){ return [p[0], p[1]]; })), { padding: [18, 18], maxZoom: 17 });
 
     wm.points.forEach(function(p, i){
-      L.circleMarker([p[0], p[1]], { radius: 7, color: '#fffdf7', weight: 2, fillColor: '#0b3c6e', fillOpacity: 0.95 })
+      var m = L.circleMarker([p[0], p[1]], { radius: 7, color: '#fffdf7', weight: 2, fillColor: '#0b3c6e', fillOpacity: 0.95 })
         .addTo(map).bindPopup('<b>' + (i+1) + '. ' + p[2] + '</b>');
+      window.bindHoverInfo(m, '<b>' + (i+1) + '. ' + p[2] + '</b>', 7);
     });
     (wm.outliers || []).forEach(function(p){
-      L.circleMarker([p[0], p[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.85, dashArray: '2 2' })
+      var m = L.circleMarker([p[0], p[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.85, dashArray: '2 2' })
         .addTo(map).bindPopup('<b>' + p[2] + '</b><br>도보권 밖 &middot; 별도 이동 필요');
+      window.bindHoverInfo(m, '<b>' + p[2] + '</b><br>도보권 밖 · 별도 이동 필요', 6);
     });
   }
 
@@ -2349,7 +2367,7 @@ window.createRouteCar = function(map, path, opts){
       var line = dayRoutes['leg' + i] || [[a[0],a[1]],[b[0],b[1]]];
       L.polyline(line, {
         color: '#0b3c6e', weight: 3, opacity: 0.85
-      }).addTo(map).bindTooltip(day.stops[i].leg, { sticky: true });
+      }).addTo(map).bindTooltip(day.stops[i].leg, { sticky: true, className: 'rt-tip' });
       dayPath = dayPath.concat(line);
     }
     window.createRouteCar(map, dayPath);
@@ -2362,22 +2380,25 @@ window.createRouteCar = function(map, path, opts){
       var seg1 = L.polyline(lineIn, {
         color: '#0b3c6e', weight: 2.5, opacity: 0.55, dashArray: '5 5'
       }).addTo(map);
-      if (br.legIn) seg1.bindTooltip(br.legIn, { sticky: true });
+      if (br.legIn) seg1.bindTooltip(br.legIn, { sticky: true, className: 'rt-tip' });
       var seg2 = L.polyline(lineOut, {
         color: '#0b3c6e', weight: 2.5, opacity: 0.55, dashArray: '5 5'
       }).addTo(map);
-      if (br.legOut) seg2.bindTooltip(br.legOut, { sticky: true });
-      L.circleMarker([via[0], via[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.5, dashArray: '2 2' })
+      if (br.legOut) seg2.bindTooltip(br.legOut, { sticky: true, className: 'rt-tip' });
+      var viaM = L.circleMarker([via[0], via[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.5, dashArray: '2 2' })
         .addTo(map).bindPopup('<b>' + via[2] + '</b> (선택)');
+      window.bindHoverInfo(viaM, '<b>' + via[2] + '</b> (선택)', 6);
     });
 
     day.stops.forEach(function(s, i){
       var p = C[s.c];
       var isEndpoint = (i === 0 || i === day.stops.length - 1);
-      L.circleMarker([p[0], p[1]], {
-        radius: isEndpoint ? 8 : 6, color: '#fffdf7', weight: 2,
+      var baseR = isEndpoint ? 8 : 6;
+      var stopM = L.circleMarker([p[0], p[1]], {
+        radius: baseR, color: '#fffdf7', weight: 2,
         fillColor: '#0b3c6e', fillOpacity: 0.95
       }).addTo(map).bindPopup('<b>' + p[2] + '</b>' + (s.leg ? '<br>' + s.leg : ''));
+      window.bindHoverInfo(stopM, '<b>' + p[2] + '</b>' + (s.leg ? '<br>' + s.leg : ''), baseR);
     });
   }
 
