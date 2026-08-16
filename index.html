@@ -385,6 +385,14 @@
     .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
   @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
   .walk-map-note{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 0.6rem; }
+  .city-label{
+    grid-column:1 / -1;
+    margin:1.1rem 0 0.5rem; padding-top:0.9rem; border-top:1px dashed var(--line);
+    font-size:0.9rem; font-weight:800; letter-spacing:0.01em; color:var(--route);
+  }
+  h4 + .city-label{ margin-top:0; padding-top:0; border-top:none; }
+  .landmark-grid > .city-label:first-child{ margin-top:0; padding-top:0; border-top:none; }
+  .city-label .optional-tag{ font-size:0.72rem; font-weight:700; color:var(--warn); margin-left:0.3rem; }
   .walk-map-link{
     display:inline-flex; align-items:center; gap:0.4rem;
     margin:0 0 1.3rem; padding:0.6rem 1.1rem;
@@ -679,6 +687,15 @@
         <div class="sight"><span class="sight-name">Il Gusto</span><span class="sight-hours">August-Bebel-Str. 8, 97297 Waldbüttelbrunn · 토 17:00–22:00</span><span class="sight-price">이탈리안(피자·파스타) · 차량 약 12분 · ☎ 0931 4040295 · <a href="https://www.google.com/maps/search/?api=1&query=Il+Gusto+Waldbuettelbrunn" target="_blank" rel="noopener">지도</a></span></div>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">Zur Alten Brauerei Zapf·Meau's Thai는 도보권, 나머지 2곳은 인근 마을이라 차량 이동이 필요합니다(운전 시간은 추정치). Da Pippo(위팅엔)와 예전 Fränkischer Landgasthof는 현재 상황이 불명확해 목록에서 제외했습니다 — 이 5곳도 도착이 늦어질 수 있으니 당일 영업 여부를 다시 확인하세요.</p>
       </div>
+      <div class="sight-list">
+        <h4>저녁 식사 추가 후보 (대형마트 ①②번 인근, 경로 이탈 거의 없음)</h4>
+        <div class="sight"><span class="sight-name">Akzenthotel Gasthof Krone</span><span class="sight-hours">Würzburger Str. 23, 97264 Helmstadt · 목–월 17:00부터(일·공휴일은 11:00부터)</span><span class="sight-price">프랑켄 향토식 + 인터내셔널 · ① Netto와 같은 길 · ☎ 09369 9064-0 · <a href="https://www.google.com/maps/search/?api=1&query=Akzenthotel+Gasthof+Krone+Helmstadt" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Bräustüble</span><span class="sight-hours">Mitteltorstraße 1, 97828 Marktheidenfeld · 매일 11:00–14:00 &amp; 17:00부터(목요일 휴무)</span><span class="sight-price">향토 가스트하우스 · ② E center 도보권(구시가) · ☎ 09391 1224 · <a href="https://www.google.com/maps/search/?api=1&query=Braeustueble+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Weinhaus Anker (Hotel &amp; Restaurant Anker)</span><span class="sight-hours">Kolpingstraße 7, 97828 Marktheidenfeld · 금·토·일 17:30/18:00–22:00</span><span class="sight-price">와인하우스 · ② E center 인근 · ☎ 09391 6004-801 · <a href="https://www.google.com/maps/search/?api=1&query=Weinhaus+Anker+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Café de mar</span><span class="sight-hours">Mainkai 10, 97828 Marktheidenfeld · 토 주방 11:00–21:00(매장 23:00까지)</span><span class="sight-price">마인강변 카페·레스토랑 · ② E center 인근 · ☎ 09391 5035010 · <a href="https://www.google.com/maps/search/?api=1&query=Cafe+de+mar+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Baumhof-Tenne</span><span class="sight-hours">Baumhofstr. 147, 97828 Marktheidenfeld · 금·토 17:00–23:00</span><span class="sight-price">숲 근처 조용한 향토 가스트호프 · ② E center에서 차량 소요 · ☎ 09391 3549 · <a href="https://www.google.com/maps/search/?api=1&query=Baumhof-Tenne+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">전부 A3 경로에서 거의 벗어나지 않는 헬름슈타트·마르크트하이덴펠트 소재입니다. 20:20~20:50 도착 예정이라 목요일 휴무인 Bräustüble 외엔 대부분 영업 중일 가능성이 높지만, 당일 다시 확인하세요.</p>
+      </div>
     </div>
     </details>
 
@@ -705,6 +722,7 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">뷔르츠부르크</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg/500px-2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg" alt="뷔르츠부르크 레지덴츠 궁전" loading="lazy">
@@ -735,6 +753,7 @@
       </div>
       <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교 → 마리엔베르크 요새</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7898,9.9192&waypoints=49.793%2C9.9257" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
+      <p class="city-label">로텐부르크</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 성벽 구시가" loading="lazy">
@@ -820,6 +839,7 @@
       </div>
       <p class="walk-map-note">지도별 추천 코스 — 로텐부르크: 시청 탑 → 크리스마스박물관 → 성 야코프 교회 → 제국 도시 박물관 → 성곽 정원 → 중세범죄박물관 → 플뢴라인 → 수공업자의 집</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.3772,10.1785&destination=49.3766,10.1814&waypoints=49.3767%2C10.1783%7C49.3779%2C10.1777%7C49.3784%2C10.1757%7C49.376%2C10.1738%7C49.3756%2C10.1792%7C49.374%2C10.1803" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
+      <p class="city-label">뉘른베르크</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nuernberg_Burg_Panorama_PtGUI.jpg/500px-Nuernberg_Burg_Panorama_PtGUI.jpg" alt="카이저부르크 뉘른베르크" loading="lazy">
@@ -954,6 +974,7 @@
       </div>
       <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크·진벨투름 → 뒤러 하우스 → 장난감박물관 → 헹커슈텍 → 성 제발두스 교회 → 구 시청 → 펨보하우스 → 중앙시장 → 게르만 국립박물관 → 철도박물관 → 수공예마을 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 전범재판 기념관·성 요한 묘지·나치전당대회장)</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4579,11.0748&destination=49.4474,11.0812&waypoints=49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
+      <p class="city-label">밤베르크 <span class="optional-tag">(선택)</span></p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시청사(Altes Rathaus)" loading="lazy">
@@ -1021,6 +1042,7 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">알리안츠 아레나</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Allianz_arena_daylight_Richard_Bartz.jpg?width=500" alt="알리안츠 아레나" loading="lazy">
@@ -1031,6 +1053,7 @@
         <div class="landmark-parking">🅿️ 아레나 전용 대형 주차장(P1~P7) · 유료(경기일 외 평상시 요금 저렴)</div>
         </div>
       </div>
+      <p class="city-label">뮌헨</p>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 노이에스 라트하우스 글로켄슈필" loading="lazy">
         <div class="landmark-body">
@@ -1394,6 +1417,7 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">프라이부르크</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Freiburger_M%C3%BCnster_-_FaB.jpg/500px-Freiburger_M%C3%BCnster_-_FaB.jpg" alt="프라이부르크 뮌스터 전망대" loading="lazy">
@@ -1450,6 +1474,7 @@
         <div class="landmark-parking">🅿️ 뮌스터 도보 5~10분(Parkhaus Am Martinstor) · 유료(시간당 €3, 24시간 최대 €22)</div>
         </div>
       </div>
+      <p class="city-label">메칭겐</p>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OutletcityMetzingen.jpg?width=500" alt="아울렛시티 메칭겐" loading="lazy">
         <div class="landmark-body">
@@ -1459,6 +1484,7 @@
         <div class="landmark-parking">🅿️ 아울렛 도보 8~12분(P4) · 무료</div>
         </div>
       </div>
+      <p class="city-label">트리베르크 <span class="optional-tag">(선택)</span></p>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cuckoo%20clocks%20in%20Triberg%20im%20Schwarzwald.JPG?width=500" alt="트리베르크 뻐꾸기시계 원조마을" loading="lazy">
         <div class="landmark-body">
@@ -1543,6 +1569,7 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">하이델베르크</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg" alt="하이델베르크 성 (Schlossticket)" loading="lazy">
@@ -1599,6 +1626,7 @@
         <div class="landmark-parking">🅿️ 성 등산철도 승강장 건물 내부(P12 Kornmarkt/Schloss) · 유료(1시간 €2.50, 5시간 €11.50)</div>
         </div>
       </div>
+      <p class="city-label">슈투트가르트 <span class="optional-tag">(선택)</span></p>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mercedes-Benz_Museum_201312_08_blue_hour.jpg/500px-Mercedes-Benz_Museum_201312_08_blue_hour.jpg" alt="메르세데스-벤츠 박물관" loading="lazy">
         <div class="landmark-body">
@@ -1618,21 +1646,22 @@
         </div>
       </div>
       <div class="landmark-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg/500px-Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg" alt="베른카슈텔쿠에스 마르크트광장 & 란트스후트 성터" loading="lazy">
-        <div class="landmark-body">
-        <h3>베른카슈텔쿠에스 마르크트광장 & 란트스후트 성터</h3>
-        <p class="landmark-desc">모젤강을 따라 늘어선 포도밭과 목조가옥이 어우러진 와인마을입니다.</p>
-        <div class="landmark-meta">광장 상시 개방 · 성터는 도보 약 30분 등반(전망 무료) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Marktplatz+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 마르크트광장 도보 몇 분(P3/P4 Moselufer) · 유료(요금 미확인, 현장 정산기 확인)</div>
-        </div>
-      </div>
-      <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg/500px-Neues_Schloss_Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg" alt="슈투트가르트 슐로스광장" loading="lazy">
         <div class="landmark-body">
         <h3>슈투트가르트 슐로스광장</h3>
         <p class="landmark-desc">노이에스 슐로스와 분수가 있는 시내 중심 광장. 슈투트가르트를 짧게 들를 때 가장 먼저 갈 만한 곳입니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Schlossplatz+Stuttgart" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙역·시내 중심(Parkhaus Hauptbahnhof) · 유료(시간당 €2.50)</div>
+        </div>
+      </div>
+      <p class="city-label">베른카슈텔쿠에스 <span class="optional-tag">(선택)</span></p>
+      <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg/500px-Aerial_image_of_the_Moselle_in_Bernkastel-Kues_%28view_from_the_southeast%29.jpg" alt="베른카슈텔쿠에스 마르크트광장 & 란트스후트 성터" loading="lazy">
+        <div class="landmark-body">
+        <h3>베른카슈텔쿠에스 마르크트광장 & 란트스후트 성터</h3>
+        <p class="landmark-desc">모젤강을 따라 늘어선 포도밭과 목조가옥이 어우러진 와인마을입니다.</p>
+        <div class="landmark-meta">광장 상시 개방 · 성터는 도보 약 30분 등반(전망 무료) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Marktplatz+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 마르크트광장 도보 몇 분(P3/P4 Moselufer) · 유료(요금 미확인, 현장 정산기 확인)</div>
         </div>
       </div>
       </div>
@@ -1684,6 +1713,7 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">뤼데스하임</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Niederwalddenkmal_ohne_Personen.jpg/500px-Niederwalddenkmal_ohne_Personen.jpg" alt="뤼데스하임 케이블카(Seilbahn) · 니더발트 기념비" loading="lazy">
@@ -1724,6 +1754,7 @@
       </div>
       <p class="walk-map-note">지도별 추천 코스 — 뤼데스하임: 케이블카 승강장 → 드로셀가세 → 악기박물관(오버 거리)</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.9796,7.9219&destination=49.9793,7.9199&waypoints=49.9783%2C7.9208" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
+      <p class="city-label">비스바덴 <span class="optional-tag">(선택)</span></p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden_Kurhaus.jpg?width=500" alt="비스바덴 쿠어하우스" loading="lazy">
