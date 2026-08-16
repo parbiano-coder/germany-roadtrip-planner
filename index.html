@@ -338,6 +338,8 @@
   .landmark-card.wide{ grid-column:1 / -1; flex-direction:row; }
   .landmark-card.wide img{ width:280px; height:auto; min-height:100%; flex-shrink:0; }
   .landmark-card.wide .landmark-body{ flex:1; }
+  .landmark-card.semi-wide{ grid-column: span 2; }
+  @media (max-width:640px){ .landmark-card.semi-wide{ grid-column: span 1; } }
   @media (max-width:640px){
     .landmark-card.wide{ flex-direction:column; }
     .landmark-card.wide img{ width:100%; height:170px; }
@@ -1284,9 +1286,9 @@
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.6rem 0 0;"><b>주차장→성 이동수단 비교</b> (편도 기준)</p>
         <div class="sight"><span class="sight-name">🚶 도보 (권장)</span><span class="sight-hours">약 40분 · 급경사</span><span class="sight-price">무료 · 버스·마차 대기시간 변수가 없어 09:10 확정 입장엔 가장 안전한 선택</span></div>
         <div class="sight"><span class="sight-name">🚌 셔틀버스</span><span class="sight-hours">티켓센터→"Jugend"/마리엔다리 정류장, 배차 간격 약 20분(성수기 첫차 08:00) + 정류장에서 성 입구까지 도보 15분(급경사 하산)</span><span class="sight-price">현금만 가능(카드 불가) · 배차 시간이 고정이 아니라 대기 변수 있음</span></div>
-        <div class="sight"><span class="sight-name">🐎 마차</span><span class="sight-hours">계곡 정류장(Hotel Müller 맞은편)→성 아래 정류장 약 20분 + 정류장에서 입구까지 도보 15분</span><span class="sight-price">올라갈 때 €8, 내려올 때(하산) €4 — 방향별 요금 다름 · 현금만, 수요에 따라 배차라 대기 변수 있음</span></div>
+        <div class="sight"><span class="sight-name">🐎 마차</span><span class="sight-hours">계곡 정류장(Hotel Müller 맞은편)→성 아래 정류장 약 20분 + 정류장에서 입구까지 도보 15분</span><span class="sight-price">올라갈 때 €8, 내려올 때 €4 — 방향별 요금 다름 · 현금만, 수요에 따라 배차라 대기 변수 있음</span></div>
       </div>
-      <div class="landmark-card">
+      <div class="landmark-card semi-wide">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Schloss_Hohenschwangau_2021.jpg/500px-Schloss_Hohenschwangau_2021.jpg" alt="호엔슈방가우 성" loading="lazy">
         <div class="landmark-body">
         <h3>호엔슈방가우 성</h3>
@@ -1295,7 +1297,7 @@
         <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1 추가)</div>
         </div>
       </div>
-      <div class="landmark-card">
+      <div class="landmark-card semi-wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein%20Castle%20from%20Marienbr%C3%BCcke%2C%202011%20May.jpg?width=500" alt="마리엔 다리에서 본 노이슈반슈타인 성" loading="lazy">
         <div class="landmark-body">
         <h3>마리엔 다리(Marienbrücke)</h3>
