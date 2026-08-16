@@ -402,7 +402,8 @@
   .walk-map-link:hover{ border-color:var(--route); background:var(--route-soft); }
   .landmark-grid > .walk-map-note,
   .landmark-grid > .walk-map-link,
-  .landmark-grid > .booking-note{ grid-column: 1 / -1; }
+  .landmark-grid > .booking-note,
+  .landmark-grid > .sight-list{ grid-column: 1 / -1; }
   svg.day-map{ width:100%; height:auto; display:block; max-height:280px; }
   .route-casing.optional, .route-line.optional{ stroke-dasharray:5 4; }
   .leg-map-label{
@@ -856,7 +857,7 @@
       </div>
       <p class="city-label">뉘른베르크</p>
       <p class="walk-map-note">🚗 로텐부르크→뉘른베르크 약 103km·1시간 12분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.3766,10.1814&destination=49.4579,11.0748" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Am Hauptbahnhof · 유료(시간당 €2.00) · 중앙역 인근, 구시가까지 도보 이동 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Hauptbahnhof+Nuernberg" target="_blank" rel="noopener">주차장 위치 보기</a></p>
-      <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크·진벨투름 → 뒤러 하우스 → 장난감박물관 → 헹커슈텍 → 성 제발두스 교회 → 구 시청 → 펨보하우스 → 중앙시장 → 게르만 국립박물관 → 철도박물관 → 수공예마을 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 전범재판 기념관·성 요한 묘지·나치전당대회장)</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크·진벨투름 → 뒤러 하우스 → 장난감박물관 → 헹커슈텍 → 성 제발두스 교회 → 구 시청 → 펨보하우스 → 중앙시장 → 게르만 국립박물관 → 철도박물관 → 수공예마을(모두 도보권) · 전범재판 기념관·성 요한 묘지·나치전당대회장은 도심에서 떨어져 있어 별도 이동 필요</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4468,11.0826&destination=49.4474,11.0812&waypoints=49.4579%2C11.0748%7C49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발: Parkhaus Am Hauptbahnhof)</a>
       <div class="landmark-grid">
       <div class="landmark-card">
@@ -1039,7 +1040,6 @@
         <div>
           <h4>팁</h4>
           <p class="tip">대형 텐트 좌석은 몇 달 전 예약 마감이라 워크인은 사실상 불가하니 이번엔 축제장 산책과 시내 관광 위주로 즐기세요. 레지덴츠·님펜부르크 궁전·구/신 피나코테크 같은 미술관·궁전은 각각 1.5~2시간 이상 필요해 반나절 코스엔 다 담기 어렵습니다 — 뮌헨을 별도 일정으로 다시 올 계획이 있다면 그때로 남겨두는 걸 추천합니다. 알리안츠 아레나는 A9 경로에서 살짝만 벗어나면 되니 외관만 보고 사진 찍는 정도는 5~10분이면 충분하지만, 뮤지엄까지 제대로 둘러보려면 1시간 이상 걸려 반나절 일정엔 부담이 될 수 있습니다.</p>
-          <div class="booking-note" style="margin-top:0.6rem;"><b>⚠️ 사전예약 참고</b> 님펜부르크 궁전(시간 되면 들를 경우)은 타임슬롯 사전예약이 필수입니다 — 현장 구매가 안 되니 방문 계획이 있다면 미리 온라인 예약하세요.</div>
         </div>
       </div>
       <div class="sight-list">
@@ -1058,8 +1058,8 @@
         </div>
       </div>
       <p class="city-label">뮌헨</p>
-      <p class="walk-map-note">🚗 알리안츠 아레나→뮌헨 시내 약 13km·19분(P+R Heimeranplatz까지는 15.7km·25분) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.2188,11.6236&destination=48.1312,11.5320" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 뮌헨 시내: 옥토버페스트 기간엔 구시가 직접 주차가 매우 어려워 시 외곽 P+R 후 지하철(U4/U5) 이용 권장(P+R 연계 할인 요금 있음, 정확한 금액은 현장 자판기·MVV 앱에서 확인) · 티켓은 역 구내 자판기(현금·카드 모두 가능) 또는 MVV go 앱에서 구매 · P+R에서 U-Bahn Heimeranplatz역 도보 1분 · Heimeranplatz→마리엔광장 U4/U5로 5정거장·약 10분 · 돌아올 땐 호프브로이하우스(마지막 코스)에서 마리엔광장역까지 도보 약 5분 + 마리엔광장→Heimeranplatz U4/U5로 5정거장·약 10분 · <a href="https://www.google.com/maps/search/?api=1&query=P%2BR+Heimeranplatz+Muenchen" target="_blank" rel="noopener">주차장 위치 보기</a></p>
-      <p class="walk-map-note">지도별 추천 코스 — 뮌헨 구시가: 마리엔 광장 → 성 페터 교회 → 구 시청 → 프라우엔교회 → 성 미하엘 교회 → 아잠 교회 → 유대인박물관 → 뮌헨 시립박물관 → 빅투알리엔마르크트 → 레지덴츠 & 보물관 → 테아티너 교회 → 호프가르텐 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 테레지엔비제·구 피나코테크·영국정원·님펜부르크 궁전)</p>
+      <p class="walk-map-note">🚗 알리안츠 아레나→뮌헨 시내 약 13km·19분(P+R Heimeranplatz까지는 15.7km·25분) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.2188,11.6236&destination=48.1312,11.5320" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 뮌헨 시내: 옥토버페스트 기간엔 구시가 직접 주차가 매우 어려워 시 외곽 P+R 후 지하철(U4/U5) 이용 권장(P+R 연계 할인 요금 있음, 정확한 금액은 현장 자판기·MVV 앱에서 확인) · <a href="https://www.google.com/maps/search/?api=1&query=P%2BR+Heimeranplatz+Muenchen" target="_blank" rel="noopener">주차장 위치 보기</a><br>🎫 티켓은 역 구내 자판기(현금·카드 모두 가능) 또는 MVV go 앱에서 구매<br>🚇 P+R에서 U-Bahn Heimeranplatz역까지 도보 1분 → Heimeranplatz→마리엔광장 U4/U5로 5정거장·약 10분<br>🔙 돌아올 땐 호프브로이하우스(마지막 코스)에서 마리엔광장역까지 도보 약 5분 → 마리엔광장→Heimeranplatz U4/U5로 5정거장·약 10분</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뮌헨 구시가: 마리엔 광장 → 성 페터 교회 → 구 시청 → 프라우엔교회 → 성 미하엘 교회 → 아잠 교회 → 유대인박물관 → 뮌헨 시립박물관 → 빅투알리엔마르크트 → 레지덴츠 & 보물관 → 테아티너 교회 → 호프가르텐(모두 도보권) · 테레지엔비제·구 피나코테크·영국정원·님펜부르크 궁전은 구시가에서 떨어져 있어 별도 이동 필요</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1371,11.5754&destination=48.1427,11.5805&waypoints=48.1365%2C11.576%7C48.1368%2C11.5771%7C48.1386%2C11.5736%7C48.1389%2C11.5704%7C48.1352%2C11.5695%7C48.1343%2C11.5723%7C48.1352%2C11.5726%7C48.1351%2C11.5755%7C48.1408%2C11.5776%7C48.142%2C11.5766" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 노이에스 라트하우스 글로켄슈필" loading="lazy">
@@ -1183,6 +1183,7 @@
         <div class="landmark-parking">🅿️ 궁전 앞(Schlossrondell) · 유료</div>
         </div>
       </div>
+      <div class="booking-note"><b>⚠️ 사전예약 참고</b> 님펜부르크 궁전(시간 되면 들를 경우)은 타임슬롯 사전예약이 필수입니다 — 현장 구매가 안 되니 방문 계획이 있다면 미리 온라인 예약하세요.</div>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alte_Pinakothek.JPG?width=500" alt="구 피나코테크" loading="lazy">
         <div class="landmark-body">
@@ -1255,8 +1256,21 @@
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
       <p class="city-label">호엔슈방가우</p>
+      <p class="walk-map-note">🚗 숙소(퓌센)→호엔슈방가우 약 4.4km·7분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.57,10.70&destination=47.5572,10.7390" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 주차장(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1) · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Koenigsschloesser+P1+Hohenschwangau" target="_blank" rel="noopener">주차장 위치 보기</a></p>
       <p class="walk-map-note">📍 주차장(P1~P4)→노이슈반슈타인 성→마리엔 다리 도보 코스 — 성까지 약 40분, 성에서 다리까지 왕복 20~30분 추가(급경사)</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.5572,10.7390&destination=47.5550,10.7494&waypoints=47.5576,10.7497" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
+      <div class="landmark-grid">
+      <div class="landmark-card wide">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/500px-Schloss_Neuschwanstein_2013.jpg" alt="노이슈반슈타인 성" loading="lazy">
+        <div class="landmark-body">
+        <h3>노이슈반슈타인 성</h3>
+        <p class="landmark-desc">독일 여행 사진의 대표 이미지. 알프스 자락 절벽 위에 세워진 순백의 성입니다. <b>09:10 입장 예약 완료</b> — 온라인 티켓은 성 앞뜰 회전문에서 바로 사용, 티켓센터 방문·교환 불필요.</p>
+        <div class="landmark-meta">09:00–18:00 (3/28–10/15) · 티켓센터 08:00–16:00 · <span class="landmark-price">성인 €21 · 학생 €20 · 18세 미만 무료</span> · <a href="https://www.hohenschwangau.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Neuschwanstein" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1 추가)</div>
+        <div style="font-size:0.8rem;color:var(--ink-soft);margin-top:0.3rem;">⚠️ <b>관람 시 유의사항</b>(공식 Site Regulations 기준) — 🎫 티켓 인쇄 권장(흑백 OK), 휴대폰 QR도 가능하나 충전 상태·무손상·무광 보호필름 없어야 스캔 인식됨. 회전문에서 스캔, 가방 검사 있을 수 있음(거부 시 입장 취소). 🎒 유모차·아기캐리어 백팩·수하물은 성 내부 반입 불가(보관 장소 없음, 동반 인원이 밖에서 대기). ☎️ 티켓센터: Alpseestraße 12, 87645 Hohenschwangau · +49 8362 930830 · info@ticket-center-hohenschwangau.de</div>
+        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>바이에른 왕 루트비히 2세가 현실 정치에서 도피해 지은 개인적 낭만의 공간. 완공 전 왕이 의문사하며 미완성으로 남았고, 훗날 디즈니 성의 실제 모티브가 되었습니다.</div>
+        </div>
+      </div>
       <div class="sight-list" id="day4-castle-plan">
         <h4>🏰 노이슈반슈타인 성 아침 이동 계획 (09:10 입장 확정)</h4>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">티켓은 시간제입니다 — 늦으면 그 자리에서 티켓이 소멸되고 환불·재발급이 안 됩니다. 공식 안내 원문 기준: "성에는 투어 10~15분 전, 앞뜰(Schlosshof)에는 투어 5분 전까지 도착"이 목표입니다. 아래는 그 기준에 맞춘 일정(도보 40분 기준)입니다.</p>
@@ -1271,18 +1285,6 @@
         <div class="sight"><span class="sight-name">🚶 도보 (권장)</span><span class="sight-hours">약 40분 · 급경사</span><span class="sight-price">무료 · 버스·마차 대기시간 변수가 없어 09:10 확정 입장엔 가장 안전한 선택</span></div>
         <div class="sight"><span class="sight-name">🚌 셔틀버스</span><span class="sight-hours">티켓센터→"Jugend"/마리엔다리 정류장, 배차 간격 약 20분(성수기 첫차 08:00) + 정류장에서 성 입구까지 도보 15분(급경사 하산)</span><span class="sight-price">현금만 가능(카드 불가) · 배차 시간이 고정이 아니라 대기 변수 있음</span></div>
         <div class="sight"><span class="sight-name">🐎 마차</span><span class="sight-hours">계곡 정류장(Hotel Müller 맞은편)→성 아래 정류장 약 20분 + 정류장에서 입구까지 도보 15분</span><span class="sight-price">올라갈 때 €8, 내려올 때(하산) €4 — 방향별 요금 다름 · 현금만, 수요에 따라 배차라 대기 변수 있음</span></div>
-      </div>
-      <div class="landmark-grid">
-      <div class="landmark-card wide">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/500px-Schloss_Neuschwanstein_2013.jpg" alt="노이슈반슈타인 성" loading="lazy">
-        <div class="landmark-body">
-        <h3>노이슈반슈타인 성</h3>
-        <p class="landmark-desc">독일 여행 사진의 대표 이미지. 알프스 자락 절벽 위에 세워진 순백의 성입니다. <b>09:10 입장 예약 완료</b> — 온라인 티켓은 성 앞뜰 회전문에서 바로 사용, 티켓센터 방문·교환 불필요.</p>
-        <div class="landmark-meta">09:00–18:00 (3/28–10/15) · 티켓센터 08:00–16:00 · <span class="landmark-price">성인 €21 · 학생 €20 · 18세 미만 무료</span> · <a href="https://www.hohenschwangau.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Neuschwanstein" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1 추가)</div>
-        <div style="font-size:0.8rem;color:var(--ink-soft);margin-top:0.3rem;">⚠️ <b>관람 시 유의사항</b>(공식 Site Regulations 기준) — 🎫 티켓 인쇄 권장(흑백 OK), 휴대폰 QR도 가능하나 충전 상태·무손상·무광 보호필름 없어야 스캔 인식됨. 회전문에서 스캔, 가방 검사 있을 수 있음(거부 시 입장 취소). 🎒 유모차·아기캐리어 백팩·수하물은 성 내부 반입 불가(보관 장소 없음, 동반 인원이 밖에서 대기). ☎️ 티켓센터: Alpseestraße 12, 87645 Hohenschwangau · +49 8362 930830 · info@ticket-center-hohenschwangau.de</div>
-        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>바이에른 왕 루트비히 2세가 현실 정치에서 도피해 지은 개인적 낭만의 공간. 완공 전 왕이 의문사하며 미완성으로 남았고, 훗날 디즈니 성의 실제 모티브가 되었습니다.</div>
-        </div>
       </div>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Schloss_Hohenschwangau_2021.jpg/500px-Schloss_Hohenschwangau_2021.jpg" alt="호엔슈방가우 성" loading="lazy">
@@ -1415,7 +1417,7 @@
     </details>
 
     <details class="day" id="day6">
-      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 트리베르크(블랙 포레스트) → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 트리베르크 → 블랙 포레스트 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 198km · 약 3시간(블랙 포레스트 트리베르크 경유, 쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 뻐꾸기시계 마을 &amp; 아울렛 쇼핑</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=Schuetzenstrasse+41+72555+Metzingen" target="_blank" rel="noopener">아파트 메칭겐 시티</a> · Schützenstr. 41, 72555 메칭겐 · 체크인 15:00–23:30(9/24 목, 도착 1시간 전 전화 필수) · 무료주차(숙소 전용) · 아파트 · 냉장고 · 전기주전자 · 쿡탑 등 간이주방 · ☎ +49 172 4951197</div>
