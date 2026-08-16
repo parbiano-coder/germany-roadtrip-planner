@@ -343,6 +343,13 @@
   }
   .landmark-card img{ width:100%; height:170px; object-fit:cover; display:block; background:var(--bg-soft); }
   html.photos-off .landmark-card img{ display:none; }
+  .landmark-card.wide{ grid-column:1 / -1; flex-direction:row; }
+  .landmark-card.wide img{ width:280px; height:auto; min-height:100%; flex-shrink:0; }
+  .landmark-card.wide .landmark-body{ flex:1; }
+  @media (max-width:640px){
+    .landmark-card.wide{ flex-direction:column; }
+    .landmark-card.wide img{ width:100%; height:170px; }
+  }
   .booking-note{
     margin:0.6rem 0 1rem; padding:0.7rem 0.9rem; border-radius:var(--radius);
     background:var(--warn-soft); border:1px solid var(--warn);
@@ -679,15 +686,6 @@
         <div class="sight"><span class="sight-name">⑤ REWE (Rottendorfer Straße, 뷔르츠부르크)</span><span class="sight-hours">Rottendorfer Straße 67, 97074 Würzburg · 월–토 07:00–20:00, 일요일 휴무</span><span class="sight-price">뷔르츠부르크 시내 경유 필요 · <a href="https://www.google.com/maps/search/?api=1&query=REWE+Rottendorfer+Strasse+67+Wuerzburg" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       <div class="sight-list">
-        <h4>저녁 식사 (위팅엔 숙소 기준)</h4>
-        <div class="sight"><span class="sight-name">Zur Alten Brauerei Zapf</span><span class="sight-hours">Kirchplatz 2, 97292 Uettingen · 토 17:00–21:30</span><span class="sight-price">숙소 겸 자체 양조장 식당(도보 0분) · ☎ 09369-8221 · <a href="https://www.google.com/maps/search/?api=1&query=Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Meau's Thai Restaurant</span><span class="sight-hours">Am Graben 1, 97292 Uettingen · 토 17:00–22:00</span><span class="sight-price">태국 음식 · 도보권 · ☎ 09369 982 4370 · <a href="https://www.google.com/maps/search/?api=1&query=Meaus+Thai+Restaurant+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Gasthaus Goldener Stern</span><span class="sight-hours">Würzburger Str. 1, 97264 Helmstadt · 토 17:00–21:00(주방 마감)</span><span class="sight-price">프랑켄 향토 요리 · 차량 약 10분 · ☎ 09369 2358 · <a href="https://www.google.com/maps/search/?api=1&query=Gasthaus+Goldener+Stern+Helmstadt" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Gasthof Horn</span><span class="sight-hours">Posthäuser 7, 97297 Waldbüttelbrunn(Roßbrunn) · 토 17:00–22:00</span><span class="sight-price">향토 요리 · 차량 약 12분 · ☎ 09369 425 · <a href="https://www.google.com/maps/search/?api=1&query=Gasthof+Horn+Waldbuettelbrunn" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Il Gusto</span><span class="sight-hours">August-Bebel-Str. 8, 97297 Waldbüttelbrunn · 토 17:00–22:00</span><span class="sight-price">이탈리안(피자·파스타) · 차량 약 12분 · ☎ 0931 4040295 · <a href="https://www.google.com/maps/search/?api=1&query=Il+Gusto+Waldbuettelbrunn" target="_blank" rel="noopener">지도</a></span></div>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">Zur Alten Brauerei Zapf·Meau's Thai는 도보권, 나머지 2곳은 인근 마을이라 차량 이동이 필요합니다(운전 시간은 추정치). Da Pippo(위팅엔)와 예전 Fränkischer Landgasthof는 현재 상황이 불명확해 목록에서 제외했습니다 — 이 5곳도 도착이 늦어질 수 있으니 당일 영업 여부를 다시 확인하세요.</p>
-      </div>
-      <div class="sight-list">
         <h4>저녁 식사 추가 후보 (대형마트 ①②번 인근, 경로 이탈 거의 없음)</h4>
         <div class="sight"><span class="sight-name">Akzenthotel Gasthof Krone</span><span class="sight-hours">Würzburger Str. 23, 97264 Helmstadt · 목–월 17:00부터(일·공휴일은 11:00부터)</span><span class="sight-price">프랑켄 향토식 + 인터내셔널 · ① Netto와 같은 길 · ☎ 09369 9064-0 · <a href="https://www.google.com/maps/search/?api=1&query=Akzenthotel+Gasthof+Krone+Helmstadt" target="_blank" rel="noopener">지도</a></span></div>
         <div class="sight"><span class="sight-name">Bräustüble</span><span class="sight-hours">Mitteltorstraße 1, 97828 Marktheidenfeld · 매일 11:00–14:00 &amp; 17:00부터(목요일 휴무)</span><span class="sight-price">향토 가스트하우스 · ② E center 도보권(구시가) · ☎ 09391 1224 · <a href="https://www.google.com/maps/search/?api=1&query=Braeustueble+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
@@ -695,6 +693,15 @@
         <div class="sight"><span class="sight-name">Café de mar</span><span class="sight-hours">Mainkai 10, 97828 Marktheidenfeld · 토 주방 11:00–21:00(매장 23:00까지)</span><span class="sight-price">마인강변 카페·레스토랑 · ② E center 인근 · ☎ 09391 5035010 · <a href="https://www.google.com/maps/search/?api=1&query=Cafe+de+mar+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
         <div class="sight"><span class="sight-name">Baumhof-Tenne</span><span class="sight-hours">Baumhofstr. 147, 97828 Marktheidenfeld · 금·토 17:00–23:00</span><span class="sight-price">숲 근처 조용한 향토 가스트호프 · ② E center에서 차량 소요 · ☎ 09391 3549 · <a href="https://www.google.com/maps/search/?api=1&query=Baumhof-Tenne+Marktheidenfeld" target="_blank" rel="noopener">지도</a></span></div>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">전부 A3 경로에서 거의 벗어나지 않는 헬름슈타트·마르크트하이덴펠트 소재입니다. 20:20~20:50 도착 예정이라 목요일 휴무인 Bräustüble 외엔 대부분 영업 중일 가능성이 높지만, 당일 다시 확인하세요.</p>
+      </div>
+      <div class="sight-list">
+        <h4>저녁 식사 (위팅엔 숙소 기준)</h4>
+        <div class="sight"><span class="sight-name">Zur Alten Brauerei Zapf</span><span class="sight-hours">Kirchplatz 2, 97292 Uettingen · 토 17:00–21:30</span><span class="sight-price">숙소 겸 자체 양조장 식당(도보 0분) · ☎ 09369-8221 · <a href="https://www.google.com/maps/search/?api=1&query=Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Meau's Thai Restaurant</span><span class="sight-hours">Am Graben 1, 97292 Uettingen · 토 17:00–22:00</span><span class="sight-price">태국 음식 · 도보권 · ☎ 09369 982 4370 · <a href="https://www.google.com/maps/search/?api=1&query=Meaus+Thai+Restaurant+Uettingen" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Gasthaus Goldener Stern</span><span class="sight-hours">Würzburger Str. 1, 97264 Helmstadt · 토 17:00–21:00(주방 마감)</span><span class="sight-price">프랑켄 향토 요리 · 차량 약 10분 · ☎ 09369 2358 · <a href="https://www.google.com/maps/search/?api=1&query=Gasthaus+Goldener+Stern+Helmstadt" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Gasthof Horn</span><span class="sight-hours">Posthäuser 7, 97297 Waldbüttelbrunn(Roßbrunn) · 토 17:00–22:00</span><span class="sight-price">향토 요리 · 차량 약 12분 · ☎ 09369 425 · <a href="https://www.google.com/maps/search/?api=1&query=Gasthof+Horn+Waldbuettelbrunn" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Il Gusto</span><span class="sight-hours">August-Bebel-Str. 8, 97297 Waldbüttelbrunn · 토 17:00–22:00</span><span class="sight-price">이탈리안(피자·파스타) · 차량 약 12분 · ☎ 0931 4040295 · <a href="https://www.google.com/maps/search/?api=1&query=Il+Gusto+Waldbuettelbrunn" target="_blank" rel="noopener">지도</a></span></div>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">Zur Alten Brauerei Zapf·Meau's Thai는 도보권, 나머지 2곳은 인근 마을이라 차량 이동이 필요합니다(운전 시간은 추정치). Da Pippo(위팅엔)와 예전 Fränkischer Landgasthof는 현재 상황이 불명확해 목록에서 제외했습니다 — 이 5곳도 도착이 늦어질 수 있으니 당일 영업 여부를 다시 확인하세요.</p>
       </div>
     </div>
     </details>
@@ -723,6 +730,8 @@
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
       <p class="city-label">뷔르츠부르크</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교 → 마리엔베르크 요새</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7898,9.9192&waypoints=49.793%2C9.9257" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg/500px-2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg" alt="뷔르츠부르크 레지덴츠 궁전" loading="lazy">
@@ -751,9 +760,9 @@
         </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교 → 마리엔베르크 요새</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7898,9.9192&waypoints=49.793%2C9.9257" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <p class="city-label">로텐부르크</p>
+      <p class="walk-map-note">지도별 추천 코스 — 로텐부르크: 시청 탑 → 크리스마스박물관 → 성 야코프 교회 → 제국 도시 박물관 → 성곽 정원 → 중세범죄박물관 → 플뢴라인 → 수공업자의 집</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.3772,10.1785&destination=49.3766,10.1814&waypoints=49.3767%2C10.1783%7C49.3779%2C10.1777%7C49.3784%2C10.1757%7C49.376%2C10.1738%7C49.3756%2C10.1792%7C49.374%2C10.1803" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 성벽 구시가" loading="lazy">
@@ -837,9 +846,9 @@
         </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 로텐부르크: 시청 탑 → 크리스마스박물관 → 성 야코프 교회 → 제국 도시 박물관 → 성곽 정원 → 중세범죄박물관 → 플뢴라인 → 수공업자의 집</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.3772,10.1785&destination=49.3766,10.1814&waypoints=49.3767%2C10.1783%7C49.3779%2C10.1777%7C49.3784%2C10.1757%7C49.376%2C10.1738%7C49.3756%2C10.1792%7C49.374%2C10.1803" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <p class="city-label">뉘른베르크</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크·진벨투름 → 뒤러 하우스 → 장난감박물관 → 헹커슈텍 → 성 제발두스 교회 → 구 시청 → 펨보하우스 → 중앙시장 → 게르만 국립박물관 → 철도박물관 → 수공예마을 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 전범재판 기념관·성 요한 묘지·나치전당대회장)</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4579,11.0748&destination=49.4474,11.0812&waypoints=49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nuernberg_Burg_Panorama_PtGUI.jpg/500px-Nuernberg_Burg_Panorama_PtGUI.jpg" alt="카이저부르크 뉘른베르크" loading="lazy">
@@ -972,8 +981,6 @@
         </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크·진벨투름 → 뒤러 하우스 → 장난감박물관 → 헹커슈텍 → 성 제발두스 교회 → 구 시청 → 펨보하우스 → 중앙시장 → 게르만 국립박물관 → 철도박물관 → 수공예마을 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 전범재판 기념관·성 요한 묘지·나치전당대회장)</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4579,11.0748&destination=49.4474,11.0812&waypoints=49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <p class="city-label">밤베르크 <span class="optional-tag">(선택)</span></p>
       <div class="landmark-grid">
       <div class="landmark-card">
@@ -1044,7 +1051,7 @@
         <h4>가볼 만한 곳</h4>
       <p class="city-label">알리안츠 아레나</p>
       <div class="landmark-grid">
-      <div class="landmark-card">
+      <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Allianz_arena_daylight_Richard_Bartz.jpg?width=500" alt="알리안츠 아레나" loading="lazy">
         <div class="landmark-body">
         <h3>알리안츠 아레나(Allianz Arena)</h3>
@@ -1055,6 +1062,8 @@
         </div>
       </div>
       <p class="city-label">뮌헨</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뮌헨 구시가: 마리엔 광장 → 성 페터 교회 → 구 시청 → 프라우엔교회 → 성 미하엘 교회 → 아잠 교회 → 유대인박물관 → 뮌헨 시립박물관 → 빅투알리엔마르크트 → 레지덴츠 & 보물관 → 테아티너 교회 → 호프가르텐 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 테레지엔비제·구 피나코테크·영국정원·님펜부르크 궁전)</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1371,11.5754&destination=48.1427,11.5805&waypoints=48.1365%2C11.576%7C48.1368%2C11.5771%7C48.1386%2C11.5736%7C48.1389%2C11.5704%7C48.1352%2C11.5695%7C48.1343%2C11.5723%7C48.1352%2C11.5726%7C48.1351%2C11.5755%7C48.1408%2C11.5776%7C48.142%2C11.5766" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 노이에스 라트하우스 글로켄슈필" loading="lazy">
         <div class="landmark-body">
@@ -1147,8 +1156,6 @@
         </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 뮌헨 구시가: 마리엔 광장 → 성 페터 교회 → 구 시청 → 프라우엔교회 → 성 미하엘 교회 → 아잠 교회 → 유대인박물관 → 뮌헨 시립박물관 → 빅투알리엔마르크트 → 레지덴츠 & 보물관 → 테아티너 교회 → 호프가르텐 (빨간 점선 = 도심에서 떨어진 곳, 별도 이동 필요: 테레지엔비제·구 피나코테크·영국정원·님펜부르크 궁전)</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1371,11.5754&destination=48.1427,11.5805&waypoints=48.1365%2C11.576%7C48.1368%2C11.5771%7C48.1386%2C11.5736%7C48.1389%2C11.5704%7C48.1352%2C11.5695%7C48.1343%2C11.5723%7C48.1352%2C11.5726%7C48.1351%2C11.5755%7C48.1408%2C11.5776%7C48.142%2C11.5766" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <p style="font-size:0.78rem;color:var(--ink-soft);margin:1rem 0 0.6rem;">아래는 시간이 더 있을 때(반나절 코스엔 다소 빠듯) 참고할 뮌헨 명소입니다 — 궁전·미술관은 각각 1.5~2시간 이상 필요합니다.</p>
       <div class="landmark-grid">
       <div class="landmark-card">
@@ -1236,14 +1243,13 @@
       </div>
       <div class="sight-list" id="day4-castle-plan">
         <h4>🏰 노이슈반슈타인 성 아침 이동 계획 (09:10 입장 확정)</h4>
-        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">티켓은 시간제입니다 — 늦으면 그 자리에서 티켓이 소멸되고 환불·재발급이 안 됩니다. 아래는 여유 있게(도보 기준 약 55분 버퍼) 짠 일정입니다.</p>
-        <div class="sight"><span class="sight-name">07:00</span><span class="sight-hours">기상 · 아침 준비</span><span class="sight-price">전날 짐·티켓(인쇄본 또는 충전된 휴대폰 QR) 미리 챙겨두기</span></div>
-        <div class="sight"><span class="sight-name">07:15</span><span class="sight-hours">TREFF APARTMENTS 출발 (차량)</span><span class="sight-price">Hintere Gasse 19 → 호엔슈방가우 · 4.4km·약 7분</span></div>
-        <div class="sight"><span class="sight-name">07:25</span><span class="sight-hours">호엔슈방가우 주차장(P1~P4) 도착 · 주차</span><span class="sight-price">티켓센터(Alpseestraße 12) 도보권 · 유료(승용차 6시간 €12, 이후 시간당 €1)</span></div>
-        <div class="sight"><span class="sight-name">07:35</span><span class="sight-hours">도보로 성 방면 출발</span><span class="sight-price">약 1.5km · 고도 약 155m 상승(평균 경사 약 10%, 급경사 구간 최대 15%↑) · 편한 신발 필수 — <a href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.5572,10.7390&destination=47.5576,10.7497" target="_blank" rel="noopener">Google 지도로 경로 보기</a></span></div>
-        <div class="sight"><span class="sight-name">08:15</span><span class="sight-hours">노이슈반슈타인 성 도착</span><span class="sight-price">도보 약 40분 기준 · 마리엔 다리(Marienbrücke)는 성에서 더 위(남쪽)로 올라가는 별도 샛길(왕복 약 20~30분)이라 시간 빠듯한 아침엔 생략 — 투어 종료 후 여유 있게 다녀오는 걸 추천</span></div>
-        <div class="sight"><span class="sight-name">08:55</span><span class="sight-hours">성 앞뜰(Schlosshof) 도착 대기</span><span class="sight-price">입장 5분 전까지 앞뜰 도착 권장 · 회전문에서 티켓 QR 스캔</span></div>
-        <div class="sight"><span class="sight-name">09:10</span><span class="sight-hours">입장</span><span class="sight-price">늦으면 재입장 불가 — 여유 있게 도착!</span></div>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">티켓은 시간제입니다 — 늦으면 그 자리에서 티켓이 소멸되고 환불·재발급이 안 됩니다. 도보는 편도 약 40분 한 번뿐이고, 그 뒤 앞뜰에서 기다리는 45분은 순수 여유 버퍼(줄서기·화장실·사진)입니다 — 이동이 두 번 걸리는 게 아닙니다.</p>
+        <div class="sight"><span class="sight-name">07:20</span><span class="sight-hours">기상 · 아침 준비</span><span class="sight-price">전날 짐·티켓(인쇄본 또는 충전된 휴대폰 QR) 미리 챙겨두기</span></div>
+        <div class="sight"><span class="sight-name">07:35</span><span class="sight-hours">TREFF APARTMENTS 출발 (차량)</span><span class="sight-price">Hintere Gasse 19 → 호엔슈방가우 · 4.4km·약 7분</span></div>
+        <div class="sight"><span class="sight-name">07:42</span><span class="sight-hours">호엔슈방가우 주차장(P1~P4) 도착 · 주차</span><span class="sight-price">티켓센터(Alpseestraße 12) 도보권 · 유료(승용차 6시간 €12, 이후 시간당 €1)</span></div>
+        <div class="sight"><span class="sight-name">07:45</span><span class="sight-hours">도보로 성 방면 출발</span><span class="sight-price">약 1.5km · 고도 약 155m 상승(평균 경사 약 10%, 급경사 구간 최대 15%↑) · 편한 신발 필수 — <a href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.5572,10.7390&destination=47.5576,10.7497" target="_blank" rel="noopener">Google 지도로 경로 보기</a></span></div>
+        <div class="sight"><span class="sight-name">08:25</span><span class="sight-hours">성 앞뜰(Schlosshof) 도착</span><span class="sight-price">도보 완료(약 40분 소요) · 회전문에서 티켓 QR 스캔</span></div>
+        <div class="sight"><span class="sight-name">09:10</span><span class="sight-hours">입장</span><span class="sight-price">08:25~09:10 45분은 추가 이동 없는 여유 버퍼 · 늦으면 재입장 불가</span></div>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.6rem 0 0;"><b>주차장→성 이동수단 비교</b> (편도 기준)</p>
         <div class="sight"><span class="sight-name">🚶 도보 (권장)</span><span class="sight-hours">약 40분 · 급경사</span><span class="sight-price">무료 · 버스·마차 대기시간 변수가 없어 09:10 확정 입장엔 가장 안전한 선택</span></div>
         <div class="sight"><span class="sight-name">🚌 셔틀버스</span><span class="sight-hours">티켓센터→"Jugend"/마리엔다리 정류장, 배차 간격 약 20분(성수기 첫차 08:00) + 정류장에서 성 입구까지 도보 15분(급경사 하산)</span><span class="sight-price">현금만 가능(카드 불가) · 배차 시간이 고정이 아니라 대기 변수 있음</span></div>
@@ -1253,9 +1259,7 @@
         <h4>⚠️ 성 관람 시 유의사항 (공식 방문 규정 요약)</h4>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">주최측(Bayerische Schlösserverwaltung) 공식 Site Regulations 문서 기준입니다.</p>
         <div class="sight"><span class="sight-name">🎫 입장</span><span class="sight-hours">티켓 인쇄 권장(흑백 인쇄 OK). 인쇄 못 하면 휴대폰 QR도 가능 — 단 화면 충전 상태 &amp; 무손상 &amp; 무광/어두운 보호필름 없어야 스캔 인식됨</span><span class="sight-price">회전문에서 스캔, 가방 검사 있을 수 있음(거부 시 입장 취소)</span></div>
-        <div class="sight"><span class="sight-name">🐕 반려동물</span><span class="sight-hours">단체 부지 내 목줄 필수 · 배변 처리 의무 · 성 건물 내부는 반려동물 반입 자체가 불가</span><span class="sight-price">-</span></div>
         <div class="sight"><span class="sight-name">🎒 큰 짐 반입 금지</span><span class="sight-hours">유모차·아기캐리어 백팩·수하물은 성 건물 내부 반입 불가(부지 내 보관 장소 없음, 동반 인원이 밖에서 대기해야 함)</span><span class="sight-price">-</span></div>
-        <div class="sight"><span class="sight-name">🚫 기타 금지사항</span><span class="sight-hours">지정된 길 이탈 금지 · 자전거/전동킥보드/세그웨이 금지 · 드론 등 촬영 비행체 금지(허가 없이) · 상업적 촬영·판매·구걸·전단 배포 금지 · 흡연·캠핑·야영·불사용 금지 · 소음(스피커·악기) 금지</span><span class="sight-price">위험물(무기·인화물·칼·가위·호신스프레이·유리병 등) 반입 금지</span></div>
         <div class="sight"><span class="sight-name">☎️ 티켓센터</span><span class="sight-hours">Alpseestraße 12, 87645 Hohenschwangau</span><span class="sight-price">☎ +49 8362 930830 · info@ticket-center-hohenschwangau.de</span></div>
       </div>
       <div id="day4map" class="day-leaflet-map"></div>
@@ -1263,8 +1267,8 @@
         <div>
           <h4>오늘의 동선</h4>
           <ul>
-            <li>노이슈반슈타인 성 09:10 입장 예약 — 상세 아침 이동 계획은 <a href="#day4-castle-plan">아래 표</a> 참고(07:15 숙소 출발 기준)</li>
-            <li>노이슈반슈타인 성 &amp; 호엔슈방가우 성 투어, 마리엔 다리(Marienbrücke) 뷰포인트</li>
+            <li>노이슈반슈타인 성 09:10 입장 예약 — 상세 아침 이동 계획은 <a href="#day4-castle-plan">아래 표</a> 참고(07:35 숙소 출발 기준)</li>
+            <li>노이슈반슈타인 성 투어(09:10~) → 호엔슈방가우 성은 외관만 관람(입장 X) → 마리엔 다리(Marienbrücke) 전망대</li>
             <li>오후 차로 오버아머가우 이동 (48km, 약 49분) — 목조공예 마을 산책, 수난극 극장 외관 구경</li>
             <li>에탈로 이동 (6km, 약 17분) — 에탈 수도원 바실리카 무료 관람. 화요일 15:00엔 양조장(Klosterbrauerei) 투어(€12, 시음 포함)도 시간이 맞으면 참여 가능 — 타이밍 맞춰 오후 일정을 조절해보세요</li>
             <li>가르미슈파르텐키르헨으로 이동 (약 16km, 약 28분) — 파르트나흐클람 협곡 트레킹 (왕복 약 1.5~2시간)</li>
@@ -1282,6 +1286,7 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">호엔슈방가우</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/500px-Schloss_Neuschwanstein_2013.jpg" alt="노이슈반슈타인 성" loading="lazy">
@@ -1297,11 +1302,23 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Schloss_Hohenschwangau_2021.jpg/500px-Schloss_Hohenschwangau_2021.jpg" alt="호엔슈방가우 성" loading="lazy">
         <div class="landmark-body">
         <h3>호엔슈방가우 성</h3>
-        <p class="landmark-desc">루트비히 2세가 유년기를 보낸 노란 성 — 노이슈반슈타인 바로 옆에 자리합니다.</p>
-        <div class="landmark-meta">08:00–16:30 (3/28–10/15) · <span class="landmark-price">성인 €21 · 학생 €18</span> · <a href="https://www.hohenschwangau.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Hohenschwangau" target="_blank" rel="noopener">지도</a></div>
+        <p class="landmark-desc">루트비히 2세가 유년기를 보낸 노란 성 — 노이슈반슈타인 바로 옆에 자리합니다. <b>이번 일정엔 외관만 관람(입장 X)</b> — 노이슈반슈타인 투어 후 지나가는 길에 사진만 남기고 이동합니다.</p>
+        <div class="landmark-meta">08:00–16:30 (3/28–10/15, 참고용 — 이번엔 입장하지 않음) · <span class="landmark-price">성인 €21 · 학생 €18</span> · <a href="https://www.hohenschwangau.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Hohenschwangau" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1 추가)</div>
         </div>
       </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein%20Castle%20from%20Marienbr%C3%BCcke%2C%202011%20May.jpg?width=500" alt="마리엔 다리에서 본 노이슈반슈타인 성" loading="lazy">
+        <div class="landmark-body">
+        <h3>마리엔 다리(Marienbrücke)</h3>
+        <p class="landmark-desc">노이슈반슈타인 성의 대표 전망 포토스팟. 성보다 더 위(남쪽) 협곡을 가로지르는 다리로, 성에서 별도 샛길로 왕복 약 20~30분 걸립니다. 노이슈반슈타인 투어를 마친 뒤 다녀오세요.</p>
+        <div class="landmark-meta">상시 개방(혼잡 시 안전상 일시 폐쇄될 수 있음) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Marienbruecke+Hohenschwangau" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 티켓센터 도보권(P1~P4) — 성 앞뜰에서 이어지는 샛길로 접근, 별도 주차 없음</div>
+        </div>
+      </div>
+      </div>
+      <p class="city-label">오버아머가우</p>
+      <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pilatushaus%20in%20Oberammergau%2C%20Bayern%20D.jpg?width=500" alt="오버아머가우 벽화 마을" loading="lazy">
         <div class="landmark-body">
@@ -1312,6 +1329,7 @@
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>18세기부터 이어진 바이에른 전통 프레스코 기법으로, 실제 건축 요소(기둥·창틀)를 그림으로 눈속임하는 것이 특징입니다. 오버아머가우는 10년마다 열리는 수난극(Passionsspiele)으로도 유명합니다.</div>
         </div>
       </div>
+      <p class="city-label">에탈</p>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kloster_Ettal%2C_Bayern.jpg?width=500" alt="에탈 수도원" loading="lazy">
         <div class="landmark-body">
@@ -1321,6 +1339,7 @@
         <div class="landmark-parking">🅿️ 수도원 바로 앞(Großer Parkplatz Klosterhof) · 유료(1일 약 €3)</div>
         </div>
       </div>
+      <p class="city-label">가르미슈파르텐키르헨</p>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Garmisch-Partenkirchen_Partnachklamm_02.JPG?width=500" alt="파르트나흐클람" loading="lazy">
         <div class="landmark-body">
@@ -1380,6 +1399,19 @@
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
+      <p class="city-label">켐프텐</p>
+      <div class="landmark-grid">
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Residenz%2C%20Kempten%2C%20Alemania%2C%202019-06-21%2C%20DD%20138.jpg?width=500" alt="켐프텐 레지덴츠" loading="lazy">
+        <div class="landmark-body">
+        <h3>켐프텐 레지덴츠(Fürstäbtliche Residenz)</h3>
+        <p class="landmark-desc">옛 제후수도원장(Fürstabt)의 바로크 궁전. 화려한 응접실·홀을 가이드 투어로 둘러봅니다. 구시가·레지덴츠광장(Residenzplatz)도 도보권입니다.</p>
+        <div class="landmark-meta">4–10월 매일 10:00–16:00(월요일 휴관, 부활절·성령강림절 월요일 제외) · 11–3월 토·일 10:00–16:00 · 가이드 투어 45분 간격 · <span class="landmark-price">성인 €4 · 할인 €3 · 18세 미만 무료</span> · <a href="https://www.schloesser.bayern.de/deutsch/schloss/objekte/kempten.htm" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Residenz+Kempten" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ Parkhaus Am Rathaus 도보권 · 유료(20분당 €0.50, 1일 최대 €15)</div>
+        </div>
+      </div>
+      </div>
+      <p class="city-label">티티제</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Titisee-blick_von_hochfirst.jpg/500px-Titisee-blick_von_hochfirst.jpg" alt="티티제 호수" loading="lazy">
@@ -1396,9 +1428,9 @@
     </details>
 
     <details class="day" id="day6">
-      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → (트리베르크 뻐꾸기시계 원조마을 선택) → 블랙 포레스트 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 트리베르크 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 176km · 약 2시간 38분(선택 스톱 트리베르크 제외 시, 쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 아울렛 쇼핑</span></div>
+      <div class="day-meta"><span><b>주행</b> 198km · 약 3시간(블랙 포레스트 트리베르크 경유, 쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 뻐꾸기시계 마을 &amp; 아울렛 쇼핑</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=Schuetzenstrasse+41+72555+Metzingen" target="_blank" rel="noopener">아파트 메칭겐 시티</a> · Schützenstr. 41, 72555 메칭겐 · 체크인 15:00–23:30(9/24 목, 도착 1시간 전 전화 필수) · 무료주차(숙소 전용) · 아파트 · 냉장고 · 전기주전자 · 쿡탑 등 간이주방 · ☎ +49 172 4951197</div>
       <div id="day6map" class="day-leaflet-map"></div>
       <div class="day-body">
@@ -1406,19 +1438,21 @@
           <h4>오늘의 동선</h4>
           <ul>
             <li>체크아웃 전 오전 프라이부르크 뮌스터 대성당 &amp; 구시가 산책 (약 1~1.5시간)</li>
-            <li>B31로 필링겐슈베닝겐(블랙 포레스트 관통)까지 이동(66km·1시간 13분) 후 A81로 메칭겐 이동(110km·1시간 25분) — 총 176km·2시간 38분(트리베르크 미경유 직행)</li>
-            <li>시간 여유 있으면 도중에 뻐꾸기시계 원조마을 트리베르크 들러 하우스 데어 1000 우렌 등 시계 공방 구경(경유 시 59km·1시간 1분 + 29km·34분 — 밤베르크처럼 선택 스톱)</li>
+            <li>B31로 뻐꾸기시계 원조마을 트리베르크까지 이동(59km·1시간 1분) — 하우스 데어 1000 우렌 등 시계 공방 구경</li>
+            <li>트리베르크에서 필링겐슈베닝겐(블랙 포레스트 관통) 거쳐 A81로 메칭겐 이동(29km·34분 + 110km·1시간 25분) — 오늘 총 198km·약 3시간</li>
             <li>아울렛시티 메칭겐에서 약 4시간 쇼핑, 메칭겐 숙박</li>
           </ul>
         </div>
         <div>
           <h4>팁</h4>
-          <p class="tip">뻐꾸기시계 원조 마을 트리베르크는 이번엔 밤베르크처럼 선택 사항으로 남겨뒀습니다 — 프라이부르크→필링겐슈베닝겐 직행(66km·1시간13분) 대비 트리베르크 경유(59km·1시간1분 + 29km·34분)는 약 22km·22분만 더 걸립니다. 이미 5일차 티티제에서 뻐꾸기시계 공방을 들르니 꼭 가야 하는 코스는 아닙니다. 벤츠·포르쉐 박물관은 다음날(7일차) 오전으로 이어집니다.</p>
+          <p class="tip">블랙 포레스트를 지나는 김에 뻐꾸기시계 원조마을 트리베르크를 기본 경유지로 넣었습니다 — 프라이부르크→필링겐슈베닝겐 직행(66km·1시간13분) 대비 약 22km·22분만 더 걸려 부담이 적습니다. 5일차 티티제에서도 뻐꾸기시계 공방을 보긴 하지만, 트리베르크가 원조 마을이라 함께 들르면 좋습니다. 벤츠·포르쉐 박물관은 다음날(7일차) 오전으로 이어집니다.</p>
         </div>
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
       <p class="city-label">프라이부르크</p>
+      <p class="walk-map-note">지도별 추천 코스 — 프라이부르크: 뮌스터 → 옛 상인회관 → 아우구스티너박물관 → Haus zum Walfisch → 시청광장 → 도시성문</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.9955,7.8529&destination=47.9937,7.8489&waypoints=47.995%2C7.8527%7C47.9938%2C7.8532%7C47.9964%2C7.8507%7C47.9962%2C7.8496" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Freiburger_M%C3%BCnster_-_FaB.jpg/500px-Freiburger_M%C3%BCnster_-_FaB.jpg" alt="프라이부르크 뮌스터 전망대" loading="lazy">
@@ -1475,6 +1509,17 @@
         <div class="landmark-parking">🅿️ 뮌스터 도보 5~10분(Parkhaus Am Martinstor) · 유료(시간당 €3, 24시간 최대 €22)</div>
         </div>
       </div>
+      <p class="city-label">트리베르크</p>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cuckoo%20clocks%20in%20Triberg%20im%20Schwarzwald.JPG?width=500" alt="트리베르크 뻐꾸기시계 원조마을" loading="lazy">
+        <div class="landmark-body">
+        <h3>트리베르크 뻐꾸기시계 원조마을(Haus der 1000 Uhren)</h3>
+        <p class="landmark-desc">뻐꾸기시계 발상지로 알려진 블랙 포레스트 마을. 하우스 데어 1000 우렌 등 원조 공방·상점이 모여 있고, 인근 쇼나흐(Schonach)엔 한때 세계 최대로 불렸던 대형 뻐꾸기시계도 있습니다.</p>
+        <div class="landmark-meta">상점가는 대체로 09:00–18:00(매장별 상이) · <span class="landmark-price">거리 관람 무료 · 매장 관람 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Haus+der+1000+Uhren+Triberg" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 시내 곳곳 소규모 주차장 · 유료(시간당 약 €1~2) · 현장 확인 권장</div>
+        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>18세기부터 뻐꾸기시계 산업이 시작된 블랙 포레스트의 중심지 중 하나로, &ldquo;원조&rdquo; 타이틀을 두고 인근 마을들과 함께 거론되는 대표 관광지입니다.</div>
+        </div>
+      </div>
       <p class="city-label">메칭겐</p>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OutletcityMetzingen.jpg?width=500" alt="아울렛시티 메칭겐" loading="lazy">
@@ -1485,21 +1530,8 @@
         <div class="landmark-parking">🅿️ 아울렛 도보 8~12분(P4) · 무료</div>
         </div>
       </div>
-      <p class="city-label">트리베르크 <span class="optional-tag">(선택)</span></p>
-      <div class="landmark-card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cuckoo%20clocks%20in%20Triberg%20im%20Schwarzwald.JPG?width=500" alt="트리베르크 뻐꾸기시계 원조마을" loading="lazy">
-        <div class="landmark-body">
-        <h3>[선택] 트리베르크 뻐꾸기시계 원조마을(Haus der 1000 Uhren)</h3>
-        <p class="landmark-desc">뻐꾸기시계 발상지로 알려진 블랙 포레스트 마을. 하우스 데어 1000 우렌 등 원조 공방·상점이 모여 있고, 인근 쇼나흐(Schonach)엔 한때 세계 최대로 불렸던 대형 뻐꾸기시계도 있습니다.</p>
-        <div class="landmark-meta">상점가는 대체로 09:00–18:00(매장별 상이) · <span class="landmark-price">거리 관람 무료 · 매장 관람 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Haus+der+1000+Uhren+Triberg" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 시내 곳곳 소규모 주차장 · 유료(시간당 약 €1~2) · 현장 확인 권장</div>
-        <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>18세기부터 뻐꾸기시계 산업이 시작된 블랙 포레스트의 중심지 중 하나로, &ldquo;원조&rdquo; 타이틀을 두고 인근 마을들과 함께 거론되는 대표 관광지입니다.</div>
-        </div>
       </div>
       </div>
-      </div>
-      <p class="walk-map-note">지도별 추천 코스 — 프라이부르크: 뮌스터 → 옛 상인회관 → 아우구스티너박물관 → Haus zum Walfisch → 시청광장 → 도시성문</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.9955,7.8529&destination=47.9937,7.8489&waypoints=47.995%2C7.8527%7C47.9938%2C7.8532%7C47.9964%2C7.8507%7C47.9962%2C7.8496" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="sight-list">
         <h4>블랙 포레스트 드라이브 코스 (참고)</h4>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">오늘 B31→A81 경로가 필링겐슈베닝겐 인근에서 블랙 포레스트를 실제로 관통합니다(위 지도에 반영). 도이체 우렌슈트라세가 이 경로와 가장 가까운 코스지만, 오늘은 직행이라 우렌슈트라세 마을들에 다 들르지는 않습니다. 블랙 포레스트만 따로 여행할 계획이 있다면 나머지 코스도 참고하세요.</p>
@@ -1571,6 +1603,8 @@
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
       <p class="city-label">하이델베르크</p>
+      <p class="walk-map-note">지도별 추천 코스 — 하이델베르크: 성 → 마르크트광장 → 하일리히가이스트 교회 → 대학교박물관 → 학생감옥 → 구 다리</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4093,8.7135&destination=49.4142,8.7096&waypoints=49.4122%2C8.7104%7C49.4121%2C8.7097%7C49.4114%2C8.7062%7C49.4113%2C8.7064" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg" alt="하이델베르크 성 (Schlossticket)" loading="lazy">
@@ -1667,8 +1701,6 @@
       </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 하이델베르크: 성 → 마르크트광장 → 하일리히가이스트 교회 → 대학교박물관 → 학생감옥 → 구 다리</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4093,8.7135&destination=49.4142,8.7096&waypoints=49.4122%2C8.7104%7C49.4121%2C8.7097%7C49.4114%2C8.7062%7C49.4113%2C8.7064" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="sight-list">
         <h4>맛집 (슈투트가르트·하이델베르크·뤼데스하임)</h4>
         <div class="sight"><span class="sight-name">Zum Ackerbürger (슈투트가르트)</span><span class="sight-hours">시내, 목조 계단 위 반목조 가옥 · 슈바벤 최고 맛집으로 꼽힘</span><span class="sight-price">꼭 시켜야 할 메뉴: 마울타셴, 츠비벨로스트브라텐 · <a href="https://www.google.com/maps/search/?api=1&query=Zum+Ackerbuerger+Stuttgart" target="_blank" rel="noopener">지도</a></span></div>
@@ -1685,9 +1717,9 @@
     </details>
 
     <details class="day" id="day8">
-      <summary class="day-head"><span class="num mono">08</span><span class="day-date mono">9/26(토)</span><h3>뤼데스하임 → 비스바덴(선택) → 프랑크푸르트 공항 (반납, 19:40 출국)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">08</span><span class="day-date mono">9/26(토)</span><h3>뤼데스하임 → 비스바덴 → 프랑크푸르트 공항 (반납, 19:40 출국)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
-      <div class="day-meta"><span><b>주행</b> 65km · 약 54분(선택 스톱 비스바덴 제외 시)</span><span><b>테마</b> 여유로운 마무리 &amp; 프랑크푸르트 시내 산책 &amp; 출국</span></div>
+      <div class="day-meta"><span><b>주행</b> 69km · 약 1시간 5분(비스바덴 경유)</span><span><b>테마</b> 여유로운 마무리 &amp; 비스바덴·프랑크푸르트 시내 산책 &amp; 출국</span></div>
       <div id="day8map" class="day-leaflet-map"></div>
       <div class="sight-list">
         <h4>렌터카 반납 (Hertz)</h4>
@@ -1699,8 +1731,8 @@
           <h4>오늘의 동선</h4>
           <ul>
             <li>이동 거리가 짧아 가장 여유로운 날 — 늦은 오전까지 뤼데스하임 케이블카(Seilbahn)나 라인강변 산책</li>
-            <li>비스바덴으로 이동, 쿠어파크(Kurpark)·구시가 잠깐 산책 (선택, 약 1시간)</li>
-            <li>프랑크푸르트 시내(뢰머광장 일대)에 들러 뢰머광장·대성당·아이제르너 슈텍 다리를 도보로 둘러보기 (약 1~1.5시간)</li>
+            <li>비스바덴으로 이동(30km·33분), 쿠어파크(Kurpark)·구시가 잠깐 산책 (약 1시간)</li>
+            <li>프랑크푸르트 시내로 이동(39km·32분), 뢰머광장 일대(뢰머광장·대성당·아이제르너 슈텍 다리)를 도보로 둘러보기 (약 1~1.5시간)</li>
             <li>늦어도 오후 3~4시에는 공항으로 출발 (연료 만땅 채우기 + 반납 2~3시간 전 도착 기준, 19:40 출국 기준)</li>
             <li>프랑크푸르트 공항(FRA) 반납소에서 차량 반납, 외관 재확인 동석 → 19:40 출국편 탑승 수속</li>
           </ul>
@@ -1715,6 +1747,8 @@
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
       <p class="city-label">뤼데스하임</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뤼데스하임: 케이블카 승강장 → 드로셀가세 → 악기박물관(오버 거리)</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.9796,7.9219&destination=49.9793,7.9199&waypoints=49.9783%2C7.9208" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Niederwalddenkmal_ohne_Personen.jpg/500px-Niederwalddenkmal_ohne_Personen.jpg" alt="뤼데스하임 케이블카(Seilbahn) · 니더발트 기념비" loading="lazy">
@@ -1753,9 +1787,9 @@
         </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 뤼데스하임: 케이블카 승강장 → 드로셀가세 → 악기박물관(오버 거리)</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.9796,7.9219&destination=49.9793,7.9199&waypoints=49.9783%2C7.9208" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
-      <p class="city-label">비스바덴 <span class="optional-tag">(선택)</span></p>
+      <p class="city-label">비스바덴</p>
+      <p class="walk-map-note">지도별 추천 코스 — 비스바덴: 쿠어하우스 & 쿠어파크 → 코흐브루넨 → 마르크트교회</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=50.0848,8.2476&destination=50.0822,8.2429&waypoints=50.0864%2C8.2419" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden_Kurhaus.jpg?width=500" alt="비스바덴 쿠어하우스" loading="lazy">
@@ -1785,9 +1819,8 @@
         </div>
       </div>
       </div>
-      <p class="walk-map-note">지도별 추천 코스 — 비스바덴: 쿠어하우스 & 쿠어파크 → 코흐브루넨 → 마르크트교회</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=50.0848,8.2476&destination=50.0822,8.2429&waypoints=50.0864%2C8.2419" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
-      <p class="walk-map-note">시간 여유가 있다면 — 프랑크푸르트 뢰머광장 일대(도보권, 아래 3곳 모두 서로 5분 이내)</p>
+      <p class="city-label">프랑크푸르트</p>
+      <p class="walk-map-note">뢰머광장 일대(도보권, 아래 3곳 모두 서로 5분 이내)</p>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt-Roemerberg-02-mit%20Justitia-Brunnen-2016-gje.jpg?width=500" alt="뢰머광장" loading="lazy">
@@ -1974,14 +2007,14 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     [47.73, 10.32, '켐프텐', '5일차 · 방문', alps, false],
     [47.92, 8.15, '티티제(블랙 포레스트)', '5일차 · 방문', schwarzwald, false],
     [47.995, 7.85, '프라이부르크', '5일차 · 숙박 · Hotel Kühler Krug', schwarzwald, false],
-    [48.13, 8.23, '트리베르크', '6일차 · 선택 스톱(뻐꾸기시계 원조마을)', schwarzwald, true],
+    [48.13, 8.23, '트리베르크', '6일차 · 방문(뻐꾸기시계 원조마을)', schwarzwald, false],
     [48.54, 9.28, '메칭겐', '6일차 · 숙박(아울렛) · 아파트 메칭겐 시티', schwarzwald, false],
     [48.78, 9.18, '슈투트가르트', '7일차 · 선택 스톱', schwarzwald, true],
     [49.41, 8.71, '하이델베르크', '7일차 · 방문', rhein, false],
     [49.92, 7.07, '베른카슈텔쿠에스', '7일차 · 선택 스톱', rhein, true],
     [49.98, 7.91, '뤼데스하임', '7일차 · 방문', rhein, false],
     [49.97, 7.86, 'Trechtingshausen', '7일차 · 숙박 · ChristRose', rhein, false],
-    [50.08, 8.24, '비스바덴', '8일차 · 선택 스톱', rhein, true]
+    [50.08, 8.24, '비스바덴', '8일차 · 방문', rhein, false]
   ];
 
   // 각 구간은 OSRM 실제 도로 경로 데이터(day1~day8 지도와 동일 출처)를 그대로 이어붙인 것
@@ -1999,12 +2032,14 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     [[47.57,10.6999],[47.5678,10.694],[47.5703,10.6656],[47.5944,10.6562],[47.6077,10.6557],[47.6155,10.661],[47.6198,10.6614],[47.626,10.655],[47.6272,10.6467],[47.6259,10.6187],[47.6297,10.6003],[47.6287,10.5804],[47.641,10.5501],[47.6408,10.5068],[47.6532,10.4678],[47.6563,10.4307],[47.6617,10.42],[47.6752,10.4071],[47.6769,10.397],[47.6747,10.3827],[47.6784,10.3743],[47.69,10.367],[47.7045,10.3669],[47.7209,10.3602],[47.7402,10.3416],[47.7411,10.3427],[47.7342,10.3242],[47.7266,10.3223],[47.7296,10.3198]],
     [[47.7296,10.3198],[47.7252,10.3231],[47.7238,10.3105],[47.7179,10.3002],[47.7105,10.2771],[47.7074,10.2737],[47.7087,10.2693],[47.7075,10.2559],[47.7167,10.2456],[47.7166,10.2289],[47.7265,10.1971],[47.7334,10.1895],[47.7423,10.1718],[47.7479,10.1484],[47.7478,10.1244],[47.7499,10.1187],[47.7537,10.1167],[47.7626,10.1037],[47.7713,10.071],[47.774,10.0488],[47.7898,10.0434],[47.7908,10.0283],[47.7938,10.0205],[47.8106,9.9997],[47.8183,9.9931],[47.8156,9.9882],[47.8134,9.9906],[47.8041,9.9864],[47.7941,9.9689],[47.7828,9.9594],[47.7752,9.9374],[47.7701,9.9281],[47.7584,9.9117],[47.739,9.8913],[47.7239,9.8689],[47.7202,9.8596],[47.7192,9.8474],[47.713,9.8296],[47.7096,9.8102],[47.704,9.7994],[47.6863,9.7865],[47.6731,9.7832],[47.6655,9.7784],[47.6565,9.7685],[47.6445,9.7485],[47.6356,9.7414],[47.6256,9.7398],[47.6038,9.7323],[47.5873,9.7362],[47.5789,9.734],[47.5742,9.7235],[47.5765,9.7052],[47.5753,9.6931],[47.5876,9.6522],[47.5964,9.6326],[47.6017,9.6274],[47.6039,9.6223],[47.6045,9.6061],[47.6084,9.5938],[47.608,9.5822],[47.6097,9.5753],[47.6238,9.5545],[47.6355,9.5227],[47.6418,9.5141],[47.6651,9.493],[47.6667,9.4879],[47.665,9.4792],[47.666,9.4713],[47.6708,9.4555],[47.6779,9.4469],[47.6808,9.4393],[47.6828,9.4212],[47.6673,9.3803],[47.6709,9.3678],[47.666,9.3596],[47.6651,9.3544],[47.6699,9.3331],[47.6776,9.3143],[47.6884,9.2991],[47.691,9.288],[47.6985,9.2818],[47.7054,9.2641],[47.7152,9.2539],[47.7219,9.2392],[47.7255,9.2371],[47.7389,9.2391],[47.7447,9.2304],[47.7452,9.2244],[47.7502,9.2154],[47.751,9.2074],[47.7591,9.1953],[47.7761,9.185],[47.7818,9.1786],[47.7919,9.1582],[47.7939,9.1444],[47.814,9.1112],[47.828,9.0676],[47.8417,9.0372],[47.8422,9.0273],[47.8394,9.0127],[47.8382,8.9904],[47.8283,8.9469],[47.8284,8.927],[47.8247,8.8989],[47.8089,8.8586],[47.8294,8.8267],[47.8487,8.8079],[47.8639,8.7847],[47.872,8.7775],[47.8849,8.7754],[47.8895,8.7711],[47.8924,8.7581],[47.8877,8.7384],[47.8918,8.7247],[47.8933,8.7103],[47.8969,8.7042],[47.9071,8.695],[47.9135,8.6817],[47.9222,8.6732],[47.9173,8.6631],[47.9169,8.632],[47.915,8.6189],[47.9194,8.6024],[47.9264,8.5897],[47.9258,8.5597],[47.9278,8.5437],[47.924,8.5144],[47.9191,8.5006],[47.9172,8.4835],[47.9022,8.4584],[47.8955,8.4409],[47.8965,8.4279],[47.89,8.4136],[47.8888,8.3765],[47.8856,8.3597],[47.8866,8.352],[47.8949,8.3358],[47.8987,8.322],[47.8997,8.2996],[47.8967,8.2783],[47.9035,8.2557],[47.9,8.2367],[47.909,8.2106],[47.9166,8.2018],[47.9203,8.1905],[47.9197,8.186],[47.9108,8.1745],[47.9081,8.1647],[47.9096,8.1605],[47.9156,8.1696],[47.9194,8.172],[47.9212,8.1501]],
     [[47.9212,8.1501],[47.9191,8.1721],[47.9094,8.16],[47.9052,8.1286],[47.9122,8.108],[47.9141,8.0806],[47.9186,8.0779],[47.9168,8.077],[47.9153,8.0792],[47.9147,8.0769],[47.9128,8.0808],[47.9124,8.0786],[47.9214,8.0555],[47.9255,8.0311],[47.9315,8.0319],[47.9343,8.0294],[47.9492,7.9931],[47.9629,7.9886],[47.9685,7.9805],[47.9721,7.9614],[47.974,7.9255],[47.9789,7.9133],[47.9893,7.8591],[47.9916,7.8544],[47.9967,7.858],[47.9973,7.8515]],
-    [[47.9973,7.8515],[47.9984,7.8502],[47.9967,7.8578],[47.9917,7.8533],[47.9891,7.8588],[47.9788,7.9133],[47.9734,7.9282],[47.9724,7.958],[47.9698,7.9759],[47.9661,7.9854],[47.961,7.9886],[47.9625,8.0013],[47.9614,8.012],[47.9648,8.0237],[47.9728,8.0342],[47.9724,8.0505],[47.9701,8.058],[47.9708,8.0711],[47.9681,8.0821],[47.9752,8.0942],[47.9729,8.099],[47.9786,8.0956],[47.9718,8.1207],[47.9732,8.1277],[47.9791,8.1343],[47.9833,8.1506],[47.9916,8.1549],[47.9901,8.1635],[47.9931,8.1686],[47.9941,8.1842],[48.002,8.2026],[48.0017,8.2158],[48.0045,8.2257],[48.0048,8.254],[48.0083,8.2764],[48.008,8.2855],[48.0042,8.3005],[47.9972,8.3056],[47.9932,8.3132],[47.9989,8.3303],[48.0044,8.3285],[48.0102,8.3218],[48.019,8.3179],[48.0254,8.3167],[48.0296,8.3182],[48.0351,8.3348],[48.0389,8.338],[48.0312,8.3466],[48.0288,8.3521],[48.0266,8.365],[48.0268,8.3963],[48.0305,8.4015],[48.0309,8.411],[48.0354,8.4106],[48.0428,8.4149],[48.0515,8.4241],[48.0566,8.4257],[48.0593,8.4307],[48.0538,8.4674],[48.0634,8.4793],[48.0621,8.4865],[48.0538,8.4876],[48.0538,8.4889],[48.0539,8.4911],[48.06,8.4906]],
+    [[47.9973,7.8515],[47.9984,7.8502],[47.9981,7.8529],[48.0049,7.8551],[48.0251,7.8567],[48.0336,7.8611],[48.0445,7.8568],[48.0514,7.8607],[48.0588,7.8742],[48.0612,7.898],[48.0776,7.9281],[48.0904,7.9702],[48.1075,7.9844],[48.1133,7.9946],[48.1261,7.9992],[48.1362,8.01],[48.1378,8.0207],[48.1448,8.0294],[48.1484,8.0299],[48.1589,8.0499],[48.1673,8.0598],[48.1717,8.0721],[48.1816,8.0807],[48.1894,8.096],[48.1965,8.1009],[48.2001,8.1147],[48.2057,8.1215],[48.2133,8.1416],[48.2258,8.1529],[48.2296,8.1658],[48.2278,8.1679],[48.2333,8.1702],[48.2379,8.1764],[48.2327,8.1805],[48.2363,8.1875],[48.2343,8.1874],[48.234,8.1897],[48.2375,8.1971],[48.2373,8.2012],[48.2318,8.2043],[48.2344,8.2147],[48.2249,8.2225],[48.2098,8.2255],[48.2047,8.2343],[48.1976,8.2346],[48.1914,8.2306],[48.1793,8.2306],[48.1687,8.2333],[48.1579,8.2402],[48.1491,8.239],[48.1466,8.241],[48.1438,8.2377],[48.1388,8.2399],[48.1288,8.2304],[48.1263,8.2333]],
+    [[48.1263,8.2333],[48.1272,8.2336],[48.1288,8.2304],[48.1367,8.2366],[48.1388,8.24],[48.1385,8.2418],[48.1322,8.2503],[48.131,8.2585],[48.134,8.2744],[48.1354,8.2758],[48.1365,8.2745],[48.1378,8.2756],[48.1348,8.2786],[48.1345,8.2856],[48.132,8.2855],[48.1307,8.2904],[48.1292,8.2892],[48.1261,8.2907],[48.1283,8.3118],[48.1229,8.3185],[48.1215,8.3237],[48.1232,8.3364],[48.1298,8.352],[48.1314,8.364],[48.1301,8.377],[48.1216,8.3925],[48.1163,8.398],[48.1148,8.404],[48.1114,8.4109],[48.1075,8.4146],[48.1007,8.4178],[48.0954,8.4233],[48.0889,8.4325],[48.0848,8.4404],[48.0773,8.4475],[48.0727,8.4555],[48.0717,8.4608],[48.0668,8.467],[48.0624,8.47],[48.0591,8.47],[48.0602,8.4702],[48.0601,8.4747],[48.0633,8.4786],[48.0619,8.4823],[48.0623,8.4862],[48.0538,8.4876],[48.0539,8.4911],[48.06,8.4906]],
     [[48.06,8.4906],[48.0539,8.4911],[48.0538,8.4876],[48.0623,8.4867],[48.0623,8.5014],[48.0689,8.4993],[48.0729,8.5006],[48.0751,8.4988],[48.0846,8.5048],[48.0856,8.5307],[48.0815,8.5481],[48.081,8.5594],[48.0768,8.5737],[48.0776,8.5809],[48.0815,8.5892],[48.08,8.59],[48.0858,8.5897],[48.0902,8.5944],[48.1049,8.5847],[48.1347,8.5712],[48.1724,8.5729],[48.1824,8.5775],[48.1912,8.5864],[48.1977,8.5983],[48.2105,8.6334],[48.2191,8.6443],[48.2268,8.6496],[48.237,8.6501],[48.267,8.6386],[48.2835,8.6411],[48.2979,8.635],[48.307,8.6369],[48.3183,8.6468],[48.3311,8.6465],[48.3372,8.6485],[48.3441,8.656],[48.3556,8.678],[48.3731,8.697],[48.379,8.7155],[48.3845,8.7247],[48.3931,8.7294],[48.4076,8.7263],[48.4155,8.729],[48.4266,8.7433],[48.4403,8.7553],[48.4595,8.7793],[48.4726,8.7899],[48.4792,8.7986],[48.4879,8.8236],[48.5012,8.8408],[48.5021,8.8452],[48.4984,8.8676],[48.4991,8.8955],[48.4896,8.9178],[48.4877,8.9279],[48.4879,8.9479],[48.4857,8.9509],[48.4786,8.9514],[48.4747,8.9599],[48.4951,9.0254],[48.5029,9.0361],[48.5132,9.0469],[48.514,9.046],[48.5161,9.0611],[48.5044,9.1179],[48.497,9.1305],[48.4986,9.1574],[48.4933,9.1723],[48.4937,9.1804],[48.491,9.1913],[48.5009,9.2009],[48.5009,9.2145],[48.511,9.2407],[48.5235,9.2541],[48.5282,9.2625],[48.537,9.264],[48.543,9.2687],[48.54,9.28]],
     [[48.54,9.28],[48.5423,9.2745],[48.542,9.2695],[48.5555,9.2601],[48.5703,9.2618],[48.5782,9.2519],[48.5882,9.2476],[48.5913,9.2488],[48.5988,9.2576],[48.6023,9.2586],[48.6083,9.2546],[48.6133,9.2547],[48.6187,9.2483],[48.6249,9.2491],[48.628,9.2357],[48.6368,9.2294],[48.6515,9.233],[48.6578,9.2313],[48.6632,9.2236],[48.6664,9.2001],[48.671,9.1903],[48.6808,9.1813],[48.6925,9.177],[48.6991,9.1675],[48.7069,9.1673],[48.7099,9.1396],[48.7085,9.1198],[48.7157,9.0868],[48.725,9.0716],[48.7293,9.0547],[48.7378,9.0386],[48.7437,9.035],[48.7621,9.0329],[48.7693,9.0299],[48.7741,9.0264],[48.7789,9.018],[48.7833,9.0063],[48.7872,8.9836],[48.8014,8.94],[48.8187,8.9075],[48.8301,8.8657],[48.8378,8.8497],[48.8408,8.8261],[48.8477,8.8064],[48.8537,8.7992],[48.8654,8.7924],[48.8899,8.7869],[48.8973,8.7834],[48.9229,8.7542],[48.9242,8.7446],[48.9192,8.731],[48.9089,8.6871],[48.9078,8.6642],[48.9097,8.631],[48.913,8.6197],[48.9183,8.6135],[48.9241,8.6017],[48.9255,8.5913],[48.934,8.5708],[48.9338,8.552],[48.9377,8.5384],[48.9374,8.5216],[48.9449,8.4972],[48.9703,8.4596],[48.9725,8.4422],[48.975,8.4381],[48.99,8.4362],[48.9942,8.4378],[49.0081,8.4583],[49.0265,8.4777],[49.0719,8.5099],[49.0899,8.531],[49.1127,8.5492],[49.1183,8.5516],[49.1295,8.5509],[49.1364,8.553],[49.2156,8.6028],[49.2223,8.604],[49.2519,8.6005],[49.2568,8.6023],[49.2757,8.6176],[49.2866,8.6231],[49.3145,8.6295],[49.3685,8.6327],[49.3741,8.6443],[49.3961,8.6703],[49.4058,8.6854],[49.41,8.71]],
     [[49.41,8.71],[49.4115,8.712],[49.4137,8.7115],[49.4082,8.6674],[49.4143,8.6427],[49.4417,8.5923],[49.4608,8.5423],[49.4659,8.5399],[49.4798,8.5446],[49.4982,8.5589],[49.5035,8.5608],[49.552,8.5599],[49.5553,8.5569],[49.5531,8.4347],[49.5457,8.4029],[49.5551,8.376],[49.5532,8.3281],[49.5537,8.3173],[49.5559,8.3127],[49.5742,8.2984],[49.5939,8.2891],[49.6042,8.2885],[49.6239,8.2943],[49.6331,8.2949],[49.6442,8.2928],[49.655,8.2861],[49.6833,8.2482],[49.6954,8.2271],[49.6995,8.2142],[49.7021,8.195],[49.6989,8.1749],[49.6995,8.167],[49.714,8.14],[49.7218,8.1343],[49.7342,8.1387],[49.7434,8.1371],[49.75,8.1317],[49.7621,8.1157],[49.7773,8.1098],[49.7826,8.1053],[49.7901,8.0916],[49.7969,8.0662],[49.8023,8.0549],[49.8083,8.0507],[49.8207,8.0491],[49.8272,8.0423],[49.8337,8.0066],[49.8391,7.9951],[49.8493,7.9809],[49.8818,7.9497],[49.8885,7.9454],[49.8962,7.9447],[49.9136,7.9493],[49.9296,7.9414],[49.9476,7.9417],[49.9526,7.9444],[49.9543,7.9476],[49.9579,7.9427],[49.9678,7.9428],[49.97,7.9313],[49.97,7.9139],[49.9759,7.9112],[49.9771,7.9166],[49.9774,7.9133]],
     [[49.9774,7.9133],[49.9772,7.9137],[49.9771,7.9166],[49.9768,7.9162],[49.9768,7.9146],[49.9762,7.9116],[49.9759,7.9112],[49.9708,7.9127],[49.97,7.9141],[49.97,7.9189],[49.9695,7.9193],[49.9689,7.9058],[49.9694,7.9046],[49.9696,7.9016],[49.9695,7.9001],[49.9692,7.8995],[49.969,7.8978],[49.969,7.894],[49.9685,7.8887],[49.9669,7.8894],[49.9664,7.8885],[49.9654,7.8888],[49.9651,7.8884],[49.964,7.8896],[49.9637,7.8896],[49.9639,7.889],[49.9644,7.8849],[49.9642,7.8833],[49.9643,7.8827],[49.9661,7.8812],[49.9672,7.8795],[49.9688,7.8784],[49.9686,7.8738],[49.9698,7.8735],[49.9707,7.8679],[49.9714,7.8662],[49.9721,7.8629],[49.9727,7.8617],[49.9719,7.8613],[49.9714,7.8606],[49.9702,7.8567],[49.9705,7.8595]],
-    [[49.9705,7.8595],[49.9714,7.8628],[49.9688,7.8783],[49.9643,7.8827],[49.9639,7.8891],[49.9506,7.8982],[49.9423,7.908],[49.9412,7.9136],[49.955,7.9413],[49.9541,7.9473],[49.9573,7.9513],[49.9788,8.0014],[49.9799,8.0289],[49.9959,8.094],[50.0027,8.1142],[49.9988,8.1349],[50.0018,8.1596],[49.9999,8.1787],[50.0078,8.1959],[50.0172,8.207],[50.028,8.2115],[50.0586,8.2129],[50.0774,8.2352],[50.0778,8.2425],[50.0805,8.242],[50.0804,8.24]]
+    [[49.9705,7.8595],[49.9714,7.8628],[49.9688,7.8783],[49.9643,7.8827],[49.9639,7.8891],[49.9506,7.8982],[49.9423,7.908],[49.9412,7.9136],[49.955,7.9413],[49.9541,7.9473],[49.9573,7.9513],[49.9788,8.0014],[49.9799,8.0289],[49.9959,8.094],[50.0027,8.1142],[49.9988,8.1349],[50.0018,8.1596],[49.9999,8.1787],[50.0078,8.1959],[50.0172,8.207],[50.028,8.2115],[50.0586,8.2129],[50.0774,8.2352],[50.0778,8.2425],[50.0805,8.242],[50.0804,8.24]],
+    [[50.0804,8.24],[50.0804,8.246],[50.0685,8.2625],[50.0612,8.2821],[50.0494,8.2907],[50.0501,8.3005],[50.056,8.317],[50.055,8.4443],[50.0568,8.4499],[50.0811,8.4857],[50.0842,8.4866],[50.0944,8.4835],[50.0978,8.486],[50.1286,8.568],[50.128,8.5747],[50.1176,8.5871],[50.1141,8.5981],[50.1163,8.6264],[50.1133,8.6517],[50.1095,8.6604],[50.1131,8.6686],[50.1074,8.6732],[50.11,8.68]]
   ];
 
   var map = L.map('map', { scrollWheelZoom: false });
@@ -2035,12 +2070,14 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     { label: '43km · 31분', optional: false },
     { label: '216km · 2시간 51분', optional: false },
     { label: '34km · 41분', optional: false },
-    { label: '66km · 1시간 13분', optional: false },
+    { label: '59km · 1시간 1분 (6일차: 트리베르크)', optional: false },
+    { label: '29km · 34분', optional: false },
     { label: '110km · 1시간 25분', optional: false },
     { label: '148km · 1시간 42분 (슈투트가르트 미경유 직행)', optional: false },
     { label: '108km · 1시간 18분 (베른카슈텔쿠에스 미경유 직행)', optional: false },
     { label: '8km · 20분 (숙소: Trechtingshausen)', optional: false },
-    { label: '38km · 37분 (선택: 비스바덴 경유)', optional: true }
+    { label: '38km · 37분 (8일차: 비스바덴)', optional: false },
+    { label: '39km · 32분', optional: false }
   ];
 
   ROUTE_LEGS.forEach(function(leg, i){
@@ -2080,16 +2117,6 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     .addTo(map).bindTooltip('178km · 2시간 6분 (선택: 베른카슈텔쿠에스 경유)', { sticky: true, className: 'rt-tip' });
   L.polyline(BERNKASTEL_BRANCH.legOut, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
     .addTo(map).bindTooltip('89km · 1시간 16분 (선택: 베른카슈텔쿠에스 경유)', { sticky: true, className: 'rt-tip' });
-
-  // 트리베르크(뻐꾸기시계 원조마을)도 선택 스톱 — 메인 경로(프라이부르크→필링겐슈베닝겐 직행)에서 벗어난 별도 점선으로 표시
-  var TRIBERG_BRANCH = {
-    legIn: [[47.9973,7.8515],[47.9984,7.8502],[47.9981,7.8529],[48.0049,7.8551],[48.0251,7.8567],[48.0336,7.8611],[48.0445,7.8568],[48.0514,7.8607],[48.0588,7.8742],[48.0612,7.898],[48.0776,7.9281],[48.0904,7.9702],[48.1075,7.9844],[48.1133,7.9946],[48.1261,7.9992],[48.1362,8.01],[48.1378,8.0207],[48.1448,8.0294],[48.1484,8.0299],[48.1589,8.0499],[48.1673,8.0598],[48.1717,8.0721],[48.1816,8.0807],[48.1894,8.096],[48.1965,8.1009],[48.2001,8.1147],[48.2057,8.1215],[48.2133,8.1416],[48.2258,8.1529],[48.2296,8.1658],[48.2278,8.1679],[48.2333,8.1702],[48.2379,8.1764],[48.2327,8.1805],[48.2363,8.1875],[48.2343,8.1874],[48.234,8.1897],[48.2375,8.1971],[48.2373,8.2012],[48.2318,8.2043],[48.2344,8.2147],[48.2249,8.2225],[48.2098,8.2255],[48.2047,8.2343],[48.1976,8.2346],[48.1914,8.2306],[48.1793,8.2306],[48.1687,8.2333],[48.1579,8.2402],[48.1491,8.239],[48.1466,8.241],[48.1438,8.2377],[48.1388,8.2399],[48.1288,8.2304],[48.1263,8.2333]],
-    legOut: [[48.1263,8.2333],[48.1272,8.2336],[48.1288,8.2304],[48.1367,8.2366],[48.1388,8.24],[48.1385,8.2418],[48.1322,8.2503],[48.131,8.2585],[48.134,8.2744],[48.1354,8.2758],[48.1365,8.2745],[48.1378,8.2756],[48.1348,8.2786],[48.1345,8.2856],[48.132,8.2855],[48.1307,8.2904],[48.1292,8.2892],[48.1261,8.2907],[48.1283,8.3118],[48.1229,8.3185],[48.1215,8.3237],[48.1232,8.3364],[48.1298,8.352],[48.1314,8.364],[48.1301,8.377],[48.1216,8.3925],[48.1163,8.398],[48.1148,8.404],[48.1114,8.4109],[48.1075,8.4146],[48.1007,8.4178],[48.0954,8.4233],[48.0889,8.4325],[48.0848,8.4404],[48.0773,8.4475],[48.0727,8.4555],[48.0717,8.4608],[48.0668,8.467],[48.0624,8.47],[48.0591,8.47],[48.0602,8.4702],[48.0601,8.4747],[48.0633,8.4786],[48.0619,8.4823],[48.0623,8.4862],[48.0538,8.4876],[48.0539,8.4911],[48.06,8.4906]]
-  };
-  L.polyline(TRIBERG_BRANCH.legIn, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('59km · 1시간 1분 (선택: 트리베르크 경유)', { sticky: true, className: 'rt-tip' });
-  L.polyline(TRIBERG_BRANCH.legOut, { color: '#0b3c6e', weight: 3, opacity: 0.6, dashArray: '6 5' })
-    .addTo(map).bindTooltip('29km · 34분 (선택: 트리베르크 경유)', { sticky: true, className: 'rt-tip' });
 
   stops.forEach(function(s){
     var isStay = s[3].indexOf('숙박') !== -1;
@@ -2137,14 +2164,14 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     titisee: [47.92, 8.15, '티티제'],
     freiburg: [47.995, 7.85, '프라이부르크'],
     villingen: [48.06, 8.49, '필링겐슈베닝겐(블랙 포레스트)'],
-    triberg: [48.1263, 8.2313, '트리베르크 (선택) · 뻐꾸기시계 원조마을'],
+    triberg: [48.1263, 8.2313, '트리베르크 · 뻐꾸기시계 원조마을'],
     metzingen: [48.54, 9.28, '메칭겐'],
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
     heidelberg: [49.41, 8.71, '하이델베르크'],
     bernkastel: [49.92, 7.07, '베른카슈텔쿠에스 (선택)'],
     ruedesheim: [49.98, 7.91, '뤼데스하임'],
     trechtingshausen: [49.97, 7.86, 'Trechtingshausen · 숙박 · ChristRose'],
-    wiesbaden: [50.08, 8.24, '비스바덴 (선택)'],
+    wiesbaden: [50.08, 8.24, '비스바덴'],
     fraEnd: [50.11, 8.68, '프랑크푸르트 공항']
   };
 
@@ -2169,9 +2196,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       { from:'kempten', via:'bodensee', to:'titisee', legIn:'124km · 1시간 43분', legOut:'95km · 1시간 14분' }
     ]},
     day6: { stops: [
-      { c:'freiburg' }, { c:'villingen', leg:'66km · 1시간 13분(트리베르크 미경유 직행)' }, { c:'metzingen', leg:'110km · 1시간 25분' }
-    ], branches: [
-      { from:'freiburg', via:'triberg', to:'villingen', legIn:'59km · 1시간 1분', legOut:'29km · 34분' }
+      { c:'freiburg' }, { c:'triberg', leg:'59km · 1시간 1분' }, { c:'villingen', leg:'29km · 34분' }, { c:'metzingen', leg:'110km · 1시간 25분' }
     ]},
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
@@ -2180,9 +2205,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분' }
     ]},
     day8: { stops: [
-      { c:'ruedesheim' }, { c:'fraEnd', leg:'65km · 54분(비스바덴 미경유 직행)' }
-    ], branches: [
-      { from:'ruedesheim', via:'wiesbaden', to:'fraEnd', legIn:'30km · 33분', legOut:'39km · 32분' }
+      { c:'ruedesheim' }, { c:'wiesbaden', leg:'30km · 33분' }, { c:'fraEnd', leg:'39km · 32분' }
     ]}
   };
 
@@ -2216,10 +2239,9 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       branchOut: [[47.77,9.17],[47.7735,9.1725],[47.7752,9.1786],[47.7801,9.1766],[47.7821,9.1798],[47.7919,9.1582],[47.7939,9.1444],[47.814,9.1112],[47.828,9.0676],[47.8422,9.0345],[47.8382,8.9904],[47.8283,8.9469],[47.8284,8.927],[47.8247,8.8989],[47.8095,8.863],[47.8091,8.8577],[47.8312,8.8243],[47.8487,8.8079],[47.8639,8.7847],[47.872,8.7775],[47.8849,8.7754],[47.8895,8.7711],[47.8924,8.7581],[47.8877,8.7384],[47.8918,8.7247],[47.8933,8.7103],[47.8969,8.7042],[47.9071,8.695],[47.9135,8.6817],[47.9222,8.6732],[47.9173,8.6631],[47.9169,8.632],[47.915,8.6189],[47.9194,8.6024],[47.9264,8.5897],[47.9258,8.5597],[47.9278,8.5437],[47.924,8.5144],[47.9191,8.5006],[47.9172,8.4835],[47.9022,8.4584],[47.8955,8.4409],[47.8965,8.4279],[47.89,8.4136],[47.8888,8.3765],[47.8856,8.3597],[47.8866,8.352],[47.8949,8.3358],[47.8987,8.322],[47.8997,8.2996],[47.8967,8.2783],[47.9035,8.2557],[47.9,8.2367],[47.909,8.2106],[47.9166,8.2018],[47.9203,8.1905],[47.9197,8.186],[47.9108,8.1745],[47.9081,8.1647],[47.9096,8.1605],[47.9156,8.1696],[47.9194,8.172],[47.9212,8.1501]],
     },
     day6: {
-      leg1: [[47.9973,7.8515],[47.9984,7.8502],[47.9967,7.8578],[47.9917,7.8533],[47.9891,7.8588],[47.9788,7.9133],[47.9734,7.9282],[47.9724,7.958],[47.9698,7.9759],[47.9661,7.9854],[47.961,7.9886],[47.9625,8.0013],[47.9614,8.012],[47.9648,8.0237],[47.9728,8.0342],[47.9724,8.0505],[47.9701,8.058],[47.9708,8.0711],[47.9681,8.0821],[47.9752,8.0942],[47.9729,8.099],[47.9786,8.0956],[47.9718,8.1207],[47.9732,8.1277],[47.9791,8.1343],[47.9833,8.1506],[47.9916,8.1549],[47.9901,8.1635],[47.9931,8.1686],[47.9941,8.1842],[48.002,8.2026],[48.0017,8.2158],[48.0045,8.2257],[48.0048,8.254],[48.0083,8.2764],[48.008,8.2855],[48.0042,8.3005],[47.9972,8.3056],[47.9932,8.3132],[47.9989,8.3303],[48.0044,8.3285],[48.0102,8.3218],[48.019,8.3179],[48.0254,8.3167],[48.0296,8.3182],[48.0351,8.3348],[48.0389,8.338],[48.0312,8.3466],[48.0288,8.3521],[48.0266,8.365],[48.0268,8.3963],[48.0305,8.4015],[48.0309,8.411],[48.0354,8.4106],[48.0428,8.4149],[48.0515,8.4241],[48.0566,8.4257],[48.0593,8.4307],[48.0538,8.4674],[48.0634,8.4793],[48.0621,8.4865],[48.0538,8.4876],[48.0538,8.4889],[48.0539,8.4911],[48.06,8.4906]],
-      leg2: [[48.06,8.4906],[48.0539,8.4911],[48.0538,8.4876],[48.0623,8.4867],[48.0623,8.5014],[48.0689,8.4993],[48.0729,8.5006],[48.0751,8.4988],[48.0846,8.5048],[48.0856,8.5307],[48.0815,8.5481],[48.081,8.5594],[48.0768,8.5737],[48.0776,8.5809],[48.0815,8.5892],[48.08,8.59],[48.0858,8.5897],[48.0902,8.5944],[48.1049,8.5847],[48.1347,8.5712],[48.1724,8.5729],[48.1824,8.5775],[48.1912,8.5864],[48.1977,8.5983],[48.2105,8.6334],[48.2191,8.6443],[48.2268,8.6496],[48.237,8.6501],[48.267,8.6386],[48.2835,8.6411],[48.2979,8.635],[48.307,8.6369],[48.3183,8.6468],[48.3311,8.6465],[48.3372,8.6485],[48.3441,8.656],[48.3556,8.678],[48.3731,8.697],[48.379,8.7155],[48.3845,8.7247],[48.3931,8.7294],[48.4076,8.7263],[48.4155,8.729],[48.4266,8.7433],[48.4403,8.7553],[48.4595,8.7793],[48.4726,8.7899],[48.4792,8.7986],[48.4879,8.8236],[48.5012,8.8408],[48.5021,8.8452],[48.4984,8.8676],[48.4991,8.8955],[48.4896,8.9178],[48.4877,8.9279],[48.4879,8.9479],[48.4857,8.9509],[48.4786,8.9514],[48.4747,8.9599],[48.4951,9.0254],[48.5029,9.0361],[48.5132,9.0469],[48.514,9.046],[48.5161,9.0611],[48.5044,9.1179],[48.497,9.1305],[48.4986,9.1574],[48.4933,9.1723],[48.4937,9.1804],[48.491,9.1913],[48.5009,9.2009],[48.5009,9.2145],[48.511,9.2407],[48.5235,9.2541],[48.5282,9.2625],[48.537,9.264],[48.543,9.2687],[48.54,9.28]],
-      branchIn: [[47.9973,7.8515],[47.9984,7.8502],[47.9981,7.8529],[48.0049,7.8551],[48.0251,7.8567],[48.0336,7.8611],[48.0445,7.8568],[48.0514,7.8607],[48.0588,7.8742],[48.0612,7.898],[48.0776,7.9281],[48.0904,7.9702],[48.1075,7.9844],[48.1133,7.9946],[48.1261,7.9992],[48.1362,8.01],[48.1378,8.0207],[48.1448,8.0294],[48.1484,8.0299],[48.1589,8.0499],[48.1673,8.0598],[48.1717,8.0721],[48.1816,8.0807],[48.1894,8.096],[48.1965,8.1009],[48.2001,8.1147],[48.2057,8.1215],[48.2133,8.1416],[48.2258,8.1529],[48.2296,8.1658],[48.2278,8.1679],[48.2333,8.1702],[48.2379,8.1764],[48.2327,8.1805],[48.2363,8.1875],[48.2343,8.1874],[48.234,8.1897],[48.2375,8.1971],[48.2373,8.2012],[48.2318,8.2043],[48.2344,8.2147],[48.2249,8.2225],[48.2098,8.2255],[48.2047,8.2343],[48.1976,8.2346],[48.1914,8.2306],[48.1793,8.2306],[48.1687,8.2333],[48.1579,8.2402],[48.1491,8.239],[48.1466,8.241],[48.1438,8.2377],[48.1388,8.2399],[48.1288,8.2304],[48.1263,8.2333]],
-      branchOut: [[48.1263,8.2333],[48.1272,8.2336],[48.1288,8.2304],[48.1367,8.2366],[48.1388,8.24],[48.1385,8.2418],[48.1322,8.2503],[48.131,8.2585],[48.134,8.2744],[48.1354,8.2758],[48.1365,8.2745],[48.1378,8.2756],[48.1348,8.2786],[48.1345,8.2856],[48.132,8.2855],[48.1307,8.2904],[48.1292,8.2892],[48.1261,8.2907],[48.1283,8.3118],[48.1229,8.3185],[48.1215,8.3237],[48.1232,8.3364],[48.1298,8.352],[48.1314,8.364],[48.1301,8.377],[48.1216,8.3925],[48.1163,8.398],[48.1148,8.404],[48.1114,8.4109],[48.1075,8.4146],[48.1007,8.4178],[48.0954,8.4233],[48.0889,8.4325],[48.0848,8.4404],[48.0773,8.4475],[48.0727,8.4555],[48.0717,8.4608],[48.0668,8.467],[48.0624,8.47],[48.0591,8.47],[48.0602,8.4702],[48.0601,8.4747],[48.0633,8.4786],[48.0619,8.4823],[48.0623,8.4862],[48.0538,8.4876],[48.0539,8.4911],[48.06,8.4906]],
+      leg1: [[47.9973,7.8515],[47.9984,7.8502],[47.9981,7.8529],[48.0049,7.8551],[48.0251,7.8567],[48.0336,7.8611],[48.0445,7.8568],[48.0514,7.8607],[48.0588,7.8742],[48.0612,7.898],[48.0776,7.9281],[48.0904,7.9702],[48.1075,7.9844],[48.1133,7.9946],[48.1261,7.9992],[48.1362,8.01],[48.1378,8.0207],[48.1448,8.0294],[48.1484,8.0299],[48.1589,8.0499],[48.1673,8.0598],[48.1717,8.0721],[48.1816,8.0807],[48.1894,8.096],[48.1965,8.1009],[48.2001,8.1147],[48.2057,8.1215],[48.2133,8.1416],[48.2258,8.1529],[48.2296,8.1658],[48.2278,8.1679],[48.2333,8.1702],[48.2379,8.1764],[48.2327,8.1805],[48.2363,8.1875],[48.2343,8.1874],[48.234,8.1897],[48.2375,8.1971],[48.2373,8.2012],[48.2318,8.2043],[48.2344,8.2147],[48.2249,8.2225],[48.2098,8.2255],[48.2047,8.2343],[48.1976,8.2346],[48.1914,8.2306],[48.1793,8.2306],[48.1687,8.2333],[48.1579,8.2402],[48.1491,8.239],[48.1466,8.241],[48.1438,8.2377],[48.1388,8.2399],[48.1288,8.2304],[48.1263,8.2333]],
+      leg2: [[48.1263,8.2333],[48.1272,8.2336],[48.1288,8.2304],[48.1367,8.2366],[48.1388,8.24],[48.1385,8.2418],[48.1322,8.2503],[48.131,8.2585],[48.134,8.2744],[48.1354,8.2758],[48.1365,8.2745],[48.1378,8.2756],[48.1348,8.2786],[48.1345,8.2856],[48.132,8.2855],[48.1307,8.2904],[48.1292,8.2892],[48.1261,8.2907],[48.1283,8.3118],[48.1229,8.3185],[48.1215,8.3237],[48.1232,8.3364],[48.1298,8.352],[48.1314,8.364],[48.1301,8.377],[48.1216,8.3925],[48.1163,8.398],[48.1148,8.404],[48.1114,8.4109],[48.1075,8.4146],[48.1007,8.4178],[48.0954,8.4233],[48.0889,8.4325],[48.0848,8.4404],[48.0773,8.4475],[48.0727,8.4555],[48.0717,8.4608],[48.0668,8.467],[48.0624,8.47],[48.0591,8.47],[48.0602,8.4702],[48.0601,8.4747],[48.0633,8.4786],[48.0619,8.4823],[48.0623,8.4862],[48.0538,8.4876],[48.0539,8.4911],[48.06,8.4906]],
+      leg3: [[48.06,8.4906],[48.0539,8.4911],[48.0538,8.4876],[48.0623,8.4867],[48.0623,8.5014],[48.0689,8.4993],[48.0729,8.5006],[48.0751,8.4988],[48.0846,8.5048],[48.0856,8.5307],[48.0815,8.5481],[48.081,8.5594],[48.0768,8.5737],[48.0776,8.5809],[48.0815,8.5892],[48.08,8.59],[48.0858,8.5897],[48.0902,8.5944],[48.1049,8.5847],[48.1347,8.5712],[48.1724,8.5729],[48.1824,8.5775],[48.1912,8.5864],[48.1977,8.5983],[48.2105,8.6334],[48.2191,8.6443],[48.2268,8.6496],[48.237,8.6501],[48.267,8.6386],[48.2835,8.6411],[48.2979,8.635],[48.307,8.6369],[48.3183,8.6468],[48.3311,8.6465],[48.3372,8.6485],[48.3441,8.656],[48.3556,8.678],[48.3731,8.697],[48.379,8.7155],[48.3845,8.7247],[48.3931,8.7294],[48.4076,8.7263],[48.4155,8.729],[48.4266,8.7433],[48.4403,8.7553],[48.4595,8.7793],[48.4726,8.7899],[48.4792,8.7986],[48.4879,8.8236],[48.5012,8.8408],[48.5021,8.8452],[48.4984,8.8676],[48.4991,8.8955],[48.4896,8.9178],[48.4877,8.9279],[48.4879,8.9479],[48.4857,8.9509],[48.4786,8.9514],[48.4747,8.9599],[48.4951,9.0254],[48.5029,9.0361],[48.5132,9.0469],[48.514,9.046],[48.5161,9.0611],[48.5044,9.1179],[48.497,9.1305],[48.4986,9.1574],[48.4933,9.1723],[48.4937,9.1804],[48.491,9.1913],[48.5009,9.2009],[48.5009,9.2145],[48.511,9.2407],[48.5235,9.2541],[48.5282,9.2625],[48.537,9.264],[48.543,9.2687],[48.54,9.28]],
     },
     day7: {
       leg1: [[48.54,9.28],[48.5423,9.2745],[48.542,9.2695],[48.5555,9.2601],[48.5703,9.2618],[48.5782,9.2519],[48.5882,9.2476],[48.5913,9.2488],[48.5988,9.2576],[48.6023,9.2586],[48.6083,9.2546],[48.6133,9.2547],[48.6187,9.2483],[48.6249,9.2491],[48.628,9.2357],[48.6368,9.2294],[48.6515,9.233],[48.6578,9.2313],[48.6632,9.2236],[48.6664,9.2001],[48.671,9.1903],[48.6808,9.1813],[48.6925,9.177],[48.6991,9.1675],[48.7069,9.1673],[48.7099,9.1396],[48.7085,9.1198],[48.7157,9.0868],[48.725,9.0716],[48.7293,9.0547],[48.7378,9.0386],[48.7437,9.035],[48.7621,9.0329],[48.7693,9.0299],[48.7741,9.0264],[48.7789,9.018],[48.7833,9.0063],[48.7872,8.9836],[48.8014,8.94],[48.8187,8.9075],[48.8301,8.8657],[48.8378,8.8497],[48.8408,8.8261],[48.8477,8.8064],[48.8537,8.7992],[48.8654,8.7924],[48.8899,8.7869],[48.8973,8.7834],[48.9229,8.7542],[48.9242,8.7446],[48.9192,8.731],[48.9089,8.6871],[48.9078,8.6642],[48.9097,8.631],[48.913,8.6197],[48.9183,8.6135],[48.9241,8.6017],[48.9255,8.5913],[48.934,8.5708],[48.9338,8.552],[48.9377,8.5384],[48.9374,8.5216],[48.9449,8.4972],[48.9703,8.4596],[48.9725,8.4422],[48.975,8.4381],[48.99,8.4362],[48.9942,8.4378],[49.0081,8.4583],[49.0265,8.4777],[49.0719,8.5099],[49.0899,8.531],[49.1127,8.5492],[49.1183,8.5516],[49.1295,8.5509],[49.1364,8.553],[49.2156,8.6028],[49.2223,8.604],[49.2519,8.6005],[49.2568,8.6023],[49.2757,8.6176],[49.2866,8.6231],[49.3145,8.6295],[49.3685,8.6327],[49.3741,8.6443],[49.3961,8.6703],[49.4058,8.6854],[49.41,8.71]],
@@ -2231,9 +2253,8 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       branch2Out: [[49.9199,7.0697],[49.9161,7.0721],[49.9148,7.0702],[49.9154,7.0748],[49.9107,7.0699],[49.9105,7.0784],[49.9119,7.079],[49.9093,7.0791],[49.903,7.0874],[49.9034,7.0992],[49.8986,7.1045],[49.8964,7.1041],[49.8984,7.1053],[49.8968,7.1047],[49.8936,7.1077],[49.893,7.1107],[49.8908,7.1089],[49.8901,7.1105],[49.8843,7.1107],[49.8775,7.1157],[49.8698,7.135],[49.8572,7.1468],[49.8537,7.1524],[49.853,7.1598],[49.8664,7.1932],[49.8791,7.2136],[49.8856,7.2194],[49.8936,7.2149],[49.907,7.2224],[49.9151,7.2391],[49.9196,7.2547],[49.9354,7.2938],[49.9379,7.3075],[49.9358,7.34],[49.9366,7.364],[49.9572,7.4135],[49.9592,7.4558],[49.9687,7.4923],[49.974,7.5027],[49.9748,7.524],[49.981,7.5387],[49.9803,7.5456],[49.9694,7.5617],[49.9683,7.5677],[49.9782,7.5932],[49.9785,7.611],[49.9858,7.6265],[49.9978,7.665],[49.9989,7.6791],[49.9938,7.6933],[49.9815,7.7088],[49.9799,7.7248],[49.9713,7.7418],[49.9666,7.763],[49.9595,7.7722],[49.9533,7.7874],[49.9414,7.7973],[49.938,7.8103],[49.926,7.8249],[49.9233,7.8342],[49.9249,7.8553],[49.9291,7.8681],[49.9298,7.8804],[49.9329,7.8911],[49.9315,7.9265],[49.9295,7.9345],[49.9309,7.9405],[49.9336,7.9423],[49.9486,7.942],[49.9543,7.9476],[49.9579,7.9427],[49.9678,7.9428],[49.97,7.9313],[49.97,7.9139],[49.9759,7.9112],[49.9771,7.9166],[49.9774,7.9133]],
     },
     day8: {
-      leg1: [[49.9774,7.9133],[49.9782,7.9287],[49.9818,7.9399],[49.9801,7.9447],[49.9802,7.9675],[49.9866,7.9797],[49.9906,7.9995],[49.9967,8.0077],[50.0029,8.0296],[50.0104,8.0457],[50.0126,8.0608],[50.0176,8.0747],[50.018,8.0921],[50.0205,8.1045],[50.0237,8.108],[50.0336,8.1072],[50.0438,8.118],[50.0456,8.1229],[50.0444,8.1364],[50.0528,8.2074],[50.0527,8.2643],[50.0497,8.2965],[50.056,8.317],[50.0553,8.4463],[50.0811,8.4857],[50.0842,8.4866],[50.0944,8.4835],[50.0978,8.486],[50.1286,8.568],[50.128,8.5747],[50.1176,8.5871],[50.1141,8.5981],[50.1163,8.6264],[50.1133,8.6517],[50.1095,8.6604],[50.1131,8.6686],[50.1074,8.6732],[50.11,8.68]],
-      branchIn: [[49.9774,7.9133],[49.9782,7.9287],[49.9818,7.9399],[49.9801,7.9447],[49.9802,7.9675],[49.9866,7.9797],[49.9906,7.9995],[49.9967,8.0077],[50.0029,8.0296],[50.0104,8.0457],[50.0126,8.0608],[50.0176,8.0747],[50.018,8.0921],[50.0205,8.1045],[50.0237,8.108],[50.0336,8.1072],[50.0452,8.121],[50.0443,8.1352],[50.0499,8.1732],[50.0493,8.187],[50.0527,8.2048],[50.0517,8.2139],[50.057,8.2124],[50.0601,8.214],[50.0774,8.2352],[50.0778,8.2425],[50.0804,8.2421],[50.0804,8.24]],
-      branchOut: [[50.0804,8.24],[50.0804,8.246],[50.0685,8.2625],[50.0612,8.2821],[50.0494,8.2907],[50.0501,8.3005],[50.056,8.317],[50.055,8.4443],[50.0568,8.4499],[50.0811,8.4857],[50.0842,8.4866],[50.0944,8.4835],[50.0978,8.486],[50.1286,8.568],[50.128,8.5747],[50.1176,8.5871],[50.1141,8.5981],[50.1163,8.6264],[50.1133,8.6517],[50.1095,8.6604],[50.1131,8.6686],[50.1074,8.6732],[50.11,8.68]],
+      leg1: [[49.9774,7.9133],[49.9782,7.9287],[49.9818,7.9399],[49.9801,7.9447],[49.9802,7.9675],[49.9866,7.9797],[49.9906,7.9995],[49.9967,8.0077],[50.0029,8.0296],[50.0104,8.0457],[50.0126,8.0608],[50.0176,8.0747],[50.018,8.0921],[50.0205,8.1045],[50.0237,8.108],[50.0336,8.1072],[50.0452,8.121],[50.0443,8.1352],[50.0499,8.1732],[50.0493,8.187],[50.0527,8.2048],[50.0517,8.2139],[50.057,8.2124],[50.0601,8.214],[50.0774,8.2352],[50.0778,8.2425],[50.0804,8.2421],[50.0804,8.24]],
+      leg2: [[50.0804,8.24],[50.0804,8.246],[50.0685,8.2625],[50.0612,8.2821],[50.0494,8.2907],[50.0501,8.3005],[50.056,8.317],[50.055,8.4443],[50.0568,8.4499],[50.0811,8.4857],[50.0842,8.4866],[50.0944,8.4835],[50.0978,8.486],[50.1286,8.568],[50.128,8.5747],[50.1176,8.5871],[50.1141,8.5981],[50.1163,8.6264],[50.1133,8.6517],[50.1095,8.6604],[50.1131,8.6686],[50.1074,8.6732],[50.11,8.68]],
     },
   };
 
