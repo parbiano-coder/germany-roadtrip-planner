@@ -213,7 +213,8 @@
 
   /* ---------- Sections ---------- */
   main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
-  section{ padding:3rem 0; border-bottom:1px solid var(--line); }
+  section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:8rem; }
+  @media (max-width:640px){ section{ scroll-margin-top:7rem; } }
   #checklist, #info{ display:none; }
   #checklist:target, #info:target{ display:block; }
   body:has(#checklist:target) header.hero,
@@ -501,7 +502,8 @@
   .card p{ margin:0; color:var(--ink-soft); font-size:0.94rem; }
 
   /* ---------- Day cards ---------- */
-  .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:4rem; }
+  .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:8rem; }
+  @media (max-width:640px){ .day{ scroll-margin-top:7rem; } }
   .day:last-child{ border-bottom:none; }
   details.day > summary.day-head{ cursor:pointer; list-style:none; }
   details.day > summary.day-head::-webkit-details-marker{ display:none; }
