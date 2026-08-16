@@ -211,7 +211,9 @@
   .daynav a:hover{ color:var(--route); border-color:var(--line); }
   .daynav a.current{ color:var(--route); background:var(--route-soft); }
   .dn-city{ font-size:0.82rem; font-weight:800; color:var(--route); }
-  @media (max-width:640px){ .daynav a{ font-size:0.8rem; padding:0.4rem 0.7rem; } .dn-city{ font-size:0.7rem; } }
+  .daynav a.dn-all{ font-size:0.82rem; }
+  .daynav a.dn-all .dn-city{ font-size:0.82rem; font-weight:700; color:var(--ink-soft); }
+  @media (max-width:640px){ .daynav a{ font-size:0.8rem; padding:0.4rem 0.7rem; } .dn-city{ font-size:0.7rem; } .daynav a.dn-all, .daynav a.dn-all .dn-city{ font-size:0.7rem; } }
 
   /* ---------- Sections ---------- */
   main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
@@ -558,20 +560,17 @@
     <a class="topbar-item" href="german-driving-rules.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg></span>운전 규칙</a>
     <a class="topbar-item" href="index.html#checklist"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</a>
     <a class="topbar-item" href="index.html#info"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>비상연락처</a>
-    <button type="button" class="topbar-item" id="photoToggle" aria-pressed="true"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span><span id="photoToggleLabel">사진 끄기</span></button>
-    <button type="button" class="topbar-item" id="expandAllDays"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg></span>전체 펼치기</button>
-    <button type="button" class="topbar-item" id="collapseAllDays"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M9 20v-5H4"/><path d="M15 20v-5h5"/></svg></span>전체 접기</button>
+    <button type="button" class="topbar-item" id="photoToggle" aria-pressed="true"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>사진</button>
+    <button type="button" class="topbar-item" id="toggleAllDays"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg></span><span id="toggleAllDaysLabel">전체 펼치기</span></button>
   </div>
 </nav>
 
 <script>
 (function(){
   var btn = document.getElementById('photoToggle');
-  var label = document.getElementById('photoToggleLabel');
   function render(){
     var off = document.documentElement.classList.contains('photos-off');
     btn.setAttribute('aria-pressed', String(!off));
-    label.textContent = off ? '사진 켜기' : '사진 끄기';
   }
   btn.addEventListener('click', function(){
     var off = document.documentElement.classList.toggle('photos-off');
@@ -584,26 +583,33 @@
 
 <script>
 (function(){
-  document.getElementById('expandAllDays').addEventListener('click', function(){
-    document.querySelectorAll('details.day').forEach(function(d){ d.open = true; });
+  var btn = document.getElementById('toggleAllDays');
+  var label = document.getElementById('toggleAllDaysLabel');
+  function allOpen(){
+    var days = document.querySelectorAll('details.day');
+    return days.length > 0 && Array.prototype.every.call(days, function(d){ return d.open; });
+  }
+  function render(){ label.textContent = allOpen() ? '전체 접기' : '전체 펼치기'; }
+  btn.addEventListener('click', function(){
+    var makeOpen = !allOpen();
+    document.querySelectorAll('details.day').forEach(function(d){ d.open = makeOpen; });
+    render();
   });
-  document.getElementById('collapseAllDays').addEventListener('click', function(){
-    document.querySelectorAll('details.day').forEach(function(d){ d.open = false; });
-  });
+  render();
 })();
 </script>
 
 <nav class="daynav" aria-label="빠른 이동">
   <div class="daynav-scroll">
-    <a href="#route">전체<span class="dn-city">경로</span></a>
-    <a href="#day1">1일차<span class="dn-city">뷔르츠부르크</span></a>
-    <a href="#day2">2일차<span class="dn-city">뉘른베르크</span></a>
-    <a href="#day3">3일차<span class="dn-city">퓌센</span></a>
-    <a href="#day4">4일차<span class="dn-city">퓌센</span></a>
-    <a href="#day5">5일차<span class="dn-city">티티제</span></a>
-    <a href="#day6">6일차<span class="dn-city">프라이부르크</span></a>
-    <a href="#day7">7일차<span class="dn-city">하이델베르크</span></a>
-    <a href="#day8">8일차<span class="dn-city">뤼데스하임</span></a>
+    <a href="#route" class="dn-all">전체<span class="dn-city">경로</span></a>
+    <a href="#day1">9/19(토)<span class="dn-city">뷔르츠부르크</span></a>
+    <a href="#day2">9/20(일)<span class="dn-city">뉘른베르크</span></a>
+    <a href="#day3">9/21(월)<span class="dn-city">퓌센</span></a>
+    <a href="#day4">9/22(화)<span class="dn-city">퓌센</span></a>
+    <a href="#day5">9/23(수)<span class="dn-city">티티제</span></a>
+    <a href="#day6">9/24(목)<span class="dn-city">프라이부르크</span></a>
+    <a href="#day7">9/25(금)<span class="dn-city">하이델베르크</span></a>
+    <a href="#day8">9/26(토)<span class="dn-city">뤼데스하임</span></a>
   </div>
 </nav>
 
