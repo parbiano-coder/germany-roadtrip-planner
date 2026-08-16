@@ -508,10 +508,6 @@
   .tip{
     border-left:3px solid var(--route); padding-left:0.8rem; font-size:0.9rem; color:var(--ink-soft); font-style:italic;
   }
-  .itin-note{
-    background:var(--route-soft); border-radius:2px; padding:0.7rem 1rem; margin-bottom:2rem;
-    font-size:0.85rem; color:var(--ink); max-width:70ch;
-  }
   .sight-list{
     margin-top:1.2rem; padding-top:1rem; border-top:1px solid var(--line);
     display:flex; flex-direction:column; gap:0.5rem;
@@ -751,7 +747,7 @@
         <h4>가볼 만한 곳</h4>
       <p class="city-label">뷔르츠부르크</p>
       <p class="walk-map-note">🚗 숙소(위팅엔)→레지덴츠 약 18km·22분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.7941,9.7296&destination=49.7928,9.9392" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 레지덴츠 정문 앞 거리 주차(시간당 €1.70→€1.20, 1일 최대 €11) · 주차 후 도보 약 1분</p>
-      <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교 → 마리엔베르크 요새</p>
+      <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7928,9.9392&waypoints=49.793%2C9.9257%7C49.7898,9.9192" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
       <div class="landmark-grid">
       <div class="landmark-card">
@@ -781,11 +777,12 @@
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Alte+Mainbruecke+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
         </div>
       </div>
+      <p class="walk-map-note">🚗 레지덴츠 궁전→마리엔베르크 요새 약 4.8km·10분(Zeller Straße 경유) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.7928,9.9392&destination=49.7898,9.9192" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 요새 현장 주차장(대수 제한적, 주말 혼잡 시 도보가 오히려 빠를 수 있음) · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Festung+Marienberg+Wuerzburg" target="_blank" rel="noopener">주차장 위치 보기</a></p>
       <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wurzburg_Marienberg_Fortress_on_the_Main_in_W%C3%BCrzburg.jpg?width=500" alt="마리엔베르크 요새" loading="lazy">
         <div class="landmark-body">
         <h3>마리엔베르크 요새(Festung Marienberg)</h3>
-        <p class="landmark-desc">마인강 건너 언덕 위에서 뷔르츠부르크 구시가 전체를 내려다보는 요새. 궁정과 정원은 무료로 둘러볼 수 있습니다. <b>레지덴츠(189m)보다 약 65m 높아</b> 다리를 건너 걸어 올라가면 꽤 힘든 오르막입니다 — 도보 대신 차량으로 요새 쪽 도로(Zeller Straße 경유)로 따로 올라가 현장 주차 후 둘러보는 방법도 고려해보세요(레지덴츠·알테 마인교 도보권은 그대로 걷고, 요새만 차로 이동).</p>
+        <p class="landmark-desc">마인강 건너 언덕 위에서 뷔르츠부르크 구시가 전체를 내려다보는 요새. 궁정과 정원은 무료로 둘러볼 수 있습니다. <b>레지덴츠(189m)보다 약 65m 높아</b> 다리를 건너 걸어 올라가면 꽤 힘든 오르막이라, 레지덴츠·알테 마인교는 그대로 걷고 요새만 위 안내대로 차로 따로 이동합니다(Zeller Straße 경유).</p>
         <div class="landmark-meta">요새 부지 4–10월 09:00–18:00 · 11–3월 10:00–16:30 (월요일 휴관) · <span class="landmark-price">부지 무료, 내부 박물관(Museum für Franken)은 별도 유료</span> · <a href="https://www.schloesser.bayern.de/deutsch/schloss/objekte/wu_fest.htm" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Festung+Marienberg+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 요새 인근 현장 주차 가능(대수 제한적, 주말 혼잡 시 도보가 오히려 빠를 수 있음) · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Festung+Marienberg+Wuerzburg" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1766,7 +1763,13 @@
       </div>
       <div class="sight-list">
         <h4>맛집 (하이델베르크)</h4>
-        <div class="sight"><span class="sight-name">Zum Güldenen Schaf</span><span class="sight-hours">구시가 중심 · 1749년부터 이어온 오랜 사랑방</span><span class="sight-price">꼭 시켜야 할 메뉴: 슈바인스학세, 향토 소시지 플래터 · <a href="https://www.google.com/maps/search/?api=1&query=Zum+Gueldenen+Schaf+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Zum Güldenen Schaf</span><span class="sight-hours">구시가 중심 · 1749년부터 이어온 오랜 사랑방</span><span class="sight-price">꼭 시켜야 할 메뉴: 슈바인스학세, 향토 소시지 플래터 · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Zum+Gueldenen+Schaf+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Weinstube Schnitzelbank</span><span class="sight-hours">Bauamtsgasse 7, 구시가 골목 · 반목조 와인선술집, 프팔츠·바덴 가정식 · 월–금 17:00–22:00, 토·일 12:00–22:00(주방 ~21:00)</span><span class="sight-price">꼭 시켜야 할 메뉴: 프팔처 자우마겐 또는 크눗슈퍼슈니첼 · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Schnitzelbank+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Weisser Bock</span><span class="sight-hours">Große Mantelgasse 24, 구시가 · 역사적 건물의 호텔 레스토랑, 제철 슈베칭엔 화이트 아스파라거스로 유명 · 화–토 17:30~</span><span class="sight-price">꼭 시켜야 할 메뉴: 칼프스코틀레트(송아지갈비, €42.00), 부야베스(€38.50) · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Weisser+Bock+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Kulturbrauerei Heidelberg</span><span class="sight-hours">Leyergasse 6, 하웁트슈트라세 동쪽·구 다리 인근 · 자체 양조 브루펍, 가정식 · 월–목 12:00–21:30, 금–일 12:00–22:30</span><span class="sight-price">자체 양조 맥주(계절 마이복 등)+소시지·스테이크류 · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Kulturbrauerei+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Vetter's Alt Heidelberger Brauhaus</span><span class="sight-hours">Steingasse 9, 구 다리 앞 · 세계에서 가장 도수 높은 맥주 "Vetter 33"(33%)로 유명한 브루펍 · 일–목 11:30–24:00, 금·토 11:30–익02:00(주방 ~23:00)</span><span class="sight-price">Vetter 33 맥주 + 바이에른식 소시지·슈니첼 · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Vetters+Alt+Heidelberger+Brauhaus" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Schnookeloch</span><span class="sight-hours">Haspelgasse 8, 구시가 · 1703년부터 이어진 학생회(Verbindung) 전통 술집, 담쟁이 덮인 비어가든 · 대략 일–목 11:00–익01:00, 금·토 11:00–익03:00(현장 확인 권장)</span><span class="sight-price">꼭 시켜야 할 메뉴: 슈니첼 비너 아트+감자샐러드(€19.90) · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Schnookeloch+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Wirtshaus zum Nepomuk</span><span class="sight-hours">Obere Neckarstraße 2, 구 다리 문루 안(Hotel zur Alten Brücke) · 소스·슈페츨레 등 모두 직접 만드는 향토식 · 매일 18:00–23:00(온메뉴 ~21:00)</span><span class="sight-price">꼭 시켜야 할 메뉴: 하이델베르거 플라스터슈타인(스테이크) 또는 오덴발트 송어 · 🅿️ 도보권(P12 Kornmarkt/Schloss) · <a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+zum+Nepomuk+Heidelberg" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       <p class="city-label">슈투트가르트 <span class="optional-tag">(선택)</span></p>
       <div class="booking-note"><b>현장구매 가능, 온라인 예매 권장</b> 메르세데스-벤츠 박물관·포르쉐 박물관은 타임슬롯 티켓제입니다. 평일엔 현장 구매로도 충분하지만, 주말·성수기엔 대기줄을 건너뛰려면 온라인 예매가 낫습니다.</div>
@@ -1819,13 +1822,23 @@
         <div class="landmark-parking">🅿️ 마르크트광장 도보 몇 분(P3/P4 Moselufer) · 유료(요금 미확인, 현장 정산기 확인)</div>
         </div>
       </div>
+      <div class="sight-list">
+        <h4>맛집 (베른카슈텔쿠에스)</h4>
+        <div class="sight"><span class="sight-name">Restaurant Ratskeller</span><span class="sight-hours">Markt 30, 마르크트광장의 옛 시청사 건물 · 화–일 12:00–22:00(주방 ~21:00) · 월요일 휴무</span><span class="sight-price">향토·계절 요리(대표 메뉴·가격 확인 안됨) · 🅿️ 도보권(P3/P4 Moselufer) · <a href="https://www.google.com/maps/search/?api=1&query=Ratskeller+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Hotel-Restaurant Doctor-Weinstuben</span><span class="sight-hours">Hebegasse 5, 마르크트광장에서 한 블록 · 1668년 건물, 향토·인터내셔널 요리 · 화–토 12:00–14:00·17:30–23:00 · 일·월 휴무</span><span class="sight-price">계절 와일드카르테(수렵육 메뉴, 대표 메뉴·가격 확인 안됨) · 🅿️ 도보권(P3/P4 Moselufer) · <a href="https://www.google.com/maps/search/?api=1&query=Doctor-Weinstuben+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Restaurant Alt Bernkastel</span><span class="sight-hours">Burgstraße 81, 란트스후트 성터로 오르는 길목 · 향토 가정식 · 대략 월–토 11:00–21:00, 일 11:00–20:00(현장 확인 권장)</span><span class="sight-price">향토 가정식(대표 메뉴·가격 확인 안됨) · 🅿️ 도보권(P3/P4 Moselufer) · <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Alt+Bernkastel" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Restaurant Graacher Tor</span><span class="sight-hours">Graacher Str. 3, 구시가 성문 인근 · 정기휴무 출처마다 편차, 현장 확인 권장</span><span class="sight-price">향토 요리(대표 메뉴·가격 확인 안됨) · 🅿️ 도보권(P3/P4 Moselufer) · <a href="https://www.google.com/maps/search/?api=1&query=Graacher+Tor+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Alter Moselbahnhof</span><span class="sight-hours">Gestade 19, 모젤강변 옛 기차역 건물(쿠에스 쪽, 다리 건너 도보) · 일–목 11:00–22:00, 금·토 11:00–23:00(주방 ~21:30)</span><span class="sight-price">슈니첼·파스타·향토 와인 셀렉션 · 🅿️ 도보권(P3/P4 Moselufer) · <a href="https://www.google.com/maps/search/?api=1&query=Alter+Moselbahnhof+Bernkastel-Kues" target="_blank" rel="noopener">지도</a></span></div>
       </div>
       </div>
       <div class="sight-list">
         <h4>맛집 (뤼데스하임 — 오늘 밤 숙소 인근)</h4>
-        <div class="sight"><span class="sight-name">Ratsstube</span><span class="sight-hours">구시가 · 방문객들이 꼽는 뤼데스하임 최고의 레스토랑</span><span class="sight-price">꼭 시켜야 할 메뉴: 라인가우 리슬링 + 향토 요리 · <a href="https://www.google.com/maps/search/?api=1&query=Ratsstube+Ruedesheim+am+Rhein" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Ramen Wang</span><span class="sight-hours">일식(라멘·스시)</span><span class="sight-price">뤼데스하임 시내 · <a href="https://www.google.com/maps/search/?api=1&query=Ramen+Wang+Ruedesheim" target="_blank" rel="noopener">지도</a></span></div>
-        <div class="sight"><span class="sight-name">Asia Wok Pho Restaurant</span><span class="sight-hours">중식·동남아식(태국)</span><span class="sight-price">뤼데스하임 시내 · <a href="https://www.google.com/maps/search/?api=1&query=Asia+Wok+Pho+Ruedesheim" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Ratsstube</span><span class="sight-hours">Marktstraße 26, 구시가·드로셀가세 인근 · 독일 가정식+지중해풍 · 화–일 12:00–21:00 · 월요일 휴무</span><span class="sight-price">꼭 시켜야 할 메뉴: 아르헨티나식 룸프스테이크+수제 허브버터(€23.90) · 🅿️ 도보권(P10 Feldtor) · <a href="https://www.google.com/maps/search/?api=1&query=Ratsstube+Ruedesheim+am+Rhein" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Ramen Wang</span><span class="sight-hours">Löhrstraße 1 · 일식(라멘) — ⚠️ 2026년 초 매각·휴업 공지가 있어 현재 영업 여부 불확실, 방문 전 전화 확인 권장</span><span class="sight-price">기존 대표 메뉴: 돈코츠 라멘(€14.90~) · 🅿️ 도보권(P10 Feldtor) · <a href="https://www.google.com/maps/search/?api=1&query=Ramen+Wang+Ruedesheim" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Asia Wok</span><span class="sight-hours">Rheinstraße 29 · 중식·동남아식(태국·베트남 쌀국수) · 월 17:00–21:30, 화–일 11:30–21:30</span><span class="sight-price">쌀국수(포) 등 10여 종 국수 요리 · 🅿️ 도보권(P10 Feldtor) · <a href="https://www.google.com/maps/search/?api=1&query=Asia+Wok+Ruedesheim+am+Rhein" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Breuer's Rüdesheimer Schloss</span><span class="sight-hours">Steingasse 10, 드로셀가세 한복판 · 호텔 부속 와인가스트하우스, 성 정원풍 안뜰 · 대략 11:00–21:00(요일별 변동, 현장 확인 권장)</span><span class="sight-price">꼭 시켜야 할 메뉴: 슐로스-엔테(대추·무화과 스터핑 오리구이) 또는 리슬링 치즈수프 · 🅿️ 도보권(P10 Feldtor) · <a href="https://www.google.com/maps/search/?api=1&query=Breuers+Ruedesheimer+Schloss" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Drosselhof</span><span class="sight-hours">Drosselgasse 5 · 1727년부터 이어진 드로셀가세에서 가장 오래된 여관, 250석 규모 · 매일 12:00~(정기휴무 정보 확인 안됨)</span><span class="sight-price">꼭 시켜야 할 메뉴: 라인식 자우어브라텐(사과 적양배추+수제 감자경단) · 🅿️ 도보권(P10 Feldtor) · <a href="https://www.google.com/maps/search/?api=1&query=Drosselhof+Ruedesheim+am+Rhein" target="_blank" rel="noopener">지도</a></span></div>
+        <div class="sight"><span class="sight-name">Gasthaus Winzerkeller</span><span class="sight-hours">Oberstraße 33, 오버 거리 초입 · 향토 요리+라인가우 리슬링·슈페트부르군더 · 화–목·일 11:30–20:00, 금·토 11:00–21:00 · 월요일 휴무 추정</span><span class="sight-price">꼭 시켜야 할 메뉴: 슈니첼(€12.90) · 🅿️ 도보권(P10 Feldtor) · <a href="https://www.google.com/maps/search/?api=1&query=Gasthaus+Winzerkeller+Ruedesheim" target="_blank" rel="noopener">지도</a></span></div>
       </div>
     </div>
     </details>
@@ -1964,8 +1977,6 @@
       </div>
     </div>
     </details>
-
-    <p class="itin-note">각 일자의 명소 운영시간·입장료는 2026년 검색 기준입니다. 요일별 휴관일이 있는 곳이 많으니 방문 직전 공식 홈페이지에서 다시 확인하세요.</p>
 
   </div>
 
@@ -2459,7 +2470,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
 </script>
 
 <footer>
-  이 페이지는 여행 준비를 돕기 위한 참고 자료입니다. 실제 규정(속도제한, 환경구역, 통행료 등)은 방문 시점 기준으로 렌터카사·공식 채널에서 다시 확인하세요.
+  이 페이지는 여행 준비를 돕기 위한 참고 자료로, 명소 운영시간·입장료는 2026년 검색 기준(요일별 휴관일이 있는 곳이 많으니 방문 직전 공식 홈페이지에서 재확인)이며, 속도제한·환경구역·통행료 등 실제 규정은 방문 시점 기준으로 렌터카사·공식 채널에서 다시 확인하세요.
 </footer>
 
 <script>
