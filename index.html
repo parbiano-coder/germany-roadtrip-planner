@@ -164,14 +164,18 @@
   }
   .topbar-scroll{
     max-width:960px; margin:0 auto; width:100%;
-    display:flex; align-items:center; gap:0.3rem; overflow-x:auto;
-    padding:0.4rem 1rem; scrollbar-width:thin;
+    display:flex; flex-wrap:wrap; align-items:center; gap:0.3rem;
+    padding:0.4rem 1rem;
   }
-  .topbar-scroll.topbar-links{ border-top:1px solid var(--line); }
+  .topbar-break{ display:none; flex-basis:100%; height:0; }
+  .topbar-links{ display:contents; }
   @media (max-width:640px){
-    .topbar-scroll.topbar-links{ justify-content:space-between; overflow-x:visible; }
-    .topbar-scroll.topbar-links .topbar-item{ padding:0.3rem 0.4rem; font-size:0.72rem; gap:0; flex-direction:column; border-radius:8px; }
-    .topbar-scroll.topbar-links .tb-icon{ display:none; }
+    .topbar-break{ display:block; }
+    .topbar-scroll{ justify-content:space-between; }
+    .topbar-scroll .topbar-item{ padding:0.3rem 0.3rem; font-size:0.66rem; gap:0; flex-direction:column; border-radius:8px; }
+    .topbar-scroll .tb-icon{ display:none; }
+    .topbar-scroll > a.topbar-item[aria-label="여행 플래너 홈"]{ flex-direction:row; }
+    .topbar-scroll > a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ display:flex; }
   }
   .topbar-item{
     flex:none; display:inline-flex; align-items:center; gap:0.5rem;
@@ -199,14 +203,14 @@
 
   /* ---------- Sticky day nav (day-roadmap grid) ---------- */
   nav.daynav{
-    position:fixed; top:105.125px; left:0; right:0; z-index:999;
+    position:fixed; top:52.5625px; left:0; right:0; z-index:999;
     background:var(--surface);
     border-bottom:1px solid var(--line);
     box-shadow: var(--shadow);
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  @media (max-width:640px){ nav.daynav{ top:96.9375px; } }
+  @media (max-width:640px){ nav.daynav{ top:130.359375px; } }
   nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -234,10 +238,10 @@
   }
 
   /* ---------- Sections ---------- */
-  main{ max-width:920px; margin:0 auto; padding:14.8rem 1.5rem 0; }
-  @media (max-width:640px){ main{ padding-top:13rem; } }
-  section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:14.8rem; }
-  @media (max-width:640px){ section{ scroll-margin-top:13rem; } }
+  main{ max-width:920px; margin:0 auto; padding:11.5rem 1.5rem 0; }
+  @media (max-width:640px){ main{ padding-top:15.2rem; } }
+  section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11.5rem; }
+  @media (max-width:640px){ section{ scroll-margin-top:15.2rem; } }
   section:last-of-type{ border-bottom:none; }
   section > .eyebrow{ display:block; margin-bottom:0.5rem; }
   section > h2{ font-size:1.6rem; margin:0 0 0.4rem; }
@@ -456,8 +460,8 @@
   .card p{ margin:0; color:var(--ink-soft); font-size:0.94rem; }
 
   /* ---------- Day cards ---------- */
-  .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:14.8rem; }
-  @media (max-width:640px){ .day{ scroll-margin-top:13rem; } }
+  .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11.5rem; }
+  @media (max-width:640px){ .day{ scroll-margin-top:15.2rem; } }
   .day:last-child{ border-bottom:none; }
   details.day > summary.day-head{ cursor:pointer; list-style:none; }
   details.day > summary.day-head::-webkit-details-marker{ display:none; }
@@ -576,13 +580,14 @@
       </span>이미지</button>
     <button type="button" class="topbar-item topbar-action" id="toggleAllDays"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg></span><span id="toggleAllDaysLabel">전체 펼치기</span></button>
     <button type="button" class="topbar-item topbar-action" id="toggleOptional"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span><span id="toggleOptionalLabel">선택 펼치기</span></button>
-  </div>
-  <div class="topbar-scroll topbar-links">
+    <div class="topbar-break"></div>
+    <div class="topbar-links">
     <a class="topbar-item" href="german-weather.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨</a>
     <a class="topbar-item" href="german-exchange.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>환율</a>
     <a class="topbar-item" href="german-car-guide.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg></span>렌터카</a>
     <a class="topbar-item" href="german-checklist.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</a>
     <a class="topbar-item" href="german-emergency.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>비상연락처</a>
+    </div>
   </div>
 </nav>
 
