@@ -579,7 +579,7 @@
         <svg class="icon-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61C3.35 8.5 2 12 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="M2 2l20 20"/></svg>
       </span>이미지</button>
     <button type="button" class="topbar-item topbar-action" id="toggleAllDays"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg></span><span id="toggleAllDaysLabel">전체 펼치기</span></button>
-    <button type="button" class="topbar-item topbar-action" id="toggleOptional"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span><span id="toggleOptionalLabel">선택 펼치기</span></button>
+    <button type="button" class="topbar-item topbar-action" id="toggleOptional"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span><span id="toggleOptionalLabel">선택도시 펼치기</span></button>
     <div class="topbar-break"></div>
     <div class="topbar-links">
     <a class="topbar-item" href="german-weather.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨</a>
@@ -633,7 +633,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var blocks = document.querySelectorAll('details.optional-block');
     return blocks.length > 0 && Array.prototype.every.call(blocks, function(d){ return d.open; });
   }
-  function render(){ label.textContent = allOpen() ? '선택 접기' : '선택 펼치기'; }
+  function render(){ label.textContent = allOpen() ? '선택도시 접기' : '선택도시 펼치기'; }
   btn.addEventListener('click', function(){
     var makeOpen = !allOpen();
     document.querySelectorAll('details.optional-block').forEach(function(d){ d.open = makeOpen; });
@@ -3544,6 +3544,18 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       if(det){ det.open = true; }
     });
   });
+
+  // 다른 페이지(날씨/체크리스트 등)에서 index.html#dayN 링크로 들어왔을 때도 해당 날짜를 펼쳐서 보여줌
+  if (location.hash) {
+    var hashTarget = document.querySelector(location.hash);
+    if (hashTarget) {
+      var hashDet = hashTarget.tagName === 'DETAILS' ? hashTarget : hashTarget.closest('details.day');
+      if (hashDet) {
+        hashDet.open = true;
+        setTimeout(function(){ hashTarget.scrollIntoView(); }, 0);
+      }
+    }
+  }
 
   var links = Array.prototype.slice.call(document.querySelectorAll('.daynav a'));
   var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
