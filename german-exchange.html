@@ -1,6 +1,6 @@
-<title>독일 여행 유로 환율 — 실시간 EUR/KRW</title>
+<title>독일 여행 유로 환율 — EUR/KRW 기준환율</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="유럽중앙은행(ECB) 기준 실시간 EUR/KRW 환율과 1주일·1개월·3개월·1년 추이 차트">
+<meta name="description" content="유럽중앙은행(ECB) 기준환율(영업일 매일 갱신) EUR/KRW 환율과 1주일·1개월·3개월·1년 추이 차트">
 <style>
   @font-face{
     font-family: 'Paperozi';
@@ -195,8 +195,10 @@
   @media (max-width:640px){
     .topbar-break{ display:block; }
     .topbar-row{ justify-content:space-between; }
-    .topbar-links .topbar-item{ padding:0.3rem 0.4rem; font-size:0.72rem; gap:0; flex-direction:column; border-radius:8px; }
-    .topbar-links .tb-icon{ display:none; }
+    .topbar-row .topbar-item{ padding:0.3rem 0.4rem; font-size:0.72rem; gap:0; flex-direction:column; border-radius:8px; }
+    .topbar-row .tb-icon{ display:none; }
+    .topbar-row > a.topbar-item[aria-label="여행 플래너 홈"]{ flex-direction:row; }
+    .topbar-row > a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ display:flex; }
   }
 
   nav.daynav .day-roadmap{
@@ -303,6 +305,7 @@
       .then(function(d){
         if (d && d.rates && typeof d.rates.KRW === 'number'){
           fEl.textContent = d.rates.KRW.toFixed(1) + '원';
+          fEl.title = (d.date || '') + ' 유럽중앙은행(ECB) 기준환율 · 실시간 아님, 참고용';
         }
       })
       .catch(function(){});
@@ -341,9 +344,9 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="eyebrow" style="display:block;">Live Rate · ECB 기준</span>
+    <span class="eyebrow" style="display:block;">ECB 기준환율</span>
     <h1>유로 환율</h1>
-    <p class="sub">유럽중앙은행(ECB) 공식 기준환율입니다. 페이지를 열 때마다 최신 데이터를 자동으로 불러옵니다.</p>
+    <p class="sub">유럽중앙은행(ECB) 공식 기준환율입니다. 영업일 기준 매일 갱신되며(주말·휴장일은 직전 영업일 값 표시), 실시간 시세는 아닙니다 — 환전 직전엔 은행 앱 등에서 한 번 더 확인하세요.</p>
   </div>
 </header>
 

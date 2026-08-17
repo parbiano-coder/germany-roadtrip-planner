@@ -222,8 +222,10 @@
   @media (max-width:640px){
     .topbar-break{ display:block; }
     .topbar-row{ justify-content:space-between; }
-    .topbar-links .topbar-item{ padding:0.3rem 0.4rem; font-size:0.72rem; gap:0; flex-direction:column; border-radius:8px; }
-    .topbar-links .tb-icon{ display:none; }
+    .topbar-row .topbar-item{ padding:0.3rem 0.4rem; font-size:0.72rem; gap:0; flex-direction:column; border-radius:8px; }
+    .topbar-row .tb-icon{ display:none; }
+    .topbar-row > a.topbar-item[aria-label="여행 플래너 홈"]{ flex-direction:row; }
+    .topbar-row > a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ display:flex; }
   }
 
   nav.daynav .day-roadmap{
@@ -330,6 +332,7 @@
       .then(function(d){
         if (d && d.rates && typeof d.rates.KRW === 'number'){
           fEl.textContent = d.rates.KRW.toFixed(1) + '원';
+          fEl.title = (d.date || '') + ' 유럽중앙은행(ECB) 기준환율 · 실시간 아님, 참고용';
         }
       })
       .catch(function(){});

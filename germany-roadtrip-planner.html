@@ -204,14 +204,14 @@
 
   /* ---------- Sticky day nav (day-roadmap grid) ---------- */
   nav.daynav{
-    position:fixed; top:52.5625px; left:0; right:0; z-index:999;
+    position:fixed; top:51.5625px; left:0; right:0; z-index:999;
     background:var(--surface);
     border-bottom:1px solid var(--line);
     box-shadow: var(--shadow);
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  @media (max-width:640px){ nav.daynav{ top:130.359375px; } }
+  @media (max-width:640px){ nav.daynav{ top:129.359375px; } }
   nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -687,6 +687,7 @@
       .then(function(d){
         if (d && d.rates && typeof d.rates.KRW === 'number'){
           fEl.textContent = d.rates.KRW.toFixed(1) + '원';
+          fEl.title = (d.date || '') + ' 유럽중앙은행(ECB) 기준환율 · 실시간 아님, 참고용';
         }
       })
       .catch(function(){});
