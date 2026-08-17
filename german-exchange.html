@@ -110,6 +110,15 @@
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-size:0.85rem; font-weight:700; text-decoration:none;
   }
+  @media (max-width:640px){
+    header.hero{ padding:1.8rem 1.2rem 1.4rem; }
+    .hero h1{ font-size:clamp(1.4rem,7vw,1.9rem); margin:0.5rem 0 0.5rem; }
+    .hero p.sub{ font-size:0.9rem; }
+    main{ padding:0 1.1rem; }
+    section{ padding:1.6rem 0; }
+    section > h2{ font-size:1.2rem; }
+    section > p.lede{ font-size:0.86rem; }
+  }
   main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
   section{ padding:2.6rem 0; }
   section > .eyebrow{ display:block; margin-bottom:0.4rem; }
@@ -207,10 +216,19 @@
   .topbar-wrap{ position:sticky; top:0; z-index:60; }
 </style>
 
+<script>if(localStorage.getItem('photosOff')==='1')document.documentElement.classList.add('photos-off');</script>
+
 <div class="topbar-wrap">
 <nav class="topbar" aria-label="전체 메뉴">
   <div class="topbar-row">
     <a class="topbar-item" href="index.html" aria-label="여행 플래너 홈"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg></span>홈</a>
+    <button type="button" class="topbar-item topbar-action" id="photoToggle" aria-pressed="true">
+      <span class="tb-icon">
+        <svg class="icon-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="icon-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61C3.35 8.5 2 12 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="M2 2l20 20"/></svg>
+      </span>이미지</button>
+    <a class="topbar-item topbar-action" href="index.html?expand=all#itinerary"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/></svg></span>전체 펼치기</a>
+    <a class="topbar-item topbar-action" href="index.html?expand=optional#itinerary"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>선택도시 펼치기</a>
     <div class="topbar-break"></div>
     <div class="topbar-links">
     <a class="topbar-item" href="german-weather.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨</a>
@@ -221,6 +239,21 @@
     </div>
   </div>
 </nav>
+<script>
+(function(){
+  var btn = document.getElementById('photoToggle');
+  function render(){
+    var off = document.documentElement.classList.contains('photos-off');
+    btn.setAttribute('aria-pressed', String(!off));
+  }
+  btn.addEventListener('click', function(){
+    var off = document.documentElement.classList.toggle('photos-off');
+    localStorage.setItem('photosOff', off ? '1' : '0');
+    render();
+  });
+  render();
+})();
+</script>
 <nav class="daynav" aria-label="일자별 바로가기">
   <div class="day-roadmap">
     <a class="day-chip" href="index.html#day1"><span class="dc-label">1일차<span class="dc-date">9/19(토)</span></span><span class="dc-city">뷔르츠부르크</span></a>

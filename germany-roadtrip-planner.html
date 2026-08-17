@@ -663,6 +663,20 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var params = new URLSearchParams(location.search);
+  var expand = params.get('expand');
+  if (expand === 'all') {
+    var b1 = document.getElementById('toggleAllDays');
+    if (b1) b1.click();
+  } else if (expand === 'optional') {
+    var b2 = document.getElementById('toggleOptional');
+    if (b2) b2.click();
+  }
+});
+</script>
+
 <nav class="daynav" aria-label="빠른 이동">
   <div class="day-roadmap">
     <a class="day-chip" href="#day1"><span class="dc-label">1일차<span class="dc-date">9/19(토)</span></span><span class="dc-city">뷔르츠부르크</span></a>
