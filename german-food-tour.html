@@ -319,7 +319,7 @@
       .then(function(r){ return r.json(); })
       .then(function(d){
         if (d && d.rates && typeof d.rates.KRW === 'number'){
-          fEl.textContent = Math.round(d.rates.KRW) + '원';
+          fEl.textContent = d.rates.KRW.toFixed(1) + '원';
         }
       })
       .catch(function(){});
