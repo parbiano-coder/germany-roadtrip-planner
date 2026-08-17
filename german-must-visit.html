@@ -283,14 +283,14 @@
 (function(){
   // 여행 중인 날의 숙박 도시 기준 날씨(없으면 프랑크푸르트) + EUR→KRW 환율을 topbar에 표시
   var LODGING = [
-    { start:'2026-09-19', end:'2026-09-19', lat:49.75, lon:9.75 },
-    { start:'2026-09-20', end:'2026-09-20', lat:49.45, lon:11.08 },
-    { start:'2026-09-21', end:'2026-09-22', lat:47.57, lon:10.70 },
-    { start:'2026-09-23', end:'2026-09-23', lat:47.995, lon:7.85 },
-    { start:'2026-09-24', end:'2026-09-24', lat:48.54, lon:9.28 },
-    { start:'2026-09-25', end:'2026-09-26', lat:49.97, lon:7.86 }
+    { start:'2026-09-19', end:'2026-09-19', lat:49.75, lon:9.75, name:'위팅엔' },
+    { start:'2026-09-20', end:'2026-09-20', lat:49.45, lon:11.08, name:'뉘른베르크' },
+    { start:'2026-09-21', end:'2026-09-22', lat:47.57, lon:10.70, name:'퓌센' },
+    { start:'2026-09-23', end:'2026-09-23', lat:47.995, lon:7.85, name:'프라이부르크' },
+    { start:'2026-09-24', end:'2026-09-24', lat:48.54, lon:9.28, name:'메칭겐' },
+    { start:'2026-09-25', end:'2026-09-26', lat:49.97, lon:7.86, name:'트레히팅스하우젠' }
   ];
-  var DEFAULT_LOC = { lat:50.11, lon:8.68 };
+  var DEFAULT_LOC = { lat:50.11, lon:8.68, name:'프랑크푸르트' };
   function todayStr(){
     var d = new Date(), p = function(n){ return ('0'+n).slice(-2); };
     return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate());
@@ -317,6 +317,7 @@
   var fEl = document.getElementById('topbarFx');
   if (wEl){
     var loc = pickLocation();
+    wEl.title = loc.name + ' 날씨';
     fetch('https://api.open-meteo.com/v1/forecast?latitude=' + loc.lat + '&longitude=' + loc.lon + '&current=temperature_2m,weather_code&timezone=Europe%2FBerlin')
       .then(function(r){ return r.json(); })
       .then(function(d){
