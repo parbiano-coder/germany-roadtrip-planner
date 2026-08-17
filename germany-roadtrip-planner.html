@@ -192,7 +192,7 @@
   .topbar-action[aria-pressed="false"] .icon-on{ display:none; }
   .topbar-action[aria-pressed="false"] .icon-off{ display:block; }
 
-  /* ---------- Sticky day nav ---------- */
+  /* ---------- Sticky day nav (day-roadmap grid) ---------- */
   nav.daynav{
     position:fixed; top:56px; left:0; right:0; z-index:999;
     background:var(--surface);
@@ -201,36 +201,37 @@
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  .daynav-scroll{
+  nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
-    display:flex; gap:0.35rem; overflow-x:auto;
-    padding:0.6rem 1rem;
-    scrollbar-width:thin;
+    display:grid; grid-template-columns:repeat(4,1fr);
+    gap:0.4rem; padding:0.5rem 0.8rem;
   }
-  .daynav a{
-    flex:none;
-    display:inline-flex; flex-direction:column; align-items:center; gap:0.15rem;
+  nav.daynav .day-chip{
+    display:flex; flex-direction:column; align-items:center; gap:0.1rem; min-width:0;
+    padding:0.35rem 0.3rem; text-align:center; text-decoration:none;
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:4px;
+  }
+  nav.daynav .day-chip:hover, nav.daynav .day-chip:focus-visible{ border-color:var(--route); }
+  nav.daynav .day-chip.current{ border-color:var(--route); background:var(--route-soft); }
+  nav.daynav .dc-label{
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-size:0.92rem; font-weight:700;
-    color:var(--ink-soft);
-    text-decoration:none;
-    padding:0.5rem 1rem;
-    border-radius:4px;
-    border:1px solid transparent;
-    white-space:nowrap;
+    font-size:0.74rem; font-weight:800; color:var(--route); white-space:nowrap;
   }
-  .daynav a:hover{ color:var(--route); border-color:var(--line); }
-  .daynav a.current{ color:var(--route); background:var(--route-soft); }
-  .dn-city{ font-size:0.82rem; font-weight:800; color:var(--route); }
-  .daynav a.dn-all{ font-size:0.82rem; }
-  .daynav a.dn-all .dn-city{ font-size:0.82rem; font-weight:700; color:var(--ink-soft); }
-  @media (max-width:640px){ .daynav a{ font-size:0.8rem; padding:0.4rem 0.7rem; } .dn-city{ font-size:0.7rem; } .daynav a.dn-all, .daynav a.dn-all .dn-city{ font-size:0.7rem; } }
+  nav.daynav .dc-date{ font-size:0.65rem; font-weight:600; color:var(--ink-soft); margin-left:0.25rem; font-family:"SF Mono","Consolas",monospace; }
+  nav.daynav .dc-city{ font-size:0.72rem; font-weight:700; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; }
+  @media (max-width:640px){
+    nav.daynav .day-roadmap{ gap:0.3rem; padding:0.4rem 0.5rem; }
+    nav.daynav .day-chip{ padding:0.3rem 0.15rem; }
+    nav.daynav .dc-label{ font-size:0.62rem; }
+    nav.daynav .dc-date{ font-size:0.56rem; margin-left:0.15rem; }
+    nav.daynav .dc-city{ font-size:0.6rem; }
+  }
 
   /* ---------- Sections ---------- */
-  main{ max-width:920px; margin:0 auto; padding:8rem 1.5rem 0; }
-  @media (max-width:640px){ main{ padding-top:7rem; } }
-  section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:8rem; }
-  @media (max-width:640px){ section{ scroll-margin-top:7rem; } }
+  main{ max-width:920px; margin:0 auto; padding:11rem 1.5rem 0; }
+  @media (max-width:640px){ main{ padding-top:9.5rem; } }
+  section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11rem; }
+  @media (max-width:640px){ section{ scroll-margin-top:9.5rem; } }
   #checklist, #info{ display:none; }
   #checklist:target, #info:target{ display:block; }
   body:has(#checklist:target) header.hero,
@@ -318,11 +319,6 @@
   .map-legend .lg-way{ background:var(--ink-soft); }
   .map-legend .lg-optional{ background:none; border:1.5px dashed var(--ink-soft); }
   .map-legend .lg-ref{ background:var(--ink-soft); opacity:0.4; }
-  .route-subhead{
-    margin:2.2rem 0 0.6rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em;
-    color:var(--ink-soft); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-weight:700;
-  }
   .de-map{ width:100%; height:auto; display:block; }
   .de-land{ fill:var(--bg-soft); stroke:var(--line); stroke-width:2; stroke-linejoin:round; }
   .route-casing{ fill:none; stroke:var(--surface); stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
@@ -437,35 +433,6 @@
     font-family:"SF Mono","Consolas",monospace; font-size:9.5px; font-weight:700; fill:var(--ink-soft);
     paint-order:stroke; stroke:var(--surface); stroke-width:3px; stroke-linejoin:round;
   }
-  /* ---------- Day roadmap ---------- */
-  .day-roadmap{
-    display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
-    column-gap:1.7rem; row-gap:1.8rem; margin:0.4rem 0 0.2rem;
-  }
-  @media (max-width:640px){ .day-roadmap{ column-gap:1rem; row-gap:1.6rem; } }
-  .day-chip{
-    position:relative; display:flex; flex-direction:column; align-items:center; gap:0.3rem;
-    min-width:0; padding:0.6rem 0.5rem; text-align:center; text-decoration:none;
-    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
-  }
-  .day-chip::after{
-    content:"→"; position:absolute; top:50%; right:-1.15rem; transform:translateY(-50%);
-    color:var(--ink-soft); font-size:1.2rem; font-weight:700; pointer-events:none;
-  }
-  @media (max-width:640px){ .day-chip::after{ right:-0.68rem; font-size:0.9rem; } }
-  .day-chip:nth-child(4n)::after{ content:none; }
-  .day-chip:nth-child(5)::before{
-    content:"→"; position:absolute; top:50%; left:-1.15rem; transform:translateY(-50%);
-    color:var(--ink-soft); font-size:1.2rem; font-weight:700; pointer-events:none;
-  }
-  @media (max-width:640px){ .day-chip:nth-child(5)::before{ left:-0.68rem; font-size:0.9rem; } }
-  .day-chip:hover, .day-chip:focus-visible{ border-color:var(--route); }
-  .dc-label{
-    display:block; font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-weight:800; font-size:0.86rem; color:var(--route);
-  }
-  .dc-date{ font-family:"SF Mono","Consolas",monospace; font-weight:600; font-size:0.72rem; color:var(--ink-soft); margin-left:0.35rem; }
-  .dc-city{ font-size:0.86rem; font-weight:700; color:var(--ink); }
 
   /* ---------- Cards / grids ---------- */
   .grid{ display:grid; gap:1rem; }
@@ -482,8 +449,8 @@
   .card p{ margin:0; color:var(--ink-soft); font-size:0.94rem; }
 
   /* ---------- Day cards ---------- */
-  .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:8rem; }
-  @media (max-width:640px){ .day{ scroll-margin-top:7rem; } }
+  .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11rem; }
+  @media (max-width:640px){ .day{ scroll-margin-top:9.5rem; } }
   .day:last-child{ border-bottom:none; }
   details.day > summary.day-head{ cursor:pointer; list-style:none; }
   details.day > summary.day-head::-webkit-details-marker{ display:none; }
@@ -639,16 +606,15 @@
 </script>
 
 <nav class="daynav" aria-label="빠른 이동">
-  <div class="daynav-scroll">
-    <a href="#route" class="dn-all">전체<span class="dn-city">경로</span></a>
-    <a href="#day1">9/19(토)<span class="dn-city">뷔르츠부르크</span></a>
-    <a href="#day2">9/20(일)<span class="dn-city">뉘른베르크</span></a>
-    <a href="#day3">9/21(월)<span class="dn-city">퓌센</span></a>
-    <a href="#day4">9/22(화)<span class="dn-city">퓌센</span></a>
-    <a href="#day5">9/23(수)<span class="dn-city">티티제</span></a>
-    <a href="#day6">9/24(목)<span class="dn-city">프라이부르크</span></a>
-    <a href="#day7">9/25(금)<span class="dn-city">하이델베르크</span></a>
-    <a href="#day8">9/26(토)<span class="dn-city">뤼데스하임</span></a>
+  <div class="day-roadmap">
+    <a class="day-chip" href="#day1"><span class="dc-label">1일차<span class="dc-date">9/19(토)</span></span><span class="dc-city">뷔르츠부르크</span></a>
+    <a class="day-chip" href="#day2"><span class="dc-label">2일차<span class="dc-date">9/20(일)</span></span><span class="dc-city">뉘른베르크</span></a>
+    <a class="day-chip" href="#day3"><span class="dc-label">3일차<span class="dc-date">9/21(월)</span></span><span class="dc-city">퓌센</span></a>
+    <a class="day-chip" href="#day4"><span class="dc-label">4일차<span class="dc-date">9/22(화)</span></span><span class="dc-city">퓌센</span></a>
+    <a class="day-chip" href="#day5"><span class="dc-label">5일차<span class="dc-date">9/23(수)</span></span><span class="dc-city">티티제</span></a>
+    <a class="day-chip" href="#day6"><span class="dc-label">6일차<span class="dc-date">9/24(목)</span></span><span class="dc-city">프라이부르크</span></a>
+    <a class="day-chip" href="#day7"><span class="dc-label">7일차<span class="dc-date">9/25(금)</span></span><span class="dc-city">하이델베르크</span></a>
+    <a class="day-chip" href="#day8"><span class="dc-label">8일차<span class="dc-date">9/26(토)</span></span><span class="dc-city">뤼데스하임</span></a>
   </div>
 </nav>
 
@@ -685,19 +651,6 @@
         <span class="days">7~8일차 · 9/25–26</span>
         <p class="cities">하이델베르크·베른카슈텔쿠에스·뤼데스하임·비스바덴</p>
       </div>
-    </div>
-
-    <h3 class="route-subhead">일정 한눈에 보기</h3>
-    <p class="lede" style="margin:0 0 1rem;">박스를 클릭하면 해당 일자의 상세 일정으로 이동하며 펼쳐집니다.</p>
-    <div class="day-roadmap">
-      <a class="day-chip" href="#day1"><span class="dc-label">1일차<span class="dc-date">9/19(토)</span></span><span class="dc-city">뷔르츠부르크</span></a>
-      <a class="day-chip" href="#day2"><span class="dc-label">2일차<span class="dc-date">9/20(일)</span></span><span class="dc-city">뉘른베르크</span></a>
-      <a class="day-chip" href="#day3"><span class="dc-label">3일차<span class="dc-date">9/21(월)</span></span><span class="dc-city">퓌센</span></a>
-      <a class="day-chip" href="#day4"><span class="dc-label">4일차<span class="dc-date">9/22(화)</span></span><span class="dc-city">퓌센</span></a>
-      <a class="day-chip" href="#day5"><span class="dc-label">5일차<span class="dc-date">9/23(수)</span></span><span class="dc-city">티티제</span></a>
-      <a class="day-chip" href="#day6"><span class="dc-label">6일차<span class="dc-date">9/24(목)</span></span><span class="dc-city">프라이부르크</span></a>
-      <a class="day-chip" href="#day7"><span class="dc-label">7일차<span class="dc-date">9/25(금)</span></span><span class="dc-city">하이델베르크</span></a>
-      <a class="day-chip" href="#day8"><span class="dc-label">8일차<span class="dc-date">9/26(토)</span></span><span class="dc-city">뤼데스하임</span></a>
     </div>
   </section>
 
@@ -855,7 +808,7 @@
       <p class="city-label">뷔르츠부르크</p>
       <p class="walk-map-note">🚗 숙소(위팅엔)→레지덴츠 약 18km·22분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.7941,9.7296&destination=49.7928,9.9392" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 레지덴츠 정문 앞 거리 주차(시간당 €1.70→€1.20, 1일 최대 €11) · 주차 후 도보 약 1분</p>
       <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7928,9.9392&waypoints=49.793%2C9.9257%7C49.7898,9.9192" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기</a>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7928,9.9392&waypoints=49.793%2C9.9257%7C49.7898,9.9192" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기 · 총 약 3.1km · 도보 약 33분</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg/500px-2004-06-27-Germany-Wuerzburg-Lutz_Marten-Residenz_side_view_1.jpg" alt="뷔르츠부르크 레지덴츠 궁전" loading="lazy">
@@ -934,7 +887,7 @@
       <p class="city-label">로텐부르크</p>
       <p class="walk-map-note">🚗 뷔르츠부르크→로텐부르크 약 70km·48분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.7898,9.9192&destination=49.3795,10.1840" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ P4 Galgentor · 유료(시간당 €1.30, 1일권 €6~8) · 주차 후 도보 약 5분 · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Galgentor+Rothenburg" target="_blank" rel="noopener">주차장 위치 보기</a></p>
       <p class="walk-map-note">지도별 추천 코스 — 로텐부르크: 성벽 구시가 → 성 야코프 교회 → 중세범죄박물관 → 플뢴라인 → 시청 탑 → 성곽 정원 → 제국 도시 박물관 → 수공업자의 집 → 크리스마스박물관 (아래 카드 순서와 동일)</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.3795,10.1840&destination=49.3795,10.1840&waypoints=49.3772%2C10.1785%7C49.3767%2C10.1783%7C49.3779%2C10.1777%7C49.3784%2C10.1757%7C49.376%2C10.1738%7C49.3756%2C10.1792%7C49.374%2C10.1803%7C49.3766,10.1814" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: P4 Galgentor 주차장)</a>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.3795,10.1840&destination=49.3795,10.1840&waypoints=49.3772%2C10.1785%7C49.3767%2C10.1783%7C49.3779%2C10.1777%7C49.3784%2C10.1757%7C49.376%2C10.1738%7C49.3756%2C10.1792%7C49.374%2C10.1803%7C49.3766,10.1814" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: P4 Galgentor 주차장) · 총 약 4.4km · 도보 약 26분</a>
       <div class="landmark-grid">
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 성벽 구시가" loading="lazy">
@@ -1044,7 +997,7 @@
       <p class="city-label">뉘른베르크</p>
       <p class="walk-map-note">🚗 로텐부르크→뉘른베르크 약 103km·1시간 12분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.3766,10.1814&destination=49.4468,11.0826" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Am Hauptbahnhof · 유료(시간당 €2.00) · 중앙역 인근, 구시가까지 도보 이동 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Hauptbahnhof+Nuernberg" target="_blank" rel="noopener">주차장 위치 보기</a></p>
       <p class="walk-map-note">지도별 추천 코스 — 뉘른베르크: 카이저부르크 → 구 시청 → 중앙시장 → 성 제발두스 교회 → 게르만 국립박물관 → 펨보하우스 → 철도박물관 → 진벨투름 → 뒤러 하우스 → 헹커슈텍 → 장난감박물관 → 수공예마을(모두 도보권, 아래 카드 순서와 동일)<br>전범재판 기념관·성 요한 묘지·나치전당대회장은 도심에서 각각 다른 방향으로 떨어져 있어 별도 차량 이동 필요</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4468,11.0826&destination=49.4468,11.0826&waypoints=49.4579%2C11.0748%7C49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744%7C49.4474,11.0812" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Am Hauptbahnhof)</a>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4468,11.0826&destination=49.4468,11.0826&waypoints=49.4579%2C11.0748%7C49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744%7C49.4474,11.0812" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Am Hauptbahnhof) · 정류점이 많아 총 거리는 위 링크에서 확인(직선거리 합산 약 4.4km, 실제 보행 경로는 더 김)</a>
       <div class="booking-note">
         <p><b>통합권 추천</b> 뉘른베르크 카드+퓌르트(Nürnberg Card + Fürth) — 48시간 유효 · <b>성인 €38</b>(학생 할인 없음, 성인 단일가).</p>
         <p>카이저부르크(개별 €10)·게르만 국립박물관(€10)·철도박물관(€10)·뒤러 하우스(€6)·장난감박물관(€7.50) 등 도시 소속 박물관 25곳 이상 무료 입장</p>
@@ -1311,7 +1264,7 @@
       <p class="city-label">뮌헨</p>
       <p class="walk-map-note">🚗 알리안츠 아레나→뮌헨 시내 약 13km·19분(P+R Heimeranplatz까지는 15.7km·25분) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.2188,11.6236&destination=48.1312,11.5320" target="_blank" rel="noopener">Google 지도로 길찾기</a> · <a href="https://www.google.com/maps/search/?api=1&query=P%2BR+Heimeranplatz+Muenchen" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 뮌헨 시내: 옥토버페스트 기간엔 구시가 직접 주차가 매우 어려워 시 외곽 P+R 후 지하철(U4/U5) 이용 권장(P+R 연계 할인 요금 있음)<br>정확한 금액은 현장 자판기·MVV 앱에서 확인<br>🎫 티켓은 역 구내 자판기(현금·카드 모두 가능) 또는 MVV go 앱에서 구매<br>🚇 P+R에서 U-Bahn Heimeranplatz역까지 도보 1분 → Heimeranplatz→마리엔광장 U4/U5로 5정거장·약 10분<br>🔙 돌아올 땐 호프브로이하우스(마지막 코스)에서 마리엔광장역까지 도보 약 5분 → 마리엔광장→Heimeranplatz U4/U5로 5정거장·약 10분</p>
       <p class="walk-map-note">지도별 추천 코스 — 뮌헨 구시가: 마리엔 광장 → 프라우엔교회 → 빅투알리엔마르크트 → 구 시청 → 아잠 교회 → 성 페터 교회 → 성 미하엘 교회 → 테아티너 교회 → 호프가르텐(모두 도보권, 아래 카드 순서와 동일)</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1371,11.5754&destination=48.1371,11.5754&waypoints=48.1365%2C11.576%7C48.1368%2C11.5771%7C48.1386%2C11.5736%7C48.1389%2C11.5704%7C48.1352%2C11.5695%7C48.1343%2C11.5723%7C48.1352%2C11.5726%7C48.1351%2C11.5755%7C48.1408%2C11.5776%7C48.142%2C11.5766%7C48.1427,11.5805" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발·도착)</a>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1371,11.5754&destination=48.1371,11.5754&waypoints=48.1365%2C11.576%7C48.1368%2C11.5771%7C48.1386%2C11.5736%7C48.1389%2C11.5704%7C48.1352%2C11.5695%7C48.1343%2C11.5723%7C48.1352%2C11.5726%7C48.1351%2C11.5755%7C48.1408%2C11.5776%7C48.142%2C11.5766%7C48.1427,11.5805" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발·도착) · 정류점이 많아 총 거리는 위 링크에서 확인(직선거리 합산 약 3.5km, 실제 보행 경로는 더 김)</a>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 노이에스 라트하우스 글로켄슈필" loading="lazy">
         <div class="landmark-body">
@@ -1529,7 +1482,7 @@
       <p class="city-label">호엔슈방가우</p>
       <p class="walk-map-note">🚗 숙소(퓌센)→호엔슈방가우 약 4.4km·7분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.57,10.70&destination=47.5572,10.7390" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 주차장(P1~P4) · 유료(승용차 6시간 €12, 이후 시간당 €1) · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Koenigsschloesser+P1+Hohenschwangau" target="_blank" rel="noopener">주차장 위치 보기</a></p>
       <p class="walk-map-note">📍 도보 순서: 주차장(P1~P4) → 노이슈반슈타인 성(약 40분, 아침엔 시간 없어 호엔슈방가우 성은 패스) → [투어 후 하산 없이 더 위로] → 마리엔 다리(편도 10~15분) → <b>왔던 길 그대로 되짚어 하산</b>(하산길에 호엔슈방가우 성 외관 들러 사진) → 주차장. 아래 링크는 편도(주차장→마리엔 다리) 기준이며, 돌아올 땐 같은 길을 반대로 걸으면 됩니다 — Google이 "왕복" 경로를 억지로 만들면 알프제 호수를 크게 도는 잘못된 길을 제시해서 편도로 안내합니다.</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.5572,10.7390&destination=47.5550,10.7494&waypoints=47.5576,10.7497" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(편도: 주차장→성→마리엔 다리)</a>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.5572,10.7390&destination=47.5550,10.7494&waypoints=47.5576,10.7497" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(편도: 주차장→성→마리엔 다리) · 편도 약 5.7km · 도보 약 16분(왕복 시 동일 경로 되짚어 약 32분)</a>
       <div class="landmark-grid">
       <div class="landmark-card wide">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/500px-Schloss_Neuschwanstein_2013.jpg" alt="노이슈반슈타인 성" loading="lazy">
