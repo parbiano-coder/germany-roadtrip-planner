@@ -159,6 +159,11 @@
   a.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
   .topbar-item.is-current{ color:var(--route); background:var(--route-soft); }
   .topbar-item.is-current .tb-icon{ background:var(--route); color:#fff; }
+  .topbar-live{
+    margin-left:0.25rem; font-size:0.72rem; font-weight:800; color:var(--route);
+    font-family:"SF Mono","Consolas",monospace;
+  }
+  .topbar-scroll .topbar-live{ margin-left:0; font-size:0.6rem; }
   @media (max-width:640px){
     .topbar-break{ display:block; }
     .topbar-row{ justify-content:space-between; }
@@ -208,14 +213,74 @@
     <a class="topbar-item topbar-action" href="index.html?expand=optional#itinerary"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>선택도시 펼치기</a>
     <div class="topbar-break"></div>
     <div class="topbar-links">
-    <span class="topbar-item is-current"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨</span>
-    <a class="topbar-item" href="german-exchange.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>환율</a>
+    <span class="topbar-item is-current"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span>날씨<span class="topbar-live" id="topbarWeather"></span></span>
+    <a class="topbar-item" href="german-exchange.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>환율<span class="topbar-live" id="topbarFx"></span></a>
     <a class="topbar-item" href="german-car-guide.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg></span>렌터카</a>
     <a class="topbar-item" href="german-checklist.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</a>
     <a class="topbar-item" href="german-emergency.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>비상연락처</a>
     </div>
   </div>
 </nav>
+<script>
+(function(){
+  // 여행 중인 날의 숙박 도시 기준 날씨(없으면 프랑크푸르트) + EUR→KRW 환율을 topbar에 표시
+  var LODGING = [
+    { start:'2026-09-19', end:'2026-09-19', lat:49.75, lon:9.75 },
+    { start:'2026-09-20', end:'2026-09-20', lat:49.45, lon:11.08 },
+    { start:'2026-09-21', end:'2026-09-22', lat:47.57, lon:10.70 },
+    { start:'2026-09-23', end:'2026-09-23', lat:47.995, lon:7.85 },
+    { start:'2026-09-24', end:'2026-09-24', lat:48.54, lon:9.28 },
+    { start:'2026-09-25', end:'2026-09-26', lat:49.97, lon:7.86 }
+  ];
+  var DEFAULT_LOC = { lat:50.11, lon:8.68 };
+  function todayStr(){
+    var d = new Date(), p = function(n){ return ('0'+n).slice(-2); };
+    return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate());
+  }
+  function pickLocation(){
+    var t = todayStr();
+    for (var i = 0; i < LODGING.length; i++){
+      if (t >= LODGING[i].start && t <= LODGING[i].end) return LODGING[i];
+    }
+    return DEFAULT_LOC;
+  }
+  function weatherIcon(code){
+    if (code === 0) return '☀️';
+    if (code === 1 || code === 2) return '🌤️';
+    if (code === 3) return '☁️';
+    if (code === 45 || code === 48) return '🌫️';
+    if (code >= 51 && code <= 67) return '🌧️';
+    if (code >= 71 && code <= 77) return '🌨️';
+    if (code >= 80 && code <= 82) return '🌦️';
+    if (code >= 95) return '⛈️';
+    return '';
+  }
+  var wEl = document.getElementById('topbarWeather');
+  var fEl = document.getElementById('topbarFx');
+  if (wEl){
+    var loc = pickLocation();
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=' + loc.lat + '&longitude=' + loc.lon + '&current=temperature_2m,weather_code&timezone=Europe%2FBerlin')
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (d && d.current && typeof d.current.temperature_2m === 'number'){
+          wEl.textContent = ' ' + Math.round(d.current.temperature_2m * 10) / 10 + '°C ' + weatherIcon(d.current.weather_code);
+        }
+      })
+      .catch(function(){});
+  }
+  if (fEl){
+    fetch('https://api.frankfurter.dev/v1/latest?from=EUR&to=KRW')
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (d && d.rates && typeof d.rates.KRW === 'number'){
+          fEl.textContent = ' ' + d.rates.KRW.toFixed(2);
+        }
+      })
+      .catch(function(){});
+  }
+})();
+</script>
+
 <script>
 (function(){
   var btn = document.getElementById('photoToggle');
