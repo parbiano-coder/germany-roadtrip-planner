@@ -428,11 +428,29 @@
   }
   .walk-map-link:hover{ border-color:var(--route); background:var(--route-soft); }
   .route-snapshot{
-    display:block; max-width:520px; margin:0.8rem 0 1.3rem;
+    display:flex; flex-wrap:wrap; max-width:760px; margin:0.8rem 0 1.3rem;
     border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
+    background:var(--surface);
   }
-  .route-snapshot img{ width:100%; height:auto; display:block; }
+  .route-snapshot-media{ flex:1 1 300px; min-width:260px; }
+  .route-snapshot-media img{ width:100%; height:100%; object-fit:cover; display:block; }
   .route-snapshot-caption{ margin:0; padding:0.45rem 0.7rem; font-size:0.72rem; color:var(--ink-soft); background:var(--bg-soft); }
+  .route-steps{
+    flex:1 1 220px; min-width:200px; list-style:none; margin:0; padding:0.8rem 0.9rem;
+    display:flex; flex-direction:column; border-left:1px solid var(--line);
+  }
+  @media (max-width:640px){ .route-steps{ border-left:none; border-top:1px solid var(--line); } }
+  .route-steps li{ position:relative; padding:0 0 0.9rem 1.1rem; }
+  .route-steps li:last-child{ padding-bottom:0; }
+  .route-steps li::before{
+    content:""; position:absolute; left:0; top:0.3rem; width:0.5rem; height:0.5rem;
+    border-radius:50%; background:var(--route);
+  }
+  .route-steps li:not(:last-child)::after{
+    content:""; position:absolute; left:0.24rem; top:0.9rem; bottom:-0.1rem; width:1px; background:var(--line);
+  }
+  .rs-name{ display:block; font-size:0.86rem; font-weight:700; color:var(--ink); }
+  .rs-seg{ display:block; font-size:0.72rem; color:var(--route); font-weight:700; margin-top:0.15rem; }
   .landmark-grid > .walk-map-note,
   .landmark-grid > .walk-map-link,
   .landmark-grid > .route-snapshot,
@@ -531,6 +549,8 @@
   .food-card .food-dish{ margin:0; font-size:0.8rem; line-height:1.5; color:var(--route); font-weight:700; }
   .food-card .food-park{ margin:0; font-size:0.76rem; line-height:1.5; color:var(--ink-soft); }
   .food-card .food-park a{ color:var(--route); font-weight:700; }
+  .food-card.area-start{ border-left:3px solid var(--route); }
+  @media (max-width:900px){ .food-card.area-start{ border-left:1px solid var(--line); border-top:3px solid var(--route); } }
   .plan-step{ display:flex; gap:0.9rem; padding:0.55rem 0; border-bottom:1px dashed var(--line); }
   .plan-step:last-child{ border-bottom:none; }
   .plan-time{ flex:none; width:3.4rem; font-family:"SF Mono","Consolas",monospace; font-weight:800; color:var(--route); font-size:0.85rem; padding-top:0.05rem; }
@@ -2064,7 +2084,8 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       <div class="sight-list">
-        <h4>대형 슈퍼마켓 — 티티제노이슈타트(B31 경로상)</h4>
+        <h4>대형 슈퍼마켓 — 켐프텐→티티제→프라이부르크 경로 · 이동시간 안 늘고 영업시간 여유있는 순</h4>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">①은 티티제노이슈타트(B31 경로상), ②·③은 숙소가 있는 프라이부르크 귄터슈탈 지역으로 서로 다른 위치입니다(굵은 선으로 구분).</p>
         <div class="food-grid">
         <div class="food-card">
           <h5>① EDEKA Schmidt's Märkte E-center (티티제노이슈타트)</h5>
@@ -2072,12 +2093,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <p class="food-dish">🍽️ B31 경로상 노이슈타트 초입, 경로 이탈 거의 없음(단 20:00 마감이라 늦게 지나면 놓칠 수 있음)</p>
           <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=EDEKA+Schmidt+Freiburger+Strasse+11+Titisee-Neustadt" target="_blank" rel="noopener">지도</a></p>
         </div>
-        </div>
-      </div>
-      <div class="sight-list">
-        <h4>대형 슈퍼마켓 — 프라이부르크 귄터슈탈(숙소 인근)</h4>
-        <div class="food-grid">
-        <div class="food-card">
+        <div class="food-card area-start">
           <h5>② REWE Merzhausen (숙소 인근)</h5>
           <p class="food-loc">Hexentalstraße 49, 79249 Merzhausen · 월–토 07:00–22:00, 일요일 휴무</p>
           <p class="food-dish">🍽️ 귄터슈탈 바로 옆 동네, 숙소에서 가장 가깝고 22:00까지 영업</p>
@@ -2370,29 +2386,6 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       <div class="sight-list">
-        <h4>대형 슈퍼마켓 — 메칭겐 시내(아울렛·숙소 인근) · 이동시간 안 늘고 영업시간 여유있는 순</h4>
-        <div class="food-grid">
-        <div class="food-card">
-          <h5>① Kaufland (메칭겐)</h5>
-          <p class="food-loc">Stuttgarter Straße 50, 72555 Metzingen · 월–토 07:00–22:00, 일요일 휴무</p>
-          <p class="food-dish">🍽️ 대형 하이퍼마켓, 아울렛·숙소와 같은 시내권, 22:00까지 영업</p>
-          <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=Kaufland+Stuttgarter+Strasse+50+Metzingen" target="_blank" rel="noopener">지도</a></p>
-        </div>
-        <div class="food-card">
-          <h5>② REWE (메칭겐)</h5>
-          <p class="food-loc">Nürtinger Straße 63, 72555 Metzingen · 월–토 07:00–22:00, 일요일 휴무</p>
-          <p class="food-dish">🍽️ 메칭겐 시내, Kaufland와 마감시간 동일한 대안</p>
-          <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=REWE+Nuertinger+Strasse+63+Metzingen" target="_blank" rel="noopener">지도</a></p>
-        </div>
-        <div class="food-card">
-          <h5>③ Aldi Süd (메칭겐)</h5>
-          <p class="food-loc">Gutenbergstraße 46, 72555 Metzingen · 월–토 07:00–21:00, 일요일 휴무</p>
-          <p class="food-dish">🍽️ 소규모 디스카운트, 마감이 1시간 이른 대안(21:00)</p>
-          <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=Aldi+Sued+Gutenbergstrasse+46+Metzingen" target="_blank" rel="noopener">지도</a></p>
-        </div>
-        </div>
-      </div>
-      <div class="sight-list">
       <h4>맛집 (메칭겐 아울렛 내)</h4>
       <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">쇼핑 매장은 일요일 휴무지만, 아울렛 내 식당 상당수는 일요일에도 영업합니다(공식 홈페이지 기준, 개별 운영시간은 현장·구글 링크에서 확인 권장).</p>
       <div class="food-grid">
@@ -2451,6 +2444,30 @@ document.addEventListener('DOMContentLoaded', function(){
           <p class="food-park">🅿️ 아울렛 통합 주차장 · <a href="https://www.google.com/maps/search/?api=1&query=Champa+Sushi+Bowl+Outletcity+Metzingen" target="_blank" rel="noopener">지도</a></p>
         </div>
       </div>
+      </div>
+      <div class="sight-list">
+        <h4>대형 슈퍼마켓 — 메칭겐 시내(아울렛·숙소 인근) · 이동시간 안 늘고 영업시간 여유있는 순</h4>
+        <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">아울렛이 20:00(토 09:00 시작)에 먼저 문을 닫으니, 쇼핑 후 저녁 시간대에 들르면 됩니다.</p>
+        <div class="food-grid">
+        <div class="food-card">
+          <h5>① Kaufland (메칭겐)</h5>
+          <p class="food-loc">Stuttgarter Straße 50, 72555 Metzingen · 월–토 07:00–22:00, 일요일 휴무</p>
+          <p class="food-dish">🍽️ 대형 하이퍼마켓, 아울렛·숙소와 같은 시내권, 22:00까지 영업</p>
+          <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=Kaufland+Stuttgarter+Strasse+50+Metzingen" target="_blank" rel="noopener">지도</a></p>
+        </div>
+        <div class="food-card">
+          <h5>② REWE (메칭겐)</h5>
+          <p class="food-loc">Nürtinger Straße 63, 72555 Metzingen · 월–토 07:00–22:00, 일요일 휴무</p>
+          <p class="food-dish">🍽️ 메칭겐 시내, Kaufland와 마감시간 동일한 대안</p>
+          <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=REWE+Nuertinger+Strasse+63+Metzingen" target="_blank" rel="noopener">지도</a></p>
+        </div>
+        <div class="food-card">
+          <h5>③ Aldi Süd (메칭겐)</h5>
+          <p class="food-loc">Gutenbergstraße 46, 72555 Metzingen · 월–토 07:00–21:00, 일요일 휴무</p>
+          <p class="food-dish">🍽️ 소규모 디스카운트, 마감이 1시간 이른 대안(21:00)</p>
+          <p class="food-park">🅿️ <a href="https://www.google.com/maps/search/?api=1&query=Aldi+Sued+Gutenbergstrasse+46+Metzingen" target="_blank" rel="noopener">지도</a></p>
+        </div>
+        </div>
       </div>
       <p class="walk-map-note tonight-note"><b>🚗 오늘 밤 숙소로</b> 아울렛시티 메칭겐→숙소(메칭겐) 약 1.0km·3분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.5368,9.2794&destination=48.5407,9.2714" target="_blank" rel="noopener">Google 지도로 길찾기</a></p>
       </div>
