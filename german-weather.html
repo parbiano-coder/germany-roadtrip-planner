@@ -113,7 +113,7 @@
     font-size:0.85rem; font-weight:700; text-decoration:none;
   }
   @media (max-width:640px){
-    header.hero{ padding:13.6rem 1.2rem 1.4rem; }
+    header.hero{ padding:12.8rem 1.2rem 1.4rem; }
     .hero h1{ font-size:clamp(1.4rem,7vw,1.9rem); margin:0.5rem 0 0.5rem; }
     .hero p.sub{ font-size:0.9rem; }
     main{ padding:0 1.1rem; }
@@ -129,6 +129,7 @@
   .table-wrap{ overflow-x:auto; }
   table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:480px; }
   @media (max-width:520px){ table{ min-width:0; } th,td{ padding:0.5rem 0.5rem; font-size:0.82rem; } }
+  .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
   td.mono{ color:var(--route); font-weight:700; }
@@ -153,6 +154,11 @@
     .topbar-break{ display:block; }
     .topbar-scroll{ justify-content:space-between; }
     .topbar-scroll .topbar-item{ padding:0.3rem 0.3rem; font-size:0.66rem; gap:0; flex-direction:column; border-radius:8px; }
+    a.topbar-item[aria-label="여행 플래너 홈"]{ font-size:0; padding:0.3rem; }
+    a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ font-size:1rem; }
+    #photoToggle, a[href*="expand=all"], a[href*="expand=optional"]{
+      flex-direction:row; gap:0.2rem; padding:0.3rem 0.4rem;
+    }
     #photoToggle .tb-icon, a[href*="expand=all"] .tb-icon, a[href*="expand=optional"] .tb-icon{ display:none; }
     #photoToggle::before, a[href*="expand=all"]::before, a[href*="expand=optional"]::before{
       content:"+"; font-size:0.85rem; font-weight:800; color:var(--route); line-height:1;
@@ -171,7 +177,7 @@
     display:flex; align-items:center; justify-content:center;
   }
   @media (max-width:640px){ .topbar-links .tb-icon{ display:none; } }
-  #topbarWeather{ font-size:0.88rem; font-weight:800; }
+  #topbarWeather{ font-weight:800; }
   a.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
   .topbar-item.is-current{ color:var(--sign); background:var(--sign-soft); }
   .topbar-item.is-current .tb-icon{ background:var(--sign); color:#fff; }
@@ -192,7 +198,7 @@
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  @media (max-width:640px){ nav.daynav{ top:107px; } }
+  @media (max-width:640px){ nav.daynav{ top:94px; } }
   nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -330,11 +336,10 @@
 
 <main>
   <section>
-    <span class="eyebrow" style="display:block;">Live Forecast</span>
     <h2>실시간 예보 앱</h2>
     <p class="lede">아래 표(평년치 참고용)보다 먼저, 출발이 가까워지면 이 중 하나로 실제 예보를 확인하세요. 유럽·독일에서 널리 쓰이는 서비스 위주로 골랐습니다.</p>
     <div class="table-wrap">
-      <table>
+      <table class="apps-table">
         <thead><tr><th>앱/서비스</th><th>특징</th><th>링크</th></tr></thead>
         <tbody>
           <tr><td>AccuWeather</td><td>한국에서도 익숙한 글로벌 서비스, 시간대별 예보 상세</td><td><a href="https://www.accuweather.com/en/de/frankfurt/72892/weather-forecast/72892" target="_blank" rel="noopener">바로가기</a></td></tr>
@@ -348,7 +353,6 @@
   </section>
 
   <section>
-    <span class="eyebrow" style="display:block;">Itinerary</span>
     <h2>일자별 구간</h2>
     <p class="lede">현재 일정과 동일한 순서로 맞췄습니다.</p>
     <div class="table-wrap">
