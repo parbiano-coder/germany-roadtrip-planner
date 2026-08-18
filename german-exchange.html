@@ -112,7 +112,7 @@
     font-size:0.85rem; font-weight:700; text-decoration:none;
   }
   @media (max-width:640px){
-    header.hero{ padding:12.8rem 1.2rem 1.4rem; }
+    header.hero{ padding:12rem 1.2rem 1.4rem; }
     .hero h1{ font-size:clamp(1.4rem,7vw,1.9rem); margin:0.5rem 0 0.5rem; }
     .hero p.sub{ font-size:0.9rem; }
     main{ padding:0 1.1rem; }
@@ -190,7 +190,7 @@
     a.topbar-item[aria-label="여행 플래너 홈"]{ font-size:0; padding:0.3rem; }
     a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ font-size:1rem; }
     .topbar-scroll #photoToggle, .topbar-scroll a[href*="expand=all"], .topbar-scroll a[href*="expand=optional"]{
-      flex-shrink:0; gap:0.35rem; padding:0.3rem 0.5rem; white-space:nowrap;
+      flex-shrink:0; flex-direction:row; gap:0.35rem; padding:0.3rem 0.5rem; white-space:nowrap;
     }
   }
   #photoToggle .tb-icon, a[href*="expand=all"] .tb-icon, a[href*="expand=optional"] .tb-icon{ display:none; }
@@ -232,7 +232,7 @@
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  @media (max-width:640px){ nav.daynav{ top:94px; } }
+  @media (max-width:640px){ nav.daynav{ top:82px; } }
   nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
     display:grid; grid-template-columns:repeat(4,1fr);

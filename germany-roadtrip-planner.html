@@ -176,7 +176,7 @@
     a.topbar-item[aria-label="여행 플래너 홈"]{ font-size:0; padding:0.3rem; }
     a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ font-size:1rem; }
     #photoToggle, #toggleAllDays, #toggleOptional{
-      flex-shrink:0; gap:0.35rem; padding:0.3rem 0.5rem; white-space:nowrap;
+      flex-shrink:0; flex-direction:row; gap:0.35rem; padding:0.3rem 0.5rem; white-space:nowrap;
     }
   }
   #photoToggle .tb-icon, #toggleAllDays .tb-icon, #toggleOptional .tb-icon{ display:none; }
@@ -219,7 +219,7 @@
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  @media (max-width:640px){ nav.daynav{ top:85px; } }
+  @media (max-width:640px){ nav.daynav{ top:82px; } }
   nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -248,9 +248,9 @@
 
   /* ---------- Sections ---------- */
   main{ max-width:920px; margin:0 auto; padding:11.5rem 1.5rem 0; }
-  @media (max-width:640px){ main{ padding-top:12.2rem; } }
+  @media (max-width:640px){ main{ padding-top:12rem; } }
   section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11.5rem; }
-  @media (max-width:640px){ section{ scroll-margin-top:12.2rem; } }
+  @media (max-width:640px){ section{ scroll-margin-top:12rem; } }
   section:last-of-type{ border-bottom:none; }
   section > .eyebrow{ display:block; margin-bottom:0.5rem; }
   section > h2{ font-size:1.6rem; margin:0 0 0.4rem; }
@@ -508,7 +508,7 @@
 
   /* ---------- Day cards ---------- */
   .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11.5rem; }
-  @media (max-width:640px){ .day{ scroll-margin-top:12.2rem; } }
+  @media (max-width:640px){ .day{ scroll-margin-top:12rem; } }
   .day:last-child{ border-bottom:none; }
   details.day > summary.day-head{ cursor:pointer; list-style:none; }
   details.day > summary.day-head::-webkit-details-marker{ display:none; }
