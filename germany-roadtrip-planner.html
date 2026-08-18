@@ -578,6 +578,7 @@
   .food-card .food-dish{ margin:0; font-size:0.8rem; line-height:1.5; color:var(--route); font-weight:700; }
   .food-card .food-park{ margin:0; font-size:0.76rem; line-height:1.5; color:var(--ink-soft); }
   .food-card .food-park a{ color:var(--route); font-weight:700; }
+  .food-card .food-near{ margin:0; font-size:0.76rem; line-height:1.5; color:var(--ink-soft); }
   .food-card.area-start{ border-left:3px solid var(--route); }
   @media (max-width:900px){ .food-card.area-start{ border-left:1px solid var(--line); border-top:3px solid var(--route); } }
   .plan-step{ display:flex; gap:0.9rem; padding:0.55rem 0; border-bottom:1px dashed var(--line); }
@@ -1032,36 +1033,42 @@ document.addEventListener('DOMContentLoaded', function(){
           <p class="food-loc">구시가·마르크트 인근 · 1319년 설립 자선 와이너리 부속 식당 · 매일 11:00–24:00, 연중무휴</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 크로스피 슈바이네셰우펠레(€27.50)</p>
           <p class="food-park">🅿️ 도보권(레지덴츠 정문) · <a href="https://www.google.com/maps/search/?api=1&query=Buergerspital+Weinstuben+Wuerzburg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 율리우스슈피탈에서 약 700m·도보 9분</p>
         </div>
         <div class="food-card">
           <h5>Backöfele</h5>
           <p class="food-loc">구시가 골목(Ursulinergasse) · 1571년 건물, 47년 전통 향토 식당 · 월–목 17:00–23:00, 금 17:00–24:00, 토 12:00–24:00, 일·공휴일 12:00–23:00</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 자우어브라텐 "Backöfele"+감자경단(€31.00)</p>
           <p class="food-park">🅿️ 도보권(레지덴츠 정문) · <a href="https://www.google.com/maps/search/?api=1&query=Backoefele+Wuerzburg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 알테 마인교에서 약 350m·도보 5분</p>
         </div>
         <div class="food-card">
           <h5>Locanda Würzburg</h5>
           <p class="food-loc">마인강변(Kranenkai) · 이탈리안, 대형 피자로 유명 · 일–목 11:30–23:00, 금·토 11:30–24:00</p>
           <p class="food-dish">🍽️ 검색 상위 노출</p>
           <p class="food-park">🅿️ 도보권(레지덴츠 정문) · <a href="https://www.google.com/maps/search/?api=1&query=Locanda+Wuerzburg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 알테 마인교에서 약 500m·도보 7분</p>
         </div>
         <div class="food-card">
           <h5>Trattoria Lugana</h5>
           <p class="food-loc">Juliuspromenade · 이탈리안 트라토리아 · 화·목·금 17:30–22:00, 수 17:30–24:00, 토 12:00–14:30·17:30–22:00, 일 12:00–14:30·17:30–24:00 · 월요일 휴무</p>
           <p class="food-dish">🍽️ 검색 상위 노출</p>
           <p class="food-park">🅿️ 도보권(레지덴츠 정문) · <a href="https://www.google.com/maps/search/?api=1&query=Trattoria+Lugana+Wuerzburg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 알테 마인교에서 약 550m·도보 8분</p>
         </div>
         <div class="food-card">
           <h5>Chay Viet Tadilen</h5>
           <p class="food-loc">Juliuspromenade · 동남아식(베트남 비건·베지테리언) · 매일 11:00–22:00</p>
           <p class="food-dish">🍽️ 검색 상위 노출</p>
           <p class="food-park">🅿️ 도보권(레지덴츠 정문) · <a href="https://www.google.com/maps/search/?api=1&query=Chay+Viet+Tadilen+Wuerzburg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 율리우스슈피탈에서 약 550m·도보 7분</p>
         </div>
         <div class="food-card">
           <h5>Wirtshaus am Dom</h5>
           <p class="food-loc">Paradeplatz 4, 레지덴츠광장 도보 2분 · 프랑켄 전통 비어하우스 · 월–목 12:00–22:00, 금·토 12:00–23:00, 일 11:00–22:00</p>
           <p class="food-dish">🍽️ 츠비벨로스트브라텐, 잔더 필레(창꼬치농어)</p>
           <p class="food-park">🅿️ 도보권(레지덴츠 정문) · <a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+am+Dom+Wuerzburg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 레지덴츠 궁전에서 약 150m·도보 2분</p>
         </div>
       </div>
       </div>
@@ -1178,18 +1185,21 @@ document.addEventListener('DOMContentLoaded', function(){
           <p class="food-loc">구시가 중심 · 가성비 좋은 프랑켄 가정식, 예약 권장 · 수–금 17:30~, 토·일 11:30–13:30+17:30~(주방 20:00 마감) · 월·화 휴무</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 프렌키셰 자우어브라텐, 후식 슈네발</p>
           <p class="food-park">🅿️ 도보권(P4 Galgentor) · <a href="https://www.google.com/maps/search/?api=1&query=Alter+Keller+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 수공업자의 집에서 약 110m·도보 2분</p>
         </div>
         <div class="food-card">
           <h5>Baumeisterhaus</h5>
           <p class="food-loc">오베레 슈미트가세 · 구시가 중심 랜드마크 건물 내 식당 · 매일 10:00–21:00</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 룸프슈테이크+허브버터(€19.50)</p>
           <p class="food-park">🅿️ 도보권(P4 Galgentor) · <a href="https://www.google.com/maps/search/?api=1&query=Baumeisterhaus+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 시청 탑에서 약 110m·도보 2분</p>
         </div>
         <div class="food-card">
           <h5>Gasthof Goldener Greifen</h5>
           <p class="food-loc">구시가 중심 · 1348년부터 160년째 한 가문이 운영하는 여관 · 월, 목–일 12:00–20:00(주방 기준), 화·수 휴무</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 프랑켄 가정식 계절 메뉴</p>
           <p class="food-park">🅿️ 도보권(P4 Galgentor) · <a href="https://www.google.com/maps/search/?api=1&query=Gasthof+Goldener+Greifen+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 시청 탑에서 약 120m·도보 2분</p>
         </div>
       </div>
       </div>
@@ -1366,12 +1376,14 @@ document.addEventListener('DOMContentLoaded', function(){
           <p class="food-loc">구시가, 성 자발트 교회 옆 · 1312년부터 이어진 정통 브랏하우스, 자체 정육점 운영 · 월–토 11:00–22:00, 일 11:00–20:00(공식 사이트 확인, 일요일도 영업)</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 오펜프리셰 셰우펠레(€21.00)</p>
           <p class="food-park">🅿️ 도보권(Parkhaus Am Hauptbahnhof) · <a href="https://www.google.com/maps/search/?api=1&query=Bratwursthaeusle+Nuernberg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 성 제발두스 교회에서 약 25m·도보 1분</p>
         </div>
         <div class="food-card">
           <h5>Cucina Italiana</h5>
           <p class="food-loc">하우프트마르크트(Obstmarkt 모퉁이) · 가족 운영 이탈리안 · 월요일 휴무, 화·수 17:00–22:30, 목–토 12:00–15:00+17:00–22:30, 일 17:00–22:30(점심 없음) · ⚠️ 방문일(9/20 일)엔 점심 불가, 저녁만 가능</p>
           <p class="food-dish">🍽️ 피자·파스타 평균 단가 약 €17대</p>
           <p class="food-park">🅿️ 도보권(Parkhaus Am Hauptbahnhof) · <a href="https://www.google.com/maps/search/?api=1&query=Cucina+Italiana+Nuernberg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 중앙시장에서 약 120m·도보 2분</p>
         </div>
         <div class="food-card">
           <h5>L'Osteria Nürnberg Tullnaupark</h5>
@@ -1390,12 +1402,14 @@ document.addEventListener('DOMContentLoaded', function(){
           <p class="food-loc">Glöckleinsgasse 2, 성 제발두스 교회 바로 옆(도보 코스상) · 1498년부터 이어진 독일에서 가장 오래된 와인선술집 · 화–일 11:00–23:00(주방 ~22:00), 월요일 휴무 · 방문일(9/20 일) 영업</p>
           <p class="food-dish">🍽️ 꼭 시켜야 할 메뉴: 오펜프리셰 슈바인스셰우펠레(€19.50), 뉘른베르거 브랏부어스트 6개(€10.50)</p>
           <p class="food-park">🅿️ 도보권(Parkhaus Hauptmarkt/Rathausplatz) · <a href="https://www.google.com/maps/search/?api=1&query=Goldenes+Posthorn+Nuernberg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 성 제발두스 교회에서 약 82m·도보 1분</p>
         </div>
         <div class="food-card">
           <h5>Heilig-Geist-Spital</h5>
           <p class="food-loc">Spitalgasse 16, 페그니츠강 위(헹커슈텍 인근, 도보 코스상) · 14세기 병원 건물을 개조한 전통 프랑켄 레스토랑 · 매일 11:30–23:00(주방 ~22:00)</p>
           <p class="food-dish">🍽️ 프랑켄 대표 메뉴: 슈바인스셰우펠레·학세·뉘른베르거 브랏부어스트(현재 정확한 가격은 현지 확인 권장)</p>
           <p class="food-park">🅿️ 도보권(Parkhaus Am Hauptbahnhof) · <a href="https://www.google.com/maps/search/?api=1&query=Heilig-Geist-Spital+Nuernberg" target="_blank" rel="noopener">지도</a></p>
+          <p class="food-near">📍 중앙시장에서 약 180m·도보 2분</p>
         </div>
       </div>
       </div>
