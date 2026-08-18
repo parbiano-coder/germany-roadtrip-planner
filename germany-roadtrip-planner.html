@@ -171,18 +171,18 @@
   .topbar-links{ display:contents; }
   @media (max-width:640px){
     .topbar-break{ display:block; }
-    .topbar-scroll{ justify-content:space-between; row-gap:0.15rem; }
+    .topbar-scroll{ justify-content:space-between; row-gap:0.05rem; }
     .topbar-scroll .topbar-item{ padding:0.3rem 0.3rem; font-size:0.66rem; gap:0; flex-direction:column; border-radius:8px; }
     a.topbar-item[aria-label="여행 플래너 홈"]{ font-size:0; padding:0.3rem; }
     a.topbar-item[aria-label="여행 플래너 홈"] .tb-icon{ font-size:1rem; }
     #photoToggle, #toggleAllDays, #toggleOptional{
-      flex-direction:row; flex-shrink:0; gap:0.35rem; padding:0.3rem 0.5rem; white-space:nowrap;
+      flex-shrink:0; gap:0.35rem; padding:0.3rem 0.5rem; white-space:nowrap;
     }
-    #photoToggle .tb-icon, #toggleAllDays .tb-icon, #toggleOptional .tb-icon{ display:none; }
-    #photoToggle::before, #toggleAllDays::before, #toggleOptional::before{
-      content:"+\A \2212"; white-space:pre-line; display:inline-block;
-      font-size:0.56rem; font-weight:800; color:var(--route); line-height:0.85; text-align:center;
-    }
+  }
+  #photoToggle .tb-icon, #toggleAllDays .tb-icon, #toggleOptional .tb-icon{ display:none; }
+  #photoToggle::before, #toggleAllDays::before, #toggleOptional::before{
+    content:"+\A \2212"; white-space:pre-line; display:inline-block;
+    font-size:0.56rem; font-weight:800; color:var(--route); line-height:0.85; text-align:center;
   }
   .topbar-item{
     flex:none; display:inline-flex; align-items:center; gap:0.35rem;
@@ -196,7 +196,7 @@
     background:var(--route-soft); color:var(--route);
     display:flex; align-items:center; justify-content:center;
   }
-  @media (max-width:640px){ .topbar-links .tb-icon{ display:none; } }
+  .topbar-links .tb-icon{ display:none; }
   #topbarWeather{ font-weight:800; }
   a.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
   .topbar-item.is-current{ color:var(--sign); background:var(--sign-soft); }
@@ -219,7 +219,7 @@
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
-  @media (max-width:640px){ nav.daynav{ top:90px; } }
+  @media (max-width:640px){ nav.daynav{ top:85px; } }
   nav.daynav .day-roadmap{
     max-width:960px; margin:0 auto;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -248,9 +248,9 @@
 
   /* ---------- Sections ---------- */
   main{ max-width:920px; margin:0 auto; padding:11.5rem 1.5rem 0; }
-  @media (max-width:640px){ main{ padding-top:12.6rem; } }
+  @media (max-width:640px){ main{ padding-top:12.2rem; } }
   section{ padding:3rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11.5rem; }
-  @media (max-width:640px){ section{ scroll-margin-top:12.6rem; } }
+  @media (max-width:640px){ section{ scroll-margin-top:12.2rem; } }
   section:last-of-type{ border-bottom:none; }
   section > .eyebrow{ display:block; margin-bottom:0.5rem; }
   section > h2{ font-size:1.6rem; margin:0 0 0.4rem; }
@@ -508,7 +508,7 @@
 
   /* ---------- Day cards ---------- */
   .day{ padding:2.4rem 0; border-bottom:1px solid var(--line); scroll-margin-top:11.5rem; }
-  @media (max-width:640px){ .day{ scroll-margin-top:12.6rem; } }
+  @media (max-width:640px){ .day{ scroll-margin-top:12.2rem; } }
   .day:last-child{ border-bottom:none; }
   details.day > summary.day-head{ cursor:pointer; list-style:none; }
   details.day > summary.day-head::-webkit-details-marker{ display:none; }
