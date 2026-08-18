@@ -202,6 +202,10 @@
     .topbar-break{ display:block; }
     .topbar-scroll{ justify-content:space-between; }
     .topbar-scroll .topbar-item{ padding:0.3rem 0.3rem; font-size:0.66rem; gap:0; flex-direction:column; border-radius:8px; }
+    #photoToggle .tb-icon, a[href*="expand=all"] .tb-icon, a[href*="expand=optional"] .tb-icon{ display:none; }
+    #photoToggle::before, a[href*="expand=all"]::before, a[href*="expand=optional"]::before{
+      content:"+"; font-size:0.85rem; font-weight:800; color:var(--route); line-height:1;
+    }
   }
   .topbar-item{
     flex:none; display:inline-flex; align-items:center; gap:0.35rem;
@@ -216,6 +220,7 @@
     display:flex; align-items:center; justify-content:center;
   }
   @media (max-width:640px){ .topbar-links .tb-icon{ display:none; } }
+  #topbarWeather{ font-size:0.88rem; font-weight:800; }
   a.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
   .topbar-item.is-current{ color:var(--sign); background:var(--sign-soft); }
   .topbar-item.is-current .tb-icon{ background:var(--sign); color:#fff; }
@@ -367,7 +372,6 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="eyebrow" style="display:block;">Food Tour · Deutschland</span>
     <h1>독일 맛집투어</h1>
     <p class="sub">7박 8일 여행 경로를 따라가며 도시별 현지 맛집과 꼭 먹어야 할 향토음식을 정리했습니다. 뷔르츠부르크부터 뤼데스하임까지, 프랑켄·바이에른·흑림·슈바벤·라인가우 5개 미식 지역을 지나갑니다.</p>
   </div>

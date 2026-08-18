@@ -206,6 +206,10 @@
     .topbar-break{ display:block; }
     .topbar-scroll{ justify-content:space-between; }
     .topbar-scroll .topbar-item{ padding:0.3rem 0.3rem; font-size:0.66rem; gap:0; flex-direction:column; border-radius:8px; }
+    #photoToggle .tb-icon, a[href*="expand=all"] .tb-icon, a[href*="expand=optional"] .tb-icon{ display:none; }
+    #photoToggle::before, a[href*="expand=all"]::before, a[href*="expand=optional"]::before{
+      content:"+"; font-size:0.85rem; font-weight:800; color:var(--route); line-height:1;
+    }
   }
   .topbar-item{
     flex:none; display:inline-flex; align-items:center; gap:0.35rem;
@@ -220,6 +224,7 @@
     display:flex; align-items:center; justify-content:center;
   }
   @media (max-width:640px){ .topbar-links .tb-icon{ display:none; } }
+  #topbarWeather{ font-size:0.88rem; font-weight:800; }
   a.topbar-item:hover{ border-color:var(--line); color:var(--ink); }
   .topbar-item.is-current{ color:var(--sign); background:var(--sign-soft); }
   .topbar-item.is-current .tb-icon{ background:var(--sign); color:#fff; }
@@ -371,7 +376,6 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="eyebrow" style="display:block;">Must Visit · Deutschland</span>
     <h1>꼭 가야할 장소</h1>
     <p class="sub">독일을 여행한다면 놓치지 말아야 할 대표 명소들, 그리고 7박 8일 경로가 지나가는 4개 권역을 지도로 살펴보세요.</p>
   </div>
