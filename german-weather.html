@@ -130,17 +130,40 @@
   table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:480px; }
   @media (max-width:520px){ table{ min-width:0; } th,td{ padding:0.5rem 0.5rem; font-size:0.82rem; } }
   .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
-  .weather-matrix{ min-width:920px; }
-  .weather-matrix th{ text-align:center; white-space:nowrap; position:sticky; top:183px; z-index:5; background:var(--bg-soft); box-shadow:0 1px 0 var(--line); }
-  .weather-matrix th:first-child{ left:0; z-index:6; text-align:left; }
-  .weather-matrix td.wx-cell{ text-align:center; white-space:nowrap; }
-  .weather-matrix td.wx-na{ text-align:center; color:var(--ink-soft); }
-  .weather-matrix td.wx-city{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; white-space:normal; min-width:68px; max-width:100px; line-height:1.25; position:sticky; left:0; z-index:2; background:var(--surface); }
-  .weather-matrix tr.wx-anchor td{ background:var(--route-soft); }
-  .weather-matrix tr.wx-anchor td.wx-city{ background:var(--route-soft); }
-  .weather-matrix td.wx-visit{ background:var(--sign); color:#fff; font-weight:800; }
-  @media (max-width:640px){ .weather-matrix th{ top:193px; } }
-  @media (max-width:520px){ .weather-matrix{ min-width:0; } }
+  .wg-outer{ font-size:0.92rem; }
+  .wg-sticky-head-wrap{
+    position:sticky; top:183px; z-index:5; display:flex; min-width:920px;
+    background:var(--bg-soft); border-bottom:1px solid var(--line); box-shadow:0 1px 0 var(--line);
+  }
+  .wg-corner{
+    flex:0 0 90px; padding:0.6rem 0.5rem; text-align:left;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft);
+  }
+  .wg-head-scroll{ flex:1; overflow-x:hidden; }
+  .wg-head-row{ display:grid; grid-template-columns:repeat(9, minmax(58px,1fr)); }
+  .wg-head{
+    padding:0.6rem 0.5rem; text-align:center; white-space:nowrap;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft);
+  }
+  .weather-grid{
+    display:grid; grid-template-columns:90px repeat(9, minmax(58px,1fr));
+    min-width:920px;
+  }
+  .weather-grid > div{ padding:0.6rem 0.5rem; border-bottom:1px solid var(--line); text-align:center; }
+  .wg-cell, .wg-city{ background:var(--surface); }
+  .wg-city{
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-weight:700; white-space:normal; line-height:1.25; text-align:left;
+    position:sticky; left:0; z-index:2;
+  }
+  .wg-cell.mono{ color:var(--route); font-weight:700; white-space:nowrap; }
+  .wg-na{ color:var(--ink-soft); }
+  .wg-anchor{ background:var(--route-soft); }
+  .wg-visit{ background:var(--sign); color:#fff; font-weight:800; }
+  @media (max-width:640px){ .wg-sticky-head-wrap{ top:193px; } }
+  @media (max-width:520px){ .wg-sticky-head-wrap, .weather-grid{ min-width:0; } }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
   td.mono{ color:var(--route); font-weight:700; }
@@ -367,33 +390,240 @@
   <section>
     <h2>도시별 예보 매트릭스 (9/19~9/27)</h2>
     <p class="lede">AccuWeather는 자동 조회를 막고 있어 수치를 직접 가져올 수 없었습니다. 대신 <a href="https://open-meteo.com/en/docs/seasonal-forecast-api" target="_blank" rel="noopener">Open-Meteo 계절예보 API</a>(ECMWF SEAS5 앙상블 모델, 51개 멤버 평균)로 채웠습니다 — 과거 평균이 아니라 매일 새로 계산되는 실제 예보 모델이지만, 한 달 이상 앞선 시점이라 오차 폭이 큽니다. 출발 1~2주 전엔 반드시 위 실시간 예보 앱으로 다시 확인하세요. 색칠된 칸은 실제 그 도시에 있는 날짜, ☔는 앙상블 멤버 중 50% 이상이 강수를 예측한 날입니다. 표는 경유지 포함 전체 도시 기준이며, 9/19은 인천 출발일·9/27은 인천 도착일입니다(9/26 19:40 프랑크푸르트 출국).</p>
-    <div class="table-wrap">
-      <table class="weather-matrix">
-        <thead><tr><th>도시</th><th>9/19(토)</th><th>9/20(일)</th><th>9/21(월)</th><th>9/22(화)</th><th>9/23(수)</th><th>9/24(목)</th><th>9/25(금)</th><th>9/26(토)</th><th>9/27(일)</th></tr></thead>
-        <tbody>
-        <tr class="wx-anchor"><td class="wx-city">인천/<br>서울</td><td class="mono wx-cell wx-visit">26/18</td><td class="mono wx-cell">27/18</td><td class="mono wx-cell">26/17</td><td class="mono wx-cell">26/17</td><td class="mono wx-cell">26/16</td><td class="mono wx-cell">26/16</td><td class="mono wx-cell">25/16</td><td class="mono wx-cell">25/16</td><td class="mono wx-cell wx-visit">25/15</td></tr>
-        <tr><td class="wx-city">프랑크<br>푸르트</td><td class="mono wx-cell wx-visit">21/13 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">뷔르츠<br>부르크</td><td class="mono wx-cell wx-visit">22/13 ☔</td><td class="mono wx-cell wx-visit">22/12 ☔</td><td class="mono wx-cell">22/13 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">로텐부<br>르크</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell wx-visit">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11 ☔</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">뉘른베<br>르크</td><td class="mono wx-cell">22/12</td><td class="mono wx-cell wx-visit">22/12</td><td class="mono wx-cell wx-visit">21/12 ☔</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/10</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">뮌헨</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell wx-visit">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">19/11</td><td class="mono wx-cell">20/10</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">호엔슈<br>방가우</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell">20/9 ☔</td><td class="mono wx-cell">20/9 ☔</td><td class="mono wx-cell wx-visit">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/8 ☔</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">퓌센</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell wx-visit">20/10 ☔</td><td class="mono wx-cell wx-visit">19/9 ☔</td><td class="mono wx-cell wx-visit">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">오버아<br>머가우</td><td class="mono wx-cell">21/10 ☔</td><td class="mono wx-cell">21/9 ☔</td><td class="mono wx-cell">20/9 ☔</td><td class="mono wx-cell wx-visit">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/8 ☔</td><td class="mono wx-cell">19/8 ☔</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">에탈</td><td class="mono wx-cell">17/6 ☔</td><td class="mono wx-cell">17/6 ☔</td><td class="mono wx-cell">16/6 ☔</td><td class="mono wx-cell wx-visit">16/6 ☔</td><td class="mono wx-cell">16/5 ☔</td><td class="mono wx-cell">16/5 ☔</td><td class="mono wx-cell">15/5 ☔</td><td class="mono wx-cell">16/5 ☔</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">가르미<br>슈파르<br>텐키르<br>헨</td><td class="mono wx-cell">21/11 ☔</td><td class="mono wx-cell">22/10 ☔</td><td class="mono wx-cell">21/10 ☔</td><td class="mono wx-cell wx-visit">20/10 ☔</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell">20/9 ☔</td><td class="mono wx-cell">20/9 ☔</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">켐프텐</td><td class="mono wx-cell">21/11 ☔</td><td class="mono wx-cell">21/10 ☔</td><td class="mono wx-cell">21/10 ☔</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell wx-visit">20/10 ☔</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell">20/10 ☔</td><td class="mono wx-cell">20/9 ☔</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">티티제</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">18/8 ☔</td><td class="mono wx-cell">18/8</td><td class="mono wx-cell">18/8</td><td class="mono wx-cell wx-visit">18/8</td><td class="mono wx-cell">18/8</td><td class="mono wx-cell">17/8</td><td class="mono wx-cell">17/7</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">프라이<br>부르크</td><td class="mono wx-cell">22/12 ☔</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell wx-visit">21/12 ☔</td><td class="mono wx-cell wx-visit">21/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">21/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">트리베<br>르크</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">19/9 ☔</td><td class="mono wx-cell">18/9 ☔</td><td class="mono wx-cell">18/9 ☔</td><td class="mono wx-cell">18/9 ☔</td><td class="mono wx-cell wx-visit">18/8 ☔</td><td class="mono wx-cell">18/8</td><td class="mono wx-cell">18/8</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">메칭겐</td><td class="mono wx-cell">22/12 ☔</td><td class="mono wx-cell">22/12 ☔</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell">20/12 ☔</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell wx-visit">21/12 ☔</td><td class="mono wx-cell wx-visit">20/12</td><td class="mono wx-cell">21/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">하이델<br>베르크</td><td class="mono wx-cell">22/13 ☔</td><td class="mono wx-cell">21/13</td><td class="mono wx-cell">21/13</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell wx-visit">20/12</td><td class="mono wx-cell">20/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">뤼데스<br>하임</td><td class="mono wx-cell">21/13 ☔</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11 ☔</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">비스바<br>덴</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">21/11 ☔</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
-        <tr><td class="wx-city">프랑크<br>푸르트</td><td class="mono wx-cell wx-visit">21/13 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
-        </tbody>
-      </table>
+    <div class="wg-outer">
+      <div class="wg-sticky-head-wrap" id="wgHeadWrap">
+        <div class="wg-corner">도시</div>
+        <div class="wg-head-scroll">
+          <div class="wg-head-row">
+  <div class="wg-head">9/19(토)</div>
+  <div class="wg-head">9/20(일)</div>
+  <div class="wg-head">9/21(월)</div>
+  <div class="wg-head">9/22(화)</div>
+  <div class="wg-head">9/23(수)</div>
+  <div class="wg-head">9/24(목)</div>
+  <div class="wg-head">9/25(금)</div>
+  <div class="wg-head">9/26(토)</div>
+  <div class="wg-head">9/27(일)</div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap" id="wgBodyWrap">
+        <div class="weather-grid">
+  <div class="wg-city wg-anchor">인천/<br>서울</div>
+  <div class="wg-cell mono wg-anchor wg-visit">26/18</div>
+  <div class="wg-cell mono wg-anchor">27/18</div>
+  <div class="wg-cell mono wg-anchor">26/17</div>
+  <div class="wg-cell mono wg-anchor">26/17</div>
+  <div class="wg-cell mono wg-anchor">26/16</div>
+  <div class="wg-cell mono wg-anchor">26/16</div>
+  <div class="wg-cell mono wg-anchor">25/16</div>
+  <div class="wg-cell mono wg-anchor">25/16</div>
+  <div class="wg-cell mono wg-anchor wg-visit">25/15</div>
+  <div class="wg-city">프랑크<br>푸르트</div>
+  <div class="wg-cell mono wg-visit">21/13 ☔</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono wg-visit">20/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">뷔르츠<br>부르크</div>
+  <div class="wg-cell mono wg-visit">22/13 ☔</div>
+  <div class="wg-cell mono wg-visit">22/12 ☔</div>
+  <div class="wg-cell mono">22/13 ☔</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">로텐부<br>르크</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono wg-visit">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">20/11 ☔</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">뉘른베<br>르크</div>
+  <div class="wg-cell mono">22/12</div>
+  <div class="wg-cell mono wg-visit">22/12</div>
+  <div class="wg-cell mono wg-visit">21/12 ☔</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/10</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">뮌헨</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono wg-visit">21/12</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">19/11</div>
+  <div class="wg-cell mono">20/10</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">호엔슈<br>방가우</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono">20/9 ☔</div>
+  <div class="wg-cell mono">20/9 ☔</div>
+  <div class="wg-cell mono wg-visit">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/8 ☔</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">퓌센</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono wg-visit">20/10 ☔</div>
+  <div class="wg-cell mono wg-visit">19/9 ☔</div>
+  <div class="wg-cell mono wg-visit">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">오버아<br>머가우</div>
+  <div class="wg-cell mono">21/10 ☔</div>
+  <div class="wg-cell mono">21/9 ☔</div>
+  <div class="wg-cell mono">20/9 ☔</div>
+  <div class="wg-cell mono wg-visit">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/8 ☔</div>
+  <div class="wg-cell mono">19/8 ☔</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">에탈</div>
+  <div class="wg-cell mono">17/6 ☔</div>
+  <div class="wg-cell mono">17/6 ☔</div>
+  <div class="wg-cell mono">16/6 ☔</div>
+  <div class="wg-cell mono wg-visit">16/6 ☔</div>
+  <div class="wg-cell mono">16/5 ☔</div>
+  <div class="wg-cell mono">16/5 ☔</div>
+  <div class="wg-cell mono">15/5 ☔</div>
+  <div class="wg-cell mono">16/5 ☔</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">가르미<br>슈파르<br>텐키르<br>헨</div>
+  <div class="wg-cell mono">21/11 ☔</div>
+  <div class="wg-cell mono">22/10 ☔</div>
+  <div class="wg-cell mono">21/10 ☔</div>
+  <div class="wg-cell mono wg-visit">20/10 ☔</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono">20/9 ☔</div>
+  <div class="wg-cell mono">20/9 ☔</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">켐프텐</div>
+  <div class="wg-cell mono">21/11 ☔</div>
+  <div class="wg-cell mono">21/10 ☔</div>
+  <div class="wg-cell mono">21/10 ☔</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono wg-visit">20/10 ☔</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono">20/10 ☔</div>
+  <div class="wg-cell mono">20/9 ☔</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">티티제</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">18/8 ☔</div>
+  <div class="wg-cell mono">18/8</div>
+  <div class="wg-cell mono">18/8</div>
+  <div class="wg-cell mono wg-visit">18/8</div>
+  <div class="wg-cell mono">18/8</div>
+  <div class="wg-cell mono">17/8</div>
+  <div class="wg-cell mono">17/7</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">프라이<br>부르크</div>
+  <div class="wg-cell mono">22/12 ☔</div>
+  <div class="wg-cell mono">21/12 ☔</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono wg-visit">21/12 ☔</div>
+  <div class="wg-cell mono wg-visit">21/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">트리베<br>르크</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">19/9 ☔</div>
+  <div class="wg-cell mono">18/9 ☔</div>
+  <div class="wg-cell mono">18/9 ☔</div>
+  <div class="wg-cell mono">18/9 ☔</div>
+  <div class="wg-cell mono wg-visit">18/8 ☔</div>
+  <div class="wg-cell mono">18/8</div>
+  <div class="wg-cell mono">18/8</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">메칭겐</div>
+  <div class="wg-cell mono">22/12 ☔</div>
+  <div class="wg-cell mono">22/12 ☔</div>
+  <div class="wg-cell mono">21/12 ☔</div>
+  <div class="wg-cell mono">20/12 ☔</div>
+  <div class="wg-cell mono">21/12 ☔</div>
+  <div class="wg-cell mono wg-visit">21/12 ☔</div>
+  <div class="wg-cell mono wg-visit">20/12</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">하이델<br>베르크</div>
+  <div class="wg-cell mono">22/13 ☔</div>
+  <div class="wg-cell mono">21/13</div>
+  <div class="wg-cell mono">21/13</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono wg-visit">20/12</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">뤼데스<br>하임</div>
+  <div class="wg-cell mono">21/13 ☔</div>
+  <div class="wg-cell mono">21/12 ☔</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11 ☔</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono wg-visit">20/11</div>
+  <div class="wg-cell mono wg-visit">20/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">비스바<br>덴</div>
+  <div class="wg-cell mono">21/12 ☔</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">21/11 ☔</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono wg-visit">20/11</div>
+  <div class="wg-cell wg-na">–</div>
+  <div class="wg-city">프랑크<br>푸르트</div>
+  <div class="wg-cell mono wg-visit">21/13 ☔</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">21/12</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">21/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono">20/11</div>
+  <div class="wg-cell mono wg-visit">20/11</div>
+  <div class="wg-cell wg-na">–</div>
+        </div>
+      </div>
     </div>
+    <script>
+    (function(){
+      var headWrap = document.getElementById("wgHeadWrap");
+      var bodyWrap = document.getElementById("wgBodyWrap");
+      var headScroll = headWrap ? headWrap.querySelector(".wg-head-scroll") : null;
+      if (headScroll && bodyWrap) {
+        bodyWrap.addEventListener("scroll", function(){
+          headScroll.scrollLeft = bodyWrap.scrollLeft;
+        });
+      }
+    })();
+    </script>
   </section>
 
   <section>
