@@ -131,13 +131,15 @@
   @media (max-width:520px){ table{ min-width:0; } th,td{ padding:0.5rem 0.5rem; font-size:0.82rem; } }
   .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
   .weather-matrix{ min-width:920px; }
-  .weather-matrix th{ text-align:center; white-space:nowrap; }
+  .weather-matrix th{ text-align:center; white-space:nowrap; position:sticky; top:183px; z-index:5; background:var(--bg-soft); box-shadow:0 1px 0 var(--line); }
+  .weather-matrix th:first-child{ left:0; z-index:6; text-align:left; }
   .weather-matrix td.wx-cell{ text-align:center; white-space:nowrap; }
   .weather-matrix td.wx-na{ text-align:center; color:var(--ink-soft); }
-  .weather-matrix td.wx-city{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; white-space:normal; min-width:68px; max-width:100px; line-height:1.25; position:sticky; left:0; background:var(--surface); }
+  .weather-matrix td.wx-city{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; white-space:normal; min-width:68px; max-width:100px; line-height:1.25; position:sticky; left:0; z-index:2; background:var(--surface); }
   .weather-matrix tr.wx-anchor td{ background:var(--route-soft); }
   .weather-matrix tr.wx-anchor td.wx-city{ background:var(--route-soft); }
   .weather-matrix td.wx-visit{ background:var(--sign); color:#fff; font-weight:800; }
+  @media (max-width:640px){ .weather-matrix th{ top:193px; } }
   @media (max-width:520px){ .weather-matrix{ min-width:0; } }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
@@ -388,6 +390,7 @@
         <tr><td class="wx-city">하이델<br>베르크</td><td class="mono wx-cell">22/13 ☔</td><td class="mono wx-cell">21/13</td><td class="mono wx-cell">21/13</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell wx-visit">20/12</td><td class="mono wx-cell">20/11</td><td class="wx-na">–</td></tr>
         <tr><td class="wx-city">뤼데스<br>하임</td><td class="mono wx-cell">21/13 ☔</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11 ☔</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
         <tr><td class="wx-city">비스바<br>덴</td><td class="mono wx-cell">21/12 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">21/11 ☔</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">프랑크<br>푸르트</td><td class="mono wx-cell wx-visit">21/13 ☔</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">21/12</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">21/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell">20/11</td><td class="mono wx-cell wx-visit">20/11</td><td class="wx-na">–</td></tr>
         </tbody>
       </table>
     </div>
