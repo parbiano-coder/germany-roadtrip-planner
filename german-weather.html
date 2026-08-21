@@ -130,6 +130,14 @@
   table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:480px; }
   @media (max-width:520px){ table{ min-width:0; } th,td{ padding:0.5rem 0.5rem; font-size:0.82rem; } }
   .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
+  .weather-matrix{ min-width:920px; }
+  .weather-matrix th{ text-align:center; white-space:nowrap; }
+  .weather-matrix td.wx-cell{ text-align:center; white-space:nowrap; }
+  .weather-matrix td.wx-na{ text-align:center; color:var(--ink-soft); }
+  .weather-matrix td.wx-city{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; white-space:nowrap; position:sticky; left:0; background:var(--surface); }
+  .weather-matrix tr.wx-anchor td{ background:var(--route-soft); }
+  .weather-matrix tr.wx-anchor td.wx-city{ background:var(--route-soft); }
+  @media (max-width:520px){ .weather-matrix{ min-width:0; } }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
   td.mono{ color:var(--route); font-weight:700; }
@@ -354,6 +362,37 @@
   </section>
 
   <section>
+    <h2>도시별 예보 매트릭스 (9/19~9/27)</h2>
+    <p class="lede">AccuWeather는 자동 조회를 막고 있어 수치를 직접 가져올 수 없었습니다. 대신 <a href="https://open-meteo.com/en/docs/seasonal-forecast-api" target="_blank" rel="noopener">Open-Meteo 계절예보 API</a>(ECMWF SEAS5 앙상블 모델, 51개 멤버 평균)로 채웠습니다 — 과거 평균이 아니라 매일 새로 계산되는 실제 예보 모델이지만, 한 달 이상 앞선 시점이라 오차 폭이 큽니다. 출발 1~2주 전엔 반드시 위 실시간 예보 앱으로 다시 확인하세요. ☔는 앙상블 멤버 중 50% 이상이 강수를 예측한 날입니다. 표는 경유지 포함 전체 도시 기준이며, 9/19은 인천 출발일·9/27은 인천 도착일입니다(9/26 19:40 프랑크푸르트 출국).</p>
+    <div class="table-wrap">
+      <table class="weather-matrix">
+        <thead><tr><th>도시</th><th>9/19(토)</th><th>9/20(일)</th><th>9/21(월)</th><th>9/22(화)</th><th>9/23(수)</th><th>9/24(목)</th><th>9/25(금)</th><th>9/26(토)</th><th>9/27(일)</th></tr></thead>
+        <tbody>
+        <tr class="wx-anchor"><td class="wx-city">인천/서울</td><td class="mono wx-cell">26°/18°</td><td class="wx-na">–</td><td class="wx-na">–</td><td class="wx-na">–</td><td class="wx-na">–</td><td class="wx-na">–</td><td class="wx-na">–</td><td class="wx-na">–</td><td class="mono wx-cell">25°/15°</td></tr>
+        <tr><td class="wx-city">프랑크푸르트</td><td class="mono wx-cell">21°/13° ☔</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">뷔르츠부르크</td><td class="mono wx-cell">22°/13° ☔</td><td class="mono wx-cell">22°/12° ☔</td><td class="mono wx-cell">22°/13° ☔</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">로텐부르크</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">20°/11° ☔</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">뉘른베르크</td><td class="mono wx-cell">22°/12°</td><td class="mono wx-cell">22°/12°</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/10°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">뮌헨</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">19°/11°</td><td class="mono wx-cell">20°/10°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">호엔슈방가우</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/9° ☔</td><td class="mono wx-cell">20°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/8° ☔</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">퓌센</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">오버아머가우</td><td class="mono wx-cell">21°/10° ☔</td><td class="mono wx-cell">21°/9° ☔</td><td class="mono wx-cell">20°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/8° ☔</td><td class="mono wx-cell">19°/8° ☔</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">에탈</td><td class="mono wx-cell">17°/6° ☔</td><td class="mono wx-cell">17°/6° ☔</td><td class="mono wx-cell">16°/6° ☔</td><td class="mono wx-cell">16°/6° ☔</td><td class="mono wx-cell">16°/5° ☔</td><td class="mono wx-cell">16°/5° ☔</td><td class="mono wx-cell">15°/5° ☔</td><td class="mono wx-cell">16°/5° ☔</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">가르미슈파르텐키르헨</td><td class="mono wx-cell">21°/11° ☔</td><td class="mono wx-cell">22°/10° ☔</td><td class="mono wx-cell">21°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/9° ☔</td><td class="mono wx-cell">20°/9° ☔</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">켐프텐</td><td class="mono wx-cell">21°/11° ☔</td><td class="mono wx-cell">21°/10° ☔</td><td class="mono wx-cell">21°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/10° ☔</td><td class="mono wx-cell">20°/9° ☔</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">티티제</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">18°/8° ☔</td><td class="mono wx-cell">18°/8°</td><td class="mono wx-cell">18°/8°</td><td class="mono wx-cell">18°/8°</td><td class="mono wx-cell">18°/8°</td><td class="mono wx-cell">17°/8°</td><td class="mono wx-cell">17°/7°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">프라이부르크</td><td class="mono wx-cell">22°/12° ☔</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">21°/11°</td><td class="mono wx-cell">21°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">트리베르크</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">19°/9° ☔</td><td class="mono wx-cell">18°/9° ☔</td><td class="mono wx-cell">18°/9° ☔</td><td class="mono wx-cell">18°/9° ☔</td><td class="mono wx-cell">18°/8° ☔</td><td class="mono wx-cell">18°/8°</td><td class="mono wx-cell">18°/8°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">메칭겐</td><td class="mono wx-cell">22°/12° ☔</td><td class="mono wx-cell">22°/12° ☔</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">20°/12° ☔</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">20°/12°</td><td class="mono wx-cell">21°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">하이델베르크</td><td class="mono wx-cell">22°/13° ☔</td><td class="mono wx-cell">21°/13°</td><td class="mono wx-cell">21°/13°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">20°/12°</td><td class="mono wx-cell">20°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">뤼데스하임</td><td class="mono wx-cell">21°/13° ☔</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11° ☔</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="wx-na">–</td></tr>
+        <tr><td class="wx-city">비스바덴</td><td class="mono wx-cell">21°/12° ☔</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">21°/12°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">21°/11° ☔</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="mono wx-cell">20°/11°</td><td class="wx-na">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
     <h2>일자별 구간</h2>
     <p class="lede">현재 일정과 동일한 순서로 맞췄습니다.</p>
     <div class="table-wrap">
@@ -368,6 +407,7 @@
           <tr><td>9/24 (목)</td><td>프라이부르크 → 트리베르크 → 블랙 포레스트 → 메칭겐</td><td class="mono">18°C / 9°C</td><td>-</td></tr>
           <tr><td>9/25 (금)</td><td>메칭겐 → 하이델베르크 → 뤼데스하임(슈투트가르트·베른카슈텔쿠에스 선택)</td><td class="mono">17–18°C / 8–9°C</td><td>이동 지역이 넓어 구간별 편차 있음</td></tr>
           <tr><td>9/26 (토)</td><td>뤼데스하임 → 비스바덴 → 프랑크푸르트 공항</td><td class="mono">18°C / 9°C</td><td>일몰 약 19:15 — 저녁 반납 운전 시 감안</td></tr>
+          <tr><td>9/27 (일)</td><td>인천 도착(9/26 19:40 프랑크푸르트 출국)</td><td class="mono">25°C / 15°C</td><td>서울·인천 9월 하순 평년치, 독일보다 한낮 기온 높음</td></tr>
         </tbody>
       </table>
     </div>
