@@ -132,7 +132,7 @@
   .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
   .wg-outer{ font-size:0.92rem; }
   .wg-sticky-head-wrap{
-    position:sticky; top:183px; z-index:5; display:flex; min-width:612px;
+    position:sticky; top:181px; z-index:5; display:flex; min-width:612px;
     background:var(--bg-soft); border-bottom:1px solid var(--line); box-shadow:0 1px 0 var(--line);
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
@@ -165,7 +165,7 @@
   .wg-na{ color:var(--ink-soft); }
   .wg-anchor{ background:var(--route-soft); }
   .wg-cell.wg-visit, .wg-city.wg-visit{ background:var(--sign); color:#fff; font-weight:800; }
-  @media (max-width:640px){ .wg-sticky-head-wrap{ top:193px; } }
+  @media (max-width:640px){ .wg-sticky-head-wrap{ top:191px; } }
   @media (max-width:520px){ .wg-sticky-head-wrap, .weather-grid{ min-width:0; } }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
@@ -391,7 +391,7 @@
   </section>
 
   <section>
-    <h2>도시별 예보 매트릭스 (9/19~9/27)</h2>
+    <h2>도시별 예보표 (9/19~9/27)</h2>
     <p class="lede">AccuWeather는 자동 조회를 막고 있어 수치를 직접 가져올 수 없었습니다. 대신 <a href="https://open-meteo.com/en/docs/seasonal-forecast-api" target="_blank" rel="noopener">Open-Meteo 계절예보 API</a>(ECMWF SEAS5 앙상블 모델, 51개 멤버 평균)로 채웠습니다 — 과거 평균이 아니라 매일 새로 계산되는 실제 예보 모델이지만, 한 달 이상 앞선 시점이라 오차 폭이 큽니다. 출발 1~2주 전엔 반드시 위 실시간 예보 앱으로 다시 확인하세요. 색칠된 칸은 실제 그 도시에 있는 날짜입니다. 날씨 아이콘은 그날 대표 예보 코드(WMO) 기준입니다. 표는 경유지 포함 전체 도시 기준이며, 9/19은 인천 출발일·9/27은 인천 도착일입니다(9/26 19:40 프랑크푸르트 출국).</p>
     <div class="wg-outer">
       <div class="wg-sticky-head-wrap" id="wgHeadWrap">
