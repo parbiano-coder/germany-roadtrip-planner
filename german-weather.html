@@ -132,7 +132,7 @@
   .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
   .wg-outer{ font-size:0.92rem; }
   .wg-sticky-head-wrap{
-    position:sticky; top:181px; z-index:5; display:flex; min-width:612px;
+    position:sticky; top:181px; z-index:5; display:flex; min-width:774px;
     background:var(--bg-soft); border-bottom:1px solid var(--line); box-shadow:0 1px 0 var(--line);
     -webkit-transform:translateZ(0); transform:translateZ(0); will-change:transform;
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
@@ -143,7 +143,7 @@
     text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft);
   }
   .wg-head-scroll{ flex:1; overflow-x:hidden; }
-  .wg-head-row{ display:grid; grid-template-columns:repeat(9, minmax(58px,1fr)); }
+  .wg-head-row{ display:grid; grid-template-columns:repeat(9, minmax(76px,1fr)); }
   .wg-head{
     padding:0.6rem 0.5rem; text-align:center; white-space:nowrap;
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
@@ -151,11 +151,13 @@
   }
   #wgBodyWrap{ margin-top:-1px; }
   .weather-grid{
-    display:grid; grid-template-columns:90px repeat(9, minmax(58px,1fr));
-    min-width:612px;
+    display:grid; grid-template-columns:90px repeat(9, minmax(76px,1fr));
+    min-width:774px;
   }
   .weather-grid > div{ padding:0.6rem 0.5rem; border-bottom:1px solid var(--line); text-align:center; }
   .wg-cell, .wg-city{ background:var(--surface); }
+  .wx-icon{ display:inline-block; font-size:1.25em; vertical-align:-0.15em; margin-left:1px; }
+  .wg-visit .wx-icon{ background:rgba(255,255,255,0.22); border-radius:50%; padding:1px; }
   .wg-city{
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     font-weight:700; white-space:normal; line-height:1.25; text-align:left;
@@ -413,204 +415,204 @@
       <div class="table-wrap" id="wgBodyWrap">
         <div class="weather-grid">
   <div class="wg-city wg-anchor">인천/<br>서울</div>
-  <div class="wg-cell mono wg-anchor wg-visit">26/18 🌤️</div>
-  <div class="wg-cell mono wg-anchor">27/18 🌤️</div>
-  <div class="wg-cell mono wg-anchor">26/17 🌤️</div>
-  <div class="wg-cell mono wg-anchor">26/17 ☀️</div>
-  <div class="wg-cell mono wg-anchor">26/16 🌧️</div>
-  <div class="wg-cell mono wg-anchor">26/16 ☁️</div>
-  <div class="wg-cell mono wg-anchor">25/16 ☁️</div>
-  <div class="wg-cell mono wg-anchor">25/16 ☀️</div>
-  <div class="wg-cell mono wg-anchor wg-visit">25/15 🌤️</div>
+  <div class="wg-cell mono wg-anchor wg-visit">26/18<span class="wx-icon">🌤️</span></div>
+  <div class="wg-cell mono wg-anchor">27/18<span class="wx-icon">🌤️</span></div>
+  <div class="wg-cell mono wg-anchor">26/17<span class="wx-icon">🌤️</span></div>
+  <div class="wg-cell mono wg-anchor">26/17<span class="wx-icon">☀️</span></div>
+  <div class="wg-cell mono wg-anchor">26/16<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-anchor">26/16<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-anchor">25/16<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-anchor">25/16<span class="wx-icon">☀️</span></div>
+  <div class="wg-cell mono wg-anchor wg-visit">25/15<span class="wx-icon">🌤️</span></div>
   <div class="wg-city">프랑크<br>푸르트</div>
-  <div class="wg-cell mono wg-visit">21/13 ☁️</div>
-  <div class="wg-cell mono">21/12 ☁️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono wg-visit">20/11 ☁️</div>
+  <div class="wg-cell mono wg-visit">21/13<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">20/11<span class="wx-icon">☁️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">뷔르츠<br>부르크</div>
-  <div class="wg-cell mono wg-visit">22/13 ☁️</div>
-  <div class="wg-cell mono wg-visit">22/12 ☁️</div>
-  <div class="wg-cell mono">22/13 🌦️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
+  <div class="wg-cell mono wg-visit">22/13<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">22/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">22/13<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">로텐부<br>르크</div>
-  <div class="wg-cell mono">21/12 ☁️</div>
-  <div class="wg-cell mono wg-visit">21/12 ☁️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">21/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">뉘른베<br>르크</div>
-  <div class="wg-cell mono">22/12 ☁️</div>
-  <div class="wg-cell mono wg-visit">22/12 ☁️</div>
-  <div class="wg-cell mono wg-visit">21/12 🌦️</div>
-  <div class="wg-cell mono">21/11 🌦️</div>
-  <div class="wg-cell mono">21/11 🌧️</div>
-  <div class="wg-cell mono">21/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/10 🌧️</div>
+  <div class="wg-cell mono">22/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">22/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">뮌헨</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
-  <div class="wg-cell mono wg-visit">21/12 🌦️</div>
-  <div class="wg-cell mono">20/11 🌦️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">19/11 🌧️</div>
-  <div class="wg-cell mono">20/10 🌦️</div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">19/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">호엔슈<br>방가우</div>
-  <div class="wg-cell mono">20/10 ☁️</div>
-  <div class="wg-cell mono">20/9 ☁️</div>
-  <div class="wg-cell mono">20/9 🌦️</div>
-  <div class="wg-cell mono wg-visit">19/9 🌦️</div>
-  <div class="wg-cell mono">19/9 🌦️</div>
-  <div class="wg-cell mono">19/9 🌦️</div>
-  <div class="wg-cell mono">19/9 🌧️</div>
-  <div class="wg-cell mono">19/8 🌦️</div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">20/9<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">20/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">19/8<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">퓌센</div>
-  <div class="wg-cell mono">20/10 ☁️</div>
-  <div class="wg-cell mono">20/10 ☁️</div>
-  <div class="wg-cell mono wg-visit">20/10 🌦️</div>
-  <div class="wg-cell mono wg-visit">19/9 🌦️</div>
-  <div class="wg-cell mono wg-visit">19/9 🌦️</div>
-  <div class="wg-cell mono">19/9 🌦️</div>
-  <div class="wg-cell mono">19/9 🌧️</div>
-  <div class="wg-cell mono">19/9 🌦️</div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">20/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">오버아<br>머가우</div>
-  <div class="wg-cell mono">21/10 ☁️</div>
-  <div class="wg-cell mono">21/9 🌧️</div>
-  <div class="wg-cell mono">20/9 🌦️</div>
-  <div class="wg-cell mono wg-visit">19/9 🌦️</div>
-  <div class="wg-cell mono">19/9 🌧️</div>
-  <div class="wg-cell mono">19/9 🌦️</div>
-  <div class="wg-cell mono">19/8 🌦️</div>
-  <div class="wg-cell mono">19/8 🌦️</div>
+  <div class="wg-cell mono">21/10<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/9<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/8<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">19/8<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">에탈</div>
-  <div class="wg-cell mono">17/6 ☁️</div>
-  <div class="wg-cell mono">17/6 🌧️</div>
-  <div class="wg-cell mono">16/6 🌦️</div>
-  <div class="wg-cell mono wg-visit">16/6 🌦️</div>
-  <div class="wg-cell mono">16/5 🌧️</div>
-  <div class="wg-cell mono">16/5 🌦️</div>
-  <div class="wg-cell mono">15/5 🌦️</div>
-  <div class="wg-cell mono">16/5 🌦️</div>
+  <div class="wg-cell mono">17/6<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">17/6<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">16/6<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">16/6<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">16/5<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">16/5<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">15/5<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">16/5<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">가르미<br>슈파르<br>텐키르<br>헨</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
-  <div class="wg-cell mono">22/10 🌧️</div>
-  <div class="wg-cell mono">21/10 🌦️</div>
-  <div class="wg-cell mono wg-visit">20/10 🌦️</div>
-  <div class="wg-cell mono">20/10 🌧️</div>
-  <div class="wg-cell mono">20/10 🌦️</div>
-  <div class="wg-cell mono">20/9 🌦️</div>
-  <div class="wg-cell mono">20/9 🌦️</div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">22/10<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">20/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/9<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">켐프텐</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
-  <div class="wg-cell mono">21/10 ☁️</div>
-  <div class="wg-cell mono">21/10 🌦️</div>
-  <div class="wg-cell mono">20/10 🌦️</div>
-  <div class="wg-cell mono wg-visit">20/10 🌦️</div>
-  <div class="wg-cell mono">20/10 🌦️</div>
-  <div class="wg-cell mono">20/10 🌧️</div>
-  <div class="wg-cell mono">20/9 🌦️</div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/10<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">20/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/10<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/9<span class="wx-icon">🌦️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">티티제</div>
-  <div class="wg-cell mono">19/9 ☁️</div>
-  <div class="wg-cell mono">18/8 🌧️</div>
-  <div class="wg-cell mono">18/8 🌦️</div>
-  <div class="wg-cell mono">18/8 🌧️</div>
-  <div class="wg-cell mono wg-visit">18/8 🌧️</div>
-  <div class="wg-cell mono">18/8 🌧️</div>
-  <div class="wg-cell mono">17/8 🌧️</div>
-  <div class="wg-cell mono">17/7 🌧️</div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">18/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">18/8<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">18/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">18/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">18/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">17/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">17/7<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">프라이<br>부르크</div>
-  <div class="wg-cell mono">22/12 ☁️</div>
-  <div class="wg-cell mono">21/12 ☁️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono wg-visit">21/12 🌦️</div>
-  <div class="wg-cell mono wg-visit">21/11 🌧️</div>
-  <div class="wg-cell mono">21/11 🌧️</div>
-  <div class="wg-cell mono">21/11 🌧️</div>
+  <div class="wg-cell mono">22/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono wg-visit">21/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">트리베<br>르크</div>
-  <div class="wg-cell mono">19/9 ☁️</div>
-  <div class="wg-cell mono">19/9 ☁️</div>
-  <div class="wg-cell mono">18/9 🌦️</div>
-  <div class="wg-cell mono">18/9 🌧️</div>
-  <div class="wg-cell mono">18/9 🌧️</div>
-  <div class="wg-cell mono wg-visit">18/8 🌧️</div>
-  <div class="wg-cell mono">18/8 🌧️</div>
-  <div class="wg-cell mono">18/8 🌧️</div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">19/9<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">18/9<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">18/9<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">18/9<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">18/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">18/8<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">18/8<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">메칭겐</div>
-  <div class="wg-cell mono">22/12 ☁️</div>
-  <div class="wg-cell mono">22/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">20/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono wg-visit">21/12 🌧️</div>
-  <div class="wg-cell mono wg-visit">20/12 🌧️</div>
-  <div class="wg-cell mono">21/11 🌧️</div>
+  <div class="wg-cell mono">22/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">22/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">20/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">하이델<br>베르크</div>
-  <div class="wg-cell mono">22/13 🌤️</div>
-  <div class="wg-cell mono">21/13 ☁️</div>
-  <div class="wg-cell mono">21/13 🌦️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono wg-visit">20/12 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
+  <div class="wg-cell mono">22/13<span class="wx-icon">🌤️</span></div>
+  <div class="wg-cell mono">21/13<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/13<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">20/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">뤼데스<br>하임</div>
-  <div class="wg-cell mono">21/13 ☁️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono wg-visit">20/11 ☁️</div>
-  <div class="wg-cell mono wg-visit">20/11 ☁️</div>
+  <div class="wg-cell mono">21/13<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">20/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono wg-visit">20/11<span class="wx-icon">☁️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">비스바<br>덴</div>
-  <div class="wg-cell mono">21/12 ☁️</div>
-  <div class="wg-cell mono">21/12 🌧️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">21/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono wg-visit">20/11 ☁️</div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">20/11<span class="wx-icon">☁️</span></div>
   <div class="wg-cell wg-na">–</div>
   <div class="wg-city">프랑크<br>푸르트</div>
-  <div class="wg-cell mono wg-visit">21/13 ☁️</div>
-  <div class="wg-cell mono">21/12 ☁️</div>
-  <div class="wg-cell mono">21/12 🌦️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">21/11 ☁️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono">20/11 🌧️</div>
-  <div class="wg-cell mono wg-visit">20/11 ☁️</div>
+  <div class="wg-cell mono wg-visit">21/13<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">21/12<span class="wx-icon">🌦️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">21/11<span class="wx-icon">☁️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono">20/11<span class="wx-icon">🌧️</span></div>
+  <div class="wg-cell mono wg-visit">20/11<span class="wx-icon">☁️</span></div>
   <div class="wg-cell wg-na">–</div>
         </div>
       </div>
