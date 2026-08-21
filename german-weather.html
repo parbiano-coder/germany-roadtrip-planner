@@ -130,21 +130,15 @@
   table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:480px; }
   @media (max-width:520px){ table{ min-width:0; } th,td{ padding:0.5rem 0.5rem; font-size:0.82rem; } }
   .apps-table th:last-child, .apps-table td:last-child{ white-space:nowrap; width:1%; }
-  .weather-matrix{ min-width:0; font-size:0.76rem; table-layout:fixed; }
-  .weather-matrix th, .weather-matrix td{ padding:0.34rem 0.3rem; }
-  .weather-matrix th{ text-align:center; white-space:nowrap; font-size:0.62rem; }
-  .weather-matrix th:first-child{ text-align:left; }
-  .weather-matrix td.wx-cell{ text-align:center; white-space:nowrap; letter-spacing:-0.02em; }
+  .weather-matrix{ min-width:920px; }
+  .weather-matrix th{ text-align:center; white-space:nowrap; }
+  .weather-matrix td.wx-cell{ text-align:center; white-space:nowrap; }
   .weather-matrix td.wx-na{ text-align:center; color:var(--ink-soft); }
-  .weather-matrix td.wx-city{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; font-size:0.72rem; white-space:nowrap; position:sticky; left:0; background:var(--surface); }
+  .weather-matrix td.wx-city{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; font-weight:700; white-space:normal; max-width:100px; line-height:1.25; position:sticky; left:0; background:var(--surface); }
   .weather-matrix tr.wx-anchor td{ background:var(--route-soft); }
   .weather-matrix tr.wx-anchor td.wx-city{ background:var(--route-soft); }
-  .weather-matrix td.wx-visit{ background:var(--sign-soft); color:var(--sign); font-weight:800; }
-  @media (max-width:640px){
-    .weather-matrix{ font-size:0.68rem; }
-    .weather-matrix th, .weather-matrix td{ padding:0.28rem 0.22rem; }
-    .weather-matrix td.wx-city{ font-size:0.64rem; }
-  }
+  .weather-matrix td.wx-visit{ background:var(--sign); color:#fff; font-weight:800; }
+  @media (max-width:520px){ .weather-matrix{ min-width:0; } }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
   td.mono{ color:var(--route); font-weight:700; }
