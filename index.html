@@ -4225,22 +4225,22 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     bamberg: [49.89, 10.89, '밤베르크 (선택)'],
     nuernberg: [49.45, 11.08, '뉘른베르크'],
     muenchen: [48.14, 11.58, '뮌헨'],
-    allianzArena: [48.2188, 11.6236, '알리안츠 아레나'],
+    allianzArena: [48.2188, 11.6236, '알리안츠 아레나', null, 'top'],
     fuessen: [47.57, 10.70, '퓌센'],
-    oberammergau: [47.60, 11.07, '오버아머가우'],
-    ettal: [47.58, 11.10, '에탈'],
+    oberammergau: [47.60, 11.07, '오버아머가우', null, 'top'],
+    ettal: [47.58, 11.10, '에탈', null, 'bottom'],
     garmisch: [47.49, 11.09, '가르미슈(파르트나흐클람)'],
     kempten: [47.73, 10.32, '켐프텐'],
     bodensee: [47.77, 9.17, '보덴 호수 (선택 경로)'],
     titisee: [47.92, 8.15, '티티제'],
-    freiburg: [47.995, 7.85, '프라이부르크'],
+    freiburg: [47.995, 7.85, '프라이부르크', null, 'left'],
     villingen: [48.06, 8.49, '필링겐슈베닝겐(블랙 포레스트)', '필링겐슈베닝겐(블랙 포레스트)'],
     triberg: [48.1263, 8.2313, '트리베르크 · 뻐꾸기시계 원조마을'],
     metzingen: [48.54, 9.28, '메칭겐'],
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
     heidelberg: [49.41, 8.71, '하이델베르크'],
     bernkastel: [49.92, 7.07, '베른카슈텔쿠에스 (선택)'],
-    ruedesheim: [49.98, 7.91, '뤼데스하임'],
+    ruedesheim: [49.98, 7.91, '뤼데스하임', null, 'left'],
     trechtingshausen: [49.97, 7.86, 'Trechtingshausen · 숙박 · ChristRose'],
     wiesbaden: [50.08, 8.24, '비스바덴'],
     fraEnd: [50.11, 8.68, '프랑크푸르트 공항']
@@ -4396,7 +4396,9 @@ window.bindHoverInfo = function(layer, html, baseRadius){
         fillColor: '#0b3c6e', fillOpacity: 0.95
       }).addTo(map).bindPopup('<b>' + p[2] + '</b>' + (s.leg ? '<br>' + s.leg : ''));
       window.bindHoverInfo(stopM, '<b>' + p[2] + '</b>' + (s.leg ? '<br>' + s.leg : ''), baseR);
-      stopM.bindTooltip(p[3] || shortLabel(p[2]), { permanent: true, direction: 'right', offset: [8, 0], className: 'city-label-tip' });
+      var dir = p[4] || 'right';
+      var offsets = { left: [-8, 0], right: [8, 0], top: [0, -8], bottom: [0, 8] };
+      stopM.bindTooltip(p[3] || shortLabel(p[2]), { permanent: true, direction: dir, offset: offsets[dir] || [8, 0], className: 'city-label-tip' });
     });
   }
 
