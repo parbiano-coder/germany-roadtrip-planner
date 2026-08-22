@@ -386,7 +386,7 @@
     <circle cx="1145" cy="290" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
     <text x="1153.41px" y="305px" style="font-family:'DejaVuSansCondensed', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:18px;;fill:#9a9a9a">Kieferngarten</text>
     <circle cx="1185" cy="250" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
-    <text x="1193.41px" y="265px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:24px;;font-weight:700;fill:#0065ae">Fröttmaning</text>
+    <text x="1210px" y="265px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:24px;font-weight:700;fill:#000">Fröttmaning</text>
     <circle cx="1245" cy="225" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
     <g transform="matrix(0.846667,0,0,0.846667,-77.1864,-1061.87)">
         <text x="1514.19px" y="1484.5px" style="font-family:'DejaVuSansCondensed', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:21.26px;;fill:#9a9a9a">Garching-</text>
