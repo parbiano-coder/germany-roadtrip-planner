@@ -4275,7 +4275,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     freiburg: [47.995, 7.85, '프라이부르크', null, 'left'],
     villingen: [48.06, 8.49, '필링겐슈베닝겐(블랙 포레스트)', '필링겐슈베닝겐(블랙 포레스트)'],
     triberg: [48.1263, 8.2313, '트리베르크 · 뻐꾸기시계 원조마을'],
-    metzingen: [48.54, 9.28, '메칭겐'],
+    metzingen: [48.54, 9.28, '메칭겐', null, 'bottom'],
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
     stuttgartMercedes: [48.7858, 9.2333, '슈투트가르트<br>(벤츠 박물관)'],
     stuttgartPorsche: [48.8345, 9.1510, '슈투트가르트<br>(포르쉐 박물관)'],
@@ -4313,7 +4313,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
     ], branches: [
-      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche'], extraViaDirs:['left','top'] },
+      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche'], extraViaDirs:['right','right'], extraViaOffsets:[[8,22],[8,-22]] },
       { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분', labelDir:'bottom' }
     ]},
     day8: { stops: [
@@ -4439,7 +4439,8 @@ window.bindHoverInfo = function(layer, html, baseRadius){
           .addTo(map).bindPopup('<b>' + vp[2] + '</b> (선택)');
         window.bindHoverInfo(m, '<b>' + vp[2] + '</b> (선택)', 6);
         var dir = (br.extraViaDirs && br.extraViaDirs[vi]) || 'right';
-        m.bindTooltip(vp[2], { permanent: true, direction: dir, offset: viaOffsets[dir] || [8, 0], className: 'city-label-tip' });
+        var off = (br.extraViaOffsets && br.extraViaOffsets[vi]) || viaOffsets[dir] || [8, 0];
+        m.bindTooltip(vp[2], { permanent: true, direction: dir, offset: off, className: 'city-label-tip' });
       });
     });
 
