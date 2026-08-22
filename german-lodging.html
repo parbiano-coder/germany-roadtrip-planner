@@ -1,6 +1,6 @@
-<title>독일 여행 체크리스트 — 7박 8일 로드트립 출발 전 준비물</title>
+<title>독일 여행 숙소 정리 — 7박 8일 로드트립 숙박지 한눈에 보기</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="2026년 9월 19일~26일 독일 렌터카 로드트립 출발 전 체크리스트 (서류·소지품, 차량 인수 당일)">
+<meta name="description" content="2026년 9월 19일~26일 독일 렌터카 로드트립 일자별 숙소 정보 — 주소, 지도, 유형, 주차, 베드타입, 냉장고·전자레인지 유무, 체크인/아웃, 특이사항">
 <style>
   @font-face{
     font-family: 'Paperozi';
@@ -104,7 +104,7 @@
     background:linear-gradient(180deg, var(--bg-soft), var(--bg));
     border-bottom:1px solid var(--line); padding:14.7rem 1.5rem 2.4rem;
   }
-  .hero-inner{ max-width:920px; margin:0 auto; }
+  .hero-inner{ max-width:1180px; margin:0 auto; }
   .hero h1{ font-size:clamp(1.9rem,4.6vw,2.9rem); margin:0.9rem 0 0.7rem; }
   .hero p.sub{ max-width:64ch; color:var(--ink-soft); font-size:1.05rem; margin:0; }
   @media (max-width:640px){
@@ -116,26 +116,38 @@
     section > h2{ font-size:1.2rem; }
     section > p.lede{ font-size:0.86rem; }
   }
-  main{ max-width:920px; margin:0 auto; padding:0 1.5rem; }
-  section{ padding:2.6rem 0; }
+  main{ max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+  section{ padding:2rem 0; }
   section > .eyebrow{ display:block; margin-bottom:0.4rem; }
   section > h2{ font-size:1.5rem; margin:0 0 0.4rem; }
-  section > p.lede{ color:var(--ink-soft); max-width:68ch; margin:0 0 1.4rem; font-size:0.95rem; }
-  footer{ max-width:920px; margin:0 auto; padding:2.4rem 1.5rem 3.5rem; color:var(--ink-soft); font-size:0.85rem; }
+  section > p.lede{ color:var(--ink-soft); max-width:72ch; margin:0 0 1.4rem; font-size:0.95rem; }
 
-  .grid{ display:grid; gap:1.4rem; }
-  .grid.cols-2{ grid-template-columns:repeat(2,1fr); }
-  @media (max-width:640px){ .grid.cols-2{ grid-template-columns:1fr; } }
-  .checklist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.5rem; }
-  .checklist li{
-    display:flex; align-items:center; gap:0.6rem;
-    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-    padding:0.6rem 0.8rem; box-shadow:var(--shadow);
+  /* ---------- Lodging table ---------- */
+  .lodging-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:var(--surface); }
+  table.lodging{ width:100%; min-width:1220px; border-collapse:collapse; font-size:0.84rem; }
+  table.lodging th, table.lodging td{ padding:0.65rem 0.75rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  table.lodging td:nth-child(3), table.lodging td:nth-child(5), table.lodging td:nth-child(7), table.lodging td:nth-child(8){ white-space:nowrap; }
+  table.lodging thead th{
+    background:var(--bg-soft); color:var(--route); font-weight:800;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.74rem; text-transform:uppercase; letter-spacing:0.04em;
+    position:sticky; top:0; z-index:2; white-space:nowrap;
   }
-  .checklist input[type="checkbox"]{ flex:none; width:1.1rem; height:1.1rem; accent-color:var(--route); }
-  .checklist label{ font-size:0.94rem; cursor:pointer; }
-  .checklist li.checked{ opacity:0.55; }
-  .checklist li.checked label{ text-decoration:line-through; }
+  table.lodging tbody tr:hover{ background:var(--bg-soft); }
+  table.lodging td.sticky-col, table.lodging th.sticky-col{
+    position:sticky; left:0; background:var(--surface); z-index:1; box-shadow:1px 0 0 var(--line);
+  }
+  table.lodging thead th.sticky-col{ z-index:3; background:var(--bg-soft); }
+  table.lodging tbody tr:hover td.sticky-col{ background:var(--bg-soft); }
+  table.lodging .name{ font-weight:800; color:var(--ink); }
+  table.lodging .yn-yes{ color:var(--route); font-weight:800; }
+  table.lodging .yn-unknown{ color:var(--ink-soft); }
+  table.lodging .note-warn{ color:#c0392b; font-weight:700; }
+  table.lodging .addr{ font-size:0.8rem; color:var(--ink-soft); }
+  table.lodging .maplink{ font-size:0.78rem; white-space:nowrap; }
+
+  .legend{ display:flex; flex-wrap:wrap; gap:0.5rem 1.2rem; margin:0.8rem 0 0; font-size:0.8rem; color:var(--ink-soft); }
+  .legend b{ color:var(--ink); }
 
   /* ---------- Sticky top cross-page bar ---------- */
   nav.topbar{
@@ -244,9 +256,9 @@
     <div class="topbar-links">
     <a class="topbar-item topbar-item-live" href="german-weather.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11z"/></svg></span><span id="topbarWeather">날씨</span></a>
     <a class="topbar-item" href="german-exchange.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>환율</a>
-    <a class="topbar-item" href="german-lodging.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg></span>숙소</a>
+    <span class="topbar-item is-current"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg></span>숙소</span>
     <a class="topbar-item" href="german-car-guide.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V9.5a1 1 0 0 1 .27-.68l1.8-2A1 1 0 0 1 6.8 6.4h10.4a1 1 0 0 1 .73.42l1.8 2a1 1 0 0 1 .27.68V16"/><rect x="3" y="13" width="18" height="5.5" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg></span>렌터카</a>
-    <span class="topbar-item is-current"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</span>
+    <a class="topbar-item" href="german-checklist.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>체크리스트</a>
     <a class="topbar-item" href="german-emergency.html"><span class="tb-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>비상연락처</a>
     </div>
   </div>
@@ -300,7 +312,6 @@
   }
 })();
 </script>
-
 <script>
 (function(){
   var btn = document.getElementById('photoToggle');
@@ -320,7 +331,7 @@
   <div class="day-roadmap">
     <a class="day-chip" href="index.html#day1"><span class="dc-label">1일차<span class="dc-date">9/19(토)</span></span><span class="dc-city">뷔르츠부르크</span></a>
     <a class="day-chip" href="index.html#day2"><span class="dc-label">2일차<span class="dc-date">9/20(일)</span></span><span class="dc-city">뉘른베르크</span></a>
-    <a class="day-chip" href="index.html#day3"><span class="dc-label">3일차<span class="dc-date">9/21(월)</span></span><span class="dc-city">퓌센</span></a>
+    <a class="day-chip" href="index.html#day3"><span class="dc-label">3일차<span class="dc-date">9/21(월)</span></span><span class="dc-city">뮌헨</span></a>
     <a class="day-chip" href="index.html#day4"><span class="dc-label">4일차<span class="dc-date">9/22(화)</span></span><span class="dc-city">퓌센</span></a>
     <a class="day-chip" href="index.html#day5"><span class="dc-label">5일차<span class="dc-date">9/23(수)</span></span><span class="dc-city">티티제</span></a>
     <a class="day-chip" href="index.html#day6"><span class="dc-label">6일차<span class="dc-date">9/24(목)</span></span><span class="dc-city">프라이부르크</span></a>
@@ -332,75 +343,133 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>출발 전 체크리스트</h1>
-    <p class="sub">체크한 항목은 브라우저에 저장되어 다시 열어도 유지됩니다.</p>
+    <h1>숙소 한눈에 보기</h1>
+    <p class="sub">7박 8일 동안 묵는 6개 숙소를 한 표로 정리했습니다. 표는 좌우로 스크롤됩니다 — 숙소명 열은 고정되어 있어요.</p>
   </div>
 </header>
 
 <main>
   <section>
-    <div class="grid cols-2">
-      <div>
-        <h4 style="font-family:'Paperozi',-apple-system,'Segoe UI','Pretendard','Noto Sans KR',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem; color:var(--sign); margin-bottom:0.6rem;">서류 &amp; 소지품</h4>
-        <ul class="checklist" id="checklist-docs"></ul>
-      </div>
-      <div>
-        <h4 style="font-family:'Paperozi',-apple-system,'Segoe UI','Pretendard','Noto Sans KR',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem; color:var(--sign); margin-bottom:0.6rem;">차량 인수 당일</h4>
-        <ul class="checklist" id="checklist-pickup"></ul>
-      </div>
+    <span class="eyebrow">Lodging Overview</span>
+    <h2>일자별 숙소 정보</h2>
+    <p class="lede">체크인·체크아웃 시간과 주요 특이사항(빨간 글씨)은 현장에서 문제가 될 수 있는 항목이니 출발 전 다시 한번 확인하세요. 냉장고·전자레인지는 숙소 측에서 명시적으로 안내한 경우만 "있음"으로 표시했고, 언급이 없는 항목은 "미기재"입니다(없다는 뜻이 아닙니다).</p>
+    <div class="lodging-table-wrap">
+      <table class="lodging">
+        <thead>
+          <tr>
+            <th class="sticky-col">일차 · 숙소</th>
+            <th>주소</th>
+            <th>유형</th>
+            <th>주차장</th>
+            <th>요금</th>
+            <th>베드타입</th>
+            <th>냉장고</th>
+            <th>전자레인지</th>
+            <th>기타 주방시설</th>
+            <th>체크인 / 체크아웃</th>
+            <th>주요 특이사항</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sticky-col">
+              <div class="name">1일차 · Wirtshaus &amp; Hotel Zur Alten Brauerei Zapf</div>
+              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+%26+Hotel+Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">구글 지도</a></div>
+            </td>
+            <td class="addr">Kirchplatz 2, 97292 위팅엔</td>
+            <td>호텔</td>
+            <td><span class="yn-yes">있음</span> · 안뜰/교회 주변</td>
+            <td>무료</td>
+            <td>트리플룸(전용 욕실)</td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td>–(조식 €15/인, 불포함)</td>
+            <td>체크인 14:00–21:00(9/19)</td>
+            <td><span class="note-warn">예상 도착 시간 미리 연락 요망</span><br>☎ +49 9369 8221</td>
+          </tr>
+          <tr>
+            <td class="sticky-col">
+              <div class="name">2일차 · Design Wohnung auf 2 Ebenen</div>
+              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Sophienstrasse+9+90478+Nuernberg" target="_blank" rel="noopener">구글 지도</a></div>
+            </td>
+            <td class="addr">Sophienstraße 9(뒤채 2층), 90478 뉘른베르크</td>
+            <td>아파트</td>
+            <td><span class="yn-yes">있음</span> · 인근 공영주차장</td>
+            <td>무료</td>
+            <td>2베드룸</td>
+            <td><span class="yn-yes">있음</span></td>
+            <td><span class="yn-yes">있음</span></td>
+            <td>전기주전자</td>
+            <td>체크인 15:00–23:00(9/20)</td>
+            <td><span class="note-warn">셀프 체크인</span> — 뒷편 안뜰(검은 대문)로 진입, 기둥 오른쪽 열쇠보관함 01·02번<br>☎ +49 175 1175713</td>
+          </tr>
+          <tr>
+            <td class="sticky-col">
+              <div class="name">3~4일차(2박) · TREFF APARTMENTS Füssen</div>
+              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=TREFF+APARTMENTS+Fuessen+Hintere+Gasse+19" target="_blank" rel="noopener">구글 지도</a></div>
+            </td>
+            <td class="addr">Hintere Gasse 19, 87629 퓌센</td>
+            <td>아파트</td>
+            <td><span class="yn-yes">있음</span> · <a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a>(도보 2분)</td>
+            <td>유료(€15/1일)</td>
+            <td>1베드룸</td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td>–</td>
+            <td>체크인 15:00(9/21) → 체크아웃 12:00(9/23)</td>
+            <td><span class="note-warn">투숙자 전원 성·이름·생년월일 사전 통보 필요</span><br>☎ +49 152 06198298</td>
+          </tr>
+          <tr>
+            <td class="sticky-col">
+              <div class="name">5일차 · Hotel Kühler Krug</div>
+              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Kuehler+Krug+Torplatz+1+Freiburg" target="_blank" rel="noopener">구글 지도</a></div>
+            </td>
+            <td class="addr">Torplatz 1, 79100 프라이부르크 임 브라이스가우</td>
+            <td>호텔</td>
+            <td><span class="yn-yes">있음</span> · 인근 공영주차장</td>
+            <td>무료</td>
+            <td>트리플룸</td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td>–(조식 포함)</td>
+            <td>체크인 14:00–<span class="note-warn">18:00</span>(9/23)</td>
+            <td><span class="note-warn">⚠️ 체크인 마감 이르니 일정 서둘러 마무리</span><br>☎ +49 761 29103</td>
+          </tr>
+          <tr>
+            <td class="sticky-col">
+              <div class="name">6일차 · 아파트 메칭겐 시티</div>
+              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Schuetzenstrasse+41+72555+Metzingen" target="_blank" rel="noopener">구글 지도</a></div>
+            </td>
+            <td class="addr">Schützenstr. 41, 72555 메칭겐</td>
+            <td>아파트</td>
+            <td><span class="yn-yes">있음</span> · 숙소 전용</td>
+            <td>무료</td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-yes">있음</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td>전기주전자·쿡탑</td>
+            <td>체크인 15:00–23:30(9/24)</td>
+            <td><span class="note-warn">도착 1시간 전 전화 필수</span><br>☎ +49 172 4951197</td>
+          </tr>
+          <tr>
+            <td class="sticky-col">
+              <div class="name">7일차 · ChristRose</div>
+              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Sonnenstrasse+8+55413+Trechtingshausen" target="_blank" rel="noopener">구글 지도</a></div>
+            </td>
+            <td class="addr">Sonnenstraße 8(1층), 55413 Trechtingshausen</td>
+            <td>아파트</td>
+            <td><span class="yn-yes">있음</span></td>
+            <td>무료</td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-yes">있음</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td>전기주전자·커피머신</td>
+            <td>체크인 16:00–21:30(9/25)</td>
+            <td>뤼데스하임 구시가에서 8.6km 떨어짐(도보권 아님)</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <p class="legend"><b>참고</b> — "미기재"는 예약 정보에 해당 항목 언급이 없었다는 뜻으로, 실제로는 있을 수도 있습니다. 현장에서 필요하면 호스트에게 미리 문의하세요.</p>
   </section>
 </main>
-
-<footer>
-  체크 상태는 이 브라우저에만 저장됩니다(다른 기기·브라우저와 공유되지 않음).
-</footer>
-
-<script>
-(function(){
-  var docs = [
-    "여권 (유효기간 6개월 이상)",
-    "국제운전면허증",
-    "한국 운전면허증 원본",
-    "여행자보험 가입 확인서",
-    "렌터카 예약 확인서",
-    "예치금용 신용카드",
-    "해외 로밍 유심",
-    "멀티 전원 어댑터 (Type F)"
-  ];
-  var pickup = [
-    "차량 외관 사진/영상 촬영",
-    "연료 타입 확인 (디젤/가솔린)",
-    "연료 정책(Full-to-Full) 확인",
-    "삼각대 · 형광조끼 · 구급함 비치 확인",
-    "환경 스티커(Umweltplakette) 부착 확인",
-    "네비게이션 목적지 한글/영문 병기 입력법 확인",
-    "계약서상 보험 자기부담금 재확인"
-  ];
-
-  function buildList(id, items, prefix){
-    var ul = document.getElementById(id);
-    items.forEach(function(text, i){
-      var key = prefix + i;
-      var li = document.createElement('li');
-      var cb = document.createElement('input');
-      cb.type = 'checkbox';
-      cb.id = key;
-      var saved = localStorage.getItem(key);
-      if(saved === '1'){ cb.checked = true; li.className = 'checked'; }
-      var label = document.createElement('label');
-      label.htmlFor = key;
-      label.textContent = text;
-      cb.addEventListener('change', function(){
-        li.classList.toggle('checked', cb.checked);
-        localStorage.setItem(key, cb.checked ? '1' : '0');
-      });
-      li.appendChild(cb);
-      li.appendChild(label);
-      ul.appendChild(li);
-    });
-  }
-  buildList('checklist-docs', docs, 'de-docs-');
-  buildList('checklist-pickup', pickup, 'de-pickup-');
-})();
-</script>
