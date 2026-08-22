@@ -401,7 +401,8 @@
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
   }
   .combo-group .landmark-card{ grid-column:span 1; }
-  @media (max-width:900px){ .combo-group{ grid-column:span 2; } }
+  .combo-group.combo-4{ grid-column:1 / -1; grid-template-columns:repeat(4,1fr); }
+  @media (max-width:900px){ .combo-group{ grid-column:span 2; } .combo-group.combo-4{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px){
     .combo-group{ grid-column:1 / -1; grid-template-columns:1fr; }
     .combo-group .landmark-card{ grid-column:1 / -1; }
@@ -3674,23 +3675,41 @@ document.addEventListener('DOMContentLoaded', function(){
         </ol>
       </div>
       <div class="landmark-grid">
-      <div class="landmark-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Niederwalddenkmal_ohne_Personen.jpg/500px-Niederwalddenkmal_ohne_Personen.jpg" alt="뤼데스하임 케이블카(Seilbahn) · 니더발트 기념비(Niederwalddenkmal)" loading="lazy">
+      <div class="combo-group combo-4">
+        <span class="combo-group-label">🚡 케이블카로 오르는 니더발트 언덕</span>
+        <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%BCdesheim%20am%20Rhein%20Seilbahn%20(01).jpg?width=500" alt="뤼데스하임 케이블카(Seilbahn)" loading="lazy">
         <div class="landmark-body">
-        <h3>뤼데스하임 케이블카(Seilbahn) · 니더발트 기념비(Niederwalddenkmal)</h3>
-        <p class="landmark-desc">뤼데스하임 케이블카를 타고 오르면 만나는 거대한 게르마니아 여신상과 라인강 전망입니다. 1954년 처음 개통(19세기 말엔 톱니바퀴 열차가 같은 구간을 다녔음)됐고, 2005년 곤돌라를 새로 교체했으며 2022년 계곡역(승강장)을 무장애 시설로 재단장했습니다.</p>
-        <p class="landmark-desc">오르는 약 8분 내내 발 아래로 뤼데스하이머 베르크(Rüdesheimer Berg) 급경사 포도밭이 펼쳐지는데, 로제넥(Roseneck)·로트란트(Rottland)·슐로스베르크(Schlossberg) 등 라인가우에서 손꼽히는 리슬링 명품 밭들입니다. 정상에서는 기념비 외에도 오스타인(Ostein) 관목숲 산책로가 이어집니다.</p>
+        <h3>뤼데스하임 케이블카(Seilbahn)</h3>
+        <p class="landmark-desc">뤼데스하임에서 니더발트 언덕까지 약 8분간 이어지는 케이블카. 1954년 처음 개통(19세기 말엔 톱니바퀴 열차가 같은 구간을 다녔음)됐고, 2005년 곤돌라를 새로 교체했으며 2022년 계곡역(승강장)을 무장애 시설로 재단장했습니다.</p>
         <div class="landmark-meta">9월 월–금 09:30–18:00, 토·일 09:30–19:00 · <span class="landmark-price">왕복 €12 · 편도 €7.50</span> · <a href="https://www.seilbahn-ruedesheim.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Seilbahn+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 드로셀가세·구시가 도보권(P10 Feldtor) · 유료(시간당 €2, 1일 최대 €16)</div>
+        </div>
+        </div>
+        <div class="landmark-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Niederwalddenkmal_ohne_Personen.jpg/500px-Niederwalddenkmal_ohne_Personen.jpg" alt="니더발트 기념비(Niederwalddenkmal)" loading="lazy">
+        <div class="landmark-body">
+        <h3>니더발트 기념비(Niederwalddenkmal)</h3>
+        <p class="landmark-desc">케이블카를 타고 오르면 만나는 거대한 게르마니아 여신상. 라인강과 뤼데스하임 시가지를 한눈에 내려다보는 전망대 역할도 겸합니다.</p>
+        <div class="landmark-meta"><span class="landmark-price">별도 입장료 없음(케이블카 요금에 포함)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Niederwalddenkmal" target="_blank" rel="noopener">지도</a></div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>1871년 독일 통일을 기념해 세운 상징물. 라인강을 내려다보는 언덕 위에서, 통일 독일제국이 품었던 자신감을 그대로 느낄 수 있습니다.</div>
         </div>
-      </div>
-      <div class="landmark-card">
+        </div>
+        <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vineyards%20and%20Gondola%20Lift%2C%20R%C3%BCdesheim%2020140928%201.jpg?width=500" alt="케이블카 아래로 펼쳐지는 뤼데스하이머 베르크 포도밭" loading="lazy">
         <div class="landmark-body">
         <h3>뤼데스하이머 베르크(Rüdesheimer Berg) 포도밭</h3>
         <p class="landmark-desc">케이블카가 지나는 급경사면 전체가 라인가우 최고 등급 리슬링 밭입니다. 로제넥·로트란트·슐로스베르크 세 구획이 나란히 이어져 있어, 곤돌라 창밖으로 계단식 포도나무 줄과 저 멀리 라인강이 함께 내려다보입니다 — 특히 9월 말 수확철엔 포도송이가 그대로 보일 정도.</p>
         <div class="landmark-meta"><span class="landmark-price">별도 입장료 없음(케이블카 요금에 포함)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Ruedesheimer+Berg+Weinberge" target="_blank" rel="noopener">지도</a></div>
+        </div>
+        </div>
+        <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Osteinscher%20Niederwald%2C%20Rossel%20R%C3%BCdesheim%2020200807%20001.jpg?width=500" alt="오스타인 관목숲 산책로와 로셀" loading="lazy">
+        <div class="landmark-body">
+        <h3>오스타인(Ostein) 관목숲 산책로</h3>
+        <p class="landmark-desc">니더발트 기념비 뒤로 이어지는 숲길. 오스타인 백작이 1774년 지은 작은 정자 '로셀(Rossel)'까지 걸어볼 수 있고, 더 가면 아스만스하우젠(Assmannshausen) 방향으로도 트레일이 이어집니다.</p>
+        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Rossel+Niederwald+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
+        </div>
         </div>
       </div>
       <div class="landmark-card">
@@ -3710,6 +3729,22 @@ document.addEventListener('DOMContentLoaded', function(){
         <p class="landmark-desc">브뢰머호프 안에 있는 자동연주 악기 박물관. 400여 점의 오르골·자동피아노 등을 45분 가이드 투어로 직접 연주해 들려줍니다.</p>
         <div class="landmark-meta">3–10월 매일 10:00–17:00 · 11–12월 09:00–17:00 · <span class="landmark-price">성인 €11~12 · 학생 €5.50~6(출처마다 소폭 차이, 현장 확인 권장)</span> · <a href="https://smmk.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Siegfrieds+Mechanisches+Musikkabinett+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 드로셀가세·구시가 도보권(P10 Feldtor) · 유료(시간당 €2, 1일 최대 €16)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Br%C3%B6mserburg%20R%C3%BCdesheim%202021-11.jpg?width=500" alt="브뢰머부르크(Brömserburg)" loading="lazy">
+        <div class="landmark-body">
+        <h3>브뢰머부르크(Brömserburg)</h3>
+        <p class="landmark-desc">라인강변에 남은 가장 오래된 성 중 하나로, 일부는 1000년경까지 거슬러 올라갑니다. 안에 있던 라인가우 와인박물관은 2017년 폐관했고, 2018년부터 시민 조합이 임차해 지금은 정원에서 간간이 와인·음식 행사만 열립니다.</p>
+        <div class="landmark-meta">⚠️ 상시 개방 아님 — 금~일 이벤트 시에만 개방(현장 확인 권장) · <span class="landmark-price">무료(정원)</span> · <a href="https://www.broemserburg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Broemserburg+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 드로셀가세·구시가 도보권(P10 Feldtor) · 유료(시간당 €2, 1일 최대 €16)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <div class="landmark-body">
+        <h3>아스바흐 방문자센터(Asbach Besucherzentrum)</h3>
+        <p class="landmark-desc">독일 대표 브랜디 브랜드 아스바흐의 증류소 겸 방문자센터. 매주 토요일 10:00 가이드 투어(브랜디 2종+리큐어 1종 시음 포함)는 최소 3일 전 홈페이지 예약이 필요합니다.</p>
+        <div class="landmark-meta">3–12월 화–토 09:00–17:00 · <span class="landmark-price">방문자센터 무료 입장, 가이드 투어는 유료(가격 홈페이지 확인)</span> · <a href="https://www.asbach.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Asbach+Besucherzentrum+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
         </div>
       </div>
       </div>
