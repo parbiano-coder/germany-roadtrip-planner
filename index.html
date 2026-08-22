@@ -4483,11 +4483,20 @@ window.bindHoverInfo = function(layer, html, baseRadius){
 <script>
 (function(){
   Array.prototype.slice.call(document.querySelectorAll('a[href^="#day"]')).forEach(function(a){
-    a.addEventListener('click', function(){
-      var target = document.querySelector(a.getAttribute('href'));
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      var target = document.querySelector(href);
       if(!target) return;
       var det = target.tagName === 'DETAILS' ? target : target.closest('details.day');
       if(det){ det.open = true; }
+      // 페이지가 매우 길어 smooth 스크롤이 1~2초 넘게 걸려 잘못된 위치에 멈춘 것처럼 보일 수 있어, day 이동만 즉시 점프로 처리
+      // (scrollIntoView의 behavior:'auto'는 CSS scroll-behavior:smooth를 그대로 따르므로, 인라인 스타일로 잠시 덮어써야 함)
+      e.preventDefault();
+      history.pushState(null, '', href);
+      var prevBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      document.documentElement.style.scrollBehavior = prevBehavior;
     });
   });
 
