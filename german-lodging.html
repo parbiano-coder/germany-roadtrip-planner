@@ -123,8 +123,8 @@
   section > p.lede{ color:var(--ink-soft); max-width:72ch; margin:0 0 1.4rem; font-size:0.95rem; }
 
   /* ---------- Lodging table (transposed: days as columns, fields as rows) ---------- */
-  .lodging-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:var(--surface); }
-  table.lodging{ width:100%; min-width:1080px; border-collapse:collapse; font-size:0.84rem; }
+  .lodging-table-wrap{ overflow:auto; max-height:75vh; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:var(--surface); }
+  table.lodging{ width:100%; min-width:1080px; border-collapse:separate; border-spacing:0; font-size:0.84rem; }
   table.lodging th, table.lodging td{ padding:0.65rem 0.75rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
   table.lodging thead th{
     background:var(--bg-soft); color:var(--route); font-weight:800;
@@ -381,21 +381,21 @@
           </tr>
           <tr>
             <th class="row-label">주소</th>
-            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+%26+Hotel+Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">Kirchplatz 2, 97292 위팅엔</a></td>
-            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Sophienstrasse+9+90478+Nuernberg" target="_blank" rel="noopener">Sophienstraße 9(뒤채 2층), 90478 뉘른베르크</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=49.7941472,9.7296395" target="_blank" rel="noopener">Kirchplatz 2, 97292 위팅엔</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=49.4452239,11.0939706" target="_blank" rel="noopener">Sophienstraße 9(뒤채 2층), 90478 뉘른베르크</a></td>
             <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=TREFF+APARTMENTS+Fuessen+Hintere+Gasse+19" target="_blank" rel="noopener">Hintere Gasse 19, 87629 퓌센</a></td>
-            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Kuehler+Krug+Torplatz+1+Freiburg" target="_blank" rel="noopener">Torplatz 1, 79100 프라이부르크 임 브라이스가우</a></td>
-            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Schuetzenstrasse+41+72555+Metzingen" target="_blank" rel="noopener">Schützenstr. 41, 72555 메칭겐</a></td>
-            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Sonnenstrasse+8+55413+Trechtingshausen" target="_blank" rel="noopener">Sonnenstraße 8(1층), 55413 Trechtingshausen</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=47.9661643,7.8549722" target="_blank" rel="noopener">Torplatz 1, 79100 프라이부르크 임 브라이스가우</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=48.5406779,9.2714463" target="_blank" rel="noopener">Schützenstr. 41, 72555 메칭겐</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=50.0110129,7.8465603" target="_blank" rel="noopener">Sonnenstraße 8(1층), 55413 Trechtingshausen</a></td>
           </tr>
           <tr>
             <th class="row-label">유형</th>
             <td>호텔</td>
-            <td>아파트</td>
-            <td>아파트</td>
+            <td>아파트<br>(2베드룸)</td>
+            <td>아파트<br>(1베드룸)</td>
             <td>호텔</td>
             <td>아파트</td>
-            <td>아파트</td>
+            <td>아파트<br>(2베드룸)</td>
           </tr>
           <tr>
             <th class="row-label">주차</th>
@@ -410,10 +410,10 @@
             <th class="row-label">베드타입</th>
             <td>초대형 더블침대 1개<br>싱글침대 1개</td>
             <td>대형 더블침대 1개<br>싱글침대 1개</td>
-            <td>1베드룸<br>대형더블침대 1개<br>더블침대 1개</td>
+            <td>대형더블침대 1개<br>더블침대 1개</td>
             <td>대형더블침대 1개<br>싱글침대 1개</td>
             <td>더블침대 1개<br>싱글침대 2개</td>
-            <td>2베드룸<br>대형더블침대 1개<br>더블침대 1개</td>
+            <td>대형더블침대 1개<br>더블침대 1개</td>
           </tr>
           <tr>
             <th class="row-label">면적</th>
@@ -426,36 +426,36 @@
           </tr>
           <tr>
             <th class="row-label">냉장고</th>
-            <td><span class="yn-unknown">미기재</span></td>
+            <td>–</td>
             <td><span class="yn-yes">있음</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
+            <td>–</td>
+            <td>–</td>
             <td><span class="yn-yes">있음</span></td>
             <td><span class="yn-yes">있음</span></td>
           </tr>
           <tr>
             <th class="row-label">전자레인지</th>
-            <td><span class="yn-unknown">미기재</span></td>
+            <td>–</td>
             <td><span class="yn-yes">있음</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
           </tr>
           <tr>
             <th class="row-label">기타 주방시설</th>
             <td>–</td>
-            <td>전기주전자·커피머신·쿡탑</td>
+            <td>전기주전자<br>커피머신</td>
             <td>–</td>
             <td>–</td>
-            <td>전기주전자·쿡탑·토스터기</td>
-            <td>전기주전자·쿡탑·토스터기·커피머신</td>
+            <td>전기주전자<br>쿡탑<br>토스터기</td>
+            <td>전기주전자<br>쿡탑<br>토스터기<br>커피머신</td>
           </tr>
           <tr>
             <th class="row-label">체크인</th>
             <td>14:00–21:00</td>
             <td>15:00–23:00</td>
-            <td>15:00</td>
+            <td>15:00–23:00</td>
             <td>14:00–<span class="note-warn">18:00</span></td>
             <td>15:00–23:30</td>
             <td>16:00–21:30</td>
@@ -471,11 +471,11 @@
           </tr>
           <tr>
             <th class="row-label">비고</th>
-            <td><span class="note-warn">예상 도착 시간 미리 연락 요망</span></td>
-            <td><span class="note-warn">셀프 체크인</span> — 뒷편 안뜰(검은 대문)로 진입, 기둥 오른쪽 열쇠보관함 01·02번</td>
-            <td><span class="note-warn">투숙자 전원 성·이름·생년월일 사전 통보 필요</span></td>
-            <td><span class="note-warn">⚠️ 체크인 마감 이르니 일정 서둘러 마무리</span></td>
-            <td><span class="note-warn">도착 1시간 전 전화 필수</span></td>
+            <td>예상 도착 시간 미리 연락 요망</td>
+            <td>셀프 체크인 — 뒷편 안뜰(검은 대문)로 진입, 기둥 오른쪽 열쇠보관함 01·02번</td>
+            <td>투숙자 전원 성·이름·생년월일 사전 통보 필요</td>
+            <td>체크인 마감 이르니 일정 서둘러 마무리</td>
+            <td>도착 1시간 전 전화 필수</td>
             <td>–</td>
           </tr>
           <tr>
@@ -490,6 +490,5 @@
         </tbody>
       </table>
     </div>
-    <p class="legend"><b>참고</b> — "미기재"는 예약 정보에 해당 항목 언급이 없었다는 뜻으로, 실제로는 있을 수도 있습니다. 현장에서 필요하면 호스트에게 미리 문의하세요.</p>
   </section>
 </main>
