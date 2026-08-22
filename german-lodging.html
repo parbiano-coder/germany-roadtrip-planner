@@ -122,21 +122,28 @@
   section > h2{ font-size:1.5rem; margin:0 0 0.4rem; }
   section > p.lede{ color:var(--ink-soft); max-width:72ch; margin:0 0 1.4rem; font-size:0.95rem; }
 
-  /* ---------- Lodging table ---------- */
+  /* ---------- Lodging table (transposed: days as columns, fields as rows) ---------- */
   .lodging-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:var(--surface); }
-  table.lodging{ width:100%; min-width:1220px; border-collapse:collapse; font-size:0.84rem; }
+  table.lodging{ width:100%; min-width:1080px; border-collapse:collapse; font-size:0.84rem; }
   table.lodging th, table.lodging td{ padding:0.65rem 0.75rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
-  table.lodging td:nth-child(3), table.lodging td:nth-child(5), table.lodging td:nth-child(7), table.lodging td:nth-child(8){ white-space:nowrap; }
   table.lodging thead th{
     background:var(--bg-soft); color:var(--route); font-weight:800;
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-size:0.74rem; text-transform:uppercase; letter-spacing:0.04em;
-    position:sticky; top:0; z-index:2; white-space:nowrap;
+    position:sticky; top:0; z-index:2; text-align:center;
   }
+  table.lodging thead th .d-num{ font-size:0.82rem; }
   table.lodging tbody tr:hover{ background:var(--bg-soft); }
-  table.lodging td.sticky-col, table.lodging th.sticky-col{
-    position:sticky; left:0; background:var(--surface); z-index:1; box-shadow:1px 0 0 var(--line);
+  table.lodging th.row-label{
+    position:sticky; left:0; background:var(--bg-soft); z-index:1; box-shadow:1px 0 0 var(--line);
+    color:var(--route); font-weight:800;
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    font-size:0.76rem; white-space:nowrap;
   }
+  table.lodging thead th.row-label{ z-index:3; text-align:left; }
+  table.lodging tbody tr:hover th.row-label{ background:var(--sign-soft); }
+  table.lodging td{ min-width:11rem; }
+  table.lodging .d-num{ font-weight:800; color:var(--route); font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; }
+  table.lodging .d-date{ font-size:0.74rem; color:var(--ink-soft); font-family:"SF Mono","Consolas",monospace; white-space:nowrap; }
   table.lodging thead th.sticky-col{ z-index:3; background:var(--bg-soft); }
   table.lodging tbody tr:hover td.sticky-col{ background:var(--bg-soft); }
   table.lodging .name{ font-weight:800; color:var(--ink); }
@@ -344,128 +351,132 @@
 <header class="hero">
   <div class="hero-inner">
     <h1>숙소 한눈에 보기</h1>
-    <p class="sub">7박 8일 동안 묵는 6개 숙소를 한 표로 정리했습니다. 표는 좌우로 스크롤됩니다 — 숙소명 열은 고정되어 있어요.</p>
   </div>
 </header>
 
 <main>
   <section>
-    <span class="eyebrow">Lodging Overview</span>
-    <h2>일자별 숙소 정보</h2>
-    <p class="lede">체크인·체크아웃 시간과 주요 특이사항(빨간 글씨)은 현장에서 문제가 될 수 있는 항목이니 출발 전 다시 한번 확인하세요. 냉장고·전자레인지는 숙소 측에서 명시적으로 안내한 경우만 "있음"으로 표시했고, 언급이 없는 항목은 "미기재"입니다(없다는 뜻이 아닙니다).</p>
     <div class="lodging-table-wrap">
       <table class="lodging">
         <thead>
           <tr>
-            <th class="sticky-col">일차 · 숙소</th>
-            <th>주소</th>
-            <th>유형</th>
-            <th>주차장</th>
-            <th>요금</th>
-            <th>베드타입</th>
-            <th>냉장고</th>
-            <th>전자레인지</th>
-            <th>기타 주방시설</th>
-            <th>체크인 / 체크아웃</th>
-            <th>주요 특이사항</th>
+            <th class="row-label">구분</th>
+            <th><div class="d-num">1일차</div><div class="d-date">9/19(토)</div></th>
+            <th><div class="d-num">2일차</div><div class="d-date">9/20(일)</div></th>
+            <th><div class="d-num">3~4일차</div><div class="d-date">9/21(월)~23(수)</div></th>
+            <th><div class="d-num">5일차</div><div class="d-date">9/23(수)</div></th>
+            <th><div class="d-num">6일차</div><div class="d-date">9/24(목)</div></th>
+            <th><div class="d-num">7일차</div><div class="d-date">9/25(금)</div></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="sticky-col">
-              <div class="name">1일차 · Wirtshaus &amp; Hotel Zur Alten Brauerei Zapf</div>
-              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+%26+Hotel+Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">구글 지도</a></div>
-            </td>
-            <td class="addr">Kirchplatz 2, 97292 위팅엔</td>
+            <th class="row-label">숙소</th>
+            <td>Wirtshaus &amp; Hotel Zur Alten Brauerei Zapf</td>
+            <td>Design Wohnung auf 2 Ebenen</td>
+            <td>TREFF APARTMENTS Füssen(2박)</td>
+            <td>Hotel Kühler Krug</td>
+            <td>아파트 메칭겐 시티</td>
+            <td>ChristRose</td>
+          </tr>
+          <tr>
+            <th class="row-label">주소</th>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+%26+Hotel+Zur+Alten+Brauerei+Zapf+Uettingen" target="_blank" rel="noopener">Kirchplatz 2, 97292 위팅엔</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Sophienstrasse+9+90478+Nuernberg" target="_blank" rel="noopener">Sophienstraße 9(뒤채 2층), 90478 뉘른베르크</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=TREFF+APARTMENTS+Fuessen+Hintere+Gasse+19" target="_blank" rel="noopener">Hintere Gasse 19, 87629 퓌센</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Kuehler+Krug+Torplatz+1+Freiburg" target="_blank" rel="noopener">Torplatz 1, 79100 프라이부르크 임 브라이스가우</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Schuetzenstrasse+41+72555+Metzingen" target="_blank" rel="noopener">Schützenstr. 41, 72555 메칭겐</a></td>
+            <td class="addr"><a href="https://www.google.com/maps/search/?api=1&query=Sonnenstrasse+8+55413+Trechtingshausen" target="_blank" rel="noopener">Sonnenstraße 8(1층), 55413 Trechtingshausen</a></td>
+          </tr>
+          <tr>
+            <th class="row-label">유형</th>
             <td>호텔</td>
-            <td><span class="yn-yes">있음</span> · 안뜰/교회 주변</td>
+            <td>아파트</td>
+            <td>아파트</td>
+            <td>호텔</td>
+            <td>아파트</td>
+            <td>아파트</td>
+          </tr>
+          <tr>
+            <th class="row-label">주차</th>
+            <td>무료 · 안뜰/교회 주변</td>
+            <td>무료 · 인근 공영주차장</td>
+            <td>유료(€15/1일) · <a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a>(도보 2분)</td>
+            <td>무료 · 인근 공영주차장</td>
+            <td>무료 · 숙소 전용</td>
             <td>무료</td>
+          </tr>
+          <tr>
+            <th class="row-label">베드타입</th>
             <td>트리플룸(전용 욕실)</td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td>–(조식 €15/인, 불포함)</td>
-            <td>체크인 14:00–21:00(9/19)</td>
-            <td><span class="note-warn">예상 도착 시간 미리 연락 요망</span><br>☎ +49 9369 8221</td>
-          </tr>
-          <tr>
-            <td class="sticky-col">
-              <div class="name">2일차 · Design Wohnung auf 2 Ebenen</div>
-              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Sophienstrasse+9+90478+Nuernberg" target="_blank" rel="noopener">구글 지도</a></div>
-            </td>
-            <td class="addr">Sophienstraße 9(뒤채 2층), 90478 뉘른베르크</td>
-            <td>아파트</td>
-            <td><span class="yn-yes">있음</span> · 인근 공영주차장</td>
-            <td>무료</td>
             <td>2베드룸</td>
-            <td><span class="yn-yes">있음</span></td>
-            <td><span class="yn-yes">있음</span></td>
-            <td>전기주전자</td>
-            <td>체크인 15:00–23:00(9/20)</td>
-            <td><span class="note-warn">셀프 체크인</span> — 뒷편 안뜰(검은 대문)로 진입, 기둥 오른쪽 열쇠보관함 01·02번<br>☎ +49 175 1175713</td>
-          </tr>
-          <tr>
-            <td class="sticky-col">
-              <div class="name">3~4일차(2박) · TREFF APARTMENTS Füssen</div>
-              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=TREFF+APARTMENTS+Fuessen+Hintere+Gasse+19" target="_blank" rel="noopener">구글 지도</a></div>
-            </td>
-            <td class="addr">Hintere Gasse 19, 87629 퓌센</td>
-            <td>아파트</td>
-            <td><span class="yn-yes">있음</span> · <a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a>(도보 2분)</td>
-            <td>유료(€15/1일)</td>
             <td>1베드룸</td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td>–</td>
-            <td>체크인 15:00(9/21) → 체크아웃 12:00(9/23)</td>
-            <td><span class="note-warn">투숙자 전원 성·이름·생년월일 사전 통보 필요</span><br>☎ +49 152 06198298</td>
-          </tr>
-          <tr>
-            <td class="sticky-col">
-              <div class="name">5일차 · Hotel Kühler Krug</div>
-              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Kuehler+Krug+Torplatz+1+Freiburg" target="_blank" rel="noopener">구글 지도</a></div>
-            </td>
-            <td class="addr">Torplatz 1, 79100 프라이부르크 임 브라이스가우</td>
-            <td>호텔</td>
-            <td><span class="yn-yes">있음</span> · 인근 공영주차장</td>
-            <td>무료</td>
             <td>트리플룸</td>
             <td><span class="yn-unknown">미기재</span></td>
             <td><span class="yn-unknown">미기재</span></td>
+          </tr>
+          <tr>
+            <th class="row-label">냉장고</th>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-yes">있음</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-yes">있음</span></td>
+            <td><span class="yn-yes">있음</span></td>
+          </tr>
+          <tr>
+            <th class="row-label">전자레인지</th>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-yes">있음</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+          </tr>
+          <tr>
+            <th class="row-label">기타 주방시설</th>
+            <td>–</td>
+            <td>전기주전자</td>
+            <td>–</td>
             <td>–(조식 포함)</td>
-            <td>체크인 14:00–<span class="note-warn">18:00</span>(9/23)</td>
-            <td><span class="note-warn">⚠️ 체크인 마감 이르니 일정 서둘러 마무리</span><br>☎ +49 761 29103</td>
-          </tr>
-          <tr>
-            <td class="sticky-col">
-              <div class="name">6일차 · 아파트 메칭겐 시티</div>
-              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Schuetzenstrasse+41+72555+Metzingen" target="_blank" rel="noopener">구글 지도</a></div>
-            </td>
-            <td class="addr">Schützenstr. 41, 72555 메칭겐</td>
-            <td>아파트</td>
-            <td><span class="yn-yes">있음</span> · 숙소 전용</td>
-            <td>무료</td>
-            <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-yes">있음</span></td>
-            <td><span class="yn-unknown">미기재</span></td>
             <td>전기주전자·쿡탑</td>
-            <td>체크인 15:00–23:30(9/24)</td>
-            <td><span class="note-warn">도착 1시간 전 전화 필수</span><br>☎ +49 172 4951197</td>
+            <td>전기주전자·커피머신</td>
           </tr>
           <tr>
-            <td class="sticky-col">
-              <div class="name">7일차 · ChristRose</div>
-              <div class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Sonnenstrasse+8+55413+Trechtingshausen" target="_blank" rel="noopener">구글 지도</a></div>
-            </td>
-            <td class="addr">Sonnenstraße 8(1층), 55413 Trechtingshausen</td>
-            <td>아파트</td>
-            <td><span class="yn-yes">있음</span></td>
-            <td>무료</td>
+            <th class="row-label">체크인</th>
+            <td>14:00–21:00</td>
+            <td>15:00–23:00</td>
+            <td>15:00</td>
+            <td>14:00–<span class="note-warn">18:00</span></td>
+            <td>15:00–23:30</td>
+            <td>16:00–21:30</td>
+          </tr>
+          <tr>
+            <th class="row-label">체크아웃</th>
             <td><span class="yn-unknown">미기재</span></td>
-            <td><span class="yn-yes">있음</span></td>
             <td><span class="yn-unknown">미기재</span></td>
-            <td>전기주전자·커피머신</td>
-            <td>체크인 16:00–21:30(9/25)</td>
-            <td>뤼데스하임 구시가에서 8.6km 떨어짐(도보권 아님)</td>
+            <td>12:00</td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+            <td><span class="yn-unknown">미기재</span></td>
+          </tr>
+          <tr>
+            <th class="row-label">비고</th>
+            <td><span class="note-warn">예상 도착 시간 미리 연락 요망</span></td>
+            <td><span class="note-warn">셀프 체크인</span> — 뒷편 안뜰(검은 대문)로 진입, 기둥 오른쪽 열쇠보관함 01·02번</td>
+            <td><span class="note-warn">투숙자 전원 성·이름·생년월일 사전 통보 필요</span></td>
+            <td><span class="note-warn">⚠️ 체크인 마감 이르니 일정 서둘러 마무리</span></td>
+            <td><span class="note-warn">도착 1시간 전 전화 필수</span></td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <th class="row-label">연락처</th>
+            <td>☎ +49 9369 8221</td>
+            <td>☎ +49 175 1175713</td>
+            <td>☎ +49 152 06198298</td>
+            <td>☎ +49 761 29103</td>
+            <td>☎ +49 172 4951197</td>
+            <td><span class="yn-unknown">미기재</span></td>
           </tr>
         </tbody>
       </table>
