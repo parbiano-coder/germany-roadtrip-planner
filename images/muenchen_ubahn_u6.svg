@@ -34,7 +34,7 @@
     <path d="M1320,1095l0,-209.288c-0,-13.261 -5.268,-25.978 -14.645,-35.355c-33.058,-33.059 -112.316,-112.316 -134.498,-134.499c-3.751,-3.751 -8.838,-5.858 -14.143,-5.858c-46.653,0 -276.17,0 -322.823,0c-5.304,-0 -10.392,2.107 -14.142,5.858c-25.407,25.407 -126.251,126.251 -158.891,158.891c-6.564,6.564 -15.466,10.251 -24.749,10.251c-62.543,0 -306.109,0 -306.109,0" style="fill:none;stroke:#fff;stroke-width:12px;stroke-miterlimit:1;"/>
     <path d="M1320,1095l0,-209.288c-0,-13.261 -5.268,-25.978 -14.645,-35.355c-33.058,-33.059 -112.316,-112.316 -134.498,-134.499c-3.751,-3.751 -8.838,-5.858 -14.143,-5.858c-46.653,0 -276.17,0 -322.823,0c-5.304,-0 -10.392,2.107 -14.142,5.858c-25.407,25.407 -126.251,126.251 -158.891,158.891c-6.564,6.564 -15.466,10.251 -24.749,10.251c-62.543,0 -306.109,0 -306.109,0" style="fill:none;stroke:#bc7a00;stroke-width:10px;;opacity:0.4"/>
     <path d="M1425,225l-206.716,-0c-5.304,-0 -10.391,2.107 -14.142,5.858c-38.886,38.886 -259.398,259.398 -298.284,298.284c-3.751,3.751 -5.858,8.838 -5.858,14.142c-0,36.817 -0,185.402 -0,222.219c0,5.304 -2.107,10.391 -5.858,14.142c-29.349,29.348 -160.149,160.148 -189.497,189.497c-3.751,3.751 -8.838,5.858 -14.142,5.858c-74.773,-0 -630.5,-0 -630.5,-0" style="fill:none;stroke:#fff;stroke-width:12px;stroke-miterlimit:1;"/>
-    <path d="M1425,225l-206.716,-0c-5.304,-0 -10.391,2.107 -14.142,5.858c-38.886,38.886 -259.398,259.398 -298.284,298.284c-3.751,3.751 -5.858,8.838 -5.858,14.142c-0,36.817 -0,185.402 -0,222.219c0,5.304 -2.107,10.391 -5.858,14.142c-29.349,29.348 -160.149,160.148 -189.497,189.497c-3.751,3.751 -8.838,5.858 -14.142,5.858c-74.773,-0 -630.5,-0 -630.5,-0" style="fill:none;stroke:#0065ae;stroke-width:15px;"/>
+    <path d="M1425,225l-206.716,-0c-5.304,-0 -10.391,2.107 -14.142,5.858c-38.886,38.886 -259.398,259.398 -298.284,298.284c-3.751,3.751 -5.858,8.838 -5.858,14.142c-0,36.817 -0,185.402 -0,222.219c0,5.304 -2.107,10.391 -5.858,14.142c-29.349,29.348 -160.149,160.148 -189.497,189.497c-3.751,3.751 -8.838,5.858 -14.142,5.858c-74.773,-0 -630.5,-0 -630.5,-0" style="fill:none;stroke:#0065ae;stroke-width:20px;"/>
     <path d="M330,224.999l266.715,-0c5.304,-0 10.391,2.107 14.142,5.858c38.886,38.886 259.399,259.399 298.285,298.285c3.751,3.751 5.858,8.838 5.858,14.142l0,222.219c-0,9.282 -3.687,18.184 -10.251,24.748c-46.075,46.075 -233.301,233.301 -268.891,268.891c-3.751,3.751 -8.838,5.858 -14.142,5.858c-63.585,-0 -471.716,-0 -471.716,-0" style="fill:none;stroke:#fff;stroke-width:12px;stroke-miterlimit:1;"/>
     <path d="M330,224.999l266.715,-0c5.304,-0 10.391,2.107 14.142,5.858c38.886,38.886 259.399,259.399 298.285,298.285c3.751,3.751 5.858,8.838 5.858,14.142l0,222.219c-0,9.282 -3.687,18.184 -10.251,24.748c-46.075,46.075 -233.301,233.301 -268.891,268.891c-3.751,3.751 -8.838,5.858 -14.142,5.858c-63.585,-0 -471.716,-0 -471.716,-0" style="fill:none;stroke:#ec6725;stroke-width:10px;;opacity:0.4"/>
     <g>
@@ -68,8 +68,8 @@
         <path d="M915,740l-15,-0" style="fill:none;stroke:#fff;stroke-width:2.5px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
     </g>
     <g transform="matrix(0.846667,0,0,0.846667,-355.726,-521.874)">
-        <text x="1510.93px" y="1484.5px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:21.26px;;font-weight:700;fill:#000">Marien-</text>
-        <text x="1510.93px" y="1508.12px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:21.26px;;font-weight:700;fill:#000">platz</text>
+        <text x="1510.93px" y="1484.5px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:28.35px;;font-weight:700;fill:#000">Marien-</text>
+        <text x="1510.93px" y="1508.12px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:28.35px;;font-weight:700;fill:#000">platz</text>
     </g>
     <g>
         <circle cx="976.369" cy="747.534" r="7.5" style="fill:#4c9046;"/>
@@ -154,8 +154,8 @@
         <path d="M815.003,880.003l-10.606,-10.606" style="fill:none;stroke:#fff;stroke-width:2.5px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
     </g>
     <g transform="matrix(0.846667,0,0,0.846667,-459.211,-361.874)">
-        <text x="1515.7px" y="1484.5px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:21.26px;;font-weight:700;fill:#000">Goethe-</text>
-        <text x="1515.7px" y="1508.12px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:21.26px;;font-weight:700;fill:#000">platz</text>
+        <text x="1515.7px" y="1484.5px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:28.35px;;font-weight:700;fill:#000">Goethe-</text>
+        <text x="1515.7px" y="1508.12px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:28.35px;;font-weight:700;fill:#000">platz</text>
     </g>
     <g>
         <path d="M775.003,920.003l-10.606,-10.606" style="fill:none;stroke:#000;stroke-width:7.5px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
@@ -386,7 +386,7 @@
     <circle cx="1145" cy="290" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
     <text x="1153.41px" y="305px" style="font-family:'DejaVuSansCondensed', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:18px;;fill:#9a9a9a">Kieferngarten</text>
     <circle cx="1185" cy="250" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
-    <text x="1193.41px" y="265px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:18px;;font-weight:700;fill:#0065ae">Fröttmaning</text>
+    <text x="1193.41px" y="265px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:24px;;font-weight:700;fill:#0065ae">Fröttmaning</text>
     <circle cx="1245" cy="225" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
     <g transform="matrix(0.846667,0,0,0.846667,-77.1864,-1061.87)">
         <text x="1514.19px" y="1484.5px" style="font-family:'DejaVuSansCondensed', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:21.26px;;fill:#9a9a9a">Garching-</text>
