@@ -3743,10 +3743,12 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Asbach_Uralt1713.JPG?width=500" alt="아스바흐 브랜디 병(제품 사진, 방문자센터 실사진은 아님)" loading="lazy">
         <div class="landmark-body">
         <h3>아스바흐 방문자센터(Asbach Besucherzentrum)</h3>
         <p class="landmark-desc">독일 대표 브랜디 브랜드 아스바흐의 증류소 겸 방문자센터. 매주 토요일 10:00 가이드 투어(브랜디 2종+리큐어 1종 시음 포함)는 최소 3일 전 홈페이지 예약이 필요합니다.</p>
         <div class="landmark-meta">3–12월 화–토 09:00–17:00 · <span class="landmark-price">방문자센터 무료 입장, 가이드 투어는 유료(가격 홈페이지 확인)</span> · <a href="https://www.asbach.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Asbach+Besucherzentrum+Ruedesheim" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🚗 P10 Feldtor에서 차량 약 2.7km·6분 — 도보권 아니라 별도 이동 필요</div>
         </div>
       </div>
       </div>
@@ -4579,7 +4581,13 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       var hashDet = hashTarget.tagName === 'DETAILS' ? hashTarget : hashTarget.closest('details.day');
       if (hashDet) {
         hashDet.open = true;
-        setTimeout(function(){ hashTarget.scrollIntoView(); }, 0);
+        // 위쪽 일차들의 지도·이미지가 늦게 로드되며 레이아웃이 밀리면 먼저 스크롤한 위치가
+        // 어긋날 수 있어(특히 마지막 날), 초기 진입 시 여러 시점에 재보정합니다.
+        var rescroll = function(){ hashTarget.scrollIntoView({ behavior: 'auto', block: 'start' }); };
+        setTimeout(rescroll, 0);
+        setTimeout(rescroll, 300);
+        setTimeout(rescroll, 1000);
+        window.addEventListener('load', rescroll);
       }
     }
   }
