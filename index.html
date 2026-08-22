@@ -4258,7 +4258,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
     heidelberg: [49.41, 8.71, '하이델베르크', null, 'bottom'],
     bernkastel: [49.92, 7.07, '베른카슈텔쿠에스 (선택)'],
-    ruedesheim: [49.98, 7.91, '뤼데스하임', null, 'left'],
+    ruedesheim: [49.98, 7.91, '뤼데스하임', null, 'top'],
     trechtingshausen: [49.97, 7.86, 'Trechtingshausen · 숙박 · ChristRose', '숙소(Trechtingshausen)'],
     wiesbaden: [50.08, 8.24, '비스바덴'],
     fraEnd: [50.11, 8.68, '프랑크푸르트 공항']
@@ -4291,7 +4291,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
     ], branches: [
       { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분' },
-      { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분' }
+      { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분', labelDir:'bottom' }
     ]},
     day8: { stops: [
       { c:'ruedesheim' }, { c:'wiesbaden', leg:'30km · 33분' }, { c:'fraEnd', leg:'39km · 32분' }
@@ -4402,7 +4402,9 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       var viaM = L.circleMarker([via[0], via[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.5, dashArray: '2 2' })
         .addTo(map).bindPopup('<b>' + via[2] + '</b> (선택)');
       window.bindHoverInfo(viaM, '<b>' + via[2] + '</b> (선택)', 6);
-      viaM.bindTooltip(shortLabel(via[2]), { permanent: true, direction: 'right', offset: [8, 0], className: 'city-label-tip' });
+      var viaDir = br.labelDir || 'right';
+      var viaOffsets = { left: [-8, 0], right: [8, 0], top: [0, -8], bottom: [0, 8] };
+      viaM.bindTooltip(shortLabel(via[2]), { permanent: true, direction: viaDir, offset: viaOffsets[viaDir] || [8, 0], className: 'city-label-tip' });
     });
 
     day.stops.forEach(function(s, i){
