@@ -339,8 +339,8 @@
   .leaflet-tooltip.rt-tip b{ color:var(--sign); }
   .leaflet-tooltip.city-label-tip{
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
-    font-size:0.74rem; font-weight:800; color:var(--ink); background:rgba(255,253,247,0.92);
-    padding:0.1rem 0.4rem; border-radius:4px; border:1px solid var(--line); box-shadow:0 1px 4px rgba(0,0,0,0.18);
+    font-size:0.74rem; font-weight:800; color:#1e2a2f; background:rgba(255,253,247,0.92);
+    padding:0.1rem 0.4rem; border-radius:4px; border:1px solid #d6d0ba; box-shadow:0 1px 4px rgba(0,0,0,0.18);
     white-space:nowrap;
   }
   .leaflet-tooltip.city-label-tip::before{ display:none; }
@@ -1660,7 +1660,7 @@ document.addEventListener('DOMContentLoaded', function(){
             <li>A9 아우토반으로 뮌헨 방면 이동 중 알리안츠 아레나(FC 바이에른 홈구장)에 들러 외관 구경 &amp; 뮤지엄 관람 (뉘른베르크→아레나 161km·1시간 36분 — 뮌헨 시내 직행 대비 약 +15~20분·+4km만 추가되는 정도라 경로 이탈 부담 적음)</li>
             <li>아레나에서 뮌헨 시내로 이동 (13km, 약 19분)</li>
             <li>테레지엔비제(옥토버페스트 축제장) 도보 산책 — 텐트 좌석 예약 없이도 놀이기구·인파·축제 분위기는 무료로 체감 가능 (숙박 없음)</li>
-            <li>마리엔 광장·신시청사(Neues Rathaus) 글로켄슈필·프라우엔교회·빅투알리엔마르크트 등 구시가 반나절 관광 — 구 시청·아잠 교회·성 페터 교회·성 미하엘 교회·테아티너 교회·호프가르텐도 모두 도보권이라 여유 있으면 묶어서 둘러볼 수 있습니다</li>
+            <li>마리엔 광장·신시청(Neues Rathaus) 글로켄슈필·프라우엔교회·빅투알리엔마르크트 등 구시가 반나절 관광 — 구시청·아잠 교회·성 페터 교회·성 미하엘 교회·테아티너 교회·호프가르텐도 모두 도보권이라 여유 있으면 묶어서 둘러볼 수 있습니다</li>
             <li>오후 늦게 퓌센으로 이동 (131km, 약 1시간 44분), 숙소 체크인</li>
           </ul>
         </div>
@@ -1686,9 +1686,31 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <p class="city-label">뮌헨</p>
       <p class="walk-map-note">🚗 알리안츠 아레나 관람 후 차로 P+R Fröttmaning까지 짧게 이동 — 아레나 방문객 주차장(북쪽)과 Fröttmaning역은 같은 구역이지만 반대편이라 도보로는 2km 가까이(15~20분) 떨어져 있어 차로 이동 권장 · <a href="https://www.google.com/maps/search/?api=1&query=Fr%C3%B6ttmaning+P%2BR+Muenchen" target="_blank" rel="noopener">P+R Fröttmaning 위치 보기</a></p>
-      <p class="walk-map-note">🅿️ P+R Fröttmaning: 주차 후 도보로 U6 승강장 이동 · 지하철로 갈아탈 경우 1일권 €1.50(24시간) · 차만 세워두고 지하철을 안 타면 €10 적용되니 반드시 P+R 요금으로 정산(자판기에서 지하철표 함께 구매 시 자동 적용) · 정확한 금액은 현장 자판기·MVV 앱에서 확인<br>🎫 티켓은 역 구내 자판기(현금·카드 모두 가능) 또는 MVV go 앱에서 구매<br>🚇 환승 없이 U6 한 노선으로 이동: Fröttmaning → 마리엔광장(구시가, 직행) · 옥토버페스트(테레지엔비제)는 같은 U6로 몇 정거장 더 가서 Goetheplatz 또는 Poccistraße 하차 — 아래 노선도의 파란색 U6 라인 참고<br>🔙 돌아올 때도 같은 U6를 타고 Fröttmaning에서 내려 주차장으로 복귀</p>
-      <div style="grid-column:1/-1;max-width:700px;margin:0.6rem 0 1.3rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--surface);">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Netzplan_U-Bahn_M%C3%BCnchen.svg?width=700" alt="뮌헨 U-Bahn 노선도(파란색 U6: Fröttmaning-마리엔광장-Goetheplatz)" loading="lazy" style="width:100%;height:auto;display:block;">
+      <p class="walk-map-note">🅿️ P+R Fröttmaning: 주차 후 도보로 U6 승강장 이동<br>🚇 환승 없이 U6 한 노선으로 이동: Fröttmaning → 마리엔광장(구시가, 직행) · 옥토버페스트(테레지엔비제)는 같은 U6로 몇 정거장 더 가서 Goetheplatz 또는 Poccistraße 하차 — 아래 노선도의 파란색 U6 라인 참고<br>🔙 돌아올 때도 같은 U6를 타고 Fröttmaning에서 내려 주차장으로 복귀</p>
+      <div class="booking-note" style="grid-column:1/-1;max-width:700px;">
+        <p><b>P+R(Park&nbsp;&amp;&nbsp;Ride)이란?</b> 도심에서 떨어진 지하철역에 차를 세우고 거기서부터 지하철로 갈아타 들어가는 방식 — 도심 진입·주차난을 피하는 대신 주차요금을 할인받습니다. Fröttmaning은 아레나이자 U6역이라 이 방식이 그대로 적용됩니다.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.6rem;margin-top:0.6rem;">
+          <div style="background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
+            <div style="font-size:0.7rem;color:var(--ink-soft);">🅿️ P+R 주차료(24시간)</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€1.50</div>
+            <div style="font-size:0.72rem;color:var(--ink-soft);">지하철 안 타면 €10 적용</div>
+          </div>
+          <div style="background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
+            <div style="font-size:0.7rem;color:var(--ink-soft);">🚇 지하철 편도(Zone M, 1인)</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€4.20</div>
+            <div style="font-size:0.72rem;color:var(--ink-soft);">Fröttmaning↔마리엔광장/Goetheplatz 모두 Zone M 내</div>
+          </div>
+          <div style="background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
+            <div style="font-size:0.7rem;color:var(--ink-soft);">🎫 1일권(1인)</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€9.70</div>
+            <div style="font-size:0.72rem;color:var(--ink-soft);">그날 무제한 · 3회 이상 탈 예정이면 이쪽이 유리</div>
+          </div>
+        </div>
+        <p style="margin-top:0.6rem;">즉 <b>주차료(€1.50)와 지하철 요금(별도)은 다른 항목</b>입니다 — 오늘은 Fröttmaning→마리엔광장→(선택)Goetheplatz→Fröttmaning으로 최소 2~3회 탑승하니, 편도씩 사면 €8.40~12.60인데 1일권(€9.70)이 인원·동선에 따라 더 유리할 수 있습니다. 가격은 2026년 기준 참고값이니 현장 자판기·MVV go 앱에서 실제 화면을 보고 선택하세요.</p>
+        <p class="cash-note"><b>MVV</b>(Münchner Verkehrs- und Tarifverbund)는 뮌헨 지하철·전철(S-Bahn)·트램·버스를 하나의 요금체계로 묶는 통합 운영기구입니다. "MVV go"는 그 공식 모바일 승차권 앱으로, 역 자판기 대신 휴대폰으로 티켓을 사는 용도입니다.</p>
+      </div>
+      <div style="grid-column:1/-1;max-width:700px;margin:0.6rem 0 1.3rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Netzplan_U-Bahn_M%C3%BCnchen.svg?width=700" alt="뮌헨 U-Bahn 노선도(파란색 U6: Fröttmaning-마리엔광장-Goetheplatz)" loading="lazy" style="width:100%;height:auto;display:block;background:#fff;">
       </div>
       <p class="walk-map-note">뮌헨 구시가 가볼 만한 곳(아래 카드)은 모두 도보권이며 카드 순서대로 이동하면 됩니다</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1370,11.5758&destination=48.1370,11.5758&waypoints=48.1367%2C11.5756%7C48.1374%2C11.5761%7C48.1387%2C11.5730%7C48.1387%2C11.5703%7C48.1351%2C11.5697%7C48.1355%2C11.5764%7C48.1422%2C11.5767%7C48.1428,11.5800" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발·도착) · 총 약 4.7km · 도보 약 1시간 3분</a>
@@ -1697,7 +1719,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <img src="images/routes/muenchen.png" alt="뮌헨 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">마리엔 광장(신시청사)</span></li>
+        <li><span class="rs-name">마리엔 광장(신시청)</span></li>
         <li><span class="rs-name">성 페터 교회</span><span class="rs-seg">(110m, 1분)</span></li>
         <li><span class="rs-name">마리엔 광장(구시청)</span><span class="rs-seg">(180m, 2분)</span></li>
         <li><span class="rs-name">프라우엔교회</span><span class="rs-seg">(450m, 6분)</span></li>
@@ -1710,12 +1732,12 @@ document.addEventListener('DOMContentLoaded', function(){
         </ol>
       </div>
       <div class="landmark-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 신시청사(Neues Rathaus) 글로켄슈필" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 신시청(Neues Rathaus) 글로켄슈필" loading="lazy">
         <div class="landmark-body">
-        <h3>마리엔 광장 & 신시청사(Neues Rathaus) 글로켄슈필</h3>
-        <p class="landmark-desc">뮌헨 구시가 중심 광장이자 1867~1908년 지어진 네오고딕 양식 신시청사가 있는 곳. 탑에서 매일 정오 열리는 글로켄슈필 인형극이 명물이며, 엘리베이터로 전망대까지 올라가면 마리엔광장과 구시가 전망을 볼 수 있습니다.</p>
+        <h3>마리엔 광장 & 신시청(Neues Rathaus) 글로켄슈필</h3>
+        <p class="landmark-desc">뮌헨 구시가 중심 광장이자 1867~1908년 지어진 네오고딕 양식 신시청이 있는 곳. 탑에서 매일 정오 열리는 글로켄슈필 인형극이 명물이며, 엘리베이터로 전망대까지 올라가면 마리엔광장과 구시가 전망을 볼 수 있습니다.</p>
         <div class="landmark-meta">글로켄슈필 공연 매일 11:00·12:00 (3–10월엔 17:00 추가) · 전망대 5–10월 매일 10:00–19:00(11–4월은 평일만 10:00–17:00) · <span class="landmark-price">광장 관람 무료, 전망대 성인 약 €6.50(온라인)/€7(현장)</span> · <a href="https://www.muenchen.de/en/sights/munich-glockenspiel" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Neues+Rathaus+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1724,16 +1746,16 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>성 페터 교회(St. Peterskirche · Alter Peter)</h3>
         <p class="landmark-desc">뮌헨에서 가장 오래된 교회. 306개 계단을 오르면 마리엔광장과 맑은 날엔 알프스까지 보이는 전망대가 나옵니다.</p>
         <div class="landmark-meta">교회 07:30–19:30 · <span class="landmark-price">본당 무료, 탑 전망대 €5</span> · <a href="https://www.google.com/maps/search/?api=1&query=St+Peterskirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Altes_Rathaus_in_M%C3%BCnchen%2C_2023.jpg?width=500" alt="구 시청" loading="lazy">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Altes_Rathaus_in_M%C3%BCnchen%2C_2023.jpg?width=500" alt="구시청" loading="lazy">
         <div class="landmark-body">
-        <h3>구 시청(Altes Rathaus)</h3>
+        <h3>구시청(Altes Rathaus)</h3>
         <p class="landmark-desc">마리엔광장 동쪽에 있는 고딕 양식 옛 시청사. 지금은 탑 안에 장난감박물관이 들어서 있습니다.</p>
         <div class="landmark-meta">외관 상시 관람 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1742,7 +1764,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>프라우엔교회(Frauenkirche)</h3>
         <p class="landmark-desc">뮌헨의 상징인 두 개의 양파 지붕 탑이 특징인 후기 고딕 성당입니다.</p>
         <div class="landmark-meta">일반적으로 08:00–20:00 (일요일은 09:30부터, 미사 시간 제외) · <span class="landmark-price">본당 무료</span> · <a href="https://www.muenchner-dom.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Frauenkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1751,7 +1773,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>성 미하엘 교회(St. Michael)</h3>
         <p class="landmark-desc">알프스 이북에서 가장 큰 르네상스 양식 교회. 지하 납골당엔 루트비히 2세도 안장돼 있습니다.</p>
         <div class="landmark-meta">월요일(오늘) 09:30–19:00(미사 시간 제외) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=St+Michael+Kirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1760,7 +1782,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>아잠 교회(Asamkirche)</h3>
         <p class="landmark-desc">아잠 형제가 사비로 지은 초호화 로코코 성당. 좁은 골목 안에 있어 놓치기 쉬운 숨은 명소입니다.</p>
         <div class="landmark-meta">토–목 09:00–19:00(11–3월은 ~18:00) · 금 13:00부터 · <span class="landmark-price">무료(기부 권장)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Asamkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1769,7 +1791,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>빅투알리엔마르크트(Viktualienmarkt)</h3>
         <p class="landmark-desc">1807년부터 이어진 뮌헨 최대 상설 식료품 시장. 노천 비어가든에서 맥주 한 잔 즐기기 좋습니다.</p>
         <div class="landmark-meta">월–토 08:00–20:00(매장별 상이) · 일요일 휴무 · <span class="landmark-price">구경 무료, 간식·맥주는 유료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Viktualienmarkt+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1778,7 +1800,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>(선택) 테아티너 교회(Theatinerkirche)</h3>
         <p class="landmark-desc">노란 파사드가 인상적인 이탈리아 바로크 양식 성당. 오데온스플라츠 광장에 접해 있습니다.</p>
         <div class="landmark-meta">상시 개방(미사 시간 제외) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Theatinerkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1787,7 +1809,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>(선택) 호프가르텐(Hofgarten)</h3>
         <p class="landmark-desc">레지덴츠 바로 옆 이탈리아식 궁정 정원. 중앙의 디아나 신전(Dianatempel)이 포토스팟입니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Hofgarten+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 유료(1일권 €1.50)</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
       <div class="landmark-card wide">
@@ -1796,7 +1818,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <h3>테레지엔비제 (옥토버페스트 축제장)</h3>
         <p class="landmark-desc">9월 19일부터 열리는 세계 최대 맥주 축제 현장. 방문일(9/21 월)은 개막 사흘째 평일이라 주말보다는 한산한 편. 이번 여행은 숙박 없이 반나절만 들러 분위기를 느낍니다.</p>
         <div class="landmark-meta">9/19(개막)–10/4, 월–목 10:00–23:30 · 금 10:00–24:00 · 토 09:00–24:00 · 일 09:00–23:30 · <span class="landmark-price">부지 산책 무료(Oide Wiesn 구역만 €4) · 놀이기구는 개별 유료</span> · <a href="https://www.oktoberfest.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Theresienwiese+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6로 Goetheplatz 또는 Poccistraße 하차 · 유료(1일권 €1.50, 직접 주차보다 저렴) · 구시가 관광 후 이동 시에도 같은 방식 권장</div>
+        <div class="landmark-parking">🅿️ P+R Fröttmaning → U6로 Goetheplatz 또는 Poccistraße 하차 · 주차 1일권 €1.50(지하철 요금 별도, 직접 주차보다 저렴) · 구시가 관광 후 이동 시에도 같은 방식 권장</div>
         <div style="font-size:0.8rem;color:var(--ink-soft);margin-top:0.3rem;">🍺 <b>텐트 좌석 예약 없이도 즐기는 법</b> — 대형 텐트(Löwenbräu, Hofbräu 등) 내부 좌석은 몇 달 전 예약 마감이라 워크인이 사실상 불가하지만, 평일 오전~이른 오후엔 텐트 앞쪽 스탠딩 구역이나 야외 비어가든 좌석은 선착순으로 남는 경우가 있습니다. 텐트 밖 놀이기구·게임 부스·길거리 간식(브레첼, 슈바인스학세)은 예약 없이 자유 이용 가능 — 이번 반나절 일정은 이 방식으로 축제 분위기만 체감하는 걸 목표로 합니다.</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>1810년 바이에른 왕세자의 결혼을 축하하는 경마 대회에서 시작된 축제입니다.</div>
         </div>
@@ -3122,7 +3144,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div>
           <h4>오늘의 동선</h4>
           <ul>
-            <li>메칭겐에서 하이델베르크로 직행 (148km·1시간 42분) — 슈투트가르트 경유 시 총 156km·2시간 3분으로 8km·21분만 늘어나는 정도라 경로 이탈 부담 적음(구간별로는 메칭겐→슈투트가르트 35km·35분, 슈투트가르트→하이델베르크 121km·1시간28분). 시간 여유 있으면 도중에 들러 메르세데스-벤츠 또는 포르쉐 박물관 관람(둘 다 화–일 운영) — 밤베르크처럼 선택 스톱. 두 박물관은 서로 다른 지구(바트칸슈타트·추펜하우젠)에 있어 도보 이동이 불가능하고 차로도 약 9km·16분 떨어져 있으니, 둘 다 보고 싶다면 별도 이동 시간까지 감안할 것</li>
+            <li>메칭겐에서 하이델베르크로 직행 (148km·1시간 42분) — 슈투트가르트 경유 시 총 156km·2시간 3분으로 8km·21분만 늘어나는 정도라 경로 이탈 부담 적음(구간별로는 메칭겐→슈투트가르트 35km·35분, 슈투트가르트→하이델베르크 121km·1시간28분)<br>시간 여유 있으면 도중에 들러 메르세데스-벤츠 또는 포르쉐 박물관 관람(둘 다 화–일 운영). 두 박물관은 서로 다른 지구(바트칸슈타트·추펜하우젠)에 있어 도보 이동이 불가능하고 차로도 약 9km·16분 떨어져 있으니, 둘 다 보고 싶다면 별도 이동 시간까지 감안할 것 — 밤베르크처럼 선택 스톱입니다</li>
             <li>하이델베르크 성 &amp; 철학자의 길·구시가 반나절 관광 (숙박 없음)</li>
             <li>하이델베르크에서 뤼데스하임으로 직행 (108km·1시간 18분) — 시간 여유 있으면 모젤 와인 마을 베른카슈텔쿠에스 들러 마르크트광장·란트스후트 성터 도보 관광(약 1시간, 경유 시 178km·2시간6분 + 89km·1시간16분 — 이 역시 선택 스톱)</li>
             <li>라인강변 뤼데스하임 도착, 저녁 드로셀가세(Drosselgasse) 산책</li>
@@ -4211,7 +4233,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     bodensee: [47.77, 9.17, '보덴 호수 (선택 경로)'],
     titisee: [47.92, 8.15, '티티제'],
     freiburg: [47.995, 7.85, '프라이부르크'],
-    villingen: [48.06, 8.49, '필링겐슈베닝겐(블랙 포레스트)'],
+    villingen: [48.06, 8.49, '필링겐슈베닝겐(블랙 포레스트)', '필링겐슈베닝겐(블랙 포레스트)'],
     triberg: [48.1263, 8.2313, '트리베르크 · 뻐꾸기시계 원조마을'],
     metzingen: [48.54, 9.28, '메칭겐'],
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
@@ -4373,7 +4395,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
         fillColor: '#0b3c6e', fillOpacity: 0.95
       }).addTo(map).bindPopup('<b>' + p[2] + '</b>' + (s.leg ? '<br>' + s.leg : ''));
       window.bindHoverInfo(stopM, '<b>' + p[2] + '</b>' + (s.leg ? '<br>' + s.leg : ''), baseR);
-      stopM.bindTooltip(shortLabel(p[2]), { permanent: true, direction: 'right', offset: [8, 0], className: 'city-label-tip' });
+      stopM.bindTooltip(p[3] || shortLabel(p[2]), { permanent: true, direction: 'right', offset: [8, 0], className: 'city-label-tip' });
     });
   }
 
