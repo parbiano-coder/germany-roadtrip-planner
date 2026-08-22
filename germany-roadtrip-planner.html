@@ -1695,21 +1695,21 @@ document.addEventListener('DOMContentLoaded', function(){
       <p class="walk-map-note">요금은 편도 1회권 기준(1인) — 오늘처럼 여러 번 탈 계획이면 위 P+R/MVV 안내의 1일권(€9.70)이 더 유리할 수 있습니다.</p>
       <div class="booking-note" style="grid-column:1/-1;max-width:700px;">
         <p><b>P+R(Park&nbsp;&amp;&nbsp;Ride)이란?</b> 도심에서 떨어진 지하철역에 차를 세우고 거기서부터 지하철로 갈아타 들어가는 방식 — 도심 진입·주차난을 피하는 대신 주차요금을 할인받습니다. Fröttmaning은 아레나이자 U6역이라 이 방식이 그대로 적용됩니다.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.6rem;margin-top:0.6rem;">
-          <div style="background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
+        <div style="display:grid;grid-template-columns:1fr 1.3fr;grid-template-areas:'parking subway' 'day subway';gap:0.6rem;margin-top:0.6rem;">
+          <div style="grid-area:parking;background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
             <div style="font-size:0.7rem;color:var(--ink-soft);">🅿️ P+R 주차료(24시간)</div>
             <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€1.50</div>
             <div style="font-size:0.72rem;color:var(--ink-soft);">지하철 안 타면 €10 적용</div>
           </div>
-          <div style="background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
-            <div style="font-size:0.7rem;color:var(--ink-soft);">🚇 지하철 편도(Zone M, 1인)</div>
-            <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€4.20</div>
-            <div style="font-size:0.72rem;color:var(--ink-soft);">Fröttmaning↔마리엔광장/Goetheplatz 모두 Zone M 내</div>
-          </div>
-          <div style="background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
+          <div style="grid-area:day;background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
             <div style="font-size:0.7rem;color:var(--ink-soft);">🎫 1일권(1인)</div>
             <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€9.70</div>
             <div style="font-size:0.72rem;color:var(--ink-soft);">그날 무제한 · 3회 이상 탈 예정이면 이쪽이 유리</div>
+          </div>
+          <div style="grid-area:subway;background:var(--surface);border-radius:6px;padding:0.5rem 0.7rem;">
+            <div style="font-size:0.7rem;color:var(--ink-soft);">🚇 지하철 편도(Zone M, 1인)</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--route);">€4.20</div>
+            <div style="font-size:0.72rem;color:var(--ink-soft);">Fröttmaning↔마리엔광장/Goetheplatz 모두 Zone M 내</div>
           </div>
         </div>
         <p style="margin-top:0.6rem;">즉 <b>주차료(€1.50)와 지하철 요금(별도)은 다른 항목</b>입니다 — 오늘은 Fröttmaning→마리엔광장→(선택)Goetheplatz→Fröttmaning으로 최소 2~3회 탑승하니, 편도씩 사면 €8.40~12.60인데 1일권(€9.70)이 인원·동선에 따라 더 유리할 수 있습니다. 가격은 2026년 기준 참고값이니 현장 자판기·MVV go 앱에서 실제 화면을 보고 선택하세요.</p>
@@ -2326,6 +2326,18 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <p class="city-label">가르미슈파르텐키르헨</p>
       <p class="walk-map-note">🚗 에탈→가르미슈파르텐키르헨 약 16km·28분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.58,11.10&destination=47.4815,11.1176" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ P21 Olympia-Skistadion · 유료(1일권 €5) · 주차 후 협곡 입구까지 도보 25~30분(도보가 기본, 성수기엔 주차장~입구 구간 마차(Kutsche)도 다니지만 편도 요금 별도이고 운행 여부는 시즌·현장 상황에 따라 다름) · <a href="https://www.google.com/maps/search/?api=1&query=P21+Olympia-Skistadion+Garmisch-Partenkirchen" target="_blank" rel="noopener">주차장 위치 보기</a></p>
+      <div class="route-snapshot" style="grid-column:1/-1;">
+        <div class="route-snapshot-media">
+          <img src="images/routes/partnachklamm.png" alt="파르트나흐클람 트레일 코스 지도 스냅샷" loading="lazy">
+        </div>
+        <ol class="route-steps">
+        <li><span class="rs-name">P21 주차장</span></li>
+        <li><span class="rs-name">협곡 입구</span><span class="rs-seg">도보 25~30분</span></li>
+        <li><span class="rs-name">협곡 안쪽 끝</span><span class="rs-seg">왕복 약 1~1.5시간</span></li>
+        <li><span class="rs-name">협곡 입구(같은 길로 복귀)</span></li>
+        <li><span class="rs-name">P21 주차장</span><span class="rs-seg">도보 25~30분</span></li>
+        </ol>
+      </div>
       <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Garmisch-Partenkirchen_Partnachklamm_02.JPG?width=500" alt="파르트나흐클람" loading="lazy">
         <div class="landmark-body">
