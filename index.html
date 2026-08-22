@@ -436,6 +436,14 @@
   .stay-detail b{ color:var(--sign); }
     .day-leaflet-map{ height:420px; margin:0.9rem 0 1.3rem; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow); background:var(--bg-soft); }
   @media (max-width:640px){ .day-leaflet-map{ height:300px; } }
+  .u6-strip{ display:flex; align-items:flex-start; gap:0; overflow-x:auto; padding:1.1rem 0.6rem 0.5rem; margin:0.6rem 0 1rem; position:relative; }
+  .u6-strip::before{ content:''; position:absolute; left:1.3rem; right:1.3rem; top:1.65rem; height:3px; background:#0065ae; z-index:0; }
+  .u6-stop{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; flex:0 0 auto; width:1.6rem; }
+  .u6-stop .dot{ width:9px; height:9px; border-radius:50%; background:#fff; border:2px solid #0065ae; margin-top:0.1rem; }
+  .u6-stop.key{ width:auto; padding:0 0.35rem; }
+  .u6-stop.key .dot{ width:13px; height:13px; border-width:2.5px; margin-bottom:0.3rem; }
+  .u6-stop.key .lbl{ font-size:0.72rem; font-weight:800; color:#0065ae; background:#e3edf9; padding:0.1rem 0.5rem; border-radius:1rem; white-space:nowrap; }
+  @media (max-width:640px){ .u6-strip{ min-width:600px; } }
   .walk-map-note{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 0.6rem; }
   .walk-map-note.tonight-note{
     margin:1.5rem 0 0.6rem; padding:0.9rem 1rem 0; border-top:2px dashed var(--route);
@@ -1718,6 +1726,23 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div style="grid-column:1/-1;max-width:700px;margin:0.6rem 0 1.3rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Netzplan_U-Bahn_M%C3%BCnchen.svg?width=700" alt="뮌헨 U-Bahn 노선도(파란색 U6 라인: Fröttmaning-마리엔광장-Goetheplatz)" loading="lazy" style="width:100%;height:auto;display:block;background:#fff;">
+        <p style="font-size:0.72rem;color:var(--ink-soft);margin:0.4rem 0.7rem 0;">전체 노선도는 다른 라인 색이 많아 복잡하니, 오늘 탈 U6 3개 역만 아래에 간단히 표시했습니다(점에 마우스를 올리면 중간역 이름이 뜹니다).</p>
+        <div class="u6-strip">
+          <div class="u6-stop key"><span class="dot"></span><span class="lbl">Fröttmaning</span></div>
+          <div class="u6-stop" title="Kieferngarten"><span class="dot"></span></div>
+          <div class="u6-stop" title="Freimann"><span class="dot"></span></div>
+          <div class="u6-stop" title="Studentenstadt"><span class="dot"></span></div>
+          <div class="u6-stop" title="Alte Heide"><span class="dot"></span></div>
+          <div class="u6-stop" title="Nordfriedhof"><span class="dot"></span></div>
+          <div class="u6-stop" title="Dietlindenstraße"><span class="dot"></span></div>
+          <div class="u6-stop" title="Münchner Freiheit"><span class="dot"></span></div>
+          <div class="u6-stop" title="Giselastraße"><span class="dot"></span></div>
+          <div class="u6-stop" title="Universität"><span class="dot"></span></div>
+          <div class="u6-stop" title="Odeonsplatz"><span class="dot"></span></div>
+          <div class="u6-stop key"><span class="dot"></span><span class="lbl">Marienplatz</span></div>
+          <div class="u6-stop" title="Sendlinger Tor"><span class="dot"></span></div>
+          <div class="u6-stop key"><span class="dot"></span><span class="lbl">Goetheplatz</span></div>
+        </div>
       </div>
       <p class="walk-map-note">뮌헨 구시가 가볼 만한 곳(아래 카드)은 모두 도보권이며 카드 순서대로 이동하면 됩니다</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1370,11.5758&destination=48.1370,11.5758&waypoints=48.1367%2C11.5756%7C48.1374%2C11.5761%7C48.1387%2C11.5730%7C48.1387%2C11.5703%7C48.1351%2C11.5697%7C48.1355%2C11.5764%7C48.1422%2C11.5767%7C48.1428,11.5800" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발·도착) · 총 약 4.7km · 도보 약 1시간 3분</a>
