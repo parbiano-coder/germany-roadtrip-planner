@@ -1690,7 +1690,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;margin:0.4rem 0 1rem;">
         <div class="booking-note" style="margin:0;">① Fröttmaning → 마리엔광장(구시가) · 11개 역 · 약 16분 · 편도 €4.20<br><span style="font-size:0.78rem;color:var(--ink-soft);">Fröttmaning → Kieferngarten → Freimann → Studentenstadt → Alte Heide → Nordfriedhof → Dietlindenstraße → Münchner Freiheit → Giselastraße → Universität → Odeonsplatz → Marienplatz</span></div>
         <div class="booking-note" style="margin:0;">② 마리엔광장 → 옥토버페스트(테레지엔비제, Goetheplatz/Poccistraße 하차) · 2~3개 역 · 약 3~5분 · 편도 €4.20(Zone M 동일)<br><span style="font-size:0.78rem;color:var(--ink-soft);">Marienplatz → Sendlinger Tor → Goetheplatz(→ Poccistraße)</span></div>
-        <div class="booking-note" style="margin:0;">③ 주차장 복귀: 옥토버페스트(Goetheplatz/Poccistraße) → Fröttmaning · 2~3개 역 · 약 3~5분 · 편도 €4.20<br><span style="font-size:0.78rem;color:var(--ink-soft);">(Poccistraße →) Goetheplatz → Sendlinger Tor → Marienplatz → Odeonsplatz → Universität → Giselastraße → Münchner Freiheit → Dietlindenstraße → Nordfriedhof → Alte Heide → Studentenstadt → Freimann → Kieferngarten → Fröttmaning</span></div>
+        <div class="booking-note" style="margin:0;">③ 주차장 복귀: 옥토버페스트(Goetheplatz/Poccistraße) → Fröttmaning · U6 13개 역 · 약 19분 · 편도 €4.20<br><span style="font-size:0.78rem;color:var(--ink-soft);">(Poccistraße →) Goetheplatz → Sendlinger Tor → Marienplatz → Odeonsplatz → Universität → Giselastraße → Münchner Freiheit → Dietlindenstraße → Nordfriedhof → Alte Heide → Studentenstadt → Freimann → Kieferngarten → Fröttmaning</span></div>
       </div>
       <p class="walk-map-note">요금은 편도 1회권 기준(1인) — 오늘처럼 여러 번 탈 계획이면 위 P+R/MVV 안내의 1일권(€9.70)이 더 유리할 수 있습니다.</p>
       <div class="booking-note" style="grid-column:1/-1;max-width:700px;">
@@ -1818,7 +1818,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="landmark-parking">🅿️ P+R Fröttmaning → U6 직행(마리엔광장 하차) · 주차 1일권 €1.50(지하철 요금 별도)</div>
         </div>
       </div>
-      <p class="walk-map-note">🚇 마리엔광장 → 옥토버페스트(테레지엔비제, Goetheplatz/Poccistraße 하차) — 2~3개 역 · 약 3~5분 · 편도 €4.20(Zone M 동일)</p>
+      <p class="walk-map-note">🚇 U6 마리엔광장 → 옥토버페스트(테레지엔비제, Goetheplatz 또는 Poccistraße 하차) — 환승 없이 2~3개 역 · 약 3~5분 · 편도 €4.20(Zone M 동일)<br>Marienplatz → Sendlinger Tor → Goetheplatz(→ Poccistraße)</p>
       <div class="landmark-card wide">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Wiesn2006_Luftaufnahme.jpg/500px-Wiesn2006_Luftaufnahme.jpg" alt="테레지엔비제(Theresienwiese)" loading="lazy">
         <div class="landmark-body">
@@ -2001,7 +2001,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
         </div>
       </div>
-      <p class="walk-map-note tonight-note">🔙 주차장 복귀: 옥토버페스트(Goetheplatz/Poccistraße) → Fröttmaning — U6 환승 없이 2~3개 역 · 약 3~5분 · 편도 €4.20<br><b>🚗 오늘 밤 숙소로</b> P+R Fröttmaning(주차장)→숙소(퓌센) 약 140.6km·1시간 42분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.2188,11.6236&destination=47.57,10.70" target="_blank" rel="noopener">Google 지도로 길찾기</a></p>
+      <p class="walk-map-note tonight-note">🔙 주차장 복귀: U6 Goetheplatz(또는 Poccistraße) → Fröttmaning, 환승 없이 13개 역 · 약 19분 · 편도 €4.20<br><span style="font-size:0.78rem;">(Poccistraße →) Goetheplatz → Sendlinger Tor → Marienplatz → Odeonsplatz → Universität → Giselastraße → Münchner Freiheit → Dietlindenstraße → Nordfriedhof → Alte Heide → Studentenstadt → Freimann → Kieferngarten → Fröttmaning</span><br><b>🚗 오늘 밤 숙소로</b> P+R Fröttmaning(주차장)→숙소(퓌센) 약 140.6km·1시간 42분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.2188,11.6236&destination=47.57,10.70" target="_blank" rel="noopener">Google 지도로 길찾기</a></p>
     </div>
     </details>
 
@@ -4277,6 +4277,8 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     triberg: [48.1263, 8.2313, '트리베르크 · 뻐꾸기시계 원조마을'],
     metzingen: [48.54, 9.28, '메칭겐'],
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
+    stuttgartMercedes: [48.7858, 9.2333, '슈투트가르트(메르세데스-벤츠 박물관)'],
+    stuttgartPorsche: [48.8345, 9.1510, '슈투트가르트(포르쉐 박물관)'],
     heidelberg: [49.41, 8.71, '하이델베르크', null, 'bottom'],
     bernkastel: [49.92, 7.07, '베른카슈텔쿠에스 (선택)'],
     ruedesheim: [49.98, 7.91, '뤼데스하임', null, 'top'],
@@ -4311,7 +4313,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
     ], branches: [
-      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분' },
+      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche'], extraViaDirs:['left','top'] },
       { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분', labelDir:'bottom' }
     ]},
     day8: { stops: [
@@ -4392,7 +4394,10 @@ window.bindHoverInfo = function(layer, html, baseRadius){
 
     var pts = day.stops.map(function(s){ return C[s.c]; });
     var bounds = L.latLngBounds(pts.map(function(p){ return [p[0], p[1]]; }));
-    branches.forEach(function(b){ bounds.extend([C[b.via][0], C[b.via][1]]); });
+    branches.forEach(function(b){
+      bounds.extend([C[b.via][0], C[b.via][1]]);
+      (b.extraVias || []).forEach(function(k){ bounds.extend([C[k][0], C[k][1]]); });
+    });
     Object.keys(dayRoutes).forEach(function(k){ dayRoutes[k].forEach(function(p){ bounds.extend(p); }); });
     map.fitBounds(bounds, { padding: [28, 28] });
 
@@ -4420,12 +4425,22 @@ window.bindHoverInfo = function(layer, html, baseRadius){
         color: '#0b3c6e', weight: 2.5, opacity: 0.55, dashArray: '5 5'
       }).addTo(map);
       if (br.legOut) seg2.bindTooltip(br.legOut, { sticky: true, className: 'rt-tip' });
-      var viaM = L.circleMarker([via[0], via[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.5, dashArray: '2 2' })
-        .addTo(map).bindPopup('<b>' + via[2] + '</b> (선택)');
-      window.bindHoverInfo(viaM, '<b>' + via[2] + '</b> (선택)', 6);
-      var viaDir = br.labelDir || 'right';
       var viaOffsets = { left: [-8, 0], right: [8, 0], top: [0, -8], bottom: [0, 8] };
-      viaM.bindTooltip(shortLabel(via[2]), { permanent: true, direction: viaDir, offset: viaOffsets[viaDir] || [8, 0], className: 'city-label-tip' });
+      if (!br.hideVia) {
+        var viaM = L.circleMarker([via[0], via[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.5, dashArray: '2 2' })
+          .addTo(map).bindPopup('<b>' + via[2] + '</b> (선택)');
+        window.bindHoverInfo(viaM, '<b>' + via[2] + '</b> (선택)', 6);
+        var viaDir = br.labelDir || 'right';
+        viaM.bindTooltip(shortLabel(via[2]), { permanent: true, direction: viaDir, offset: viaOffsets[viaDir] || [8, 0], className: 'city-label-tip' });
+      }
+      (br.extraVias || []).forEach(function(vk, vi){
+        var vp = C[vk];
+        var m = L.circleMarker([vp[0], vp[1]], { radius: 6, color: '#fffdf7', weight: 2, fillColor: '#c2492f', fillOpacity: 0.5, dashArray: '2 2' })
+          .addTo(map).bindPopup('<b>' + vp[2] + '</b> (선택)');
+        window.bindHoverInfo(m, '<b>' + vp[2] + '</b> (선택)', 6);
+        var dir = (br.extraViaDirs && br.extraViaDirs[vi]) || 'right';
+        m.bindTooltip(vp[2], { permanent: true, direction: dir, offset: viaOffsets[dir] || [8, 0], className: 'city-label-tip' });
+      });
     });
 
     day.stops.forEach(function(s, i){
