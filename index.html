@@ -4277,9 +4277,9 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     triberg: [48.1263, 8.2313, '트리베르크 · 뻐꾸기시계 원조마을'],
     metzingen: [48.54, 9.28, '메칭겐'],
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
-    stuttgartMercedes: [48.7858, 9.2333, '슈투트가르트<br>(메르세데스-벤츠 박물관)'],
+    stuttgartMercedes: [48.7858, 9.2333, '슈투트가르트<br>(벤츠 박물관)'],
     stuttgartPorsche: [48.8345, 9.1510, '슈투트가르트<br>(포르쉐 박물관)'],
-    heidelberg: [49.41, 8.71, '하이델베르크', null, 'bottom'],
+    heidelberg: [49.41, 8.71, '하이델베르크', null, 'left'],
     bernkastel: [49.92, 7.07, '베른카슈텔쿠에스 (선택)'],
     ruedesheim: [49.98, 7.91, '뤼데스하임', null, 'top'],
     trechtingshausen: [49.97, 7.86, 'Trechtingshausen · 숙박 · ChristRose', '숙소(Trechtingshausen)'],
@@ -4313,7 +4313,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
     ], branches: [
-      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche'], extraViaDirs:['left','right'] },
+      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche'], extraViaDirs:['left','top'] },
       { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분', labelDir:'bottom' }
     ]},
     day8: { stops: [
