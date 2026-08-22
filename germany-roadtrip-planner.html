@@ -4582,26 +4582,34 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       var hashDet = hashTarget.tagName === 'DETAILS' ? hashTarget : hashTarget.closest('details.day');
       if (hashDet) {
         hashDet.open = true;
-        // 위쪽 일차들의 지도·이미지가 늦게 로드되며 레이아웃이 밀리면 스크롤 위치가 어긋날 수 있어
-        // (특히 마지막 날), 문서 높이가 안정될 때까지 기다렸다가 한 번만 스크롤합니다
-        // (여러 번 다시 스크롤하면 7일차→8일차처럼 화면이 튀어 보이는 문제가 있었음).
-        var lastHeight = -1, stableCount = 0, attempts = 0;
-        var checkStable = function(){
-          attempts++;
-          var h = document.documentElement.scrollHeight;
-          if (h === lastHeight) {
-            stableCount++;
-          } else {
-            stableCount = 0;
-            lastHeight = h;
-          }
-          if (stableCount >= 2 || attempts >= 30) {
-            hashTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
-            return;
-          }
-          setTimeout(checkStable, 80);
+        // 타겟보다 앞쪽(위쪽 일차들)의 lazy 이미지가 늦게 로드되며 레이아웃이 밀리면
+        // 스크롤 위치가 어긋날 수 있어(특히 마지막 날), 그 이미지들을 미리 즉시 로드시키고
+        // 다 뜬 뒤 한 번만 스크롤합니다(여러 번 다시 스크롤하면 화면이 튀어 보임).
+        var allImgs = Array.prototype.slice.call(document.querySelectorAll('img[loading="lazy"]'));
+        var priorImgs = allImgs.filter(function(img){
+          return !!(img.compareDocumentPosition(hashDet) & Node.DOCUMENT_POSITION_FOLLOWING);
+        });
+        var pending = priorImgs.filter(function(img){ return !img.complete; });
+        var scrollOnce = function(){
+          if (scrollOnce.done) return;
+          scrollOnce.done = true;
+          hashTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
         };
-        checkStable();
+        if (pending.length === 0) {
+          scrollOnce();
+        } else {
+          var remaining = pending.length;
+          var onOneDone = function(){
+            remaining--;
+            if (remaining <= 0) scrollOnce();
+          };
+          pending.forEach(function(img){
+            img.addEventListener('load', onOneDone, { once: true });
+            img.addEventListener('error', onOneDone, { once: true });
+            img.loading = 'eager';
+          });
+          setTimeout(scrollOnce, 4000); // 안전장치: 네트워크가 느려도 4초 뒤엔 진행
+        }
       }
     }
   }
