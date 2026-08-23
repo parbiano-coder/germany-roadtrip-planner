@@ -459,7 +459,7 @@
   }
   .walk-map-link:hover{ border-color:var(--route); background:var(--route-soft); }
   .route-snapshot{
-    display:flex; flex-wrap:wrap; max-width:820px; margin:0.8rem 0 1.3rem;
+    display:flex; flex-wrap:wrap; max-width:100%; margin:0.8rem 0 1.3rem;
     border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
     background:var(--surface);
   }
@@ -1661,7 +1661,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <h4>오늘의 동선</h4>
           <ul>
             <li>A9 아우토반으로 뮌헨 방면 이동 중 알리안츠 아레나(FC 바이에른 홈구장)에 들러 외관 구경 &amp; 뮤지엄 관람 (뉘른베르크→아레나 161km·1시간 36분 — 뮌헨 시내 직행 대비 약 +15~20분·+4km만 추가되는 정도라 경로 이탈 부담 적음)</li>
-            <li>시내로 가는 길에 BMW 벨트·박물관(Olympiapark 인근) 경유 가능 — 아레나에서 약 13km·15분</li>
+            <li>시내로 가는 길에 BMW 벨트(Olympiapark 인근) 경유 가능 — 아레나에서 약 13km·15분(⚠️ BMW 박물관은 오늘 월요일 휴관)</li>
             <li>아레나에서 뮌헨 시내로 이동 (13km, 약 19분)</li>
             <li>테레지엔비제(옥토버페스트 축제장) 도보 산책 — 텐트 좌석 예약 없이도 놀이기구·인파·축제 분위기는 무료로 체감 가능 (숙박 없음)</li>
             <li>마리엔 광장·신시청(Neues Rathaus) 글로켄슈필·프라우엔교회·빅투알리엔마르크트 등 구시가 반나절 관광 — 구시청·아잠 교회·성 페터 교회·성 미하엘 교회·테아티너 교회·호프가르텐도 모두 도보권이라 여유 있으면 묶어서 둘러볼 수 있습니다</li>
@@ -1710,8 +1710,8 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/4_cilindros_y_museo_BMW%2C_M%C3%BAnich%2C_Alemania_2012-04-28%2C_DD_02.JPG" alt="BMW 타워와 BMW 박물관" loading="lazy">
         <div class="landmark-body">
-        <h3>BMW 박물관(BMW Museum)</h3>
-        <p class="landmark-desc">네 개의 원통이 겹쳐진 'BMW 타워'와 그 아래 사발 모양 건물이 박물관입니다. BMW의 자동차·오토바이·엔진 역사를 시대별로 전시합니다. BMW 벨트 바로 옆(도보 3분)이라 함께 둘러보기 좋습니다.</p>
+        <h3>(휴관) BMW 박물관(BMW Museum)</h3>
+        <p class="landmark-desc">네 개의 원통이 겹쳐진 'BMW 타워'와 그 아래 사발 모양 건물이 박물관입니다. BMW의 자동차·오토바이·엔진 역사를 시대별로 전시합니다. BMW 벨트 바로 옆(도보 3분)이라 평소엔 함께 둘러보기 좋지만, <b>⚠️ 방문일(9/21 월)은 정기휴무일이라 관람 불가</b> — 옆의 BMW 벨트(무료)만 둘러보고 지나가는 걸 추천합니다.</p>
         <div class="landmark-meta">화–일 10:00–18:00(월요일 휴관) · <span class="landmark-price">성인 €10~14 · 대학생 €7~8(학생증 지참, 출처마다 가격 차이 — 현장·홈페이지 확인 권장)</span> · <a href="https://www.bmwgroup-classic.com/en/company/museum.html" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=BMW+Museum+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ BMW 벨트 지하주차장(공용) · 최초 15분 무료, 이후 시간당 €2.50(1일 최대 €19) · U3/U8 Olympiazentrum역 도보 3분 거리</div>
         </div>
@@ -1750,8 +1750,8 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div style="grid-column:1/-1;margin:0.6rem 0 1.3rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;">
         <img src="images/muenchen_ubahn_u6.svg" alt="뮌헨 U-Bahn 노선도 — U6 라인과 Fröttmaning·마리엔광장·Goetheplatz 3개 역 강조 표시" loading="lazy" style="width:100%;height:auto;display:block;background:#fff;">      </div>
-      <p class="walk-map-note">🅿️ P+R Fröttmaning 주차 후 U6 라인으로 마리엔광장 하차(주차 1일권 €1.50, 지하철 요금 별도) — 아래 명소는 모두 마리엔광장역에서 이어지는 도보권이며 카드 순서대로 이동하면 됩니다. 구 피나코테크에서 도보 코스가 끝나니 관람 후 대중교통으로 복귀하세요</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1370,11.5758&destination=48.1478,11.5692&waypoints=48.1367%2C11.5756%7C48.1374%2C11.5761%7C48.1387%2C11.5730%7C48.1387%2C11.5703%7C48.1351%2C11.5697%7C48.1355%2C11.5764%7C48.1422%2C11.5767%7C48.1421%2C11.5778%7C48.1414%2C11.5786%7C48.1411%2C11.5794%7C48.1428%2C11.5800" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발 → 구 피나코테크 도착) · 총 약 4.9km · 도보 약 1시간 3분</a>
+      <p class="walk-map-note">🅿️ P+R Fröttmaning 주차 후 U6 라인으로 마리엔광장 하차(주차 1일권 €1.50, 지하철 요금 별도) — 아래 명소는 모두 마리엔광장역에서 이어지는 도보권이며 카드 순서대로 이동하면 됩니다. 영국정원에서 도보 코스가 끝나니 U6 라인 우니베르지테트·오데온스플라츠역에서 대중교통으로 복귀하세요. 구 피나코테크·신 피나코테크는 도보권 밖(지도엔 위치만 표시)인 데다 오늘(월)은 둘 다 정기휴관이라 이번엔 들르지 않습니다</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1370,11.5758&destination=48.1434,11.5859&waypoints=48.1367%2C11.5756%7C48.1374%2C11.5761%7C48.1387%2C11.5730%7C48.1387%2C11.5703%7C48.1351%2C11.5697%7C48.1355%2C11.5764%7C48.1422%2C11.5767%7C48.1421%2C11.5778%7C48.1414%2C11.5786%7C48.1411%2C11.5794%7C48.1428%2C11.5800" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발 → 영국정원 도착) · 총 약 4.4km · 도보 약 1시간</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
           <img src="images/routes/muenchen.png" alt="뮌헨 도보 코스 지도 스냅샷" loading="lazy">
@@ -1769,9 +1769,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">레지덴츠 & 보물관</span><span class="rs-seg">(200m, 3분)</span></li>
         <li><span class="rs-name">퀴비예 극장</span><span class="rs-seg">(80m, 1분)</span></li>
         <li><span class="rs-name">호프가르텐</span><span class="rs-seg">(150m, 2분)</span></li>
-        <li><span class="rs-name">구 피나코테크</span><span class="rs-seg">(1.1km, 14분)</span></li>
+        <li><span class="rs-name">영국정원</span><span class="rs-seg">(500m, 7분)</span></li>
         </ol>
-        <p style="grid-column:1/-1;font-size:0.78rem;color:var(--ink-soft);margin:0.5rem 0 0;">🚇 구 피나코테크 관람 후 차로 복귀 시: 쾨니히스플라츠역(U2) 도보 3분 → 중앙역(Hauptbahnhof) 환승 → U6 → Fröttmaning(전체 약 20분, 환승 1회)</p>
+        <p style="grid-column:1/-1;font-size:0.78rem;color:var(--ink-soft);margin:0.5rem 0 0;">🚇 영국정원 관람 후 차로 복귀 시: 도보로 우니베르지테트 또는 오데온스플라츠역 이동(약 5~7분) → U6 → Fröttmaning, 환승 없음</p>
       </div>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 신시청(Neues Rathaus) 글로켄슈필" loading="lazy">
@@ -1877,12 +1877,29 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       <div class="landmark-card semi-wide">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monopteros_Englischer_Garten_M%C3%BCnchen_01.jpg?width=500" alt="영국정원" loading="lazy">
+        <div class="landmark-body">
+        <h3>영국정원(Englischer Garten)</h3>
+        <p class="landmark-desc">뉴욕 센트럴파크보다 넓은 유럽 최대급 도심 공원. 모노프테로스 신전과 서퍼들이 파도를 타는 아이스바흐 급류가 명물입니다. 남쪽 끝(하우스 데어 쿤스트 인근)이 호프가르텐에서 도보 약 7분 거리라 부담 없이 들를 수 있습니다.</p>
+        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Englischer+Garten+Muenchen" target="_blank" rel="noopener">지도</a></div>
+        <div class="landmark-parking">🅿️ 인근 노상 유료주차 위주 · 시간당 약 €2~4(구역별 상이) · 대중교통 권장(U3/U6 Giselastr.)</div>
+        </div>
+      </div>
+      <div class="landmark-card semi-wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alte_Pinakothek.JPG?width=500" alt="구 피나코테크" loading="lazy">
         <div class="landmark-body">
         <h3>구 피나코테크(Alte Pinakothek)</h3>
-        <p class="landmark-desc">중세부터 18세기 중반까지 유럽 거장들의 회화를 소장한 미술관. 신 피나코테크가 리모델링 휴관 중이라 19세기 명작 일부도 이곳에서 함께 전시됩니다. 1836년 개관 당시 유럽 미술관 건축의 본보기가 되어 상트페테르부르크 에르미타주 등에도 영향을 준 곳으로, 루벤스 작품 72점은 세계에서 가장 큰 루벤스 컬렉션이고 독일 거장 회화 컬렉션도 세계에서 가장 방대한 편입니다("세계 6대 미술관"이라는 표현은 자주 회자되지만 공식적으로 확인되는 순위는 아닙니다). 이번 여행 도시들 중 이만한 규모의 서양 고전 회화 미술관은 따로 없어 뮌헨에서만 볼 수 있는 컬렉션입니다.</p>
+        <p class="landmark-desc">중세부터 18세기 중반까지 유럽 거장들의 회화를 소장한 미술관. 신 피나코테크가 리모델링 휴관 중이라 19세기 명작 일부도 이곳에서 함께 전시됩니다. 1836년 개관 당시 유럽 미술관 건축의 본보기가 되어 상트페테르부르크 에르미타주 등에도 영향을 준 곳으로, 루벤스 작품 72점은 세계에서 가장 큰 루벤스 컬렉션이고 독일 거장 회화 컬렉션도 세계에서 가장 방대한 편입니다("세계 6대 미술관"이라는 표현은 자주 회자되지만 공식적으로 확인되는 순위는 아닙니다). 이번 여행 도시들 중 이만한 규모의 서양 고전 회화 미술관은 따로 없어 뮌헨에서만 볼 수 있는 컬렉션입니다. 구시가 도보 코스에서 약 1.1km(도보 14분) 떨어져 있어 위 도보 코스엔 포함하지 않았고(위 지도엔 위치만 참고로 표시), <b>⚠️ 방문일(9/21 월)은 정기휴관일이라 이번엔 관람할 수 없습니다</b> — 뮌헨을 다시 방문할 계획이 있다면 화~일 중 별도 일정으로 고려해보세요.</p>
         <div class="landmark-meta">매일 10:00–18:00(화·수 ~20:00), 월요일 휴관 · <span class="landmark-price">성인 €7 · 대학생 €5(일요일 전관 €1)</span> · <a href="https://www.pinakothek.de/en/alte-pinakothek" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Alte+Pinakothek+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 쾨니히스플라츠 인근 유료주차장 · 뮌헨 시내 평균 시간당 약 €3~4(업체·구역별 상이)</div>
+        </div>
+      </div>
+      <div class="landmark-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neue%20Pinakothek%20Muenchen-2.jpg?width=500" alt="신 피나코테크(휴관 중)" loading="lazy">
+        <div class="landmark-body">
+        <h3>(휴관) 신 피나코테크(Neue Pinakothek)</h3>
+        <p class="landmark-desc">구 피나코테크 바로 건너편(테레지엔 거리 맞은편, 도보 1분)에 있어 위치상으로는 함께 묶어 보기 좋지만, 2019년부터 리모델링으로 휴관 중이며 2029년 하반기 재개관 예정입니다. 19세기 유럽 회화(낭만주의·인상주의 등, 모네·반고흐·고갱·세잔 등)를 소장했던 곳으로, 휴관 기간 소장품 일부는 구 피나코테크 동쪽 별관과 샤크 컬렉션(Sammlung Schack)에서 볼 수 있습니다.</p>
+        <div class="landmark-meta">⚠️ 2029년 하반기까지 휴관 · <a href="https://www.google.com/maps/search/?api=1&query=Neue+Pinakothek+Muenchen" target="_blank" rel="noopener">지도(쿤스트아레알 지구)</a></div>
         </div>
       </div>
       <div class="landmark-card">
@@ -1894,29 +1911,12 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       <div class="landmark-card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Neue%20Pinakothek%20Muenchen-2.jpg?width=500" alt="신 피나코테크(휴관 중)" loading="lazy">
-        <div class="landmark-body">
-        <h3>(휴관) 신 피나코테크(Neue Pinakothek)</h3>
-        <p class="landmark-desc">19세기 유럽 회화(낭만주의·인상주의 등, 모네·반고흐·고갱·세잔 등)를 소장한 미술관이지만 2019년부터 리모델링으로 휴관 중이며 2029년 하반기 재개관 예정입니다. 휴관 기간 소장품 일부는 구 피나코테크 동쪽 별관과 샤크 컬렉션(Sammlung Schack)에서 볼 수 있습니다.</p>
-        <div class="landmark-meta">⚠️ 2029년 하반기까지 휴관 · <a href="https://www.google.com/maps/search/?api=1&query=Neue+Pinakothek+Muenchen" target="_blank" rel="noopener">지도(쿤스트아레알 지구)</a></div>
-        </div>
-      </div>
-      <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Schloss_Nymphenburg_in_M%C3%BCnchen.JPG?width=500" alt="님펜부르크 궁전" loading="lazy">
         <div class="landmark-body">
         <h3>님펜부르크 궁전(Schloss Nymphenburg)</h3>
-        <p class="landmark-desc">비텔스바흐 왕가의 여름 별궁. 광활한 정원과 파빌리온이 딸려 있어 궁전 하나만 봐도 반나절이 훌쩍 갑니다. 시내 중심(마리엔광장)에서 서쪽으로 약 6km 떨어져 있어 별도 이동이 필요합니다. <b>현장 구매 불가</b> — 시간 되어 들를 경우 미리 온라인으로 타임슬롯을 예약해야 합니다.</p>
+        <p class="landmark-desc">비텔스바흐 왕가의 여름 별궁. 광활한 정원과 파빌리온이 딸려 있어 궁전 하나만 봐도 반나절이 훌쩍 갑니다. 시내 중심(마리엔광장)에서 서쪽으로 약 6km 떨어져 있어 도보권 밖이며 별도 이동이 필요합니다(위 지도엔 방향과 거리만 표시). <b>현장 구매 불가</b> — 시간 되어 들를 경우 미리 온라인으로 타임슬롯을 예약해야 합니다.</p>
         <div class="landmark-meta">4–10/15 매일 09:00–18:00 · 10/16–3월 매일 10:00–16:00 · <span class="landmark-price">궁전 €10 · 대학생 €9, 파빌리온 포함 통합권 €20(비수기 €16)</span> · ⚠️ 타임슬롯 사전예약 필수 · <a href="https://www.schloss-nymphenburg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Schloss+Nymphenburg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 궁전 앞(Schlossrondell) · 유료(정확한 시간당 요금 미확인 — 현장 정산기 확인 필요)</div>
-        </div>
-      </div>
-      <div class="landmark-card semi-wide">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monopteros_Englischer_Garten_M%C3%BCnchen_01.jpg?width=500" alt="영국정원" loading="lazy">
-        <div class="landmark-body">
-        <h3>영국정원(Englischer Garten)</h3>
-        <p class="landmark-desc">뉴욕 센트럴파크보다 넓은 유럽 최대급 도심 공원. 모노프테로스 신전과 서퍼들이 파도를 타는 아이스바흐 급류가 명물입니다.</p>
-        <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Englischer+Garten+Muenchen" target="_blank" rel="noopener">지도</a></div>
-        <div class="landmark-parking">🅿️ 인근 노상 유료주차 위주 · 시간당 약 €2~4(구역별 상이) · 대중교통 권장(U3/U6 Giselastr.)</div>
         </div>
       </div>
       <div class="sight-list">
