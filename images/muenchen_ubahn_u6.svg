@@ -45,7 +45,7 @@
         <circle cx="885" cy="710" r="6.25" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
         <path d="M885,710l-0,-24.095c0,-3.261 2.644,-5.905 5.905,-5.905l24.095,-0" style="fill:none;stroke:#fff;stroke-width:2.5px;"/>
     </g>
-    <text x="924.191px" y="685px" style="font-family:'DejaVuSansCondensed', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:18px;;fill:#9a9a9a">Odeonsplatz</text>
+    <text x="924.191px" y="685px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:24px;font-weight:700;fill:#000">Odeonsplatz</text>
     <g>
         <path d="M874.694,777.873c-0,-0 -27.553,27.553 -38.251,38.25c-2.306,2.307 -2.306,6.046 0,8.352c6.18,6.18 17.038,17.037 17.038,17.037" style="fill:none;stroke:#000;stroke-width:7.5px;"/>
         <path d="M857.9,837.093c2.439,2.439 2.439,6.4 0,8.839c-2.439,2.439 -6.399,2.439 -8.839,-0c-2.439,-2.439 -2.439,-6.4 0,-8.839c2.44,-2.439 6.4,-2.439 8.839,0Z" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
@@ -358,7 +358,7 @@
         <path d="M921.25,635c0,3.449 -2.801,6.25 -6.25,6.25c-3.449,-0 -6.25,-2.801 -6.25,-6.25c0,-3.449 2.801,-6.25 6.25,-6.25c3.449,-0 6.25,2.801 6.25,6.25Z" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>
         <path d="M915,635l-15,-0" style="fill:none;stroke:#fff;stroke-width:2.5px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
     </g>
-    <text x="923.594px" y="640px" style="font-family:'DejaVuSansCondensed', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:18px;;fill:#9a9a9a">Universität</text>
+    <text x="923.594px" y="640px" style="font-family:'DejaVuSansCondensed-Bold', 'DejaVu Sans', sans-serif;font-stretch:semi-condensed;font-size:24px;font-weight:700;fill:#000">Universität</text>
     <g>
         <path d="M915,590l-15,-0" style="fill:none;stroke:#000;stroke-width:7.5px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
         <path d="M906.25,590c0,3.449 -2.801,6.25 -6.25,6.25c-3.449,-0 -6.25,-2.801 -6.25,-6.25c0,-3.449 2.801,-6.25 6.25,-6.25c3.449,-0 6.25,2.801 6.25,6.25Z" style="fill:#fff;stroke:#000;stroke-width:2.5px;"/>

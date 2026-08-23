@@ -418,6 +418,7 @@
   .booking-note .cash-note{ margin-top:0.5rem; padding-top:0.5rem; border-top:1px dashed var(--warn); }
   .landmark-body{ padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:0.6rem; }
   .landmark-body h3{ margin:0; font-size:1.02rem; }
+  .stop-num{ display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:var(--route); color:#fff; font-size:0.72rem; font-weight:800; margin-right:0.4rem; vertical-align:middle; flex:none; }
   .landmark-desc{ margin:0; font-size:0.88rem; color:var(--ink-soft); }
   .landmark-meta{ font-size:0.8rem; color:var(--ink-soft); }
   .landmark-meta .landmark-price{ color:var(--route); font-weight:700; font-family:"SF Mono","Consolas",monospace; }
@@ -1749,9 +1750,9 @@ document.addEventListener('DOMContentLoaded', function(){
         <p class="cash-note"><b>MVV</b>(Münchner Verkehrs- und Tarifverbund)는 뮌헨 지하철·전철(S-Bahn)·트램·버스를 하나의 요금체계로 묶는 통합 운영기구입니다. <b>MVV 앱</b>은 그 공식 모바일 승차권 앱으로, 역 자판기 대신 휴대폰으로 티켓을 사는 용도입니다 — <a href="https://apps.apple.com/de/app/mvv-app/id388686726?platform=iphone" target="_blank" rel="noopener">iOS 다운로드</a> · <a href="https://play.google.com/store/apps/details?id=com.mdv.companion" target="_blank" rel="noopener">Android 다운로드</a></p>
       </div>
       <div style="grid-column:1/-1;margin:0.6rem 0 1.3rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;">
-        <img src="images/muenchen_ubahn_u6.svg" alt="뮌헨 U-Bahn 노선도 — U6 라인과 Fröttmaning·마리엔광장·Goetheplatz 3개 역 강조 표시" loading="lazy" style="width:100%;height:auto;display:block;background:#fff;">      </div>
-      <p class="walk-map-note">🅿️ P+R Fröttmaning 주차 후 U6 라인으로 마리엔광장 하차(주차 1일권 €1.50, 지하철 요금 별도) — 아래 명소는 모두 마리엔광장역에서 이어지는 도보권이며 카드 순서대로 이동하면 됩니다. 영국정원에서 도보 코스가 끝나니 U6 라인 우니베르지테트·오데온스플라츠역에서 대중교통으로 복귀하세요. 구 피나코테크·신 피나코테크는 도보권 밖(지도엔 위치만 표시)인 데다 오늘(월)은 둘 다 정기휴관이라 이번엔 들르지 않습니다</p>
-      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1370,11.5758&destination=48.1434,11.5859&waypoints=48.1367%2C11.5756%7C48.1374%2C11.5761%7C48.1387%2C11.5730%7C48.1387%2C11.5703%7C48.1351%2C11.5697%7C48.1355%2C11.5764%7C48.1422%2C11.5767%7C48.1421%2C11.5778%7C48.1414%2C11.5786%7C48.1411%2C11.5794%7C48.1428%2C11.5800" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발 → 영국정원 도착) · 총 약 4.4km · 도보 약 1시간</a>
+        <img src="images/muenchen_ubahn_u6.svg" alt="뮌헨 U-Bahn 노선도 — U6 라인과 Fröttmaning·우니베르지테트·오데온스플라츠·마리엔광장·Goetheplatz 5개 역 강조 표시" loading="lazy" style="width:100%;height:auto;display:block;background:#fff;">      </div>
+      <p class="walk-map-note">🅿️ P+R Fröttmaning 주차 후 U6 라인으로 마리엔광장 하차(주차 1일권 €1.50, 지하철 요금 별도) — 아래 명소는 모두 마리엔광장역에서 이어지는 도보권이며 카드 순서대로 이동하면 됩니다. 실질적인 도보 코스는 호프가르텐에서 끝나고, 영국정원은 시간 되면 초입만 살짝 들르는 선택 코스입니다(생략해도 무방) — U6 라인 오데온스플라츠·우니베르지테트역에서 대중교통으로 복귀하세요. 구 피나코테크·신 피나코테크는 도보권 밖(지도엔 위치만 표시)인 데다 오늘(월)은 둘 다 정기휴관이라 이번엔 들르지 않습니다</p>
+      <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1370,11.5758&destination=48.1428,11.5800&waypoints=48.1367%2C11.5756%7C48.1374%2C11.5761%7C48.1387%2C11.5730%7C48.1387%2C11.5703%7C48.1351%2C11.5697%7C48.1355%2C11.5764%7C48.1422%2C11.5767%7C48.1421%2C11.5778%7C48.1414%2C11.5786%7C48.1411%2C11.5794" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(마리엔광장역 출발 → 호프가르텐 도착) · 총 약 3.8km · 도보 약 49분</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
           <img src="images/routes/muenchen.png" alt="뮌헨 도보 코스 지도 스냅샷" loading="lazy">
@@ -1769,14 +1770,14 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">레지덴츠 & 보물관</span><span class="rs-seg">(200m, 3분)</span></li>
         <li><span class="rs-name">퀴비예 극장</span><span class="rs-seg">(80m, 1분)</span></li>
         <li><span class="rs-name">호프가르텐</span><span class="rs-seg">(150m, 2분)</span></li>
-        <li><span class="rs-name">영국정원</span><span class="rs-seg">(500m, 7분)</span></li>
+        <li><span class="rs-name">(선택) 영국정원(초입만 또는 생략 가능)</span><span class="rs-seg">(500m, 7분)</span></li>
         </ol>
-        <p style="grid-column:1/-1;font-size:0.78rem;color:var(--ink-soft);margin:0.5rem 0 0;">🚇 영국정원에서 도보로 우니베르지테트 또는 오데온스플라츠역 이동(약 5~7분), 이후 U6 라인 한 번으로 어디든 갈 수 있습니다 — 주차장(Fröttmaning) 복귀 시엔 그대로 진행 방향, 옥토버페스트(Goetheplatz)로 바로 이동 시엔 반대 방향으로 타면 마리엔광장에 내릴 필요 없이 곧장 갑니다(환승 없음)</p>
+        <p style="grid-column:1/-1;font-size:0.78rem;color:var(--ink-soft);margin:0.5rem 0 0;">🚇 호프가르텐(또는 영국정원까지 갔다면 그 자리)에서 도보로 <b>오데온스플라츠</b> 또는 <b>우니베르지테트</b>역 이동(약 3~7분) — 주차장(Fröttmaning) 복귀는 진행 방향 그대로 U6, 옥토버페스트 이동은 아래 "옥토버페스트 축제장 이동" 참고</p>
       </div>
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" alt="마리엔 광장 & 신시청(Neues Rathaus) 글로켄슈필" loading="lazy">
         <div class="landmark-body">
-        <h3>마리엔 광장 & 신시청(Neues Rathaus) 글로켄슈필</h3>
+        <h3><span class="stop-num">1</span>마리엔 광장 & 신시청(Neues Rathaus) 글로켄슈필</h3>
         <p class="landmark-desc">뮌헨 구시가 중심 광장이자 1867~1908년 지어진 네오고딕 양식 신시청이 있는 곳. 탑에서 매일 정오 열리는 글로켄슈필 인형극이 명물이며, 엘리베이터로 전망대까지 올라가면 마리엔광장과 구시가 전망을 볼 수 있습니다.</p>
         <div class="landmark-meta">글로켄슈필 공연 매일 11:00·12:00 (3–10월엔 17:00 추가) · 전망대 5–10월 매일 10:00–19:00(11–4월은 평일만 10:00–17:00) · <span class="landmark-price">광장 관람 무료, 전망대 성인 약 €6.50(온라인)/€7(현장)</span> · <a href="https://www.muenchen.de/en/sights/munich-glockenspiel" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Neues+Rathaus+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1784,7 +1785,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2350_-_M%C3%BCnchen_-_St_Peterskirche.JPG?width=500" alt="성 페터 교회" loading="lazy">
         <div class="landmark-body">
-        <h3>성 페터 교회(St. Peterskirche · Alter Peter)</h3>
+        <h3><span class="stop-num">2</span>성 페터 교회(St. Peterskirche · Alter Peter)</h3>
         <p class="landmark-desc">뮌헨에서 가장 오래된 교회. 306개 계단을 오르면 마리엔광장과 맑은 날엔 알프스까지 보이는 전망대가 나옵니다.</p>
         <div class="landmark-meta">교회 07:30–19:30 · <span class="landmark-price">본당 무료, 탑 전망대 €5</span> · <a href="https://www.google.com/maps/search/?api=1&query=St+Peterskirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1792,7 +1793,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Altes_Rathaus_in_M%C3%BCnchen%2C_2023.jpg?width=500" alt="구시청" loading="lazy">
         <div class="landmark-body">
-        <h3>구시청(Altes Rathaus)</h3>
+        <h3><span class="stop-num">3</span>구시청(Altes Rathaus)</h3>
         <p class="landmark-desc">마리엔광장 동쪽에 있는 고딕 양식 옛 시청사. 지금은 탑 안에 장난감박물관이 들어서 있습니다.</p>
         <div class="landmark-meta">외관 상시 관람 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1808,7 +1809,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Frauenkirche_Munich_March_2013.JPG?width=500" alt="프라우엔교회" loading="lazy">
         <div class="landmark-body">
-        <h3>프라우엔교회(Frauenkirche)</h3>
+        <h3><span class="stop-num">4</span>프라우엔교회(Frauenkirche)</h3>
         <p class="landmark-desc">뮌헨의 상징인 두 개의 양파 지붕 탑이 특징인 후기 고딕 성당입니다.</p>
         <div class="landmark-meta">일반적으로 08:00–20:00 (일요일은 09:30부터, 미사 시간 제외) · <span class="landmark-price">본당 무료</span> · <a href="https://www.muenchner-dom.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Frauenkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="meaning-box"><span class="mb-label">👹 악마의 발자국(Teufelstritt)</span>1468년 건축가 외르크 폰 할스파흐는 자금을 대는 대신 "창문이 하나도 안 보이는 성당"을 지으라는 악마의 조건을 받아들였습니다. 완공 후 악마가 입구에서 안을 들여다보니 정말 기둥에 가려 창문이 하나도 안 보이자 기뻐하며 바닥을 발로 굴렀는데, 몇 걸음 더 들어가서야 창문들이 보이는 걸 깨닫고 속았다는 걸 알았다는 전설입니다. 그때 찍힌 검은 발자국 모양 자국이 지금도 입구 바닥 타일에 남아 있어 찾아볼 수 있습니다.</div>
@@ -1817,7 +1818,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/St._Michael_-_Munich_-_011.JPG?width=500" alt="성 미하엘 교회" loading="lazy">
         <div class="landmark-body">
-        <h3>성 미하엘 교회(St. Michael)</h3>
+        <h3><span class="stop-num">5</span>성 미하엘 교회(St. Michael)</h3>
         <p class="landmark-desc">알프스 이북에서 가장 큰 르네상스 양식 교회. 지하 납골당엔 루트비히 2세도 안장돼 있습니다.</p>
         <div class="landmark-meta">월요일(오늘) 09:30–19:00(미사 시간 제외) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=St+Michael+Kirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1825,7 +1826,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Asamkirche_M%C3%BCnchen.jpg?width=500" alt="아잠 교회" loading="lazy">
         <div class="landmark-body">
-        <h3>아잠 교회(Asamkirche)</h3>
+        <h3><span class="stop-num">6</span>아잠 교회(Asamkirche)</h3>
         <p class="landmark-desc">아잠 형제가 사비로 지은 초호화 로코코 성당. 좁은 골목 안에 있어 놓치기 쉬운 숨은 명소입니다.</p>
         <div class="landmark-meta">토–목 09:00–19:00(11–3월은 ~18:00) · 금 13:00부터 · <span class="landmark-price">무료(기부 권장)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Asamkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1833,7 +1834,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Muenchen_Viktualienmarkt.JPG?width=500" alt="빅투알리엔마르크트" loading="lazy">
         <div class="landmark-body">
-        <h3>빅투알리엔마르크트(Viktualienmarkt)</h3>
+        <h3><span class="stop-num">7</span>빅투알리엔마르크트(Viktualienmarkt)</h3>
         <p class="landmark-desc">1807년부터 이어진 뮌헨 최대 상설 식료품 시장. 노천 비어가든에서 맥주 한 잔 즐기기 좋습니다.</p>
         <div class="landmark-meta">월–토 08:00–20:00(매장별 상이) · 일요일 휴무 · <span class="landmark-price">구경 무료, 간식·맥주는 유료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Viktualienmarkt+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1841,7 +1842,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Theatinerkirche_M%C3%BCnchen_NR1.JPG?width=500" alt="테아티너 교회" loading="lazy">
         <div class="landmark-body">
-        <h3>테아티너 교회(Theatinerkirche)</h3>
+        <h3><span class="stop-num">8</span>테아티너 교회(Theatinerkirche)</h3>
         <p class="landmark-desc">노란 파사드가 인상적인 이탈리아 바로크 양식 성당. 오데온스플라츠 광장에 접해 있습니다.</p>
         <div class="landmark-meta">상시 개방(미사 시간 제외) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Theatinerkirche+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1849,7 +1850,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wrede%20Feldherrnhalle%20Muenchen-1.jpg?width=500" alt="펠트헤른할레" loading="lazy">
         <div class="landmark-body">
-        <h3>펠트헤른할레(Feldherrnhalle)</h3>
+        <h3><span class="stop-num">9</span>펠트헤른할레(Feldherrnhalle)</h3>
         <p class="landmark-desc">오데온스광장에 있는 개방형 회랑. 1841~44년 루트비히 1세가 피렌체의 로지아 데이 란치를 본떠 지었고, 바이에른 장군 틸리·브레데의 동상이 서 있습니다. 1923년 히틀러의 뮌헨 폭동(맥주홀 폭동) 행진이 경찰에 저지되며 유혈 충돌이 벌어진 역사적 현장이기도 합니다(나치 시절 세워진 추모 기념물은 종전 후 1945년 시민들이 철거).</p>
         <div class="landmark-meta">상시 개방(옥외 구조물) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Feldherrnhalle+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 오퍼른가라게(Tiefgarage vor der Oper, Max-Joseph-Platz) · 시간당 €4.00(1일권 €32)</div>
@@ -1860,7 +1861,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%BCnchner_Residenz_Munich_2014_01.jpg?width=500" alt="뮌헨 레지덴츠 & 보물관" loading="lazy">
         <div class="landmark-body">
-        <h3>뮌헨 레지덴츠 & 보물관(Residenz & Schatzkammer)</h3>
+        <h3><span class="stop-num">10</span>뮌헨 레지덴츠 & 보물관(Residenz & Schatzkammer)</h3>
         <p class="landmark-desc">비텔스바흐 왕가가 5세기에 걸쳐 증축한 독일 최대 규모의 도심 궁전. 보물관엔 왕가의 보석·금공예품이 전시됩니다.</p>
         <div class="landmark-meta">3/28–10/19 09:00–18:00(마지막 입장 17:00) · 10/20–3/27 10:00–17:00(마지막 입장 16:00) · <span class="landmark-price">레지덴츠 박물관만 €10·대학생 €9 · 박물관+보물관 통합 €15·대학생 €13 · 박물관+보물관+퀴비예 극장 통합 €20·대학생 €16</span> · <a href="https://www.residenz-muenchen.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Residenz+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 오퍼른가라게(Tiefgarage vor der Oper, Max-Joseph-Platz) · 시간당 €4.00(1일권 €32)</div>
@@ -1869,7 +1870,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cuvilli%C3%A9s-Theater_in_M%C3%BCnchner_Residenz.jpg?width=500" alt="퀴비예 극장" loading="lazy">
         <div class="landmark-body">
-        <h3>퀴비예 극장(Cuvilliés-Theater)</h3>
+        <h3><span class="stop-num">11</span>퀴비예 극장(Cuvilliés-Theater)</h3>
         <p class="landmark-desc">레지덴츠 안에 있는 화려한 로코코 궁정극장. 독일에서 가장 아름다운 로코코 극장으로 꼽힙니다.</p>
         <div class="landmark-meta">9/15–10/19 월–토 14:00–18:00, 일·공휴일 09:00–18:00(마지막 입장 1시간 전) · <span class="landmark-price">성인 €5 · 대학생 €4 · 레지덴츠 통합권 €20</span> · <a href="https://www.schloesser.bayern.de/englisch/palace/objects/mu_cuv.htm" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Cuvillies+Theater+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 오퍼른가라게(Tiefgarage vor der Oper, Max-Joseph-Platz) · 시간당 €4.00(1일권 €32)</div>
@@ -1879,7 +1880,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Muenchen_Hofgarten_und_die_Bayerische_Staatskanzlei.JPG?width=500" alt="호프가르텐" loading="lazy">
         <div class="landmark-body">
-        <h3>호프가르텐(Hofgarten)</h3>
+        <h3><span class="stop-num">12</span>호프가르텐(Hofgarten)</h3>
         <p class="landmark-desc">레지덴츠 바로 옆 이탈리아식 궁정 정원. 중앙의 디아나 신전(Dianatempel)이 포토스팟입니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Hofgarten+Muenchen" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1887,8 +1888,8 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card semi-wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monopteros_Englischer_Garten_M%C3%BCnchen_01.jpg?width=500" alt="영국정원" loading="lazy">
         <div class="landmark-body">
-        <h3>영국정원(Englischer Garten)</h3>
-        <p class="landmark-desc">뉴욕 센트럴파크보다 넓은 유럽 최대급 도심 공원. 모노프테로스 신전과 서퍼들이 파도를 타는 아이스바흐 급류가 명물입니다. 남쪽 끝(하우스 데어 쿤스트 인근)이 호프가르텐에서 도보 약 7분 거리라 부담 없이 들를 수 있습니다.</p>
+        <h3><span class="stop-num">13</span>(선택) 영국정원(Englischer Garten)</h3>
+        <p class="landmark-desc">뉴욕 센트럴파크보다 넓은 유럽 최대급 도심 공원. 모노프테로스 신전과 서퍼들이 파도를 타는 아이스바흐 급류가 명물입니다. 남쪽 끝(하우스 데어 쿤스트 인근)이 호프가르텐에서 도보 약 7분 거리라 부담 없이 들를 수 있지만, 제대로 보려면 넓어서 시간이 걸리는 편 — 시간 빠듯하면 초입만 살짝 보거나 생략해도 무방합니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Englischer+Garten+Muenchen" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 인근 노상 유료주차 위주 · 시간당 약 €2~4(구역별 상이) · 대중교통 권장(U3/U6 Giselastr.)</div>
         </div>
@@ -2014,7 +2015,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       </div>
-      <p class="walk-map-note"><b>마리엔광장 → 옥토버페스트 축제장 이동</b><br>1) 🚇 지하철: U6 라인 <b>마리엔광장</b> → <b>Goetheplatz</b>역(옥토버페스트·테레지엔비제 하차, 한 정거장 더 가면 <b>Poccistraße</b>역)<br>. 환승 없이 2~3개 역 · 약 3~5분 · 편도 €4.20(같은 요금구간이라 요금 동일)<br>. <b>Marienplatz</b> → Sendlinger Tor → <b>Goetheplatz</b><br>※ 역 → 축제장 입구: <b>Goetheplatz</b>역·<b>Poccistraße</b>역 모두 도보 약 8~10분(약 0.7~1km) — 테레지엔비제역보다 한산해서 혼잡할 때 대안으로 좋음<br><br>2) 🚶 도보: <b>마리엔광장</b>에서 지하철 없이 바로 걸어가는 것도 가능 · 약 2.5km · 30~35분 — 지하철비 아끼고 싶다면 선택지, 짐이 많거나 시간 빠듯하면 1) 이용 권장</p>
+      <p class="walk-map-note"><b>구시가 도보 코스 → 옥토버페스트 축제장 이동</b><br>🚇 지하철: U6 라인 <b>우니베르지테트</b> 또는 <b>오데온스플라츠</b>역 → <b>Goetheplatz</b>역(옥토버페스트·테레지엔비제 하차, 한 정거장 더 가면 <b>Poccistraße</b>역) — 마리엔광장에 내렸다 다시 탈 필요 없이 같은 방향으로 타면 곧장 도착<br>. 환승 없이 4~6개 역 · 약 8~10분 · 편도 €4.20(같은 요금구간이라 요금 동일)<br>. <b>우니베르지테트</b> → 오데온스플라츠 → 마리엔광장 → 젠들링거토어 → <b>Goetheplatz</b><br>※ 역 → 축제장 입구: <b>Goetheplatz</b>역·<b>Poccistraße</b>역 모두 도보 약 8~10분(약 0.7~1km) — 테레지엔비제역보다 한산해서 혼잡할 때 대안으로 좋음</p>
       <div class="landmark-card wide">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Wiesn2006_Luftaufnahme.jpg/500px-Wiesn2006_Luftaufnahme.jpg" alt="테레지엔비제(Theresienwiese)" loading="lazy">
         <div class="landmark-body">
