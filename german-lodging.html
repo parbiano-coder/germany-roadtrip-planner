@@ -150,6 +150,9 @@
   table.lodging .yn-yes{ color:var(--route); font-weight:800; }
   table.lodging .yn-unknown{ color:var(--ink-soft); }
   table.lodging .note-warn{ color:#c0392b; font-weight:700; }
+  table.lodging tr.name-row th, table.lodging tr.name-row td{ position:sticky; top:52px; z-index:1; background:var(--surface); }
+  table.lodging tr.name-row th.row-label{ z-index:2; }
+  table.lodging tr.cancel-row td{ color:#c0392b; font-weight:700; }
   table.lodging .addr{ font-size:0.8rem; color:var(--ink-soft); }
   table.lodging .maplink{ font-size:0.78rem; white-space:nowrap; }
 
@@ -370,7 +373,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="name-row">
             <th class="row-label">숙소</th>
             <td>Wirtshaus &amp; Hotel Zur Alten Brauerei Zapf</td>
             <td>Design Wohnung auf 2 Ebenen</td>
@@ -379,7 +382,7 @@
             <td>아파트 메칭겐 시티</td>
             <td>ChristRose</td>
           </tr>
-          <tr>
+          <tr class="cancel-row">
             <th class="row-label">무료취소 기한</th>
             <td>9/11 23:59</td>
             <td>9/18 23:59</td>
@@ -465,7 +468,7 @@
             <td>14:00–21:00</td>
             <td>15:00–23:00</td>
             <td>15:00–23:00</td>
-            <td>14:00–<span class="note-warn">18:00</span></td>
+            <td>20:00–21:00</td>
             <td>15:00–23:30</td>
             <td>16:00–21:30</td>
           </tr>
@@ -483,7 +486,7 @@
             <td>예상 도착 시간 미리 연락 요망</td>
             <td>셀프 체크인 — 뒷편 안뜰(검은 대문)로 진입, 기둥 오른쪽 열쇠보관함 01·02번</td>
             <td>투숙자 전원 성·이름·생년월일 사전 통보 필요</td>
-            <td>체크인 마감 이르니 일정 서둘러 마무리</td>
+            <td>–</td>
             <td>도착 1시간 전 전화 필수</td>
             <td>–</td>
           </tr>
