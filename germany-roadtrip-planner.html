@@ -372,10 +372,10 @@
   .landmark-card img{ width:100%; height:170px; object-fit:cover; display:block; background:var(--bg-soft); }
   html.photos-off .landmark-card img{ display:none; }
   .landmark-card.wide{ grid-column:span 6; flex-direction:row; }
-  .landmark-card.wide img{ width:280px; height:auto; min-height:100%; max-height:380px; flex-shrink:0; }
+  .landmark-card.wide img{ width:280px; height:280px; flex-shrink:0; align-self:flex-start; }
   .landmark-card.wide .landmark-body{ flex:1; }
   .landmark-card.semi-wide{ grid-column:span 3; flex-direction:row; }
-  .landmark-card.semi-wide img{ width:170px; height:auto; min-height:100%; max-height:380px; flex-shrink:0; }
+  .landmark-card.semi-wide img{ width:170px; height:280px; flex-shrink:0; align-self:flex-start; }
   .landmark-card.semi-wide .landmark-body{ flex:1; }
   @media (max-width:900px){
     .landmark-grid{ grid-template-columns:repeat(2,1fr); }
