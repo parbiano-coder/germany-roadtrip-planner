@@ -488,6 +488,8 @@
   .route-steps li:not(:last-child)::after{
     content:""; position:absolute; left:0.57rem; top:1.15rem; bottom:-0.15rem; width:1px; background:var(--line);
   }
+  .route-steps li.rs-p{ counter-increment:none; }
+  .route-steps li.rs-p::before{ content:"P"; background:#5a6a72; }
   .rs-name{ display:block; font-size:0.85rem; font-weight:700; color:var(--ink); }
   .rs-seg{ display:block; font-size:0.72rem; color:var(--route); font-weight:700; margin-top:0.2rem; }
   @media (max-width:640px){
@@ -982,7 +984,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <ul>
             <li>오전 뷔르츠부르크 레지덴츠 궁전 &amp; 구시가 관광 (09:00 개장에 맞춰 일찍 시작하면 여유, 약 1.5~2시간)</li>
             <li>로맨틱 가도(Romantische Straße)를 타고 로텐부르크로 이동 (70km, 약 48분), 성곽길 도보 한 바퀴(약 2.5km) &amp; 구시가 산책</li>
-            <li>로텐부르크에서 뉘른베르크로 직행 (103km, 약 1시간 12분) — 밤베르크는 시간 되면 들르는 선택 스톱(경유 시 131km·1시간30분 + 65km·52분, 구시가·구시청사·레그니츠강 뷰포인트 도보 관광 약 1.5~2시간)</li>
+            <li>로텐부르크에서 뉘른베르크로 직행 (103km, 약 1시간 12분) — 밤베르크는 시간 되면 들르는 선택 스톱(경유 시 131km·1시간30분 + 65km·52분, 구시가·구시청사·레그니츠강 뷰포인트 도보 관광 약 1.5~2시간, <b>국립미술관(Staatsgalerie)</b>까지 보면 시간 더 필요)</li>
             <li>뉘른베르크 성 &amp; 구시가, 카이저부르크 성, 중앙 광장 소시지 맛집(뉘른베르거 브랏부어스트)</li>
           </ul>
         </div>
@@ -1158,7 +1160,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <img src="images/routes/rothenburg.png" alt="로텐부르크 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">성벽 구시가(Galgentor)</span></li>
+        <li class="rs-p"><span class="rs-name">성벽 구시가(Galgentor)</span></li>
         <li><span class="rs-name">시청 탑 · 라츠트링크슈투베(마이스터트룽크 시계)</span><span class="rs-seg">(650m, 8분)</span></li>
         <li><span class="rs-name">크리스마스박물관</span><span class="rs-seg">(69m, 1분)</span></li>
         <li><span class="rs-name">성 야코프 교회</span><span class="rs-seg">(190m, 3분)</span></li>
@@ -1167,7 +1169,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">중세범죄박물관(Kriminalmuseum)</span><span class="rs-seg">(600m, 9분)</span></li>
         <li><span class="rs-name">플뢴라인</span><span class="rs-seg">(220m, 3분)</span></li>
         <li><span class="rs-name">수공업자의 집</span><span class="rs-seg">(350m, 5분)</span></li>
-        <li><span class="rs-name">성벽 구시가(Galgentor)</span><span class="rs-seg">(500m, 7분)</span></li>
+        <li class="rs-p"><span class="rs-name">성벽 구시가(Galgentor)</span><span class="rs-seg">(500m, 7분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
@@ -1342,27 +1344,28 @@ document.addEventListener('DOMContentLoaded', function(){
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4537,11.0773&destination=49.4537,11.0773&waypoints=49.4579%2C11.0748%7C49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4537%2C11.0773%7C49.4481%2C11.0762%7C49.4455%2C11.0744%7C49.4474,11.0812" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Hauptmarkt) · 총 약 5.1km · 도보 약 1시간 9분</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
-          <img src="images/routes/nurnberg.png?v=4" alt="뉘른베르크 도보 코스 지도 스냅샷" loading="lazy">
+          <img src="images/routes/nurnberg.png?v=5" alt="뉘른베르크 도보 코스 지도 스냅샷 — Zone A 대중교통 정류장·카드 구매처 표시" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">출발(Parkhaus Hauptmarkt)</span></li>
-        <li><span class="rs-name">카이저부르크(Kaiserburg)</span><span class="rs-seg">(650m, 9분)</span></li>
-        <li><span class="rs-name">뒤러 하우스</span><span class="rs-seg">(160m, 2분)</span></li>
-        <li><span class="rs-name">장난감박물관</span><span class="rs-seg">(350m, 5분)</span></li>
+        <li class="rs-p"><span class="rs-name">출발(Parkhaus Hauptmarkt)</span></li>
+        <li><span class="rs-name"><b>카이저부르크(Kaiserburg)</b> 🎟️</span><span class="rs-seg">(650m, 9분)</span></li>
+        <li><span class="rs-name"><b>뒤러 하우스</b> 🎟️</span><span class="rs-seg">(160m, 2분)</span></li>
+        <li><span class="rs-name"><b>장난감박물관</b> 🎟️</span><span class="rs-seg">(350m, 5분)</span></li>
         <li><span class="rs-name">헹커슈텍</span><span class="rs-seg">(260m, 4분)</span></li>
         <li><span class="rs-name">성 제발두스 교회</span><span class="rs-seg">(450m, 7분)</span></li>
         <li><span class="rs-name">구 시청</span><span class="rs-seg">(66m, 1분)</span></li>
         <li><span class="rs-name">펨보하우스</span><span class="rs-seg">(200m, 3분)</span></li>
         <li><span class="rs-name">중앙시장</span><span class="rs-seg">(400m, 5분)</span></li>
-        <li><span class="rs-name">게르만 국립박물관</span><span class="rs-seg">(750m, 10분)</span></li>
-        <li><span class="rs-name">DB 철도박물관</span><span class="rs-seg">(290m, 4분)</span></li>
+        <li><span class="rs-name"><b>게르만 국립박물관</b> 🎟️</span><span class="rs-seg">(750m, 10분)</span></li>
+        <li><span class="rs-name"><b>DB 철도박물관</b> 🎟️</span><span class="rs-seg">(290m, 4분)</span></li>
         <li><span class="rs-name">수공예마을</span><span class="rs-seg">(700m, 10분)</span></li>
-        <li><span class="rs-name">주차장(Parkhaus Hauptmarkt)</span><span class="rs-seg">(980m, 13분)</span></li>
+        <li class="rs-p"><span class="rs-name">주차장(Parkhaus Hauptmarkt)</span><span class="rs-seg">(980m, 13분)</span></li>
         </ol>
       </div>
       <div class="booking-note">
         <p><b>통합권 추천</b> 뉘른베르크 카드+퓌르트(Nürnberg Card + Fürth) — <b>구매 시점이 아니라 처음 사용(개시)한 순간부터 정확히 48시간</b> 유효(예: 오늘 10시에 첫 박물관 입장·버스 탑승 시 사용 개시 → 모레 10시까지 유효, "달력상 이틀"이 아니라 만 48시간) · <b>성인 €38</b>(학생 할인 없음, 성인 단일가) · 6~11세 어린이용 키즈카드 €12, 5세 이하는 보호자 카드 구매 시 무료.</p>
-        <p><b>오늘 코스에서 카드로 갈 수 있는 곳</b>(카드 소지 시 매표소 줄 서지 않고 바로 입장 — 아래 명소 카드에 🎟️ 통합권 표시) — <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">2</span> 카이저부르크(성 안 진벨투름·박물관 포함, 개별 €10) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">3</span> 알브레히트 뒤러 하우스(개별 €6) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">4</span> 장난감박물관(개별 €7.50) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">10</span> 게르만 국립박물관(개별 €10) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">11</span> DB 철도박물관(개별 €10) — 위치는 모두 위 지도상 해당 번호 스톱과 동일합니다.</p>
+        <p><b>오늘 코스에서 카드로 갈 수 있는 곳</b>(카드 소지 시 매표소 줄 서지 않고 바로 입장 — 아래 명소 카드에 🎟️ 통합권 표시) — <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">1</span> 카이저부르크(성 안 진벨투름·박물관 포함, 개별 €10) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">2</span> 알브레히트 뒤러 하우스(개별 €6) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">3</span> 장난감박물관(개별 €7.50) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">9</span> 게르만 국립박물관(개별 €10) · <span class="stop-num" style="width:1.1rem;height:1.1rem;font-size:0.6rem;">10</span> DB 철도박물관(개별 €10) — 위치는 모두 위 지도상 해당 번호 스톱과 동일합니다.</p>
+        <p>⚠️ <b>카드는 명소에서 직접 살 수 없습니다</b> — 아래 매표소·구매처에서 미리 사서 소지한 채로 각 명소 입구에 제시(스캔)하는 방식입니다. 위 지도의 <b>🎟️ 카드 구매처</b> 표시는 중앙시장 옆 관광안내소(Tourist Information, Hauptmarkt) 위치입니다.</p>
         <p>오늘 동선 밖이지만 카드로 무료 입장 가능한 곳(시간 남으면 추가로) — 뉘른베르크 동물원(Tiergarten), 나치전당대회장 문서센터(Memorium Nürnberger Prozesse, 재판정), 노이에스 박물관(Neues Museum, 현대미술·디자인) 등 도시 소속 박물관 총 25곳 이상.</p>
         <p>+ 뉘른베르크·퓌르트·슈타인 지역(VGN Preisstufe A) U반·S반·트램·버스 전부 무료(평소 1회권 €3.90, 1일권 €10.60) — 에를랑엔은 별도 요금구간이라 미포함.</p>
         <p>오늘 코스처럼 카이저부르크+게르만박물관+철도박물관 3곳만 개별 구매해도 €30, 뒤러 하우스나 장난감박물관까지 들르면 개별 합산이 카드 가격(€38)을 넘어서므로 위 목록 중 3곳 이상을 볼 계획이면 카드 쪽이 유리</p>
@@ -1372,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Nuernberg_Burg_Panorama_PtGUI.jpg/500px-Nuernberg_Burg_Panorama_PtGUI.jpg" alt="카이저부르크 뉘른베르크" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">2</span>카이저부르크 뉘른베르크(Kaiserburg Nürnberg)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">1</span>카이저부르크 뉘른베르크(Kaiserburg Nürnberg)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
         <p class="landmark-desc">구시가 언덕 위에서 붉은 지붕들을 내려다보는 신성로마제국의 상징적 요새입니다.</p>
         <div class="landmark-meta">09:00–18:00 (4–9월) · <span class="landmark-price">통합권 €10 · 대학생 €9(2026년 인상가)</span> · <a href="https://www.kaiserburg-nuernberg.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kaiserburg+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1390,7 +1393,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht-D%C3%BCrer-Haus_-_Tierg%C3%A4rtnerplatz_-_Nuremberg%2C_Germany_-_DSC02033.jpg?width=500" alt="알브레히트 뒤러 하우스" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">3</span>알브레히트 뒤러 하우스(Albrecht-Dürer-Haus)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">2</span>알브레히트 뒤러 하우스(Albrecht-Dürer-Haus)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
         <p class="landmark-desc">독일 르네상스 화가 알브레히트 뒤러가 실제로 살고 작업했던 목조 가옥. 판화 인쇄 시연도 볼 수 있습니다.</p>
         <div class="landmark-meta">화–일 10:00–18:00 (월요일 휴관) · <span class="landmark-price">성인 €6 · 대학생 €1.50</span> · <a href="https://museen.nuernberg.de/duererhaus" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Albrecht+Duerer+Haus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1398,7 +1401,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/22-06-26_Spielzeugmuseum_N%C3%BCrnberg.jpg?width=500" alt="장난감박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">4</span>장난감박물관(Spielzeugmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">3</span>장난감박물관(Spielzeugmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
         <p class="landmark-desc">수백 년간 독일 장난감 산업의 중심지였고, 지금도 세계 최대 장난감 박람회(Spielwarenmesse)가 매년 열리는 도시입니다. 이런 배경 때문에 뉘른베르크 장난감박물관은 세계적으로도 손꼽히는 정통 장난감 박물관으로 평가받고, 소장품 규모·역사적 깊이(양철 장난감, 인형의 집, 모형 기차 등)도 훨씬 방대합니다.</p>
         <div class="landmark-meta">화–금 10:00–17:00 · 토·일 10:00–18:00 (월요일 휴관) · <span class="landmark-price">성인 €7.50 · 대학생 €2.50</span> · <a href="https://museen.nuernberg.de/spielzeugmuseum/besucherinformation/eintrittspreise" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Spielzeugmuseum+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1406,7 +1409,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Henkersteg.JPG?width=500" alt="헹커슈텍" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">5</span>헹커슈텍(Henkersteg)</h3>
+        <h3><span class="stop-num">4</span>헹커슈텍(Henkersteg)</h3>
         <p class="landmark-desc">페그니츠강 위에 놓인 목조 지붕 다리로, 중세 사형집행인이 살던 탑과 이어져 이런 이름이 붙었습니다. 사진 명소입니다.</p>
         <div class="landmark-meta">상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Henkersteg+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1414,7 +1417,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg%2C_Winklerstra%C3%9Fe_26%2C_Sebalduskirche-20160810-002.jpg?width=500" alt="성 제발두스 교회" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">6</span>성 제발두스 교회(St. Sebaldus)</h3>
+        <h3><span class="stop-num">5</span>성 제발두스 교회(St. Sebaldus)</h3>
         <p class="landmark-desc">뉘른베르크에서 가장 오래된 교구 교회(13세기). 제발두스 성인의 유해를 모신 청동 성물함이 유명합니다.</p>
         <div class="landmark-meta">3–12월 09:30–18:00, 1–2월 09:30–16:00 · <span class="landmark-price">관광 입장 €5 · 대학생 €2.50(예배·기도는 무료)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Sebalduskirche+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1423,7 +1426,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nuernberg_Rathaus_001.JPG?width=500" alt="구 시청" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">7</span>구 시청(Altes Rathaus) · 중세 지하감옥(Lochgefängnisse)</h3>
+        <h3><span class="stop-num">6</span>구 시청(Altes Rathaus) · 중세 지하감옥(Lochgefängnisse)</h3>
         <p class="landmark-desc">하우프트마르크트 옆 옛 시청사. 지하엔 원형 감방과 고문실이 그대로 남은 &ldquo;뉘른베르크 지하감옥&rdquo;이 있어 별도 투어로 둘러볼 수 있습니다.</p>
         <div class="landmark-meta">지하감옥 화–일 10:00–16:30(<b>투어는 매시 정각</b>, 11:00–18:00) · <span class="landmark-price">지하감옥 성인 €3.50 · 대학생 €1.50</span> · <a href="https://www.google.com/maps/search/?api=1&query=Altes+Rathaus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1432,7 +1435,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_Stadtmuseum_Fembohaus_001.JPG?width=500" alt="펨보하우스 시립박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">8</span>펨보하우스 시립박물관(Stadtmuseum im Fembo-Haus)</h3>
+        <h3><span class="stop-num">7</span>펨보하우스 시립박물관(Stadtmuseum im Fembo-Haus)</h3>
         <p class="landmark-desc">뉘른베르크에 남은 유일한 완전한 상인 저택(16세기 후기 르네상스 양식). 도시 역사 전반을 오디오가이드와 함께 둘러볼 수 있습니다.</p>
         <div class="landmark-meta">화–금 10:00–17:00 · 토·일 10:00–18:00(월요일 휴관) · <span class="landmark-price">성인 €7.50 · 대학생 €2.50</span> · <a href="https://museen.nuernberg.de/fembohaus" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Fembohaus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1441,7 +1444,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/00_3960_Sch%C3%B6ner_Brunnen_-_N%C3%BCrnberg.jpg?width=500" alt="중앙시장" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">9</span>중앙시장(Hauptmarkt) · 아름다운 분수(Schöner Brunnen)</h3>
+        <h3><span class="stop-num">8</span>중앙시장(Hauptmarkt) · 아름다운 분수(Schöner Brunnen)</h3>
         <p class="landmark-desc">구시가 중심 광장. 1385~1396년 지어진 19m 높이의 첨탑형 분수가 상징이며, 황금 고리를 돌리면 소원이 이루어진다는 전설이 있습니다.</p>
         <div class="landmark-meta">상시 개방(시장은 월–토 오전~오후) · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Hauptmarkt+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1450,7 +1453,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Germanisches_Nationalmuseum_020.JPG?width=500" alt="게르만 국립박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">10</span>게르만 국립박물관(Germanisches Nationalmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">9</span>게르만 국립박물관(Germanisches Nationalmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
         <p class="landmark-desc">1852년 설립된 독일 최대 문화사 박물관. 선사시대부터 현대까지 독일어권 문화 전반을 아우르는 방대한 소장품을 자랑합니다.</p>
         <div class="landmark-meta">화–일 10:00–18:00(수 ~20:30), 월요일 휴관 · <span class="landmark-price">성인 €10 · 대학생 €6</span> · <a href="https://www.gnm.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Germanisches+Nationalmuseum" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1459,7 +1462,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_-_Verkehrsmuseum.jpg?width=500" alt="독일 철도 박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">11</span>독일 철도 박물관(DB Museum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">10</span>독일 철도 박물관(DB Museum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
         <p class="landmark-desc">1899년 개관한 세계에서 가장 오래된 철도 박물관. 독일 최초 증기기관차 &ldquo;아들러(Adler)&rdquo; 복제품 등 역사적 차량을 전시합니다.</p>
         <div class="landmark-meta">수–금 09:00–17:00 · 토·일·공휴일 10:00–18:00(월·화 휴관) · <span class="landmark-price">성인 €10 · 대학생 €8</span> · <a href="https://dbmuseum.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=DB+Museum+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1468,7 +1471,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Handwerkerhof_-_N%C3%BCrnberg.jpg?width=500" alt="수공예마을" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">12</span>수공예마을(Handwerkerhof)</h3>
+        <h3><span class="stop-num">11</span>수공예마을(Handwerkerhof)</h3>
         <p class="landmark-desc">중앙역 바로 옆 성벽 안에 재현한 중세 장인 마을. 유리공예·금속공예 등 공방과 기념품점, 소시지집이 모여 있습니다.</p>
         <div class="landmark-meta">매장별 상이(대략 10:00–18:00, 겨울철 단축 운영) · <span class="landmark-price">입장 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Handwerkerhof+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -2173,16 +2176,16 @@ document.addEventListener('DOMContentLoaded', function(){
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.5543,10.7360&destination=47.5550,10.7494&waypoints=47.5576,10.7497" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(링크는 편도만 표시, 왕복은 같은 길로 되짚기) · 총 약 4.4km · 도보 약 1시간 27분(오르막 40분+12분, 내리막 약 35분)</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
-          <img src="images/routes/neuschwanstein.png?v=2" alt="노이슈반슈타인 성 도보 코스 지도 스냅샷 — 매표소·셔틀버스 승하차장·마차 승차장 표시" loading="lazy">
+          <img src="images/routes/neuschwanstein.png?v=3" alt="노이슈반슈타인 성 도보 코스 지도 스냅샷 — 매표소·셔틀버스 승하차장·마차 승차장 표시" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">주차장(P1~P4)</span></li>
+        <li class="rs-p"><span class="rs-name">주차장(P1~P4)</span></li>
         <li><span class="rs-name">노이슈반슈타인 성(투어 약 40분)</span><span class="rs-seg">(1.5km, 오르막 약 40분(고도 약 155m 상승))</span></li>
         <li><span class="rs-name">마리엔 다리</span><span class="rs-seg">(650m, 12분)</span></li>
-        <li><span class="rs-name">주차장(왔던 길 그대로 하산 · 호엔슈방가우 성 외관 경유)</span><span class="rs-seg">(2.2km, 내리막 약 35분)</span></li>
+        <li class="rs-p"><span class="rs-name">주차장(왔던 길 그대로 하산 · 호엔슈방가우 성 외관 경유)</span><span class="rs-seg">(2.2km, 내리막 약 35분)</span></li>
         </ol>
       </div>
-      <p class="walk-map-note" style="font-size:0.78rem;">지도 범례 — 🎫 매표소(Ticket Center) · 🚌↑ 셔틀버스 승차장(계곡) · 🚌↓ 셔틀버스 하차장("Jugend", 성까지 도보 15분 하산) · 🐎 마차 승차장(계곡, Hotel Müller 맞은편) · H 호엔슈방가우 성</p>
+      <p class="walk-map-note" style="font-size:0.78rem;">지도 범례 — 🎫 매표소(Ticket Center, 주차장에서 도보 약 3~4분·260m) · 🚌↑ 셔틀버스 승차장(계곡, 주차장에서 도보 약 3분·200m) · 🚌↓ 셔틀버스 하차장("Jugend", 성까지 도보 약 15분·600m 하산) · 🐎 마차 승차장(계곡, Hotel Müller 맞은편, 주차장에서 도보 약 4~5분·300m) · H 호엔슈방가우 성</p>
       <div class="landmark-grid">
       <div class="landmark-card wide">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/500px-Schloss_Neuschwanstein_2013.jpg" alt="노이슈반슈타인 성(Schloss Neuschwanstein)" loading="lazy">
@@ -2545,12 +2548,12 @@ document.addEventListener('DOMContentLoaded', function(){
           <img src="images/routes/partnachklamm.png" alt="파르트나흐클람 트레일 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">P21 주차장</span></li>
+        <li class="rs-p"><span class="rs-name">P21 주차장</span></li>
         <li><span class="rs-name">협곡 입구</span><span class="rs-seg">2.2km, 25~30분</span></li>
         <li><span class="rs-name">철교(Eiserne Brücke)</span><span class="rs-seg">약 350m, 5~7분 — 1914년 건립, 협곡 위 약 70m 높이를 가로지르는 철제 다리로 아래 급류를 내려다볼 수 있는 대표 뷰포인트</span></li>
         <li><span class="rs-name">협곡 안쪽 끝</span><span class="rs-seg">약 350m, 5~7분</span></li>
         <li><span class="rs-name">협곡 입구(같은 길로 복귀)</span><span class="rs-seg">약 700m, 10~15분</span></li>
-        <li><span class="rs-name">P21 주차장</span><span class="rs-seg">2.2km, 25~30분</span></li>
+        <li class="rs-p"><span class="rs-name">P21 주차장</span><span class="rs-seg">2.2km, 25~30분</span></li>
         </ol>
       </div>
       <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem;margin:0 0 1rem;">
@@ -2990,7 +2993,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <img src="images/routes/freiburg.png?v=4" alt="프라이부르크 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">주차장(Parkhaus Karlsbau)</span></li>
+        <li class="rs-p"><span class="rs-name">주차장(Parkhaus Karlsbau)</span></li>
         <li><span class="rs-name">도시성문(Martinstor)</span><span class="rs-seg">(650m, 9분)</span></li>
         <li><span class="rs-name">Markthalle</span><span class="rs-seg">(120m, 2분)</span></li>
         <li><span class="rs-name">시청광장</span><span class="rs-seg">(300m, 4분)</span></li>
@@ -2998,7 +3001,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">아우구스티너박물관</span><span class="rs-seg">(450m, 6분)</span></li>
         <li><span class="rs-name">옛 상인회관</span><span class="rs-seg">(180m, 2분)</span></li>
         <li><span class="rs-name">뮌스터</span><span class="rs-seg">(52m, 1분)</span></li>
-        <li><span class="rs-name">주차장(Parkhaus Karlsbau)</span><span class="rs-seg">(250m, 4분)</span></li>
+        <li class="rs-p"><span class="rs-name">주차장(Parkhaus Karlsbau)</span><span class="rs-seg">(250m, 4분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
@@ -3404,7 +3407,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <h4>오늘의 동선</h4>
           <ul>
             <li>메칭겐에서 하이델베르크로 직행 (148km·1시간 42분).</li>
-            <li>(하이델베르크 우천 예보시) 슈투트가르트 시내 경유 시 총 156km·2시간 3분으로 하이델베르크 직행보다 8km·21분 더 걸립니다.<br>(구간별 메칭겐→슈투트가르트 35km·35분, 슈투트가르트→하이델베르크 121km·1시간28분)</li>
+            <li>(하이델베르크 우천 예보시) 슈투트가르트 시내 경유 시 총 156km·2시간 3분으로 하이델베르크 직행보다 8km·21분 더 걸립니다.<br>(구간별 메칭겐→슈투트가르트 35km·35분, 슈투트가르트→하이델베르크 121km·1시간28분) — 이 경로면 <b>슈투트가르트 국립미술관(Staatsgalerie)</b>도 슐로스광장 도보권이라 자동차 박물관과 달리 추가 이동 없이 들를 수 있습니다.</li>
             <li><b>메르세데스-벤츠 박물관만</b> 들를 경우엔 박물관이 바트칸슈타트 지구라 총 165.7km·2시간22분으로 하이델베르크 직행보다 17.7km·40분 더 걸립니다.<br>(구간별 메칭겐→박물관 40.9km·47분, 박물관→하이델베르크 124.8km·1시간35분)</li>
             <li><b>포르쉐 박물관만</b> 들를 경우엔 박물관이 추펜하우젠 지구라 총 165.5km·1시간56분으로 하이델베르크 직행보다 17.5km·14분 더 걸립니다.<br>(구간별 메칭겐→박물관 53.7km·42분, 박물관→하이델베르크 111.8km·1시간14분)</li>
             <li>총 거리는 두 경로가 거의 같지만(포르쉐 165.5km vs 벤츠 165.7km), 소요 시간은 포르쉐 경유가 1시간56분으로 벤츠 경유(2시간22분)보다 약 26분 더 짧습니다 — 포르쉐 박물관이 있는 추펜하우젠은 A81 아우토반 바로 옆이라 대부분 고속도로 주행인 반면, 벤츠 박물관이 있는 바트칸슈타트는 시내 쪽으로 더 들어가야 해서 일반 도로 구간이 늘어나 평균 속도가 떨어지기 때문입니다(벤츠 경로 평균 약 70km/h vs 포르쉐 경로 평균 약 86km/h).</li>
@@ -3430,7 +3433,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4093,8.7135&destination=49.4093,8.7135&waypoints=49.4122%2C8.7104%7C49.4121%2C8.7097%7C49.4114%2C8.7062%7C49.4113%2C8.7064%7C49.4142%2C8.7096%7C49.4158,8.7057" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(성 등산철도역 출발·도착) · 총 약 4.3km · 도보 약 1시간 18분</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
-          <img src="images/routes/heidelberg.png?v=2" alt="하이델베르크 도보 코스 지도 스냅샷" loading="lazy">
+          <img src="images/routes/heidelberg.png?v=3" alt="하이델베르크 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
         <li><span class="rs-name">하이델베르크 성(Schloss)</span></li>
@@ -4069,11 +4072,11 @@ document.addEventListener('DOMContentLoaded', function(){
           <img src="images/routes/wiesbaden.png" alt="비스바덴 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">Parkhaus Luisenplatz</span></li>
+        <li class="rs-p"><span class="rs-name">Parkhaus Luisenplatz</span></li>
         <li><span class="rs-name">쿠어하우스(Kurhaus) & 쿠어파크</span><span class="rs-seg">(1.2km, 17분)</span></li>
         <li><span class="rs-name">코흐브루넨</span><span class="rs-seg">(550m, 8분)</span></li>
         <li><span class="rs-name">마르크트교회</span><span class="rs-seg">(600m, 8분)</span></li>
-        <li><span class="rs-name">Parkhaus Luisenplatz</span><span class="rs-seg">(600m, 9분)</span></li>
+        <li class="rs-p"><span class="rs-name">Parkhaus Luisenplatz</span><span class="rs-seg">(600m, 9분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
@@ -4183,14 +4186,14 @@ document.addEventListener('DOMContentLoaded', function(){
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=50.1102,8.6822&destination=50.1102,8.6822&waypoints=50.1107%2C8.6853%7C50.1127%2C8.6830%7C50.1081,8.6821" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(Parkhaus Dom-Römer 출발·도착) · 총 약 1.7km · 도보 약 23분</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
-          <img src="images/routes/frankfurt.png?v=2" alt="프랑크푸르트 도보 코스 지도 스냅샷" loading="lazy">
+          <img src="images/routes/frankfurt.png?v=3" alt="프랑크푸르트 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">뢰머광장(Parkhaus Dom-Römer 출발)</span></li>
+        <li class="rs-p"><span class="rs-name">뢰머광장(Parkhaus Dom-Römer 출발)</span></li>
         <li><span class="rs-name">프랑크푸르트 대성당</span><span class="rs-seg">(300m, 4분)</span></li>
         <li><span class="rs-name">클라인마르크트할레(Kleinmarkthalle)</span><span class="rs-seg">(300m, 4분)</span></li>
         <li><span class="rs-name">아이제르너 슈텍</span><span class="rs-seg">(600m, 8분)</span></li>
-        <li><span class="rs-name">뢰머광장(Parkhaus Dom-Römer 복귀)</span><span class="rs-seg">(500m, 7분)</span></li>
+        <li class="rs-p"><span class="rs-name">뢰머광장(Parkhaus Dom-Römer 복귀)</span><span class="rs-seg">(500m, 7분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
