@@ -490,6 +490,8 @@
   }
   .route-steps li.rs-p{ counter-increment:none; }
   .route-steps li.rs-p::before{ content:"P"; background:#5a6a72; }
+  .route-steps li.rs-repeat1{ counter-increment:none; }
+  .route-steps li.rs-repeat1::before{ content:"1"; }
   .rs-name{ display:block; font-size:0.85rem; font-weight:700; color:var(--ink); }
   .rs-seg{ display:block; font-size:0.72rem; color:var(--route); font-weight:700; margin-top:0.2rem; }
   @media (max-width:640px){
@@ -1007,7 +1009,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">레지덴츠 궁전(Residenz)</span></li>
         <li><span class="rs-name">율리우스슈피탈</span><span class="rs-seg">(1.2km, 16분)</span></li>
         <li><span class="rs-name">알테 마인교</span><span class="rs-seg">(1.2km, 17분)</span></li>
-        <li><span class="rs-name">레지덴츠 궁전(Residenz)</span><span class="rs-seg">(1.2km, 17분)</span></li>
+        <li class="rs-repeat1"><span class="rs-name">레지덴츠 궁전(Residenz) 복귀</span><span class="rs-seg">(1.2km, 17분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
@@ -1176,13 +1178,15 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG" alt="로텐부르크 성벽 구시가" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">1</span>로텐부르크 성벽 구시가(Stadtmauer)</h3>
+        <h3>로텐부르크 성벽 구시가(Stadtmauer)</h3>
         <p class="landmark-desc">동화책 삽화 같은 목조 가옥과 붉은 지붕이 성벽 안에 고스란히 남아있는 마을입니다.</p>
         <div class="landmark-meta">성벽 도보 한바퀴 약 2.5km, 상시 개방 · <span class="landmark-price">무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Rothenburg+ob+der+Tauber+Stadtmauer" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
         <div class="meaning-box"><span class="mb-label">💡 이곳이 갖는 의미</span>2차대전 폭격 위기에서 기적적으로 살아남은 몇 안 되는 독일 중세 도시. 종전 직전 미군 사령관이 파괴 명령을 거부하며 지켜낸 역사가 전해집니다.</div>
         </div>
       </div>
+      <div class="combo-group">
+        <span class="combo-group-label">📍 같은 위치(마르크트 광장)</span>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rothenburg_ob_der_Tauber%2C_Herrngasse_mit_Rathaus.jpg?width=500" alt="시청 탑" loading="lazy">
         <div class="landmark-body">
@@ -1200,6 +1204,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="landmark-meta"><b>매시 정각 10:00–22:00</b>(출처마다 실제 인형극 재연은 11·12·13·14시로 한정된다는 설명도 있어 정오 전후가 가장 확실) · <span class="landmark-price">외부 관람 무료</span> · <a href="https://www.google.com/maps/search/?api=1&query=Ratstrinkstube+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 구시가 도보 5분(P4 Galgentor) · 유료(시간당 €1.30, 1일권 €6~8)</div>
         </div>
+      </div>
       </div>
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%A4the_Wohlfahrt_Weihnachtsdorf_in_Rothenburg_ob_der_Tauber.JPG?width=500" alt="크리스마스박물관" loading="lazy">
@@ -3175,7 +3180,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">뻐꾸기시계 원조마을</span></li>
         <li><span class="rs-name">트리베르크란트</span><span class="rs-seg">(300m, 4분)</span></li>
         <li><span class="rs-name">트리베르크 폭포</span><span class="rs-seg">(750m, 10분)</span></li>
-        <li><span class="rs-name">뻐꾸기시계 원조마을(복귀 — 지도상 1번과 동일 지점)</span><span class="rs-seg">(450m, 6분)</span></li>
+        <li class="rs-repeat1"><span class="rs-name">뻐꾸기시계 원조마을(복귀)</span><span class="rs-seg">(450m, 6분)</span></li>
         </ol>
       </div>
       <div class="landmark-card">
@@ -3443,7 +3448,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name">학생감옥</span><span class="rs-seg">(130m, 2분)</span></li>
         <li><span class="rs-name">구 다리</span><span class="rs-seg">(550m, 8분)</span></li>
         <li><span class="rs-name">철학자의 길</span><span class="rs-seg">(500m, 15분 — 가파른 오르막)</span></li>
-        <li><span class="rs-name">하이델베르크 성(Schloss)</span><span class="rs-seg">(2.0km, 38분)</span></li>
+        <li class="rs-repeat1"><span class="rs-name">하이델베르크 성(Schloss) 복귀</span><span class="rs-seg">(2.0km, 38분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
@@ -3899,13 +3904,13 @@ document.addEventListener('DOMContentLoaded', function(){
           <img src="images/routes/ruedesheim.png" alt="뤼데스하임 도보 코스 지도 스냅샷" loading="lazy">
         </div>
         <ol class="route-steps">
-        <li><span class="rs-name">P10 Feldtor 주차장</span></li>
+        <li class="rs-p"><span class="rs-name">P10 Feldtor 주차장</span></li>
         <li><span class="rs-name">케이블카 승강장</span><span class="rs-seg">(450m, 6분)</span></li>
         <li><span class="rs-name">드로셀가세</span><span class="rs-seg">(200m, 2분)</span></li>
         <li><span class="rs-name">오버 거리(Oberstraße)</span><span class="rs-seg">(70m, 1분)</span></li>
         <li><span class="rs-name">악기박물관</span><span class="rs-seg">(60m, 1분)</span></li>
         <li><span class="rs-name">브뢰머부르크</span><span class="rs-seg">(260m, 3분)</span></li>
-        <li><span class="rs-name">P10 Feldtor 주차장</span><span class="rs-seg">(220m, 3분)</span></li>
+        <li class="rs-p"><span class="rs-name">P10 Feldtor 주차장</span><span class="rs-seg">(220m, 3분)</span></li>
         </ol>
       </div>
       <div class="landmark-grid">
@@ -4602,6 +4607,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     stuttgart: [48.78, 9.18, '슈투트가르트 (선택)'],
     stuttgartMercedes: [48.7858, 9.2333, '슈투트가르트<br>(벤츠 박물관)'],
     stuttgartPorsche: [48.8345, 9.1510, '슈투트가르트<br>(포르쉐 박물관)'],
+    stuttgartStaatsgalerie: [48.7802, 9.1871, '슈투트가르트<br>(국립미술관)'],
     heidelberg: [49.41, 8.71, '하이델베르크', null, 'left'],
     bernkastel: [49.92, 7.07, '베른카슈텔쿠에스 (선택)'],
     ruedesheim: [49.9774, 7.9133, '뤼데스하임', null, 'top'],
@@ -4636,7 +4642,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
     ], branches: [
-      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche'], extraViaDirs:['right','right'], extraViaOffsets:[[2,4],[-18,-30]] },
+      { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', hideVia:true, extraVias:['stuttgartMercedes','stuttgartPorsche','stuttgartStaatsgalerie'], extraViaDirs:['right','right','bottom'], extraViaOffsets:[[2,4],[-18,-30],[0,10]] },
       { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분', labelDir:'bottom' }
     ]},
     day8: { stops: [
