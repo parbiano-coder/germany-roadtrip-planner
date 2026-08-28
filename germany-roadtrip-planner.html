@@ -471,8 +471,8 @@
     border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
     background:var(--surface);
   }
-  .route-snapshot-media{ flex:7 1 320px; min-width:280px; background:var(--bg-soft); }
-  .route-snapshot-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .route-snapshot-media{ flex:7 1 320px; min-width:280px; background:var(--bg-soft); display:flex; align-items:center; justify-content:center; }
+  .route-snapshot-media img{ width:100%; height:100%; object-fit:contain; display:block; }
   .route-steps{
     flex:3 1 210px; min-width:190px; list-style:none; margin:0; padding:0.9rem 1rem;
     display:flex; flex-direction:column; border-left:1px solid var(--line);
