@@ -467,15 +467,15 @@
   }
   .walk-map-link:hover{ border-color:var(--route); background:var(--route-soft); }
   .route-snapshot{
-    display:flex; flex-wrap:wrap; max-width:100%; margin:0.8rem 0 1.3rem;
+    display:flex; flex-direction:column; max-width:100%; margin:0.8rem 0 1.3rem;
     border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
     background:var(--surface);
   }
-  .route-snapshot-media{ flex:7 1 320px; min-width:280px; background:var(--bg-soft); display:flex; align-items:center; justify-content:center; }
-  .route-snapshot-media img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .route-snapshot-media{ width:100%; background:var(--bg-soft); display:flex; align-items:center; justify-content:center; }
+  .route-snapshot-media img{ width:100%; height:auto; display:block; }
   .route-steps{
-    flex:3 1 210px; min-width:190px; list-style:none; margin:0; padding:0.9rem 1rem;
-    display:flex; flex-direction:column; border-left:1px solid var(--line);
+    width:100%; list-style:none; margin:0; padding:0.9rem 1rem;
+    display:flex; flex-direction:column; border-left:none; border-top:1px solid var(--line);
     background:var(--bg-soft); counter-reset:rs;
   }
   .route-steps li{ position:relative; padding:0 0 1rem 1.4rem; counter-increment:rs; }
@@ -494,12 +494,6 @@
   .route-steps li.rs-repeat1::before{ content:"1"; }
   .rs-name{ display:block; font-size:0.85rem; font-weight:700; color:var(--ink); }
   .rs-seg{ display:block; font-size:0.72rem; color:var(--route); font-weight:700; margin-top:0.2rem; }
-  @media (max-width:640px){
-    .route-snapshot{ flex-direction:column; max-width:100%; }
-    .route-snapshot-media{ flex:none; width:100%; }
-    .route-snapshot-media img{ height:auto; }
-    .route-steps{ flex:none; width:100%; border-left:none; border-top:1px solid var(--line); }
-  }
   .landmark-grid > .walk-map-note,
   .landmark-grid > .walk-map-link,
   .landmark-grid > .route-snapshot,
@@ -1018,7 +1012,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7928,9.9392&waypoints=49.7979,9.9321%7C49.7930,9.9257%7C49.7934,9.9323" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기 · 총 약 3.6km · 도보 약 48분</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
-          <img src="images/routes/wurzburg.png?v=7" alt="뷔르츠부르크 도보 코스 지도 스냅샷 — 대성당·Sparkasse ATM·만차 시 대안 주차장(P2 Marktgarage) 위치 포함" loading="lazy" width="900" height="560">
+          <img src="images/routes/wurzburg.png?v=8" alt="뷔르츠부르크 도보 코스 지도 스냅샷 — 대성당·Sparkasse ATM·만차 시 대안 주차장(P2 Marktgarage)·맛집(R)·디저트카페(C) 위치 포함" loading="lazy" width="900" height="560">
         </div>
         <ol class="route-steps">
         <li><span class="rs-name">레지덴츠 궁전(Residenz)</span></li>
