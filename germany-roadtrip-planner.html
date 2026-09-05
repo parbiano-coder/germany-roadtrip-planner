@@ -5110,26 +5110,38 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       { c:'wuerzburg' }, { c:'rothenburg', leg:'70km · 48분' }, { c:'nuernberg', leg:'103km · 1시간 12분(밤베르크 미경유 직행)' }
     ], branches: [
       { from:'rothenburg', via:'bamberg', to:'nuernberg', legIn:'131km · 1시간 30분', legOut:'65km · 52분' }
+    ], markets: [
+      [49.7931529,9.9294086,'Edeka Luksch(뷔르츠부르크)']
     ]},
     day3: { stops: [
       { c:'nuernberg' }, { c:'allianzArena', leg:'161km · 1시간 36분' }, { c:'bmwWelt', leg:'7km · 10분' }, { c:'muenchen', leg:'6km · 9분' }, { c:'fuessen', leg:'131km · 1시간 44분' }
+    ], markets: [
+      [47.5676401,10.6953139,'Feneberg(퓌센)']
     ]},
     day4: { stops: [
       { c:'fuessen' }, { c:'oberammergau', leg:'48km · 49분' }, { c:'ettal', leg:'6km · 17분' }, { c:'garmisch', leg:'16km · 28분' }, { c:'fuessen', leg:'62km · 1시간' }
+    ], markets: [
+      [47.5676401,10.6953139,'Feneberg(퓌센)']
     ]},
     day5: { stops: [
       { c:'fuessen' }, { c:'kempten', leg:'43km · 31분' }, { c:'titisee', leg:'216km · 2시간 51분(보덴제 미경유 직행)' }, { c:'freiburg', leg:'35km · 44분' }
     ], branches: [
       { from:'kempten', via:'bodensee', to:'titisee', legIn:'124km · 1시간 43분', legOut:'95km · 1시간 14분' }
+    ], markets: [
+      [47.9968007,7.8525468,'Rewe(프라이부르크)']
     ]},
     day6: { stops: [
       { c:'freiburg' }, { c:'triberg', leg:'59km · 1시간 1분' }, { c:'metzingen', leg:'약 120km · 1시간 44분', color:'#c0392b' }
+    ], markets: [
+      [48.5312713,9.3295776,'E-Center(메칭겐)']
     ]},
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
     ], branches: [
       { from:'metzingen', via:'stuttgart', to:'heidelberg', legIn:'35km · 35분', legOut:'121km · 1시간 28분', labelDir:'right' },
       { from:'heidelberg', via:'bernkastel', to:'ruedesheim', legIn:'178km · 2시간 6분', legOut:'89km · 1시간 16분', labelDir:'bottom' }
+    ], markets: [
+      [49.9514113,7.9006295,'Netto Marken-Discount(빙엔)']
     ]},
     day8: { stops: [
       { c:'ruedesheim' }, { c:'fraEnd', leg:'약 66km · 55분' }
@@ -5213,6 +5225,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       (b.extraVias || []).forEach(function(k){ bounds.extend([C[k][0], C[k][1]]); });
     });
     Object.keys(dayRoutes).forEach(function(k){ dayRoutes[k].forEach(function(p){ bounds.extend(p); }); });
+    (day.markets || []).forEach(function(mk){ bounds.extend([mk[0], mk[1]]); });
     map.fitBounds(bounds, { padding: [28, 28] });
 
     var dayPath = [];
@@ -5270,6 +5283,15 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       var dir = p[4] || 'right';
       var offsets = { left: [-8, 0], right: [8, 0], top: [0, -8], bottom: [0, 8] };
       stopM.bindTooltip(p[3] || shortLabel(p[2]), { permanent: true, direction: dir, offset: offsets[dir] || [8, 0], className: 'city-label-tip' });
+    });
+
+    (day.markets || []).forEach(function(mk){
+      var mkM = L.circleMarker([mk[0], mk[1]], {
+        radius: 6, color: '#fffdf7', weight: 2,
+        fillColor: '#6a3d9a', fillOpacity: 0.95
+      }).addTo(map).bindPopup('<b>🛒 ' + mk[2] + '</b>');
+      window.bindHoverInfo(mkM, '<b>🛒 ' + mk[2] + '</b>', 6);
+      mkM.bindTooltip('🛒 ' + mk[2], { permanent: true, direction: 'bottom', offset: [0, 8], className: 'city-label-tip' });
     });
   }
 
