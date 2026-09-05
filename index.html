@@ -5109,7 +5109,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       { from:'kempten', via:'bodensee', to:'titisee', legIn:'124km · 1시간 43분', legOut:'95km · 1시간 14분' }
     ]},
     day6: { stops: [
-      { c:'freiburg' }, { c:'triberg', leg:'59km · 1시간 1분' }, { c:'metzingen', leg:'약 120km · 1시간 44분' }
+      { c:'freiburg' }, { c:'triberg', leg:'59km · 1시간 1분' }, { c:'metzingen', leg:'약 120km · 1시간 44분', color:'#c0392b' }
     ]},
     day7: { stops: [
       { c:'metzingen' }, { c:'heidelberg', leg:'148km · 1시간 42분(슈투트가르트 미경유 직행)' }, { c:'ruedesheim', leg:'108km · 1시간 18분(베른카슈텔쿠에스 미경유 직행)' }, { c:'trechtingshausen', leg:'8km · 20분' }
@@ -5206,7 +5206,7 @@ window.bindHoverInfo = function(layer, html, baseRadius){
       var a = C[day.stops[i-1].c], b = C[day.stops[i].c];
       var line = dayRoutes['leg' + i] || [[a[0],a[1]],[b[0],b[1]]];
       L.polyline(line, {
-        color: '#0b3c6e', weight: 3, opacity: 0.85
+        color: day.stops[i].color || '#0b3c6e', weight: 3, opacity: 0.85
       }).addTo(map).bindTooltip(day.stops[i].leg, { sticky: true, className: 'rt-tip' });
       dayPath = dayPath.concat(line);
     }
