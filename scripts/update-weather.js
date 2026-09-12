@@ -193,7 +193,7 @@ async function main() {
   }
 
   // ---- update the "YYYY-MM-DD(요일) 독일시간 HH시 MM분 기준(Open-Meteo, ...)" line ----
-  const dateLine = `${todayBerlin}(${weekdayBerlin}) 독일시간 ${hourBerlin}시 ${minuteBerlin}분 기준(Open-Meteo, 무료 기상 예보 서비스)`;
+  const dateLine = `${todayBerlin}(${weekdayBerlin}) 독일시간 ${hourBerlin}시 ${minuteBerlin}분 기준(Open-Meteo 기상예보서비스)`;
   html = html.replace(/\d{4}-\d{2}-\d{2}[^<]*Open-Meteo[^<]*\)/, dateLine);
 
   fs.writeFileSync(htmlPath, html, 'utf8');
