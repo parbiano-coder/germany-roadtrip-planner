@@ -11,10 +11,11 @@ const htmlPath = path.join(__dirname, '..', 'german-weather.html');
 
 // Display the update time in Germany's own local time (Europe/Berlin) since
 // that's the timezone the forecast itself is anchored to, and the routine fires
-// at 06:00 / 18:00 German time.
+// hourly (German time).
 const now = new Date();
 const todayBerlin = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin' }).format(now);
 const hourBerlin = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', hour12: false }).format(now);
+const weekdayBerlin = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Europe/Berlin', weekday: 'short' }).format(now);
 if (todayBerlin > CUTOFF) {
   console.log(`오늘(${todayBerlin}, 독일시간)은 갱신 종료일(${CUTOFF})을 지났습니다. 아무 것도 하지 않습니다.`);
   process.exit(0);
@@ -189,7 +190,7 @@ async function main() {
   }
 
   // ---- update the "YYYY-MM-DD HH시(독일시간) 기준(Open-Meteo)" line ----
-  const dateLine = `${todayBerlin} ${hourBerlin}시 독일시간 기준(Open-Meteo)`;
+  const dateLine = `${todayBerlin}(${weekdayBerlin}) 독일시간 ${hourBerlin}시 기준(Open-Meteo)`;
   html = html.replace(/\d{4}-\d{2}-\d{2}[^<]*\(Open-Meteo\)/, dateLine);
 
   fs.writeFileSync(htmlPath, html, 'utf8');
