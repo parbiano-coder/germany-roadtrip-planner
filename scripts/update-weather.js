@@ -6,7 +6,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const CUTOFF = '2026-09-26'; // last day we bother refreshing (return-day forecast)
+const CUTOFF_DATE = '2026-09-26'; // return day (19:40 Frankfurt departure)
+const CUTOFF_HOUR = '18'; // stop after German time 9/26 18:00 — no point refreshing past departure
 const htmlPath = path.join(__dirname, '..', 'german-weather.html');
 
 // Display the update time in Germany's own local time (Europe/Berlin) since
@@ -16,8 +17,9 @@ const now = new Date();
 const todayBerlin = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin' }).format(now);
 const hourBerlin = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', hour12: false }).format(now);
 const weekdayBerlin = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Europe/Berlin', weekday: 'short' }).format(now);
-if (todayBerlin > CUTOFF) {
-  console.log(`오늘(${todayBerlin}, 독일시간)은 갱신 종료일(${CUTOFF})을 지났습니다. 아무 것도 하지 않습니다.`);
+const pastCutoff = todayBerlin > CUTOFF_DATE || (todayBerlin === CUTOFF_DATE && hourBerlin > CUTOFF_HOUR);
+if (pastCutoff) {
+  console.log(`지금(${todayBerlin} ${hourBerlin}시, 독일시간)은 갱신 종료 시점(${CUTOFF_DATE} ${CUTOFF_HOUR}시)을 지났습니다. 아무 것도 하지 않습니다.`);
   process.exit(0);
 }
 
