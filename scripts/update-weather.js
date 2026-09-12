@@ -25,7 +25,10 @@ function iconFor(code) {
   if (code === 1) return '🌤️';
   if (code === 2) return '⛅';
   if (code === 3) return '☁️';
-  if (code === 45 || code === 48) return '🌫️';
+  // fog (45/48) renders as plain cloud instead of a separate fog icon — a
+  // distinct fog glyph next to otherwise-cloudy neighboring columns/cities
+  // reads as an error rather than real weather variation, so keep it uniform.
+  if (code === 45 || code === 48) return '☁️';
   if (code >= 51 && code <= 57) return '🌦️';
   if (code >= 61 && code <= 67) return '🌧️';
   if (code >= 71 && code <= 77) return '🌨️';
@@ -122,12 +125,20 @@ async function main() {
   });
 
   const dailyNamesNoSeoul = DAILY_NAMES.slice(1);
-  const sunsetVals = HOURLY_COLUMNS.map(([locIdx, dateStr]) => {
+  function dailyForColumn(locIdx, dateStr) {
     const cityName = HOURLY_NAMES[locIdx];
     const dIdx = dailyNamesNoSeoul.indexOf(cityName) + 1; // +1 offset for Seoul at index 0
     const dloc = daily[dIdx].daily;
     const ti = dloc.time.indexOf(dateStr);
+    return { dloc, ti };
+  }
+  const sunsetVals = HOURLY_COLUMNS.map(([locIdx, dateStr]) => {
+    const { dloc, ti } = dailyForColumn(locIdx, dateStr);
     return dloc.sunset[ti].split('T')[1];
+  });
+  const minmaxVals = HOURLY_COLUMNS.map(([locIdx, dateStr]) => {
+    const { dloc, ti } = dailyForColumn(locIdx, dateStr);
+    return `${Math.round(dloc.temperature_2m_min[ti])}/${Math.round(dloc.temperature_2m_max[ti])}`;
   });
 
   // there are two <table class="hourly-table"> elements (a 6-hour summary and a
@@ -150,6 +161,12 @@ async function main() {
     htSection = htSection.replace(/(<tr class="wg-sunset-row"><td>🌇 일몰<\/td>)([\s\S]*?)(<\/tr>)/, (m, p1, cellsBlock, p3) => {
       let cellIdx = 0;
       const newCells = cellsBlock.replace(/(<td class="mono">)(\d{2}:\d{2})(<\/td>)/g, (mm, a, oldTime, c) => `${a}${sunsetVals[cellIdx++]}${c}`);
+      return p1 + newCells + p3;
+    });
+
+    htSection = htSection.replace(/(<tr class="wg-minmax-row"><td>[^<]*<\/td>)([\s\S]*?)(<\/tr>)/, (m, p1, cellsBlock, p3) => {
+      let cellIdx = 0;
+      const newCells = cellsBlock.replace(/(<td class="mono">)(\d+\/\d+)(<\/td>)/g, (mm, a, oldVal, c) => `${a}${minmaxVals[cellIdx++]}${c}`);
       return p1 + newCells + p3;
     });
 

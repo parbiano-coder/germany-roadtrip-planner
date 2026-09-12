@@ -193,6 +193,7 @@
     backface-visibility:hidden; -webkit-backface-visibility:hidden;
   }
   .wg-sunset-row td{ background:var(--bg-soft); color:var(--ink-soft); font-style:italic; }
+  .wg-minmax-row td{ background:var(--bg-soft); color:var(--route); font-weight:700; }
   .wg-mid-row td{ background:var(--route-soft); }
   th,td{ text-align:left; padding:0.6rem 0.75rem; border-bottom:1px solid var(--line); }
   th{ font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif; text-transform:uppercase; letter-spacing:0.05em; font-size:0.72rem; color:var(--ink-soft); }
@@ -341,7 +342,7 @@
     if (code === 0) return '☀️';
     if (code === 1 || code === 2) return '🌤️';
     if (code === 3) return '☁️';
-    if (code === 45 || code === 48) return '🌫️';
+    if (code === 45 || code === 48) return '☁️';
     if (code >= 51 && code <= 67) return '🌧️';
     if (code >= 71 && code <= 77) return '🌨️';
     if (code >= 80 && code <= 82) return '🌦️';
@@ -443,6 +444,7 @@
         </colgroup>
         <tbody>
           <tr class="wg-sunset-row"><td>🌇 일몰</td><td class="mono">19:30</td><td class="mono">19:23</td><td class="mono">19:21</td><td class="mono">19:18</td><td class="mono">19:16</td><td class="mono">19:13</td><td class="mono">19:15</td><td class="mono">19:15</td><td class="mono">19:13</td><td class="mono">19:13</td><td class="mono">19:13</td><td class="mono">19:14</td><td class="mono">19:23</td><td class="mono">19:22</td><td class="mono">19:21</td><td class="mono">19:16</td><td class="mono">19:15</td><td class="mono">19:17</td><td class="mono">19:17</td><td class="mono">19:16</td><td class="mono">19:14</td></tr>
+          <tr class="wg-minmax-row"><td>🌡️ 최저/최고</td><td class="mono">10/20</td><td class="mono">13/21</td><td class="mono">13/20</td><td class="mono">13/21</td><td class="mono">9/19</td><td class="mono">13/20</td><td class="mono">10/23</td><td class="mono">10/22</td><td class="mono">9/22</td><td class="mono">9/22</td><td class="mono">11/24</td><td class="mono">12/24</td><td class="mono">11/25</td><td class="mono">17/30</td><td class="mono">15/27</td><td class="mono">15/29</td><td class="mono">11/20</td><td class="mono">11/20</td><td class="mono">9/20</td><td class="mono">10/20</td><td class="mono">8/20</td></tr>
           <tr><td>00시</td><td class="mono">13°<span class="wx-icon">🌤️</span></td><td class="mono">16°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">12°<span class="wx-icon">☁️</span></td><td class="mono">15°<span class="wx-icon">⛅</span></td><td class="mono">12°<span class="wx-icon">☀️</span></td><td class="mono">12°<span class="wx-icon">☀️</span></td><td class="mono">11°<span class="wx-icon">⛅</span></td><td class="mono">11°<span class="wx-icon">⛅</span></td><td class="mono">12°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">🌤️</span></td><td class="mono">13°<span class="wx-icon">🌤️</span></td><td class="mono">19°<span class="wx-icon">☀️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">16°<span class="wx-icon">☀️</span></td><td class="mono">16°<span class="wx-icon">☀️</span></td><td class="mono">15°<span class="wx-icon">☁️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td></tr>
           <tr class="wg-mid-row"><td>06시</td><td class="mono">11°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">🌦️</span></td><td class="mono">9°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">10°<span class="wx-icon">☀️</span></td><td class="mono">10°<span class="wx-icon">☀️</span></td><td class="mono">10°<span class="wx-icon">🌤️</span></td><td class="mono">9°<span class="wx-icon">🌤️</span></td><td class="mono">11°<span class="wx-icon">⛅</span></td><td class="mono">12°<span class="wx-icon">⛅</span></td><td class="mono">11°<span class="wx-icon">🌤️</span></td><td class="mono">17°<span class="wx-icon">☀️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">15°<span class="wx-icon">☀️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">11°<span class="wx-icon">☁️</span></td><td class="mono">9°<span class="wx-icon">☀️</span></td><td class="mono">10°<span class="wx-icon">☀️</span></td><td class="mono">8°<span class="wx-icon">☀️</span></td></tr>
           <tr class="wg-mid-row"><td>12시</td><td class="mono">17°<span class="wx-icon">☁️</span></td><td class="mono">20°<span class="wx-icon">⛅</span></td><td class="mono">19°<span class="wx-icon">⛅</span></td><td class="mono">19°<span class="wx-icon">🌦️</span></td><td class="mono">16°<span class="wx-icon">⛅</span></td><td class="mono">19°<span class="wx-icon">☁️</span></td><td class="mono">20°<span class="wx-icon">☀️</span></td><td class="mono">20°<span class="wx-icon">☀️</span></td><td class="mono">19°<span class="wx-icon">☀️</span></td><td class="mono">19°<span class="wx-icon">☀️</span></td><td class="mono">21°<span class="wx-icon">☀️</span></td><td class="mono">21°<span class="wx-icon">☁️</span></td><td class="mono">21°<span class="wx-icon">🌤️</span></td><td class="mono">27°<span class="wx-icon">☀️</span></td><td class="mono">25°<span class="wx-icon">☀️</span></td><td class="mono">26°<span class="wx-icon">☀️</span></td><td class="mono">18°<span class="wx-icon">⛅</span></td><td class="mono">18°<span class="wx-icon">⛅</span></td><td class="mono">17°<span class="wx-icon">🌤️</span></td><td class="mono">17°<span class="wx-icon">☀️</span></td><td class="mono">17°<span class="wx-icon">🌤️</span></td></tr>
@@ -489,6 +491,7 @@
         </colgroup>
         <tbody>
           <tr class="wg-sunset-row"><td>🌇 일몰</td><td class="mono">19:30</td><td class="mono">19:23</td><td class="mono">19:21</td><td class="mono">19:18</td><td class="mono">19:16</td><td class="mono">19:13</td><td class="mono">19:15</td><td class="mono">19:15</td><td class="mono">19:13</td><td class="mono">19:13</td><td class="mono">19:13</td><td class="mono">19:14</td><td class="mono">19:23</td><td class="mono">19:22</td><td class="mono">19:21</td><td class="mono">19:16</td><td class="mono">19:15</td><td class="mono">19:17</td><td class="mono">19:17</td><td class="mono">19:16</td><td class="mono">19:14</td></tr>
+          <tr class="wg-minmax-row"><td>🌡️ 최저/최고</td><td class="mono">10/20</td><td class="mono">13/21</td><td class="mono">13/20</td><td class="mono">13/21</td><td class="mono">9/19</td><td class="mono">13/20</td><td class="mono">10/23</td><td class="mono">10/22</td><td class="mono">9/22</td><td class="mono">9/22</td><td class="mono">11/24</td><td class="mono">12/24</td><td class="mono">11/25</td><td class="mono">17/30</td><td class="mono">15/27</td><td class="mono">15/29</td><td class="mono">11/20</td><td class="mono">11/20</td><td class="mono">9/20</td><td class="mono">10/20</td><td class="mono">8/20</td></tr>
           <tr><td>00시</td><td class="mono">13°<span class="wx-icon">🌤️</span></td><td class="mono">16°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">12°<span class="wx-icon">☁️</span></td><td class="mono">15°<span class="wx-icon">⛅</span></td><td class="mono">12°<span class="wx-icon">☀️</span></td><td class="mono">12°<span class="wx-icon">☀️</span></td><td class="mono">11°<span class="wx-icon">⛅</span></td><td class="mono">11°<span class="wx-icon">⛅</span></td><td class="mono">12°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">🌤️</span></td><td class="mono">13°<span class="wx-icon">🌤️</span></td><td class="mono">19°<span class="wx-icon">☀️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">16°<span class="wx-icon">☀️</span></td><td class="mono">16°<span class="wx-icon">☀️</span></td><td class="mono">15°<span class="wx-icon">☁️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td></tr>
           <tr><td>01시</td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">16°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">12°<span class="wx-icon">☁️</span></td><td class="mono">15°<span class="wx-icon">☁️</span></td><td class="mono">11°<span class="wx-icon">☀️</span></td><td class="mono">11°<span class="wx-icon">☀️</span></td><td class="mono">10°<span class="wx-icon">⛅</span></td><td class="mono">10°<span class="wx-icon">⛅</span></td><td class="mono">12°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">🌤️</span></td><td class="mono">13°<span class="wx-icon">🌤️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">16°<span class="wx-icon">☀️</span></td><td class="mono">15°<span class="wx-icon">☀️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">11°<span class="wx-icon">🌤️</span></td><td class="mono">11°<span class="wx-icon">🌤️</span></td></tr>
           <tr><td>02시</td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">15°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">11°<span class="wx-icon">☁️</span></td><td class="mono">14°<span class="wx-icon">☁️</span></td><td class="mono">10°<span class="wx-icon">☀️</span></td><td class="mono">11°<span class="wx-icon">☀️</span></td><td class="mono">10°<span class="wx-icon">⛅</span></td><td class="mono">9°<span class="wx-icon">⛅</span></td><td class="mono">11°<span class="wx-icon">☁️</span></td><td class="mono">13°<span class="wx-icon">🌤️</span></td><td class="mono">12°<span class="wx-icon">🌤️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">18°<span class="wx-icon">☀️</span></td><td class="mono">16°<span class="wx-icon">☀️</span></td><td class="mono">14°<span class="wx-icon">☀️</span></td><td class="mono">13°<span class="wx-icon">☁️</span></td><td class="mono">11°<span class="wx-icon">🌤️</span></td><td class="mono">11°<span class="wx-icon">🌤️</span></td><td class="mono">11°<span class="wx-icon">🌤️</span></td></tr>
@@ -665,7 +668,7 @@
         </tr>
         <tr>
           <td class="wg-city">오버아머가우</td>
-          <td class="wg-cell mono">17/8<span class="wx-icon">🌫️</span></td>
+          <td class="wg-cell mono">17/8<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">20/8<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">20/10<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono wg-visit">22/9<span class="wx-icon">☁️</span></td>
@@ -677,7 +680,7 @@
         </tr>
         <tr>
           <td class="wg-city">에탈</td>
-          <td class="wg-cell mono">17/7<span class="wx-icon">🌫️</span></td>
+          <td class="wg-cell mono">17/7<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">20/8<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">20/9<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono wg-visit">22/9<span class="wx-icon">☁️</span></td>
@@ -701,7 +704,7 @@
         </tr>
         <tr>
           <td class="wg-city">켐프텐</td>
-          <td class="wg-cell mono">18/8<span class="wx-icon">🌫️</span></td>
+          <td class="wg-cell mono">18/8<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">20/11<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">21/10<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">24/11<span class="wx-icon">☁️</span></td>
@@ -725,7 +728,7 @@
         </tr>
         <tr>
           <td class="wg-city">프라이부르크</td>
-          <td class="wg-cell mono">21/7<span class="wx-icon">🌫️</span></td>
+          <td class="wg-cell mono">21/7<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">25/15<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">23/13<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">26/13<span class="wx-icon">⛅</span></td>
@@ -737,7 +740,7 @@
         </tr>
         <tr>
           <td class="wg-city">트리베르크</td>
-          <td class="wg-cell mono">17/7<span class="wx-icon">🌫️</span></td>
+          <td class="wg-cell mono">17/7<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">21/13<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">22/14<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">24/14<span class="wx-icon">⛅</span></td>
@@ -749,7 +752,7 @@
         </tr>
         <tr>
           <td class="wg-city">메칭겐</td>
-          <td class="wg-cell mono">21/6<span class="wx-icon">🌫️</span></td>
+          <td class="wg-cell mono">21/6<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">23/13<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">21/11<span class="wx-icon">☁️</span></td>
           <td class="wg-cell mono">25/9<span class="wx-icon">☁️</span></td>
