@@ -172,7 +172,7 @@ async function main() {
   }
 
   // ---- update the "YYYY-MM-DD HH시(독일시간) 기준(Open-Meteo)" line ----
-  const dateLine = `${todayBerlin} ${hourBerlin}시(독일시간) 기준(Open-Meteo)`;
+  const dateLine = `${todayBerlin} ${hourBerlin}시 독일시간 기준(Open-Meteo)`;
   html = html.replace(/\d{4}-\d{2}-\d{2}[^<]*\(Open-Meteo\)/, dateLine);
 
   fs.writeFileSync(htmlPath, html, 'utf8');
