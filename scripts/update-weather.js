@@ -42,9 +42,10 @@ const ROW_ORDER = DAILY_NAMES.concat(['프랑크푸르트']);
 const HOURLY_NAMES = ['프랑크푸르트','뷔르츠부르크','로텐부르크','뉘른베르크','뮌헨','퓌센','호엔슈방가우','오버아머가우','에탈','가르미슈파르텐키르헨','켐프텐','티티제','프라이부르크','트리베르크','메칭겐','슈투트가르트','하이델베르크','뤼데스하임','비스바덴'];
 const HOURLY_LAT = ['50.11','49.79','49.38','49.45','48.14','47.57','47.55','47.60','47.57','47.49','47.73','47.90','47.995','48.13','48.54','48.78','49.41','49.98','50.08'];
 const HOURLY_LON = ['8.68','9.93','10.18','11.08','11.58','10.70','10.74','11.07','11.10','11.10','10.32','8.16','7.85','8.23','9.28','9.18','8.71','7.91','8.24'];
-// [locIndex into HOURLY_*, date] per hourly-table column, in header order
+// [locIndex into HOURLY_*, date] per hourly-table column, in header order.
+// Nürnberg appears twice (09-20 stay, then again the morning of 09-21 before driving to Munich).
 const HOURLY_COLUMNS = [
-  [0,'2026-09-19'],[1,'2026-09-20'],[2,'2026-09-20'],[3,'2026-09-20'],[4,'2026-09-21'],
+  [0,'2026-09-19'],[1,'2026-09-20'],[2,'2026-09-20'],[3,'2026-09-20'],[3,'2026-09-21'],[4,'2026-09-21'],
   [5,'2026-09-22'],[6,'2026-09-22'],[7,'2026-09-22'],[8,'2026-09-22'],[9,'2026-09-22'],
   [10,'2026-09-23'],[11,'2026-09-23'],[12,'2026-09-24'],[13,'2026-09-24'],[14,'2026-09-24'],
   [15,'2026-09-25'],[16,'2026-09-25'],[17,'2026-09-26'],[18,'2026-09-26'],[0,'2026-09-26'],
@@ -126,31 +127,46 @@ async function main() {
     return dloc.sunset[ti].split('T')[1];
   });
 
-  const htStart = html.indexOf('<table class="hourly-table">');
-  const htEnd = html.indexOf('</table>', htStart) + '</table>'.length;
-  let htSection = html.slice(htStart, htEnd);
+  // there are two <table class="hourly-table"> elements (a 6-hour summary and a
+  // 1-hour detail table) — refresh cells in both, wherever their rows appear.
+  function refreshHourlySection(htSection) {
+    htSection = htSection.replace(/<tr([^>]*)><td>(\d{2}시)<\/td>([\s\S]*?)<\/tr>/g, (m, trAttrs, label, cellsBlock) => {
+      const hh = label.slice(0, 2);
+      const vals = hourlyRowVals[hh];
+      let cellIdx = 0;
+      const newCells = cellsBlock.replace(
+        /(<td class="mono">)(\d+)°(<span class="wx-icon">)([^<]*)(<\/span><\/td>)/g,
+        (mm, p1, oldTemp, p3, oldIcon, p5) => {
+          const v = vals[cellIdx++];
+          return `${p1}${v.val.replace('°', '')}°${p3}${v.icon}${p5}`;
+        }
+      );
+      return `<tr${trAttrs}><td>${label}</td>${newCells}</tr>`;
+    });
 
-  htSection = htSection.replace(/<tr([^>]*)><td>(\d{2}시)<\/td>([\s\S]*?)<\/tr>/g, (m, trAttrs, label, cellsBlock) => {
-    const hh = label.slice(0, 2);
-    const vals = hourlyRowVals[hh];
-    let cellIdx = 0;
-    const newCells = cellsBlock.replace(
-      /(<td class="mono">)(\d+)°(<span class="wx-icon">)([^<]*)(<\/span><\/td>)/g,
-      (mm, p1, oldTemp, p3, oldIcon, p5) => {
-        const v = vals[cellIdx++];
-        return `${p1}${v.val.replace('°', '')}°${p3}${v.icon}${p5}`;
-      }
-    );
-    return `<tr${trAttrs}><td>${label}</td>${newCells}</tr>`;
-  });
+    htSection = htSection.replace(/(<tr class="wg-sunset-row"><td>🌇 일몰<\/td>)([\s\S]*?)(<\/tr>)/, (m, p1, cellsBlock, p3) => {
+      let cellIdx = 0;
+      const newCells = cellsBlock.replace(/(<td class="mono">)(\d{2}:\d{2})(<\/td>)/g, (mm, a, oldTime, c) => `${a}${sunsetVals[cellIdx++]}${c}`);
+      return p1 + newCells + p3;
+    });
 
-  htSection = htSection.replace(/(<tr class="wg-sunset-row"><td>🌇 일몰<\/td>)([\s\S]*?)(<\/tr>)/, (m, p1, cellsBlock, p3) => {
-    let cellIdx = 0;
-    const newCells = cellsBlock.replace(/(<td class="mono">)(\d{2}:\d{2})(<\/td>)/g, (mm, a, oldTime, c) => `${a}${sunsetVals[cellIdx++]}${c}`);
-    return p1 + newCells + p3;
-  });
+    return htSection;
+  }
 
-  html = html.slice(0, htStart) + htSection + html.slice(htEnd);
+  let searchFrom = 0;
+  let tableCount = 0;
+  while (true) {
+    const htStart = html.indexOf('<table class="hourly-table">', searchFrom);
+    if (htStart === -1) break;
+    const htEnd = html.indexOf('</table>', htStart) + '</table>'.length;
+    const refreshed = refreshHourlySection(html.slice(htStart, htEnd));
+    html = html.slice(0, htStart) + refreshed + html.slice(htEnd);
+    searchFrom = htStart + refreshed.length;
+    tableCount++;
+  }
+  if (tableCount !== 2) {
+    throw new Error(`expected 2 hourly-table elements, found ${tableCount} — aborting to avoid corrupting the file`);
+  }
 
   // ---- update the "YYYY-MM-DD 업데이트(Open-Meteo)" line ----
   html = html.replace(/\d{4}-\d{2}-\d{2}( 업데이트\(Open-Meteo\))/, `${today}$1`);
