@@ -9,11 +9,14 @@ const path = require('path');
 const CUTOFF = '2026-09-26'; // last day we bother refreshing (return-day forecast)
 const htmlPath = path.join(__dirname, '..', 'german-weather.html');
 
-// Use the trip's own local date (Asia/Seoul, the traveler's home timezone) rather
-// than the server's UTC date, so the displayed date matches what the user expects.
-const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
-if (today > CUTOFF) {
-  console.log(`오늘(${today})은 갱신 종료일(${CUTOFF})을 지났습니다. 아무 것도 하지 않습니다.`);
+// Display the update time in Germany's own local time (Europe/Berlin) since
+// that's the timezone the forecast itself is anchored to, and the routine fires
+// at 06:00 / 18:00 German time.
+const now = new Date();
+const todayBerlin = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Berlin' }).format(now);
+const hourBerlin = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', hour12: false }).format(now);
+if (todayBerlin > CUTOFF) {
+  console.log(`오늘(${todayBerlin}, 독일시간)은 갱신 종료일(${CUTOFF})을 지났습니다. 아무 것도 하지 않습니다.`);
   process.exit(0);
 }
 
@@ -168,11 +171,12 @@ async function main() {
     throw new Error(`expected 2 hourly-table elements, found ${tableCount} — aborting to avoid corrupting the file`);
   }
 
-  // ---- update the "YYYY-MM-DD 업데이트(Open-Meteo)" line ----
-  html = html.replace(/\d{4}-\d{2}-\d{2}( 업데이트\(Open-Meteo\))/, `${today}$1`);
+  // ---- update the "YYYY-MM-DD HH시(독일시간) 기준(Open-Meteo)" line ----
+  const dateLine = `${todayBerlin} ${hourBerlin}시(독일시간) 기준(Open-Meteo)`;
+  html = html.replace(/\d{4}-\d{2}-\d{2}[^<]*\(Open-Meteo\)/, dateLine);
 
   fs.writeFileSync(htmlPath, html, 'utf8');
-  console.log(`german-weather.html을 ${today} 기준 Open-Meteo 데이터로 갱신했습니다.`);
+  console.log(`german-weather.html을 ${dateLine} 데이터로 갱신했습니다.`);
 }
 
 main().catch((err) => {
