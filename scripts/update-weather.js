@@ -192,9 +192,9 @@ async function main() {
     throw new Error(`expected 2 hourly-table elements, found ${tableCount} — aborting to avoid corrupting the file`);
   }
 
-  // ---- update the "YYYY-MM-DD HH시(독일시간) 기준(Open-Meteo)" line ----
-  const dateLine = `${todayBerlin}(${weekdayBerlin}) 독일시간 ${hourBerlin}시 ${minuteBerlin}분 기준(Open-Meteo)`;
-  html = html.replace(/\d{4}-\d{2}-\d{2}[^<]*\(Open-Meteo\)/, dateLine);
+  // ---- update the "YYYY-MM-DD(요일) 독일시간 HH시 MM분 기준(Open-Meteo, ...)" line ----
+  const dateLine = `${todayBerlin}(${weekdayBerlin}) 독일시간 ${hourBerlin}시 ${minuteBerlin}분 기준(Open-Meteo, 무료 기상 예보 서비스)`;
+  html = html.replace(/\d{4}-\d{2}-\d{2}[^<]*Open-Meteo[^<]*\)/, dateLine);
 
   fs.writeFileSync(htmlPath, html, 'utf8');
   console.log(`german-weather.html을 ${dateLine} 데이터로 갱신했습니다.`);
