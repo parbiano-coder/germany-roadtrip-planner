@@ -1,0 +1,39 @@
+name: Update weather page
+
+on:
+  schedule:
+    # every hour, on the hour (UTC)
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-weather
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run weather auto-update script
+        run: node scripts/update-weather.js
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain german-weather.html)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add german-weather.html
+            git commit -m "날씨 페이지 자동 갱신 ($(date -u +%Y-%m-%d) UTC, GitHub Actions)"
+            git push
+          else
+            echo "No changes to commit."
+          fi
