@@ -2,7 +2,7 @@ name: Update weather page
 
 on:
   schedule:
-    # every hour, on the hour (UTC)
+    # every hour, on the hour (UTC) — resynced after initial scheduling delay
     - cron: '0 * * * *'
   workflow_dispatch: {}
 
