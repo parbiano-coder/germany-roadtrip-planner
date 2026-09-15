@@ -2,8 +2,10 @@ name: Update weather page
 
 on:
   schedule:
-    # every hour, on the hour (UTC) — resynced after initial scheduling delay
-    - cron: '0 * * * *'
+    # twice daily: 04:00 and 16:00 UTC = 06:00 and 18:00 German time
+    # (GitHub's scheduler throttles hourly crons to every 2-6h in practice anyway,
+    # so a realistic 2x/day cadence is both what was asked for and more reliable)
+    - cron: '0 4,16 * * *'
   workflow_dispatch: {}
 
 permissions:
