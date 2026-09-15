@@ -540,6 +540,8 @@
     background:var(--bg-soft); border:1px solid var(--line); border-radius:2px; padding:0.15rem 0.5rem;
   }
   .day-head h3{ margin:0; font-size:1.3rem; }
+  .day-head h3 a{ color:inherit; text-decoration:underline; text-decoration-style:dotted; text-underline-offset:3px; }
+  .day-head h3 a:hover{ color:var(--route); }
   details.optional-block > summary.optional-summary{ cursor:pointer; list-style:none; display:flex; align-items:center; }
   details.optional-block > summary.optional-summary::-webkit-details-marker{ display:none; }
   details.optional-block > summary.optional-summary::marker{ content:""; }
@@ -720,6 +722,21 @@
   });
   render();
 })();
+</script>
+
+<script>
+function jumpToCity(event, id){
+  event.preventDefault();
+  event.stopPropagation();
+  var target = document.getElementById(id);
+  if (!target) return;
+  var el = target;
+  while (el){
+    if (el.tagName === 'DETAILS') el.open = true;
+    el = el.parentElement;
+  }
+  target.scrollIntoView({ behavior:'smooth', block:'start' });
+}
 </script>
 
 <script>
@@ -996,7 +1013,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day2" open>
-      <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3>뷔르츠부르크 → 로텐부르크 → 뉘른베르크 (밤베르크 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">02</span><span class="day-date mono">9/20(일)</span><h3><a href="#cl-d2-wurzburg" onclick="jumpToCity(event,'cl-d2-wurzburg')">뷔르츠부르크</a> → <a href="#cl-d2-rothenburg" onclick="jumpToCity(event,'cl-d2-rothenburg')">로텐부르크</a> → <a href="#cl-d2-nurnberg" onclick="jumpToCity(event,'cl-d2-nurnberg')">뉘른베르크</a> (<a href="#cl-d2-bamberg" onclick="jumpToCity(event,'cl-d2-bamberg')">밤베르크</a> 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 173km · 약 2시간(선택 스톱 밤베르크 제외 시)</span><span><b>테마</b> 로맨틱 가도 &amp; UNESCO 구시가</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=49.445283,11.093911" target="_blank" rel="noopener">Design Wohnung auf 2 Ebenen - Nähe Messe</a> · Sophienstraße 9 (뒤채 2층), 90478 뉘른베르크 · 체크인 15:00–<b>23:00</b>(9/20 일, <span style="color:#c0392b;font-weight:800;">셀프 체크인</span>) · 무료주차(인근 공영주차장) · 2베드룸 아파트 · 전자레인지 · 냉장고 · 전기주전자 · 무료취소 ~9/18 23:59까지 · ☎ +49 175 1175713</div>
@@ -1019,7 +1036,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
-      <p class="city-label">뷔르츠부르크</p>
+      <p class="city-label" id="cl-d2-wurzburg">뷔르츠부르크</p>
       <p class="walk-map-note">🚗 숙소(위팅엔)→레지덴츠 약 18km·22분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.7941,9.7296&destination=49.7928,9.9392" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 레지덴츠 정문 앞 거리 주차(시간당 €1.70→€1.20, 1일 최대 €11) · 주차 후 도보 약 1분 · 여행자 리뷰 좋음("레지덴츠 방문엔 최고의 자리")<br>🅿️ 행사로 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Marktgarage+Wuerzburg" target="_blank" rel="noopener">P2 Marktgarage</a>(마르크트광장 지하, 레지덴츠까지 도보 약 8~10분, 요금은 다소 높고 폭 좁음)</p>
       <p class="walk-map-note">지도별 추천 코스 — 뷔르츠부르크: 레지덴츠 궁전 → 알테 마인교</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.7928,9.9392&destination=49.7928,9.9392&waypoints=49.7979,9.9321%7C49.7930,9.9257%7C49.7934,9.9323" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기 · 총 약 3.6km · 도보 약 48분</a>
@@ -1211,7 +1228,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       </div>
-      <p class="city-label">로텐부르크</p>
+      <p class="city-label" id="cl-d2-rothenburg">로텐부르크</p>
       <p class="walk-map-note">🚗 뷔르츠부르크→로텐부르크 약 70km·48분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.7898,9.9192&destination=49.3795,10.1840" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ P4 Galgentor · 유료(시간당 €1.30, 1일권 €6~8) · 주차 후 도보 약 5분 · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Galgentor+Rothenburg" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Bezoldweg+Rothenburg+ob+der+Tauber" target="_blank" rel="noopener">P5 Bezoldweg</a>(P4 바로 옆, 동일 요금·도보 약 5분)</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.3795,10.1840&destination=49.3795,10.1840&waypoints=49.3772%2C10.1785%7C49.3767%2C10.1783%7C49.3779%2C10.1777%7C49.3784%2C10.1757%7C49.376%2C10.1738%7C49.3756%2C10.1792%7C49.374%2C10.1803%7C49.3766,10.1814" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: P4 Galgentor 주차장) · 총 약 3.1km · 도보 약 44분</a>
       <div class="route-snapshot">
@@ -1428,7 +1445,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       </div>
-      <p class="city-label">뉘른베르크</p>
+      <p class="city-label" id="cl-d2-nurnberg">뉘른베르크</p>
       <p class="walk-map-note">🚗 로텐부르크→뉘른베르크 약 103km·1시간 12분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.3766,10.1814&destination=49.4537,11.0773" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Hauptmarkt · 유료(시간당 €1.80, 1일 최대 €16) · 중앙시장 바로 옆이라 Parkhaus Am Hauptbahnhof(중앙역, 도보 18~20분)보다 훨씬 가깝고 저렴 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Hauptmarkt+Nuernberg" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Hauptbahnhof+Nuernberg" target="_blank" rel="noopener">Parkhaus Am Hauptbahnhof</a>(중앙역 인근, 시간당 €2.00, 도보 18~20분 더 멂)</p>
       <p class="walk-map-note">뉘른베르크 가볼 만한 곳(아래 카드) 중 12곳은 모두 도보권이며 카드 순서대로 이동하면 됩니다 — <b>1번 중앙시장의 관광안내소에서 통합권부터 구매</b>한 뒤 나머지 카드 순서대로 돌면 됩니다(전 구간 도보, 대중교통 환승 불필요)<br>전범재판 기념관·성 요한 묘지·나치전당대회장은 도심에서 각각 다른 방향으로 떨어져 있어 별도 차량 이동 필요</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4531,11.0790&destination=49.4531,11.0790&waypoints=49.4537%2C11.0773%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4579%2C11.0748%7C49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4481%2C11.0762%7C49.4455%2C11.0744%7C49.4474,11.0812" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Hauptmarkt) · 총 약 4.5km · 도보 약 58분</a>
@@ -1756,7 +1773,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       <details class="optional-block" open>
-      <summary class="city-label optional-summary">밤베르크 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="city-label optional-summary" id="cl-d2-bamberg">밤베르크 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="landmark-grid">
       <div class="landmark-card wide">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kloster_Michaelsberg_Parkseite.jpg/500px-Kloster_Michaelsberg_Parkseite.jpg" alt="밤베르크 구시청사(Altes Rathaus)" loading="lazy">
@@ -1857,7 +1874,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day3" open>
-      <summary class="day-head"><span class="num mono">03</span><span class="day-date mono">9/21(월)</span><h3>뉘른베르크 → 뮌헨 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">03</span><span class="day-date mono">9/21(월)</span><h3>뉘른베르크 → <a href="#cl-d3-munchen" onclick="jumpToCity(event,'cl-d3-munchen')">뮌헨</a> → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 305km · 약 3시간 39분</span><span><b>테마</b> 뮌헨 반나절 관광 &amp; 알프스 관문 마을로</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=47.568657,10.698583" target="_blank" rel="noopener">TREFF APARTMENTS Füssen</a> (2박 중 1일차) · Hintere Gasse 19, 87629 퓌센 · 체크인 15:00–<b>23:00</b>(9/21 월, <span style="color:#c0392b;font-weight:800;">투숙자 전원 성·이름·생년월일 사전 통보 필요</span>) · 유료주차(€15/1일, <a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a> · 숙소에서 도보 2분) · 1베드룸 아파트 · 무료취소 ~9/15 23:59까지 · ☎ +49 152 06198298</div>
@@ -1936,7 +1953,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
         </div>
       </div>
-      <p class="city-label">뮌헨</p>
+      <p class="city-label" id="cl-d3-munchen">뮌헨</p>
       <p class="walk-map-note">🚗 알리안츠 아레나 관람 후 차로 P+R Fröttmaning까지 이동 — 약 1km · 3분 내외 · <a href="https://www.google.com/maps/search/?api=1&query=Fr%C3%B6ttmaning+P%2BR+Muenchen" target="_blank" rel="noopener">P+R Fröttmaning 위치 보기</a> · 약 1,300면 규모지만 옥토버페스트 기간엔 P+R 이용객이 몰려 만차될 수 있음<br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=P%2BR+Studentenstadt+Muenchen" target="_blank" rel="noopener">P+R Studentenstadt</a>(약 405면, U6 라인으로 3개 역 더 시내 쪽 — 운전은 좀 더 걸리지만 지하철은 오히려 더 짧음)</p>
       <p class="walk-map-note">🅿️ P+R Fröttmaning 주차 후 도보로 U6 라인 승강장 이동 — 아래 3구간 모두 환승 없이 U6 라인 하나로(파란색, 노선도 참고)</p>
       <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;margin:0.4rem 0 1rem;">
@@ -2389,7 +2406,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day4" open>
-      <summary class="day-head"><span class="num mono">04</span><span class="day-date mono">9/22(화)</span><h3>퓌센 → 오버아머가우 → 에탈 → 가르미슈 → 퓌센</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">04</span><span class="day-date mono">9/22(화)</span><h3><a href="#cl-d4-fuessen" onclick="jumpToCity(event,'cl-d4-fuessen')">퓌센</a> → <a href="#cl-d4-oberammergau" onclick="jumpToCity(event,'cl-d4-oberammergau')">오버아머가우</a> → <a href="#cl-d4-ettal" onclick="jumpToCity(event,'cl-d4-ettal')">에탈</a> → <a href="#cl-d4-garmisch" onclick="jumpToCity(event,'cl-d4-garmisch')">가르미슈</a> → <a href="#cl-d4-fuessen" onclick="jumpToCity(event,'cl-d4-fuessen')">퓌센</a></h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 154km · 약 2시간 46분(린더호프궁전 경유 시)</span><span><b>테마</b> 동화 속 성 완주 + 알프스 소도시 루프 (매우 빡빡한 하루)</span></div>
       <div class="stay-detail"><b>숙박지</b> TREFF APARTMENTS Füssen (2박 중 2일차, 전날과 동일 숙소) · Hintere Gasse 19, 87629 퓌센 · 체크아웃 10:00–<b>12:00</b>(9/23 수) · 유료주차(€15/1일, <a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a> · 숙소에서 도보 2분) · 1베드룸 아파트 · 무료취소 ~9/15 23:59까지</div>
@@ -2609,7 +2626,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       </div>
-      <p class="city-label">오버아머가우</p>
+      <p class="city-label" id="cl-d4-oberammergau">오버아머가우</p>
       <p class="walk-map-note">🚗 노이슈반슈타인 성→오버아머가우 약 48km·49분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.5576,10.7497&destination=47.60,11.07" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkplatz Süd/Festplatz · 유료(30분당 최대 €0.50~1.30) · 주차 후 마을 중심 도보권 · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Sued+Festplatz+Oberammergau" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Doettenbichl+Oberammergau" target="_blank" rel="noopener">Parkplatz Döttenbichl</a>(마을 남쪽 아머강변, 유료·정확한 요금·거리 미확인 — 소규모 마을이라 구글 평점 없음)</p>
       <div class="landmark-grid">
       <div class="landmark-card wide">
@@ -2671,7 +2688,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       </div>
-      <p class="city-label">에탈</p>
+      <p class="city-label" id="cl-d4-ettal">에탈</p>
       <p class="walk-map-note">🚗 오버아머가우→에탈 약 6km·17분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.60,11.07&destination=47.58,11.10" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Großer Parkplatz Klosterhof · 유료(1일 약 €3) · 수도원 바로 앞, 도보 이동 거의 없음 · <a href="https://www.google.com/maps/search/?api=1&query=Grosser+Parkplatz+Klosterhof+Ettal" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Kloster+Ettal+Parkplatz" target="_blank" rel="noopener">수도원 부지 내 P2/P3</a>(클로스터호프와 비슷하거나 더 가까움, 유료·정확한 요금 미확인)</p>
       <div class="booking-note">
         <div><b>예약 권장</b> 에탈 수도원 양조장 투어는 이메일 예약 확인을 받아야 자리가 보장됩니다(현장 구매만으로는 자리가 없을 수 있음).</div>
@@ -2792,7 +2809,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
       </div>
-      <p class="city-label">가르미슈파르텐키르헨</p>
+      <p class="city-label" id="cl-d4-garmisch">가르미슈파르텐키르헨</p>
       <p class="walk-map-note">🚗 린더호프궁전→가르미슈파르텐키르헨 약 26km·27분(에탈 경유) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.5697,10.9570&destination=47.4815,11.1176" target="_blank" rel="noopener">Google 지도로 길찾기</a></p>
       <p class="walk-map-note">🚗 에탈→가르미슈파르텐키르헨 약 16km·28분(린더호프 생략 시) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.58,11.10&destination=47.4815,11.1176" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ P21 Olympia-Skistadion · 유료(1일권 €5) · 주차 후 협곡 입구까지 도보 2.2km·25~30분(도보가 기본, 성수기엔 주차장~입구 구간 마차(Kutsche)도 다니지만 편도 요금 별도이고 운행 여부는 시즌·현장 상황에 따라 다름) · <a href="https://www.google.com/maps/search/?api=1&query=P21+Olympia-Skistadion+Garmisch-Partenkirchen" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Eisstadion+Garmisch-Partenkirchen" target="_blank" rel="noopener">P8 Eisstadion/Wellenbad</a>(P21 바로 옆·도보 약 1분, 586면, 무료 — 협곡까지 거리는 P21과 동일)</p>
       <div class="landmark-card wide">
@@ -2908,7 +2925,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <p class="walk-map-note tonight-note"><b>🚗 오늘 밤 숙소로</b> 파르트나흐클람(P21 주차장)→숙소(퓌센) 약 62.3km·1시간 2분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.4815,11.1176&destination=47.57,10.70" target="_blank" rel="noopener">Google 지도로 길찾기</a></p>
       <div class="sight-list">
-        <h4>가볼 만한 곳 — 퓌센 구시가(숙소 도보권)</h4>
+        <h4 id="cl-d4-fuessen">가볼 만한 곳 — 퓌센 구시가(숙소 도보권)</h4>
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0 0 0.6rem;">숙소(Hintere Gasse 19)가 퓌센 구시가 한복판이라, 이틀 밤 묵는 동안 저녁 시간이나 다음날 아침에 짧게 들를 수 있습니다. 일정상 필수는 아니지만 도보 5분 내외로 가까워 시간 되면 추천합니다.</p>
       <p class="walk-map-note">📍 도보 순서: 숙소 → 호에스 슐로스(도보 3분) → 장크트 망 수도원·바실리카(도보 2분) → 숙소 복귀(도보 4분) — 전체 약 630m·9분의 짧은 루프</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.568657,10.698583&destination=47.568657,10.698583&waypoints=47.5671,10.6981%7C47.5665,10.6993" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(숙소 출발·도착) · 총 약 630m · 도보 약 9분</a>
@@ -3046,7 +3063,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day5" open>
-      <summary class="day-head"><span class="num mono">05</span><span class="day-date mono">9/23(수)</span><h3>퓌센 → 켐프텐 → 보덴제(선택) → 티티제 → 프라이부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">05</span><span class="day-date mono">9/23(수)</span><h3>퓌센 → <a href="#cl-d5-kempten" onclick="jumpToCity(event,'cl-d5-kempten')">켐프텐</a> → 보덴제(선택) → <a href="#cl-d5-titisee" onclick="jumpToCity(event,'cl-d5-titisee')">티티제</a> → 프라이부르크</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 294km · 약 4시간 6분 (초장거리 이동일)</span><span><b>테마</b> 알고이에서 블랙 포레스트 거쳐 프라이부르크까지</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=47.966176,7.855127" target="_blank" rel="noopener">Hotel Kühler Krug</a> · Torplatz 1, 79100 프라이부르크 임 브라이스가우 · 체크인 20:00–21:00(9/23 수) · 무료주차(인근 공영주차장) · 트리플룸 · 조식 포함 · 무료취소 ~9/21 23:59까지 · ☎ +49 761 29103</div>
@@ -3071,7 +3088,7 @@ document.addEventListener('DOMContentLoaded', function(){
       
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
-      <p class="city-label">켐프텐</p>
+      <p class="city-label" id="cl-d5-kempten">켐프텐</p>
       <p class="walk-map-note">🚗 숙소(퓌센)→레지덴츠 약 43km·31분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.57,10.70&destination=47.7263,10.3182" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Am Rathaus · 주차 후 도보 약 3~5분 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Rathaus+Kempten" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Colosseum+Hirnbeinstrasse+7+Kempten" target="_blank" rel="noopener">Parkhaus Colosseum</a>(Hirnbeinstraße 7, 도보 5~10분)</p>
       <div class="landmark-grid">
       <div class="landmark-card semi-wide">
@@ -3179,7 +3196,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       </div>
-      <p class="city-label">티티제</p>
+      <p class="city-label" id="cl-d5-titisee">티티제</p>
       <p class="walk-map-note">🚗 켐프텐→티티제 약 216km·2시간 51분(보덴제 미경유 직행) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.73,10.32&destination=47.92,8.15" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkplatz am See · 유료(4시간 €8, 이후 최대 €9) · 호숫가 바로 앞, 도보 이동 거의 없음 · <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+am+See+Titisee" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Grossparkplatz+Titisee+P1" target="_blank" rel="noopener">Großparkplatz Titisee P1</a>(호수·시내 도보 몇 분, 요금 구조 거의 동일 — 4시간 €8·이후 최대 €9 부근)</p>
       <div class="landmark-grid">
       <div class="landmark-card semi-wide">
@@ -3351,7 +3368,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day6" open>
-      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3>프라이부르크 → 트리베르크 → 블랙 포레스트 → 메칭겐(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">06</span><span class="day-date mono">9/24(목)</span><h3><a href="#cl-d6-freiburg" onclick="jumpToCity(event,'cl-d6-freiburg')">프라이부르크</a> → <a href="#cl-d6-triberg" onclick="jumpToCity(event,'cl-d6-triberg')">트리베르크</a> → <a href="#cl-d6-schwarzwald" onclick="jumpToCity(event,'cl-d6-schwarzwald')">블랙 포레스트</a> → <a href="#cl-d6-metzingen" onclick="jumpToCity(event,'cl-d6-metzingen')">메칭겐</a>(아울렛)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 179km · 약 2시간 45분(블랙 포레스트 트리베르크 경유, 쇼핑 약 4시간 별도)</span><span><b>테마</b> 프라이부르크 아침 산책 &amp; 뻐꾸기시계 마을 &amp; 아울렛 쇼핑</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=48.5223,9.3084" target="_blank" rel="noopener">Metzingen Apartments Panoramablick</a> · Schwalbenring 14, 72555 메칭겐 · 체크인 15:00–24:00(9/24 목) · 체크아웃 ~10:00 · 무료주차(숙소 전용) · 아파트(2베드룸, 50㎡) · 더블침대 1개·싱글침대 2개·소파베드 1개 · 냉장고·인덕션·전자레인지·전기주전자 등 주방 · 무료취소 ~9/23 23:59까지</div>
@@ -3373,7 +3390,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
-      <p class="city-label">프라이부르크</p>
+      <p class="city-label" id="cl-d6-freiburg">프라이부르크</p>
       <p class="walk-map-note">🚗 숙소(Hotel Kühler Krug)→뮌스터 약 4.6km·11분(Günterstal 소재라 도보권 아님) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.9662,7.8550&destination=47.9975,7.8541" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Karlsbau · 유료(30분당 €1.30, 24시간 최대 €22) · 뮌스터 도보 2~4분 · ADAC "이용하기 좋은 주차장"상 2회 수상 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Karlsbau+Freiburg" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Tiefgarage+Uni+KG+Freiburg" target="_blank" rel="noopener">Tiefgarage Uni KG</a>(대학본관, Karlsbau와 비슷한 위치·요금, 단 2026년 여름까지 리모델링으로 자리 일부 축소)</p>
       <p class="walk-map-note">지도별 추천 코스 — 프라이부르크: 뮌스터(주차장에서 가장 가까움) → 옛 상인회관 → 아우구스티너박물관 → 도시성문 → Markthalle → 시청광장 → Haus zum Walfisch (시계방향, 아래 카드 순서와 동일)</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=47.9975,7.8541&destination=47.9975,7.8541&waypoints=47.9955%2C7.8529%7C47.995%2C7.8527%7C47.9938%2C7.8532%7C47.9937%2C7.8489%7C47.9939%2C7.8498%7C47.9962%2C7.8496%7C47.9964,7.8507" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Karlsbau) · 총 약 2.1km · 도보 약 30분</a>
@@ -3559,7 +3576,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       </div>
-      <p class="city-label">트리베르크</p>
+      <p class="city-label" id="cl-d6-triberg">트리베르크</p>
       <p class="walk-map-note">🚗 프라이부르크→트리베르크 약 59km·1시간 1분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=47.9955,7.8529&destination=48.1263,8.2313" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 시내 곳곳 소규모 주차장 · 유료(시간당 약 €1~2, 현장 확인 권장)<br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+Scheffelplatz+Triberger+Wasserfaelle" target="_blank" rel="noopener">Parkplatz Scheffelplatz</a>(폭포 입구에서 도보 약 5분, 약 20~25대 규모)</p>
       <p class="walk-map-note">지도별 추천 코스 — 트리베르크: 뻐꾸기시계 원조마을 → 폭포</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=48.1291,8.2311&destination=48.1291,8.2311&waypoints=48.1264,8.2276" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기 · 총 약 1.1km · 도보 약 14분</a>
@@ -3673,7 +3690,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       </div>
-      <p class="city-label">블랙 포레스트</p>
+      <p class="city-label" id="cl-d6-schwarzwald">블랙 포레스트</p>
       <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sch%C3%B6nwald%20im%20Schwarzwald%2C%20Ortsansicht%20--%202025%20--%200141.jpg?width=500" alt="블랙 포레스트 풍경" loading="lazy">
         <div class="landmark-body">
@@ -3682,7 +3699,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="landmark-meta"><span class="landmark-price">무료(드라이브 경관)</span> · <a href="https://www.google.com/maps/search/?api=1&query=Schwarzwald" target="_blank" rel="noopener">지도</a></div>
         </div>
       </div>
-      <p class="city-label">메칭겐</p>
+      <p class="city-label" id="cl-d6-metzingen">메칭겐</p>
       <p class="walk-map-note">🚗 트리베르크→메칭겐 약 120km·1시간 44분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.1263,8.2313&destination=48.54,9.28" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 아울렛 P4 · 무료 · 주차 후 도보 8~12분 · <a href="https://www.google.com/maps/search/?api=1&query=Outletcity+Metzingen+Parkhaus+P4" target="_blank" rel="noopener">주차장 위치 보기</a></p>
       <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/OutletcityMetzingen.jpg?width=500" alt="아울렛시티 메칭겐(Outletcity Metzingen)" loading="lazy">
@@ -3811,7 +3828,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day7" open>
-      <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → 하이델베르크 → 뤼데스하임 (슈투트가르트·베른카슈텔쿠에스 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">07</span><span class="day-date mono">9/25(금)</span><h3>메칭겐 → <a href="#cl-d7-heidelberg" onclick="jumpToCity(event,'cl-d7-heidelberg')">하이델베르크</a> → <a href="#cl-d7-ruedesheim" onclick="jumpToCity(event,'cl-d7-ruedesheim')">뤼데스하임</a> (<a href="#cl-d7-stuttgart" onclick="jumpToCity(event,'cl-d7-stuttgart')">슈투트가르트</a>·<a href="#cl-d7-bernkastel" onclick="jumpToCity(event,'cl-d7-bernkastel')">베른카슈텔쿠에스</a> 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 264km · 약 3시간 20분(선택 스톱 슈투트가르트·베른카슈텔쿠에스 제외 시)</span><span><b>테마</b> 자동차 박물관에서 라인·모젤 와인가도로</span></div>
       <div class="stay-detail"><b>숙박지</b> <a href="https://www.google.com/maps/search/?api=1&query=50.010997,7.846507" target="_blank" rel="noopener">ChristRose</a> · Sonnenstraße 8 (1층), 55413 Trechtingshausen · 체크인 16:00–<b>21:30</b>(9/25 금) · 무료주차 · 아파트 · 냉장고 · 전기주전자 · 커피머신 등 간이주방 · 무료취소 ~9/23 23:59까지 · ☎ +49 491794571686</div>
@@ -3867,7 +3884,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </details>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
-      <p class="city-label">하이델베르크</p>
+      <p class="city-label" id="cl-d7-heidelberg">하이델베르크</p>
       <p class="walk-map-note">🚗 숙소(메칭겐)→성 약 148km·1시간 42분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.54,9.28&destination=49.4093,8.7135" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ 성 등산철도 승강장 건물 내부(P12 Kornmarkt/Schloss) · 주차 후 등산철도로 바로 연결(도보 이동 없음)<br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+P1+Poststrasse+Heidelberg" target="_blank" rel="noopener">P1 Poststraße</a>(3.8★/516리뷰, 비스마르크광장 인근, 하웁트슈트라세 따라 도보 10~12분)</p>
       <p class="walk-map-note">🌧️ 우천 시 — 🚗 숙소(메칭겐)→슈투트가르트 국립미술관→하이델베르크 성 약 156km·2시간 3분(직행 대비 +8km·21분) · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=48.54,9.28&destination=49.4093,8.7135&waypoints=48.7802,9.1871" target="_blank" rel="noopener">Google 지도로 길찾기</a></p>
       <div class="booking-note"><b>예약 권장(대기 방지)</b> 학생감옥·대학교박물관은 예약 없이도 방문 가능하지만, 대기 없이 보려면 최대 1주 전 전화 예약을 권장합니다.</div>
@@ -4122,7 +4139,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       <details class="optional-block" open>
-      <summary class="city-label optional-summary">슈투트가르트 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="city-label optional-summary" id="cl-d7-stuttgart">슈투트가르트 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="landmark-grid">
       <div class="booking-note"><b>현장구매 가능, 온라인 예매 권장</b> 메르세데스-벤츠 박물관·포르쉐 박물관은 타임슬롯 티켓제입니다. 평일엔 현장 구매로도 충분하지만, 주말·성수기엔 대기줄을 건너뛰려면 온라인 예매가 낫습니다.</div>
       <div class="landmark-card">
@@ -4236,7 +4253,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </details>
       <details class="optional-block" open>
-      <summary class="city-label optional-summary">베른카슈텔쿠에스 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="city-label optional-summary" id="cl-d7-bernkastel">베른카슈텔쿠에스 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
       <p class="walk-map-note">🚗 하이델베르크→베른카슈텔쿠에스 약 178km·2시간 6분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.4093,8.7135&destination=49.92,7.07" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ P3/P4 Moselufer · 유료(요금 미확인, 현장 정산기 확인) · 마르크트광장 도보 몇 분 — P3 Gestade(베른카슈텔 쪽, 약 550면, 도보 3분)가 P4보다 훨씬 커서 사실상 주력, P4 Brückenkeller(쿠에스 쪽, 약 40면)는 소규모<br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Moselvorgelaende+Parkplatz+Bernkastel-Kues" target="_blank" rel="noopener">Moselvorgelände 강변 주차장</a>(P3에서 도보 몇 분 더, 요금 미확인)</p>
       <div class="landmark-grid">
       <div class="landmark-card wide">
@@ -4404,7 +4421,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </details>
 
     <details class="day" id="day8" open>
-      <summary class="day-head"><span class="num mono">08</span><span class="day-date mono">9/26(토)</span><h3>뤼데스하임 → 프랑크푸르트 공항 (반납, 19:40 출국, 비스바덴 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="day-head"><span class="num mono">08</span><span class="day-date mono">9/26(토)</span><h3>뤼데스하임 → <a href="#cl-d8-frankfurt" onclick="jumpToCity(event,'cl-d8-frankfurt')">프랑크푸르트</a> 공항 (반납, 19:40 출국, <a href="#cl-d8-wiesbaden" onclick="jumpToCity(event,'cl-d8-wiesbaden')">비스바덴</a> 선택)</h3><span class="day-toggle" aria-hidden="true">&#9662;</span></summary>
       <div class="day-content">
       <div class="day-meta"><span><b>주행</b> 약 80km · 약 1시간 10분(숙소→케이블카, 프랑크푸르트→렌터카 반납 포함, 비스바덴 선택 시 별도 추가)</span><span><b>테마</b> 여유로운 마무리 &amp; 프랑크푸르트 시내 산책(슈테델 미술관부터) &amp; 출국</span></div>
       <div id="day8map" class="day-leaflet-map"></div>
@@ -4428,7 +4445,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <div class="sight-list">
         <h4>가볼 만한 곳</h4>
-      <p class="city-label">뤼데스하임</p>
+      <p class="city-label" id="cl-d7-ruedesheim">뤼데스하임</p>
       <p class="walk-map-note">🚗 숙소(Trechtingshausen)→케이블카 승강장 약 8.6km·22분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.97,7.86&destination=49.9796,7.9219" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ P10 Feldtor(드로셀가세·구시가 도보권) · 주차 후 도보 약 5분 · <a href="https://www.google.com/maps/search/?api=1&query=P10+Feldtor+Ruedesheim" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkplatz+An+der+Ringmauer+Ruedesheim" target="_blank" rel="noopener">P2 An der Ringmauer</a>(케이블카 승강장·구시가 인근, P10과 비슷한 거리, 유료·정확한 요금 미확인)</p>
       <p class="walk-map-note">지도별 추천 코스 — 뤼데스하임: 케이블카 승강장 → 드로셀가세 → 오버 거리(Oberstraße) → 악기박물관 → 브뢰머부르크</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.9788,7.9165&destination=49.9788,7.9165&waypoints=49.9796%2C7.9219%7C49.9783%2C7.9208%7C49.9787,7.9203%7C49.9793,7.9199%7C49.9777,7.9178" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: P10 Feldtor 주차장) · 총 약 1.3km · 도보 약 16분</a>
@@ -4612,7 +4629,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       </div>
       </div>
-      <p class="city-label">프랑크푸르트</p>
+      <p class="city-label" id="cl-d8-frankfurt">프랑크푸르트</p>
       <p class="walk-map-note">🚗 뤼데스하임→프랑크푸르트 직행 약 66km·55분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.9775,7.9271&destination=50.1102,8.6822" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Dom-Römer(뢰머광장 바로 앞, 대성당·클라인마르크트할레도 도보 5분 내) · 유료(시간당 약 €3~4) · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Dom-Roemer+Frankfurt" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Hauptwache+Frankfurt" target="_blank" rel="noopener">Parkhaus Hauptwache</a>(클라인마르크트할레에서 도보 약 7분)</p>
       <p class="walk-map-note">뢰머광장 바로 앞 Parkhaus Dom-Römer에 주차해두고, 대성당·클라인마르크트할레 등 나머지 명소와 붙어 있는 이 주차장을 거점 삼아 먼저 다리를 건너 슈테델 미술관을 보고 온 뒤, 되돌아오는 길에 아이제르너 슈텍·뢰머광장·대성당·클라인마르크트할레를 도는 순서로 정리했습니다. 비행기 시간이 빠듯하면 슈테델 관람을 줄이고 뢰머광장 일대만 짧게 둘러보세요.</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=50.1102,8.6822&destination=50.1102,8.6822&waypoints=50.1033%2C8.6739%7C50.1081%2C8.6821%7C50.1107%2C8.6853%7C50.1127%2C8.6830" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(Parkhaus Dom-Römer 출발·도착) · 총 약 3.0km · 도보 약 37분</a>
@@ -4846,7 +4863,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <p style="font-size:0.78rem;color:var(--ink-soft);margin:0.4rem 0 0;">19:40 출국이면 늦어도 17:00~17:30 반납 도착을 목표로 하세요(체크인·보안검색 시간 감안). 픽업 때와 같은 카운터입니다.</p>
       </div>
       <details class="optional-block" open>
-      <summary class="city-label optional-summary">비스바덴 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
+      <summary class="city-label optional-summary" id="cl-d8-wiesbaden">비스바덴 <span class="optional-tag">(선택)</span><span class="optional-toggle" aria-hidden="true">&#9662;</span></summary>
       <p class="walk-map-note">🚗 뤼데스하임→비스바덴 약 30km·33분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.9788,7.9165&destination=50.0785,8.2397" target="_blank" rel="noopener">Google 지도로 길찾기</a> · 비스바덴→프랑크푸르트 약 39km·32분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=50.0785,8.2397&destination=50.1106,8.6822" target="_blank" rel="noopener">Google 지도로 길찾기</a> — 프랑크푸르트 직행(66km·55분)과 총거리 차이가 거의 없어, 시간 있으면 가는 길에 들르기 좋습니다(순서상 프랑크푸르트보다 먼저 지나가는 길목입니다)<br>🅿️ Parkhaus Luisenplatz · 유료(시간당 약 €2, 1일 최대 €20) · 리뷰가 소수 표본이라 확정적이진 않음 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Luisenplatz+Wiesbaden" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+LuisenForum+Karlstrasse+4+Wiesbaden" target="_blank" rel="noopener">Parkhaus LuisenForum</a>(Karlstraße 4, 마켓 지역 도보 약 3분, 요금은 비슷하거나 다소 높음)</p>
       <p class="walk-map-note">지도별 추천 코스 — 비스바덴: 쿠어하우스 & 쿠어파크 → 코흐브루넨 → 마르크트교회</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=50.0785,8.2397&destination=50.0785,8.2397&waypoints=50.0848%2C8.2476%7C50.0864%2C8.2419%7C50.0822,8.2429" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Luisenplatz) · 총 약 3.0km · 도보 약 41분</a>
