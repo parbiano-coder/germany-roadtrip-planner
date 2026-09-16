@@ -141,9 +141,10 @@ async function main() {
     const { dloc, ti } = dailyForColumn(locIdx, dateStr);
     return dloc.sunset[ti].split('T')[1];
   });
+  // max/min order, matching the city/date grid table's convention (e.g. "20/10")
   const minmaxVals = HOURLY_COLUMNS.map(([locIdx, dateStr]) => {
     const { dloc, ti } = dailyForColumn(locIdx, dateStr);
-    return `${Math.round(dloc.temperature_2m_min[ti])}/${Math.round(dloc.temperature_2m_max[ti])}`;
+    return `${Math.round(dloc.temperature_2m_max[ti])}/${Math.round(dloc.temperature_2m_min[ti])}`;
   });
 
   // there are two <table class="hourly-table"> elements (a 6-hour summary and a
