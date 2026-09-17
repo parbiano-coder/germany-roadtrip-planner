@@ -149,6 +149,8 @@
   table.lodging .name{ font-weight:800; color:var(--ink); }
   table.lodging .yn-yes{ color:var(--route); font-weight:800; }
   table.lodging .yn-unknown{ color:var(--ink-soft); }
+  table.lodging td.parking-offsite{ background:var(--warn-soft); }
+  table.lodging td.parking-offsite .pk-dist{ display:block; color:var(--warn); font-weight:800; font-size:0.82rem; margin-top:0.15rem; }
   table.lodging .note-warn{ color:#c0392b; font-weight:700; }
   table.lodging tr.name-row th, table.lodging tr.name-row td{ position:sticky; top:52px; z-index:1; background:var(--surface); }
   table.lodging tr.name-row th.row-label{ z-index:2; }
@@ -421,12 +423,12 @@
           </tr>
           <tr>
             <th class="row-label">주차</th>
-            <td>무료<br>안뜰/교회 주변</td>
-            <td>무료<br>인근 공영주차장</td>
-            <td>유료(€15/1일)<br><a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a><br>(도보 2분)</td>
-            <td>무료<br>인근 공영주차장</td>
+            <td>무료<br>숙소 안뜰/바로 옆 교회 공터</td>
+            <td class="parking-offsite">무료<br>인근 공영주차장<span class="pk-dist">거리 미확인 — 체크인 전 호스트 확인 권장</span></td>
+            <td class="parking-offsite">유료(€15/1일)<br><a href="https://www.google.com/maps/search/?api=1&query=Luitpoldstrasse+7+Fuessen" target="_blank" rel="noopener">Luitpoldstraße 7</a><span class="pk-dist">도보 2분</span></td>
+            <td class="parking-offsite">무료<br>인근 공영주차장<span class="pk-dist">거리 미확인 — 숙소가 도심에서 4.6km 떨어진 귄터슈탈 소재</span></td>
             <td>무료<br>숙소 전용</td>
-            <td>무료</td>
+            <td>무료<br>숙소 부지 내(전용)</td>
           </tr>
           <tr>
             <th class="row-label">베드타입</th>
