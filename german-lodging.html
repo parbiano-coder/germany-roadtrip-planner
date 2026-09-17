@@ -148,6 +148,7 @@
   table.lodging tbody tr:hover td.sticky-col{ background:var(--bg-soft); }
   table.lodging .name{ font-weight:800; color:var(--ink); }
   table.lodging .yn-yes{ color:var(--route); font-weight:800; }
+  table.lodging .yn-no{ color:var(--warn); font-weight:800; }
   table.lodging .yn-unknown{ color:var(--ink-soft); }
   table.lodging td.parking-offsite{ background:var(--warn-soft); }
   table.lodging td.parking-offsite .pk-dist{ display:block; color:var(--warn); font-weight:800; font-size:0.82rem; margin-top:0.15rem; }
@@ -449,6 +450,15 @@
             <td>80m²</td>
           </tr>
           <tr>
+            <th class="row-label">무료생수</th>
+            <td><span class="yn-no">X</span></td>
+            <td></td>
+            <td></td>
+            <td><span class="yn-yes">○</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
             <th class="row-label">냉장고</th>
             <td></td>
             <td><span class="yn-yes">○</span></td>
@@ -483,15 +493,6 @@
             <td></td>
             <td></td>
             <td><span class="yn-yes">○</span></td>
-          </tr>
-          <tr>
-            <th class="row-label">무료생수</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><span class="yn-yes">○</span></td>
-            <td></td>
-            <td></td>
           </tr>
           <tr>
             <th class="row-label">기타 주방시설</th>
