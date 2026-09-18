@@ -416,6 +416,13 @@
     font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
     vertical-align:middle; margin-left:0.35rem; white-space:nowrap;
   }
+  .monclosed-badge{
+    display:inline-flex; align-items:center; gap:0.2rem;
+    background:var(--warn-soft); border:1px solid var(--warn); border-radius:999px;
+    padding:0.1rem 0.55rem; font-size:0.62rem; font-weight:800; color:var(--warn);
+    font-family:'Paperozi',-apple-system,"Segoe UI","Pretendard","Noto Sans KR",sans-serif;
+    vertical-align:middle; margin-left:0.35rem; white-space:nowrap;
+  }
   @media (max-width:900px){ .combo-group{ grid-column:span 2; } .combo-group.combo-4{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:640px){
     .combo-group{ grid-column:1 / -1; grid-template-columns:1fr; }
@@ -1455,7 +1462,7 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
       <p class="city-label" id="cl-d2-nurnberg">뉘른베르크</p>
       <p class="walk-map-note">🚗 로텐부르크→뉘른베르크 약 103km·1시간 12분 · <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=49.3766,10.1814&destination=49.4537,11.0773" target="_blank" rel="noopener">Google 지도로 길찾기</a><br>🅿️ Parkhaus Hauptmarkt · 유료(시간당 €1.80, 1일 최대 €16) · 중앙시장 바로 옆이라 Parkhaus Am Hauptbahnhof(중앙역, 도보 18~20분)보다 훨씬 가깝고 저렴 · <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Hauptmarkt+Nuernberg" target="_blank" rel="noopener">주차장 위치 보기</a><br>🅿️ 만차 시 대안: <a href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Hauptbahnhof+Nuernberg" target="_blank" rel="noopener">Parkhaus Am Hauptbahnhof</a>(중앙역 인근, 시간당 €2.00, 도보 18~20분 더 멂)</p>
-      <p class="walk-map-note">뉘른베르크 가볼 만한 곳(아래 카드) 중 12곳은 모두 도보권이며 카드 순서대로 이동하면 됩니다 — <b>1번 중앙시장의 관광안내소에서 통합권부터 구매</b>한 뒤 나머지 카드 순서대로 돌면 됩니다(전 구간 도보, 대중교통 환승 불필요)<br>전범재판 기념관·성 요한 묘지·나치전당대회장은 도심에서 각각 다른 방향으로 떨어져 있어 별도 차량 이동 필요</p>
+      <p class="walk-map-note">뉘른베르크 가볼 만한 곳(아래 카드) 중 12곳은 모두 도보권이며 카드 순서대로 이동하면 됩니다 — <b>1번 중앙시장의 관광안내소에서 통합권부터 구매</b>한 뒤 나머지 카드 순서대로 돌면 됩니다(전 구간 도보, 대중교통 환승 불필요)<br>전범재판 기념관·성 요한 묘지·나치전당대회장은 도심에서 각각 다른 방향으로 떨어져 있어 별도 차량 이동 필요<br>🚫 표시 5곳(펨보하우스·뒤러 하우스·장난감박물관·게르만 국립박물관·DB철도박물관)은 월요일 휴관이라 일요일 도착 당일 저녁에 봐야 합니다</p>
       <a class="walk-map-link" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=49.4531,11.0790&destination=49.4531,11.0790&waypoints=49.4537%2C11.0773%7C49.4553%2C11.0764%7C49.4552%2C11.0773%7C49.4566%2C11.0771%7C49.4579%2C11.0748%7C49.4572%2C11.0738%7C49.4546%2C11.0743%7C49.4531%2C11.0731%7C49.4481%2C11.0762%7C49.4455%2C11.0744%7C49.4474,11.0812" target="_blank" rel="noopener">📍 Google 지도로 도보 코스 보기(출발·도착: Parkhaus Hauptmarkt) · 총 약 4.5km · 도보 약 58분</a>
       <div class="route-snapshot">
         <div class="route-snapshot-media">
@@ -1466,13 +1473,13 @@ document.addEventListener('DOMContentLoaded', function(){
         <li><span class="rs-name"><b>중앙시장(Hauptmarkt)</b> 🎟️<a href="https://www.google.com/maps/search/?api=1&query=Tourist+Information+Hauptmarkt+Nuernberg" target="_blank" rel="noopener" style="font-weight:700;">여기서 통합권 구매</a></span><span class="rs-seg">(180m, 2분)</span></li>
         <li><span class="rs-name">성 제발두스 교회(Sebalduskirche)</span><span class="rs-seg">(250m, 3분)</span></li>
         <li><span class="rs-name">구 시청(Altes Rathaus)</span><span class="rs-seg">(90m, 1분)</span></li>
-        <li><span class="rs-name">펨보하우스(Fembohaus)</span><span class="rs-seg">(200m, 3분)</span></li>
+        <li><span class="rs-name">펨보하우스(Fembohaus) 🚫</span><span class="rs-seg">(200m, 3분)</span></li>
         <li><span class="rs-name"><b>카이저부르크(Kaiserburg)</b> 🎟️</span><span class="rs-seg">(290m, 4분)</span></li>
-        <li><span class="rs-name"><b>뒤러 하우스</b> 🎟️</span><span class="rs-seg">(140m, 2분)</span></li>
-        <li><span class="rs-name"><b>장난감박물관</b> 🎟️</span><span class="rs-seg">(380m, 5분)</span></li>
+        <li><span class="rs-name"><b>뒤러 하우스</b> 🎟️🚫</span><span class="rs-seg">(140m, 2분)</span></li>
+        <li><span class="rs-name"><b>장난감박물관</b> 🎟️🚫</span><span class="rs-seg">(380m, 5분)</span></li>
         <li><span class="rs-name">헹커슈텍(Henkersteg)</span><span class="rs-seg">(240m, 3분)</span></li>
-        <li><span class="rs-name"><b>게르만 국립박물관(Germanisches Nationalmuseum)</b> 🎟️</span><span class="rs-seg">(780m, 10분)</span></li>
-        <li><span class="rs-name"><b>DB 철도박물관(DB Museum)</b> 🎟️</span><span class="rs-seg">(410m, 5분)</span></li>
+        <li><span class="rs-name"><b>게르만 국립박물관(Germanisches Nationalmuseum)</b> 🎟️🚫</span><span class="rs-seg">(780m, 10분)</span></li>
+        <li><span class="rs-name"><b>DB 철도박물관(DB Museum)</b> 🎟️🚫</span><span class="rs-seg">(410m, 5분)</span></li>
         <li><span class="rs-name">수공예마을(Handwerkerhof)</span><span class="rs-seg">(700m, 9분)</span></li>
         <li class="rs-p"><span class="rs-name">주차장(Parkhaus Hauptmarkt)</span><span class="rs-seg">(850m, 11분)</span></li>
         </ol>
@@ -1515,7 +1522,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_Stadtmuseum_Fembohaus_001.JPG?width=500" alt="펨보하우스 시립박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">4</span>펨보하우스 시립박물관(Stadtmuseum im Fembo-Haus)</h3>
+        <h3><span class="stop-num">4</span>펨보하우스 시립박물관(Stadtmuseum im Fembo-Haus)<span class="monclosed-badge" title="월요일 휴관 — 일요일에 방문해야 함">🚫 월요일 휴관</span></h3>
         <p class="landmark-desc">뉘른베르크에 남은 유일한 완전한 상인 저택(16세기 후기 르네상스 양식). 도시 역사 전반을 오디오가이드와 함께 둘러볼 수 있습니다.</p>
         <div class="landmark-meta">화–금 10:00–17:00 · 토·일 10:00–18:00(월요일 휴관) · <span class="landmark-price">성인 €7.50 · 대학생 €2.50</span> · <a href="https://museen.nuernberg.de/fembohaus" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Fembohaus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1545,7 +1552,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht-D%C3%BCrer-Haus_-_Tierg%C3%A4rtnerplatz_-_Nuremberg%2C_Germany_-_DSC02033.jpg?width=500" alt="알브레히트 뒤러 하우스" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">6</span>알브레히트 뒤러 하우스(Albrecht-Dürer-Haus)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">6</span>알브레히트 뒤러 하우스(Albrecht-Dürer-Haus)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span><span class="monclosed-badge" title="월요일 휴관 — 일요일에 방문해야 함">🚫 월요일 휴관</span></h3>
         <p class="landmark-desc">독일 르네상스 화가 알브레히트 뒤러가 실제로 살고 작업했던 목조 가옥. 판화 인쇄 시연도 볼 수 있습니다.</p>
         <div class="landmark-meta">화–일 10:00–18:00 (월요일 휴관) · <span class="landmark-price">성인 €6 · 대학생 €1.50</span> · <a href="https://museen.nuernberg.de/duererhaus" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Albrecht+Duerer+Haus+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         </div>
@@ -1554,7 +1561,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/22-06-26_Spielzeugmuseum_N%C3%BCrnberg.jpg?width=500" alt="장난감박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">7</span>장난감박물관(Spielzeugmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">7</span>장난감박물관(Spielzeugmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span><span class="monclosed-badge" title="월요일 휴관 — 일요일에 방문해야 함">🚫 월요일 휴관</span></h3>
         <p class="landmark-desc">수백 년간 독일 장난감 산업의 중심지였고, 지금도 세계 최대 장난감 박람회(Spielwarenmesse)가 매년 열리는 도시입니다. 이런 배경 때문에 뉘른베르크 장난감박물관은 세계적으로도 손꼽히는 정통 장난감 박물관으로 평가받고, 소장품 규모·역사적 깊이(양철 장난감, 인형의 집, 모형 기차 등)도 훨씬 방대합니다.</p>
         <div class="landmark-meta">화–금 10:00–17:00 · 토·일 10:00–18:00 (월요일 휴관) · <span class="landmark-price">성인 €7.50 · 대학생 €2.50</span> · <a href="https://museen.nuernberg.de/spielzeugmuseum/besucherinformation/eintrittspreise" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Spielzeugmuseum+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.5rem;margin-top:0.6rem;">
@@ -1589,7 +1596,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Germanisches_Nationalmuseum_020.JPG?width=500" alt="게르만 국립박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">9</span>게르만 국립박물관(Germanisches Nationalmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">9</span>게르만 국립박물관(Germanisches Nationalmuseum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span><span class="monclosed-badge" title="월요일 휴관 — 일요일에 방문해야 함">🚫 월요일 휴관</span></h3>
         <p class="landmark-desc">1852년 설립된 독일 최대 문화사 박물관. 선사시대부터 현대까지 독일어권 문화 전반을 아우르는 방대한 소장품을 자랑합니다.</p>
         <div class="landmark-meta">화–일 10:00–18:00(수 ~20:30), 월요일 휴관 · <span class="landmark-price">성인 €10 · 대학생 €6</span> · <a href="https://www.gnm.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=Germanisches+Nationalmuseum" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
@@ -1599,7 +1606,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="landmark-card wide">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/N%C3%BCrnberg_-_Verkehrsmuseum.jpg?width=500" alt="독일 철도 박물관" loading="lazy">
         <div class="landmark-body">
-        <h3><span class="stop-num">10</span>독일 철도 박물관(DB Museum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span></h3>
+        <h3><span class="stop-num">10</span>독일 철도 박물관(DB Museum)<span class="ticket-badge" title="뉘른베르크 카드+퓌르트 통합권(€38)에 포함">🎟️ 통합권</span><span class="monclosed-badge" title="월·화 휴관 — 일요일에 방문해야 함">🚫 월·화 휴관</span></h3>
         <p class="landmark-desc">1899년 개관한 세계에서 가장 오래된 철도 박물관. 독일 최초 증기기관차 &ldquo;아들러(Adler)&rdquo; 복제품 등 역사적 차량을 전시합니다.</p>
         <div class="landmark-meta">수–금 09:00–17:00 · 토·일·공휴일 10:00–18:00(월·화 휴관) · <span class="landmark-price">성인 €10 · 대학생 €8</span> · <a href="https://dbmuseum.de" target="_blank" rel="noopener">홈페이지</a> · <a href="https://www.google.com/maps/search/?api=1&query=DB+Museum+Nuernberg" target="_blank" rel="noopener">지도</a></div>
         <div class="landmark-parking">🅿️ 중앙시장 인근(Parkhaus Hauptmarkt) · 유료(시간당 €1.80, 1일 최대 €16)</div>
