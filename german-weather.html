@@ -394,18 +394,11 @@
 </nav>
 </div>
 
-<header class="hero">
-  <div class="hero-inner">
-    <h1>여행 기간 실제 날씨</h1>
-    <p class="sub">2026년 9월 19일~27일 여행 기간 실제 기상 기록(Open-Meteo Historical Weather API 기준)</p>
-  </div>
-</header>
-
 <main>
 
   <section>
       <div class="wg-outer">
-        <h2 class="wg-sticky-title">시간대별 실제 날씨(1시간 단위) <span style="font-weight:400; font-size:0.6em; color:var(--ink-soft);">* 일몰 시각은 천문 계산값 기준</span></h2>
+        <h2 class="wg-sticky-title">시간대별 날씨 <span style="font-weight:400; font-size:0.6em; color:var(--ink-soft);">* 일몰 시각은 천문 계산값 기준</span></h2>
         <div class="wg-table-block">
         <div class="wg-sticky-head-wrap" id="wgHeadWrap2">
           <div class="wg-corner">시간</div>
@@ -483,42 +476,7 @@
     })();
     </script>
 
-  <section>
-      <h2 class="wg-sticky-title">일자별 실제 날씨</h2>
-      <p style="margin:0 0 1rem; font-size:0.82rem; color:var(--ink-soft);">여행 중 실제로 방문한 도시의 그날 실측 기상 기록입니다(Open-Meteo Historical Weather API 기준).</p>
-      <div class="table-wrap">
-        <table class="weather-grid" style="min-width:0;">
-          <thead>
-            <tr><th style="text-align:left;">도시</th><th>날짜</th><th>최고/최저</th><th>일몰</th></tr>
-          </thead>
-          <tbody>
-        <tr><td class="wg-city">서울</td><td class="mono">9/19(토) 출국</td><td class="mono">29/19<span class="wx-icon">☁️</span></td><td class="mono">11:35</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/frankfurt/60311/month/168720" target="_blank" rel="noopener">프랑크푸르트</a></td><td class="mono">9/19(토)</td><td class="mono">23/11<span class="wx-icon">☁️</span></td><td class="mono">19:30</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/wurzburg/97070/month/167557" target="_blank" rel="noopener">뷔르츠부르크</a></td><td class="mono">9/20(일)</td><td class="mono">22/13<span class="wx-icon">🌦️</span></td><td class="mono">19:22</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/rothenburg-ob-der-tauber/91541/month/167691" target="_blank" rel="noopener">로텐부르크</a></td><td class="mono">9/20(일)</td><td class="mono">21/12<span class="wx-icon">🌧️</span></td><td class="mono">19:21</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/nuremberg/90402/month/167559" target="_blank" rel="noopener">뉘른베르크(도착일)</a></td><td class="mono">9/20(일)</td><td class="mono">22/12<span class="wx-icon">🌦️</span></td><td class="mono">19:18</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/nuremberg/90402/month/167559" target="_blank" rel="noopener">뉘른베르크(출발일)</a></td><td class="mono">9/21(월)</td><td class="mono">16/9<span class="wx-icon">🌦️</span></td><td class="mono">19:15</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/munich/80331/month/178086" target="_blank" rel="noopener">뮌헨</a></td><td class="mono">9/21(월)</td><td class="mono">16/10<span class="wx-icon">🌦️</span></td><td class="mono">19:14</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/fussen/87629/month/167596" target="_blank" rel="noopener">퓌센</a></td><td class="mono">9/22(화)</td><td class="mono">16/4<span class="wx-icon">☁️</span></td><td class="mono">19:15</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/hohenschwangau/87645/month/1018288" target="_blank" rel="noopener">호엔슈방가우</a></td><td class="mono">9/22(화)</td><td class="mono">15/4<span class="wx-icon">☁️</span></td><td class="mono">19:15</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/oberammergau/82487/month/173194" target="_blank" rel="noopener">오버아머가우</a></td><td class="mono">9/22(화)</td><td class="mono">15/2<span class="wx-icon">☁️</span></td><td class="mono">19:13</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/ettal/82488/month/172567" target="_blank" rel="noopener">에탈</a></td><td class="mono">9/22(화)</td><td class="mono">15/2<span class="wx-icon">☁️</span></td><td class="mono">19:13</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/garmisch-partenkirchen/82467/month/172200" target="_blank" rel="noopener">가르미슈파르텐키르헨</a></td><td class="mono">9/22(화)</td><td class="mono">16/4<span class="wx-icon">☁️</span></td><td class="mono">19:13</td></tr>
-        <tr><td class="wg-city">린다우</td><td class="mono">9/23(수)</td><td class="mono">20/7<span class="wx-icon">⛅</span></td><td class="mono">19:17</td></tr>
-        <tr><td class="wg-city">메르스부르크</td><td class="mono">9/23(수)</td><td class="mono">20/8<span class="wx-icon">☁️</span></td><td class="mono">19:18</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/freiburg-im-breisgau/79098/month/167209" target="_blank" rel="noopener">프라이부르크</a></td><td class="mono">9/24(목)</td><td class="mono">22/13<span class="wx-icon">☁️</span></td><td class="mono">19:22</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/triberg-im-schwarzwald/78098/month/176995" target="_blank" rel="noopener">트리베르크</a></td><td class="mono">9/24(목)</td><td class="mono">19/10<span class="wx-icon">☁️</span></td><td class="mono">19:21</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/metzingen/72555/month/167308" target="_blank" rel="noopener">메칭겐</a></td><td class="mono">9/24(목)</td><td class="mono">18/8<span class="wx-icon">🌦️</span></td><td class="mono">19:17</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/heidelberg/69117/month/167210" target="_blank" rel="noopener">하이델베르크</a></td><td class="mono">9/25(금)</td><td class="mono">22/6<span class="wx-icon">⛅</span></td><td class="mono">19:17</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/ruedesheim-am-rhein/65385/month/178612" target="_blank" rel="noopener">뤼데스하임</a></td><td class="mono">9/26(토)</td><td class="mono">23/6<span class="wx-icon">☁️</span></td><td class="mono">19:17</td></tr>
-        <tr><td class="wg-city"><a href="https://www.accuweather.com/en/de/frankfurt/60311/month/168720" target="_blank" rel="noopener">프랑크푸르트(귀국일)</a></td><td class="mono">9/26(토) 반납·출국</td><td class="mono">23/5<span class="wx-icon">☁️</span></td><td class="mono">19:14</td></tr>
-        <tr><td class="wg-city">서울(귀국)</td><td class="mono">9/27(일) 도착</td><td class="mono">26/17<span class="wx-icon">☁️</span></td><td class="mono">11:23</td></tr>
-          </tbody>
-        </table>
-      </div>
-  </section>
 
-  
 </main>
 
 <script src="search-inpage.js" defer></script>
